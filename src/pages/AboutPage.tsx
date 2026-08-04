@@ -386,12 +386,14 @@ const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {TRUST_ITEMS.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-5 p-8 rounded-2xl bg-gray-800/80 border border-gray-700/80 hover:border-secunova-blue/50 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-secunova-blue border border-blue-400/30 flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-blue-500/20 mt-1">
-                  {item.icon}
-                </div>
+              <div key={idx} className="p-8 rounded-2xl bg-gray-800/80 border border-gray-700/80 hover:border-secunova-blue/50 transition-colors flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-secunova-blue border border-blue-400/30 flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-blue-500/20">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white leading-tight">{item.title}</h3>
+                  </div>
                   <p className="text-sm text-gray-300 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
