@@ -43,8 +43,8 @@ const ContactPage = () => {
       icon: <Mail className="h-8 w-8 text-secunova-blue" />,
       title: 'Email Us',
       description: 'Send us a detailed message',
-      contact: 'hello@secunova.ca',
-      action: 'mailto:hello@secunova.ca',
+      contact: 'hello@secunovainc.com',
+      action: 'mailto:hello@secunovainc.com',
       color: 'from-secunova-blue/10 to-secunova-blue/20 hover:from-secunova-blue/20 hover:to-secunova-blue/30'
     }
   ];
@@ -59,14 +59,14 @@ const ContactPage = () => {
           ======================================== */}
       <Helmet>
         <title>Contact SecuNova | Get Free Consultation | 403-401-1552 | Calgary, AB</title>
-        <meta name="description" content="Contact SecuNova for expert IT & cybersecurity services. Call 403-401-1552 or email hello@secunova.ca. Located at 1122 3 St SE Ste 1906, Calgary, AB T2G 1H7, CA." />
-        <meta name="keywords" content="contact SecuNova Calgary, SecuNova phone number 403 401 1552, IT support Calgary contact, cybersecurity consultation Calgary, SecuNova email hello@secunova.ca, SecuNova Calgary office 1122 3 St SE Ste 1906" />
-        <link rel="canonical" href="https://secunova.ca/contact" />
+        <meta name="description" content="Contact SecuNova for expert IT & cybersecurity services. Call 403-401-1552 or email hello@secunovainc.com. Located at 1122 3 St SE Ste 1906, Calgary, AB T2G 1H7, CA." />
+        <meta name="keywords" content="contact SecuNova Calgary, SecuNova phone number 403 401 1552, IT support Calgary contact, cybersecurity consultation Calgary, SecuNova email hello@secunovainc.com, SecuNova Calgary office 1122 3 St SE Ste 1906" />
+        <link rel="canonical" href="https://secunovainc.com/contact" />
 
         {/* OpenGraph Tags */}
         <meta property="og:title" content="Contact SecuNova | Free Consultation | 403-401-1552" />
-        <meta property="og:description" content="Get in touch with SecuNova in Calgary. Call 403-401-1552 or email hello@secunova.ca." />
-        <meta property="og:url" content="https://secunova.ca/contact" />
+        <meta property="og:description" content="Get in touch with SecuNova in Calgary. Call 403-401-1552 or email hello@secunovainc.com." />
+        <meta property="og:url" content="https://secunovainc.com/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SecuNova" />
         <meta property="og:locale" content="en_CA" />
@@ -74,7 +74,7 @@ const ContactPage = () => {
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact SecuNova | 403-401-1552" />
-        <meta name="twitter:description" content="Free consultation. Call 403-401-1552 or email hello@secunova.ca" />
+        <meta name="twitter:description" content="Free consultation. Call 403-401-1552 or email hello@secunovainc.com" />
 
         {/* Additional SEO Tags */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -88,12 +88,12 @@ const ContactPage = () => {
             "@type": "ContactPage",
             "name": "Contact SecuNova",
             "description": "Contact SecuNova for expert consulting, software engineering, and technical project supervision in Calgary, Alberta",
-            "url": "https://secunova.ca/contact",
+            "url": "https://secunovainc.com/contact",
             "mainEntity": {
               "@type": "Organization",
               "name": "SecuNova",
               "telephone": "+1-403-401-1552",
-              "email": "hello@secunova.ca",
+              "email": "hello@secunovainc.com",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "1122 3 St SE Ste 1906",
@@ -135,7 +135,7 @@ const ContactPage = () => {
                 Call 403-401-1552
               </a>
               <a
-                href="mailto:hello@secunova.ca"
+                href="mailto:hello@secunovainc.com"
                 className="btn btn-outline-light btn-lg"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />

@@ -16,7 +16,7 @@ export interface KnowledgeItem {
 }
 
 export const SUPPORT_PHONE = '403-401-1552';
-export const SUPPORT_EMAIL = 'hello@secunova.ca';
+export const SUPPORT_EMAIL = 'hello@secunovainc.com';
 
 // Detect if query is Arabic
 export function isArabicText(text: string): boolean {

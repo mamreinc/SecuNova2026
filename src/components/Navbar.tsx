@@ -42,9 +42,9 @@ const TopBar = () => {
     <div className="bg-gradient-to-r from-secunova-dark to-secunova-blue text-white py-2 hidden lg:block">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center space-y-2 lg:space-y-0">
         <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-6">
-          <a href="mailto:hello@secunova.ca" className="flex items-center hover:text-white transition-all duration-300 hover:scale-105 text-xs sm:text-sm text-white">
+          <a href="mailto:hello@secunovainc.com" className="flex items-center hover:text-white transition-all duration-300 hover:scale-105 text-xs sm:text-sm text-white">
             <Mail className="h-4 w-4 mr-2 transition-transform duration-300 hover:rotate-12" />
-            hello@secunova.ca
+            hello@secunovainc.com
           </a>
           <a href="tel:403-401-1552" className="flex items-center hover:text-white transition-all duration-300 hover:scale-105 text-xs sm:text-sm text-white">
             <Phone className="h-3.5 w-3.5 mr-1.5 text-white" />

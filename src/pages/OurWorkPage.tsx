@@ -627,7 +627,7 @@ const OurWorkPage = () => {
                 Want to see everything?
               </p>
               <a
-                href="mailto:hello@secunova.ca?subject=Full%20Portfolio%20Request"
+                href="mailto:hello@secunovainc.com?subject=Full%20Portfolio%20Request"
                 className="inline-flex items-center gap-2 font-semibold text-sm px-6 py-3 border border-gray-200 text-secunova-dark rounded-lg hover:border-secunova-blue/40 hover:text-secunova-blue transition-all"
               >
                 <span>Request Full Portfolio</span>
