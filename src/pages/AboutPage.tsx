@@ -413,6 +413,16 @@ const AboutPage: React.FC = () => {
 
       {/* ── CTA SECTION ─── */}
       <CtaSection />
+
+      {/* Organization Information */}
+      <section className="border-t border-gray-100 bg-gray-50">
+        <div className="container mx-auto px-4 py-4">
+          <p className="text-xs text-gray-500 text-center leading-relaxed">
+            Business Number: <span className="font-medium text-gray-700">714343225</span> · Corporation
+            Number: <span className="font-medium text-gray-700">2026915245</span>
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
