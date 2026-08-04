@@ -543,11 +543,11 @@ const ServicesPage = () => {
                 Call 403-401-1552
               </a>
               <a
-                href="mailto:hello@secunova.ca"
+                href="mailto:hello@secunovainc.com"
                 className="btn btn-outline btn-lg"
               >
                 <Mail className="mr-2 h-5 w-5" />
-                hello@secunova.ca
+                hello@secunovainc.com
               </a>
             </div>
           </div>

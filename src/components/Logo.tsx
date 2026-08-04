@@ -49,7 +49,7 @@ export const Logo: React.FC<LogoProps> = ({
         decoding="async"
       />
 
-      {/* Brand Text formatted strictly matching secunova.ca */}
+      {/* Brand Text formatted strictly matching secunovainc.com */}
       {variant !== 'monogram' && (
         <div className="flex flex-col">
           <div

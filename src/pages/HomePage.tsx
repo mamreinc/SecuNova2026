@@ -180,7 +180,7 @@ const HomePage = () => {
             "slogan": "Navigate Digital Change. Before It Costs You Momentum.",
             "priceRange": "$$",
             "telephone": "+1-403-401-1552",
-            "email": "hello@secunova.ca",
+            "email": "hello@secunovainc.com",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "#270, 1122 3 St SE Ste 1906",
