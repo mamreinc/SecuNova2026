@@ -438,9 +438,9 @@ const ProductCard: React.FC<{ product: Product; index: number; onOpen: (p: Produ
       {/* Outcome stats */}
       <div className="mt-5 pt-5 grid grid-cols-3 gap-2 border-t border-gray-100">
         {product.outcomeStats.map((stat, i) => (
-          <div key={i} className="text-center">
-            <span className="block text-lg font-bold text-secunova-dark">{stat.value}</span>
-            <span className="block text-[10px] text-gray-400 uppercase tracking-wider mt-0.5 leading-tight">{stat.label}</span>
+          <div key={i} className="flex flex-col justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-center shadow-xs">
+            <span className="block text-base sm:text-lg font-black text-secunova-blue leading-tight mb-1">{stat.value}</span>
+            <span className="block text-[11px] font-semibold text-slate-700 leading-snug">{stat.label}</span>
           </div>
         ))}
       </div>

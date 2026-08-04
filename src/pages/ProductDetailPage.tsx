@@ -109,9 +109,9 @@ const ProductDetailPage: React.FC = () => {
               {/* Stats Highlights */}
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-2xl">
                 {product.outcomeStats.map((stat, i) => (
-                  <div key={i} className="text-left">
-                    <span className="block text-2xl sm:text-3xl font-extrabold text-white">{stat.value}</span>
-                    <span className="block text-xs text-blue-200 font-medium uppercase tracking-wider mt-1">{stat.label}</span>
+                  <div key={i} className="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-center shadow-xs">
+                    <span className="block text-2xl sm:text-3xl font-black text-white mb-1">{stat.value}</span>
+                    <span className="block text-xs text-blue-100 font-semibold leading-snug">{stat.label}</span>
                   </div>
                 ))}
               </div>
