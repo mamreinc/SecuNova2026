@@ -322,11 +322,11 @@ const CaseStudyModal: React.FC<{ product: Product; onClose: () => void }> = ({ p
 
       <div className="p-8 space-y-8">
         {/* Outcome Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {product.outcomeStats.map((stat, i) => (
-            <div key={i} className="rounded-xl bg-secunova-blue/5 border border-secunova-blue/10 p-5 text-center">
-              <span className="block text-2xl font-bold text-secunova-dark">{stat.value}</span>
-              <span className="block text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">{stat.label}</span>
+            <div key={i} className="rounded-xl bg-blue-50/50 border border-blue-100 p-3.5 text-center">
+              <span className="block text-xl font-bold text-secunova-blue mb-0.5">{stat.value}</span>
+              <span className="block text-xs text-slate-700 font-medium leading-tight">{stat.label}</span>
             </div>
           ))}
         </div>
@@ -436,11 +436,11 @@ const ProductCard: React.FC<{ product: Product; index: number; onOpen: (p: Produ
       <p className="text-sm text-gray-600 leading-relaxed flex-1">{product.pitch.length > 180 ? product.pitch.substring(0, 180) + '...' : product.pitch}</p>
 
       {/* Outcome stats */}
-      <div className="mt-5 pt-5 grid grid-cols-3 gap-2 border-t border-gray-100">
+      <div className="mt-3 pt-3 grid grid-cols-3 gap-1.5 border-t border-gray-100">
         {product.outcomeStats.map((stat, i) => (
-          <div key={i} className="flex flex-col justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-center shadow-xs">
-            <span className="block text-base sm:text-lg font-black text-secunova-blue leading-tight mb-1">{stat.value}</span>
-            <span className="block text-[11px] font-semibold text-slate-700 leading-snug">{stat.label}</span>
+          <div key={i} className="flex flex-col justify-center p-1.5 rounded-lg bg-slate-50 border border-slate-100 text-center">
+            <span className="block text-xs font-extrabold text-secunova-blue leading-none mb-0.5">{stat.value}</span>
+            <span className="block text-[10px] font-medium text-slate-600 leading-tight">{stat.label}</span>
           </div>
         ))}
       </div>
