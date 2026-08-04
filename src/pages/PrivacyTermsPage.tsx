@@ -6,9 +6,9 @@ const PrivacyTermsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Privacy Policy Terms of Service | SecuNova Inc. Calgary Alberta IT Company</title>
-        <meta name="description" content="SecuNova Inc. privacy policy and terms of service. Learn how we protect your data and the terms governing our IT services in Calgary & Alberta. Data protection and service agreements." />
-        <meta name="keywords" content="SecuNova privacy policy, SecuNova terms of service, IT company privacy Calgary, data protection Alberta, service terms Calgary, SecuNova Inc legal" />
+        <title>Privacy Policy & Terms of Service | SecuNova Consulting Calgary</title>
+        <meta name="description" content="SecuNova Consulting privacy policy and terms of service. Learn how we protect your data and the terms governing our consulting and engineering services in Calgary & Alberta." />
+        <meta name="keywords" content="SecuNova privacy policy, SecuNova terms of service, consulting privacy Calgary, data protection Alberta, service terms Calgary, SecuNova Consulting legal" />
         <link rel="canonical" href="https://secunovainc.com/privacy-terms" />
       </Helmet>
 

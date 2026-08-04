@@ -8,33 +8,51 @@ const WebDevelopmentPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Custom Web App Development Calgary | Enterprise Applications & Funnels | SecuNova Inc.</title>
+        <title>Custom Web Development Calgary | React Web Apps & Landing Pages | SecuNova Consulting</title>
         <meta
           name="description"
-          content="Custom web applications, enterprise platforms, and high-converting landing funnels in Calgary & Alberta. Engineered with React, TypeScript, and AI-augmented senior development (Vibe Coding) for maximum speed and zero technical debt."
+          content="Custom web development in Calgary: React.js web applications, enterprise platforms, and high-converting landing pages built with senior-led engineering and 100% IP ownership."
         />
         <meta
           name="keywords"
-          content="Custom Web App Calgary, Web Application Development Alberta, React Development Calgary, Enterprise Web Apps Canada, High Converting Landing Pages, Vibe Coding Development, SaaS Product Engineering, SecuNova Inc."
+          content="custom web development Calgary, React.js web apps, web application development Alberta, high-converting landing pages, custom corporate websites Calgary, enterprise web platforms Canada, Vibe Coding development, SecuNova Consulting"
         />
         <link rel="canonical" href="https://secunovainc.com/services/web-development" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="Custom Web App Development | Enterprise Web Applications | SecuNova Inc." />
+        <meta property="og:title" content="Custom Web Development Calgary | React Web Apps | SecuNova Consulting" />
         <meta
           property="og:description"
           content="Custom web applications, corporate platforms, and high-converting funnels engineered for North American organizations."
         />
         <meta property="og:url" content="https://secunovainc.com/services/web-development" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Custom Web App Development | SecuNova Inc." />
+        <meta name="twitter:title" content="Custom Web Development Calgary | SecuNova Consulting" />
         <meta
           name="twitter:description"
           content="Custom web applications and high-converting landing funnels engineered with React, TypeScript, and senior AI workflows."
         />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.com/services" },
+              { "@type": "ListItem", "position": 3, "name": "Custom Web Development Calgary", "item": "https://secunovainc.com/services/web-development" }
+            ]
+          })}
+        </script>
 
         {/* Structured Data */}
         <script type="application/ld+json">

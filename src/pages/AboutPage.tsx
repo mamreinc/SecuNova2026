@@ -73,30 +73,40 @@ const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>About SecuNova | Canadian Consulting & Technology Firm | Calgary, AB</title>
+        <title>About SecuNova Consulting | Digital Transformation Firm Calgary</title>
         <meta
           name="description"
-          content="SecuNova is a Canadian consulting and technology firm based in Calgary, Alberta. Founded in Warsaw in 2016 and incorporated in Calgary in 2025, SecuNova helps organizations navigate digital change and prevent technology entropy."
+          content="SecuNova Consulting is a Calgary-based digital transformation and engineering firm. Founded in 2016, SecuNova helps organizations navigate digital change and prevent technology entropy."
         />
         <meta
           name="keywords"
-          content="SecuNova about, Canadian technology firm, Calgary digital consulting, technology entropy, custom digital engineering, PMaaS Calgary, IT consulting Alberta"
+          content="SecuNova about, SecuNova Consulting Calgary, Canadian technology firm, Calgary digital consulting, technology entropy, custom digital engineering, PMaaS Calgary, IT consulting Alberta"
         />
         <link rel="canonical" href="https://secunovainc.com/about" />
 
-        <meta property="og:title" content="About SecuNova Inc. | Canadian Consulting & Technology Firm" />
+        <meta property="og:title" content="About SecuNova Consulting | Digital Transformation Firm Calgary" />
         <meta
           property="og:description"
           content="Senior-led digital advisory and engineering firm based in Calgary, Alberta. SecuNova helps organizations navigate digital change and prevent technology entropy."
         />
         <meta property="og:url" content="https://secunovainc.com/about" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About SecuNova Consulting Calgary" />
+        <meta name="twitter:description" content="Senior-led digital advisory and engineering firm based in Calgary, Alberta." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "SecuNova Inc.",
+            "alternateName": "SecuNova Consulting",
             "url": "https://secunovainc.com/about",
             "description": "SecuNova is a Canadian consulting and technology firm based in Calgary, Alberta, that helps organizations and leaders navigate digital change. Founded in Warsaw, Poland, in 2016 and incorporated in Calgary in 2025, SecuNova operates as a single-expert firm preventing technology entropy.",
             "address": {
@@ -106,7 +116,6 @@ const AboutPage: React.FC = () => {
               "addressCountry": "CA"
             },
             "sameAs": [
-              "https://secunovainc.com/",
               "https://linkedin.com/company/secunova-inc"
             ]
           })}

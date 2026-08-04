@@ -154,25 +154,35 @@ const JoinUsPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Join SecuNova Inc. | Investment, Executive Leadership & Partnership Opportunities</title>
-        <meta name="description" content="Partner with SecuNova Inc. in Calgary, Alberta. Explore seed investment opportunities, executive co-founder roles, senior sub-contractor contracts, and lucrative referral programs." />
+        <title>Join SecuNova Consulting | Investment, Leadership & Partnership Opportunities</title>
+        <meta name="description" content="Partner with SecuNova Consulting in Calgary, Alberta. Explore seed investment opportunities, executive co-founder roles, senior sub-contractor contracts, and referral programs." />
         <meta name="keywords" content="SecuNova investment, Calgary IT startup investment, co-founder opportunity Calgary, tech sub-contractor Alberta, IT referral program Calgary, SecuNova partnership" />
         <link rel="canonical" href="https://secunovainc.com/join-us" />
 
-        <meta property="og:title" content="Join SecuNova Inc. | Capital & Strategic Partnerships" />
+        <meta property="og:title" content="Join SecuNova Consulting | Capital & Strategic Partnerships" />
         <meta property="og:description" content="Build, invest, and scale with a senior-led Canadian technology firm redefining enterprise IT delivery." />
         <meta property="og:url" content="https://secunovainc.com/join-us" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Join SecuNova Consulting | Partnerships" />
+        <meta name="twitter:description" content="Investment, executive co-founder, delivery network, and referral opportunities." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Join SecuNova Inc. Partnership Opportunities",
-            "description": "Investment, executive co-founder, delivery network, and referral opportunities with SecuNova Inc.",
+            "name": "Join SecuNova Consulting Partnership Opportunities",
+            "description": "Investment, executive co-founder, delivery network, and referral opportunities with SecuNova Consulting.",
             "publisher": {
               "@type": "Organization",
               "name": "SecuNova Inc.",
+              "alternateName": "SecuNova Consulting",
               "url": "https://secunovainc.com"
             }
           })}

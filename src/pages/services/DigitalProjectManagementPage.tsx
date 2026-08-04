@@ -69,15 +69,37 @@ const DigitalProjectManagementPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Digital Project Management Calgary | PMaaS & IT Governance | SecuNova Inc.</title>
-        <meta name="description" content="Expert digital project management services in Calgary. Project Management as a Service (PMaaS), Agile/Waterfall delivery, vendor oversight, budget governance. Protecting your digital investments since 2016." />
-        <meta name="keywords" content="digital project management Calgary, PMaaS Calgary, project management as a service, IT project governance, Agile project management Alberta, vendor oversight Calgary, technical project supervision, budget governance, SecuNova project management" />
+        <title>Digital Project Management Calgary | PMaaS & IT Governance | SecuNova Consulting</title>
+        <meta name="description" content="Digital project management (PMaaS) in Calgary. Independent project supervision, vendor oversight, budget protection, and milestone enforcement for North American organizations." />
+        <meta name="keywords" content="digital project management Calgary, Project Management as a Service, PMaaS Calgary, IT project governance Alberta, vendor oversight Calgary, technical project supervision, budget governance, Agile project management, SecuNova Consulting" />
         <link rel="canonical" href="https://secunovainc.com/services/digital-project-management" />
 
-        <meta property="og:title" content="Digital Project Management | PMaaS & IT Governance | SecuNova Inc." />
-        <meta property="og:description" content="Expert digital project management. PMaaS, vendor oversight, and budget governance for North American businesses." />
+        <meta property="og:title" content="Digital Project Management Calgary | PMaaS | SecuNova Consulting" />
+        <meta property="og:description" content="Independent project supervision, vendor oversight, budget protection, and milestone enforcement for North American organizations." />
         <meta property="og:url" content="https://secunovainc.com/services/digital-project-management" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digital Project Management Calgary | SecuNova Consulting" />
+        <meta name="twitter:description" content="PMaaS, vendor oversight, and budget governance for North American businesses." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.com/services" },
+              { "@type": "ListItem", "position": 3, "name": "Digital Project Management Calgary", "item": "https://secunovainc.com/services/digital-project-management" }
+            ]
+          })}
+        </script>
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -88,6 +110,7 @@ const DigitalProjectManagementPage = () => {
             "provider": {
               "@type": "LocalBusiness",
               "name": "SecuNova Inc.",
+              "alternateName": "SecuNova Consulting",
               "telephone": "+1-403-401-1552"
             },
             "areaServed": {

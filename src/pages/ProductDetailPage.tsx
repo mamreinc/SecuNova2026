@@ -52,15 +52,24 @@ const ProductDetailPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>{product.name} | {product.tagline} | SecuNova Inc.</title>
+        <title>{product.name} | {product.tagline} | SecuNova Consulting</title>
         <meta name="description" content={`${product.name}: ${product.pitch}`} />
-        <meta name="keywords" content={`${product.name}, ${product.techStack.join(', ')}, SecuNova products, custom software, case study`} />
+        <meta name="keywords" content={`${product.name}, ${product.techStack.join(', ')}, SecuNova Consulting products, custom software, case study`} />
         <link rel="canonical" href={`https://secunovainc.com/about/our-work/${product.id}`} />
 
-        <meta property="og:title" content={`${product.name} | SecuNova Inc.`} />
+        <meta property="og:title" content={`${product.name} | SecuNova Consulting`} />
         <meta property="og:description" content={product.pitch} />
         <meta property="og:url" content={`https://secunovainc.com/about/our-work/${product.id}`} />
         <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${product.name} | SecuNova Consulting`} />
+        <meta name="twitter:description" content={product.pitch} />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
       </Helmet>
 
       {/* Top Nav Bar / Breadcrumb */}

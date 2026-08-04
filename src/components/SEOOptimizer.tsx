@@ -61,7 +61,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   description,
   keywords,
   canonicalUrl,
-  ogImage = "https://secunovainc.com/iPhone.png",
+  ogImage = "https://secunovainc.com/logo/secunova-icon.png",
   structuredData,
   breadcrumbs,
   noIndex = false,
@@ -96,7 +96,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content={optimizedTitle} />
-        <meta property="og:site_name" content="SecuNova Inc." />
+        <meta property="og:site_name" content="SecuNova Consulting" />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:locale:alternate" content="fr_CA" />
 

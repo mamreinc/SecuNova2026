@@ -166,9 +166,11 @@ const LoginPage = () => {
           Meta tags and page title
           ======================================== */}
       <Helmet>
-        <title>Client Portal Login | SecuNova Inc. Calgary Alberta IT Services</title>
-        <meta name="description" content="Secure client portal login for SecuNova Inc. customers in Calgary & Alberta. Access your IT services account, support tickets, and project information." />
+        <title>Client Portal Login | SecuNova Consulting Calgary</title>
+        <meta name="description" content="Secure client portal login for SecuNova Consulting customers in Calgary & Alberta. Access your account, support tickets, and project information." />
         <meta name="keywords" content="SecuNova login, client portal Calgary, IT services login Alberta, SecuNova account access, customer portal Calgary" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
         <link rel="canonical" href="https://secunovainc.com/login" />
       </Helmet>
       {/* ========================================

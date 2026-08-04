@@ -489,15 +489,24 @@ const OurWorkPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Our Work & Products | SecuNova Inc. Calgary</title>
-        <meta name="description" content="Explore SecuNova's product portfolio: Nova macOS AI agent, Career OS, SecuBoost, Journalism Audit Platform, Lead Finder, CanadaQuest, and client projects MoonYYC, YYC Echo, AB Arabic. Custom software, zero-debt architecture, full IP transfer." />
+        <title>Our Work & Products | SecuNova Consulting Calgary</title>
+        <meta name="description" content="Explore SecuNova Consulting's product portfolio: Nova macOS AI agent, Career OS, SecuBoost, Journalism Audit Platform, Lead Finder, CanadaQuest, and client projects MoonYYC, YYC Echo, AB Arabic. Custom software, zero-debt architecture, full IP transfer." />
         <meta name="keywords" content="SecuNova products, Nova macOS AI agent, Career OS, SecuBoost, CanadaQuest, MoonYYC, YYC Echo, AB Arabic, custom software Calgary, zero-debt architecture, privacy-first software" />
         <link rel="canonical" href="https://secunovainc.com/about/our-work" />
 
-        <meta property="og:title" content="Our Work & Products | SecuNova Inc." />
-        <meta property="og:description" content="Products we own, platforms we delivered. Proof of execution from SecuNova Inc." />
+        <meta property="og:title" content="Our Work & Products | SecuNova Consulting" />
+        <meta property="og:description" content="Products we own, platforms we delivered. Proof of execution from SecuNova Consulting." />
         <meta property="og:url" content="https://secunovainc.com/about/our-work" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Work & Products | SecuNova Consulting" />
+        <meta name="twitter:description" content="Products we own, platforms we delivered. Proof of execution from SecuNova Consulting." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -508,6 +517,7 @@ const OurWorkPage = () => {
             "provider": {
               "@type": "LocalBusiness",
               "name": "SecuNova Inc.",
+              "alternateName": "SecuNova Consulting",
               "telephone": "+1-403-401-1552"
             },
           })}

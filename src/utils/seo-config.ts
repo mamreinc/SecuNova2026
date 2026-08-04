@@ -1,12 +1,20 @@
+/*
+ ========================================
+ SEO CONFIGURATION - SecuNova Consulting
+ Central keyword strategy + per-route metadata
+ ========================================
+ */
+
 export const baseSEO = {
-  siteName: 'SecuNova Inc.',
+  siteName: 'SecuNova Consulting',
   siteUrl: 'https://secunovainc.com',
-  defaultImage: 'https://secunovainc.com/logo/secunova-logo.png',
+  defaultImage: 'https://secunovainc.com/og-image.png',
+  logo: 'https://secunovainc.com/logo/secunova-logo.png',
   defaultAuthor: 'SecuNova Inc.',
   companyName: 'SecuNova Inc.',
-  keywords: 'SecuNova Consulting, SecuNova Inc Calgary, SecuNova Consulting Calgary, consulting firm Calgary, digital transformation consulting Calgary, executive training Alberta, custom corporate websites Calgary, B2B website copywriting, SEO content strategy, digital engineering, technology consulting Canada',
+  slogan: 'Navigate Digital Change. Before It Costs You Momentum.',
   phone: '+1-403-401-1552',
-  emergencyPhone: '+1-403-401-1552',
+  phoneDisplay: '403-401-1552',
   email: 'hello@secunovainc.com',
   address: {
     street: '#270, 1122 3 St SE Ste 1906',
@@ -22,6 +30,161 @@ export const baseSEO = {
   social: {
     linkedin: 'https://ca.linkedin.com/company/secunovac'
   }
+};
+
+/*
+ * Keyword strategy for SecuNova Consulting
+ * Primary (brand + location), service, and long-tail keywords.
+ */
+export const keywords = {
+  primary: [
+    'SecuNova Consulting',
+    'SecuNova Consulting Calgary',
+    'SecuNova Inc Calgary',
+    'consulting firm Calgary',
+    'IT consulting Calgary',
+    'digital transformation consulting Calgary'
+  ],
+  services: [
+    'custom web development Calgary',
+    'React.js web development Calgary',
+    'UI UX design Calgary',
+    'B2B SEO strategy Calgary',
+    'digital project management Calgary',
+    'Project Management as a Service Calgary',
+    'executive leadership consulting Alberta',
+    'web maintenance Calgary',
+    'tech stack audit Calgary',
+    'custom web app development Calgary'
+  ],
+  longTail: [
+    'Calgary consulting and technology firm',
+    'senior-led digital engineering Calgary',
+    'custom corporate websites Calgary Alberta',
+    'B2B content and SEO strategy Canada',
+    'Calgary IT project governance',
+    'executive digital transformation advisory Calgary'
+  ],
+  all: function () {
+    return [...this.primary, ...this.services, ...this.longTail];
+  },
+  asMeta: function () {
+    return this.all().join(', ');
+  }
+};
+
+/*
+ * Per-route metadata for every page of the site.
+ */
+export const pageSEO = {
+  '/': {
+    title: 'SecuNova Consulting Calgary | Digital Transformation & Custom Web Development',
+    description:
+      'SecuNova Consulting is a Calgary-based consulting firm for digital transformation, executive leadership, custom web development, UI/UX design, and B2B SEO. One senior-led partner for North American leaders.',
+    keywords:
+      'SecuNova Consulting, SecuNova Consulting Calgary, consulting firm Calgary, digital transformation consulting Calgary, custom web development Calgary, UI UX design Calgary, B2B SEO strategy Calgary, IT consulting Canada'
+  },
+  '/services': {
+    title: 'Consulting & Engineering Services Calgary | SecuNova Consulting',
+    description:
+      'Explore SecuNova Consulting services in Calgary: digital transformation consulting, executive leadership programs, custom web apps, UI/UX redesign, B2B SEO strategy, and digital project management (PMaaS).',
+    keywords:
+      'SecuNova Consulting, digital transformation consulting Calgary, custom web development Calgary, UI UX design Calgary, B2B SEO strategy Calgary, digital project management Calgary, consulting firm Alberta'
+  },
+  '/services/web-development': {
+    title: 'Custom Web Development Calgary | React Web Apps & Landing Pages | SecuNova Consulting',
+    description:
+      'Custom web development in Calgary: React.js web applications, enterprise platforms, and high-converting landing pages built with senior-led engineering and 100% IP ownership.',
+    keywords:
+      'custom web development Calgary, React.js web apps, web application development Alberta, high-converting landing pages, custom corporate websites Calgary, SecuNova Consulting'
+  },
+  '/services/ui-ux-design': {
+    title: 'UI/UX Design Calgary | Website & App Redesign | SecuNova Consulting',
+    description:
+      'UI/UX design and website redesign in Calgary. User research, wireframes, Figma prototypes, and conversion-focused interface design that boosts engagement and credibility.',
+    keywords:
+      'UI UX design Calgary, user experience design Calgary, website redesign Calgary, app UI design, Figma prototyping, interface design Calgary, SecuNova Consulting'
+  },
+  '/services/seo-marketing': {
+    title: 'B2B SEO Strategy & Content Marketing Calgary | SecuNova Consulting',
+    description:
+      'B2B SEO and content strategy in Calgary. High-intent keyword strategy, executive copywriting, technical SEO, and schema markup that turn organic traffic into B2B pipeline.',
+    keywords:
+      'B2B SEO strategy Calgary, SEO content marketing Calgary, B2B copywriting Alberta, technical SEO Canada, thought leadership content, SecuNova Consulting'
+  },
+  '/services/digital-project-management': {
+    title: 'Digital Project Management Calgary | PMaaS | SecuNova Consulting',
+    description:
+      'Digital project management (PMaaS) in Calgary. Independent project supervision, vendor oversight, budget protection, and milestone enforcement for North American organizations.',
+    keywords:
+      'digital project management Calgary, Project Management as a Service, PMaaS Calgary, vendor oversight, IT project governance Alberta, budget protection, SecuNova Consulting'
+  },
+  '/about': {
+    title: 'About SecuNova Consulting | Senior-Led Consulting Firm in Calgary',
+    description:
+      'Meet SecuNova Consulting, a Calgary-based consulting firm built by senior architects. Strategy and engineering under one roof with 100% IP ownership and zero handoffs.',
+    keywords:
+      'About SecuNova Consulting, senior-led consulting firm Calgary, Calgary consulting and technology firm, IT consulting Alberta, SecuNova team'
+  },
+  '/about/our-work': {
+    title: 'Our Work & Products | SecuNova Consulting Case Studies',
+    description:
+      'Explore SecuNova Consulting shipped products and case studies: Nova AI agent, Career OS, SecuBoost, and more. Custom software with zero technical debt and full IP transfer.',
+    keywords:
+      'SecuNova products, custom software case studies Calgary, Nova AI agent, Career OS, custom web app portfolio, zero-debt architecture'
+  },
+  '/contact': {
+    title: 'Contact SecuNova Consulting Calgary | Free Strategy Call',
+    description:
+      'Contact SecuNova Consulting in Calgary, AB. Call 403-401-1552 or email hello@secunovainc.com for a free strategy call. Located at #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7.',
+    keywords:
+      'contact SecuNova Consulting Calgary, free strategy call, consulting firm Calgary contact, 403-401-1552, hello@secunovainc.com'
+  },
+  '/faq': {
+    title: 'FAQ | SecuNova Consulting Calgary Questions Answered',
+    description:
+      'Answers to common questions about SecuNova Consulting: digital transformation, custom web development, UI/UX design, B2B SEO, PMaaS, and tech stack audits in Calgary.',
+    keywords:
+      'SecuNova FAQ, IT consulting questions, custom web development FAQ Calgary, PMaaS questions, B2B SEO Calgary, tech stack audit'
+  },
+  '/free-services': {
+    title: 'Free Digital Services & Assessments | SecuNova Consulting Calgary',
+    description:
+      'Free digital assessments and resources from SecuNova Consulting: free strategy calls, digital footprint audits, and tools for Calgary businesses.',
+    keywords:
+      'free strategy call Calgary, free digital assessment, IT consulting free consultation, SecuNova Consulting free services'
+  },
+  '/join-us': {
+    title: 'Join SecuNova Consulting | Careers, Partnerships & Investment',
+    description:
+      'Partner with SecuNova Consulting in Calgary: senior contractor roles, referral programs, executive co-founder opportunities, and seed investment.',
+    keywords:
+      'SecuNova careers, IT consulting jobs Calgary, tech partnership Alberta, referral program, seed investment Calgary'
+  },
+  '/privacy-terms': {
+    title: 'Privacy Policy & Terms | SecuNova Consulting',
+    description:
+      'Read the SecuNova Consulting privacy policy and terms of service for our consulting and digital engineering services in Calgary and Alberta.',
+    keywords:
+      'SecuNova privacy policy, terms of service, data protection Alberta, consulting service terms Calgary'
+  },
+  '/brand': {
+    title: 'Brand & Identity | SecuNova Consulting',
+    description:
+      'SecuNova Consulting brand guidelines, identity, and digital assets.',
+    keywords: 'SecuNova brand, SecuNova Consulting identity, brand guidelines'
+  },
+  '/login': {
+    title: 'Client Portal Login | SecuNova Consulting',
+    description:
+      'Secure client portal login for SecuNova Consulting clients.',
+    keywords: 'SecuNova client login, client portal Calgary',
+    noIndex: true
+  }
+};
+
+export const getPageSEO = (path: string) => {
+  return pageSEO[path] || pageSEO['/'];
 };
 
 export const generateServiceSchema = (service: {
@@ -40,6 +203,7 @@ export const generateServiceSchema = (service: {
     'provider': {
       '@type': 'LocalBusiness',
       'name': baseSEO.companyName,
+      'alternateName': 'SecuNova Consulting',
       'telephone': baseSEO.phone,
       'email': baseSEO.email,
       'address': {
@@ -56,37 +220,28 @@ export const generateServiceSchema = (service: {
         'longitude': baseSEO.geo.longitude
       },
       'url': baseSEO.siteUrl,
-      'logo': baseSEO.defaultImage,
+      'logo': baseSEO.logo,
       'image': baseSEO.defaultImage,
-      'priceRange': service.priceRange || '$$',
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': '4.9',
-        'reviewCount': '127',
-        'bestRating': '5',
-        'worstRating': '1'
-      }
+      'priceRange': service.priceRange || '$$'
     },
     'areaServed': [
-      {
-        '@type': 'City',
-        'name': 'Calgary'
-      },
-      {
-        '@type': 'State',
-        'name': 'Alberta'
-      }
+      { '@type': 'City', 'name': 'Calgary' },
+      { '@type': 'State', 'name': 'Alberta' },
+      { '@type': 'Country', 'name': 'Canada' },
+      { '@type': 'Country', 'name': 'United States' }
     ],
     'serviceType': service.name,
-    'offers': service.features ? {
-      '@type': 'AggregateOffer',
-      'priceCurrency': 'CAD',
-      'availability': 'https://schema.org/InStock',
-      'itemOffered': service.features.map(feature => ({
-        '@type': 'Service',
-        'name': feature
-      }))
-    } : undefined
+    'offers': service.features
+      ? {
+          '@type': 'AggregateOffer',
+          'priceCurrency': 'CAD',
+          'availability': 'https://schema.org/InStock',
+          'itemOffered': service.features.map((feature) => ({
+            '@type': 'Service',
+            'name': feature
+          }))
+        }
+      : undefined
   };
 };
 
@@ -107,7 +262,7 @@ export const generateFAQSchema = (faqs: Array<{ question: string; answer: string
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    'mainEntity': faqs.map(faq => ({
+    'mainEntity': faqs.map((faq) => ({
       '@type': 'Question',
       'name': faq.question,
       'acceptedAnswer': {
@@ -121,9 +276,10 @@ export const generateFAQSchema = (faqs: Array<{ question: string; answer: string
 export const generateLocalBusinessSchema = () => {
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     '@id': baseSEO.siteUrl,
     'name': baseSEO.companyName,
+    'alternateName': 'SecuNova Consulting',
     'url': baseSEO.siteUrl,
     'telephone': baseSEO.phone,
     'email': baseSEO.email,
@@ -146,106 +302,15 @@ export const generateLocalBusinessSchema = () => {
         '@type': 'OpeningHoursSpecification',
         'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         'opens': '09:00',
-        'closes': '17:00'
+        'closes': '18:00'
       }
     ],
     'image': baseSEO.defaultImage,
-    'logo': baseSEO.defaultImage,
-    'description': 'A Canadian consulting and technology firm in Calgary, AB. Strategic consulting, executive programs, custom corporate websites, and growth engineering for North American businesses.',
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '127',
-      'bestRating': '5',
-      'worstRating': '1'
-    },
+    'logo': baseSEO.logo,
+    'description':
+      'SecuNova Consulting is a Calgary-based B2B consulting and digital engineering firm. Strategic consulting, executive leadership programs, custom web applications, UI/UX redesigns, B2B content and SEO strategy, and digital project management for North American leaders.',
+    'foundingDate': '2016',
+    'slogan': baseSEO.slogan,
     'sameAs': [baseSEO.social.linkedin]
   };
-};
-
-export const servicesData = {
-  'technical-support': {
-    name: 'Technical Support Services Calgary',
-    title: 'Technical Support Calgary | 24/7 IT Support Services Alberta | SecuNova Inc.',
-    description: 'Professional 24/7 technical IT support in Calgary & Alberta. Remote assistance, on-site support, system optimization, troubleshooting. Fast response times. Certified technicians. Serving businesses across Calgary.',
-    keywords: 'SecuNova Consulting, technical support Calgary, IT support Calgary, 24/7 IT support Calgary, computer support Calgary, IT help desk Calgary, remote IT support Calgary, on-site IT support Calgary, Calgary tech support, IT troubleshooting Calgary, technical assistance Calgary, Calgary IT technicians, help desk services Calgary',
-    features: ['24/7 Remote Support', 'On-Site Assistance', 'System Optimization', 'Troubleshooting', 'Hardware Support', 'Software Support']
-  },
-  'home-tech-support': {
-    name: 'Home Tech Support Calgary',
-    title: 'Home Tech Support Calgary | Residential IT Services Alberta | SecuNova Inc.',
-    description: 'Professional home tech support in Calgary. Computer repair, network setup, smart home installation, virus removal, data recovery. Same-day service available. Emergency support 24/7.',
-    keywords: 'SecuNova Consulting, home tech support Calgary, residential IT Calgary, home computer repair Calgary, Calgary home IT services, smart home setup Calgary, home network Calgary, computer troubleshooting Calgary, Calgary tech help home',
-    features: ['Computer Repair', 'Network Setup', 'Smart Home Installation', 'Virus Removal', 'Data Recovery', 'Emergency Support']
-  },
-  'managed-it': {
-    name: 'Managed IT Services Calgary',
-    title: 'Managed IT Services Calgary | Managed Service Provider Alberta | SecuNova MSP',
-    description: 'Comprehensive managed IT services in Calgary & Alberta. Proactive monitoring, cloud management, network administration, backup solutions. Reduce costs, improve security. Trusted MSP for Calgary businesses.',
-    keywords: 'SecuNova Consulting, managed IT services Calgary, MSP Calgary, managed service provider Calgary, IT management Calgary, proactive IT Calgary, cloud management Calgary, network administration Calgary, IT monitoring Calgary, Calgary MSP, Alberta managed IT',
-    features: ['Proactive Monitoring', 'Cloud Management', 'Network Administration', 'Backup Solutions', 'Security Management', 'IT Consulting']
-  },
-  'managed-it-services': {
-    name: 'Managed IT Support Calgary',
-    title: 'Managed IT Support Services Calgary | Complete IT Management Alberta | SecuNova',
-    description: 'Complete managed IT support for Calgary businesses. Infrastructure management, cybersecurity, cloud services, data backup, disaster recovery. Scalable solutions for SMBs.',
-    keywords: 'SecuNova Consulting, managed IT support Calgary, IT infrastructure Calgary, IT management services Calgary, business IT Calgary, Calgary IT provider, enterprise IT Calgary, IT support packages Calgary',
-    features: ['Infrastructure Management', 'Cybersecurity', 'Cloud Services', 'Data Backup', 'Disaster Recovery', 'IT Strategy']
-  },
-  'cybersecurity': {
-    name: 'Cybersecurity Services Calgary',
-    title: 'Cybersecurity Services Calgary | Cyber Security Solutions Alberta | SecuNova Inc.',
-    description: 'Enterprise-grade cybersecurity services in Calgary & Alberta. Threat detection, security assessments, penetration testing, vulnerability scanning, compliance management. Protecting Calgary businesses from cyber threats.',
-    keywords: 'SecuNova Consulting, cybersecurity Calgary, cyber security Calgary, IT security Calgary, network security Calgary, penetration testing Calgary, security audit Calgary, vulnerability assessment Calgary, cybersecurity services Alberta, Calgary cybersecurity company',
-    features: ['Threat Detection', 'Security Assessments', 'Penetration Testing', 'Vulnerability Scanning', 'Compliance Management', '24/7 Monitoring']
-  },
-  'web-development': {
-    name: 'Web Development & Landing Pages Calgary',
-    title: 'Web Development & Landing Pages Calgary | Custom Corporate Websites Alberta | SecuNova Inc.',
-    description: 'Custom corporate websites, web applications, and high-converting landing pages in Calgary & Alberta. React, Node.js, full-stack development, conversion-focused web design, e-commerce. SEO-optimized, mobile-responsive. Expert Calgary web developers.',
-    keywords: 'SecuNova Consulting, web development Calgary, web developer Calgary, custom website Calgary, Calgary web development company, full-stack development Calgary, React developer Calgary, e-commerce Calgary, web application Calgary, web design Calgary, website design Calgary, landing pages Calgary, high-converting landing pages Calgary, conversion focused web design Calgary',
-    features: ['Custom Development', 'Full-Stack Solutions', 'E-Commerce', 'Web Applications', 'Landing Pages', 'Conversion-Focused Design']
-  },
-  'wordpress': {
-    name: 'WordPress Development Calgary',
-    title: 'WordPress Development Calgary | WordPress Website Design Alberta | SecuNova',
-    description: 'Expert WordPress development in Calgary. Custom themes, plugin development, WooCommerce, WordPress optimization. Calgary WordPress specialists.',
-    keywords: 'SecuNova Consulting, WordPress Calgary, WordPress development Calgary, WordPress designer Calgary, WooCommerce Calgary, WordPress website Calgary, custom WordPress Calgary',
-    features: ['Custom Themes', 'Plugin Development', 'WooCommerce', 'WordPress Optimization', 'Security Hardening', 'Maintenance']
-  },
-  'mobile-apps': {
-    name: 'Mobile App Development Calgary',
-    title: 'Mobile App Development Calgary | iOS Android App Developers Alberta | SecuNova',
-    description: 'Custom mobile app development in Calgary. iOS, Android, React Native, cross-platform apps. Expert Calgary mobile developers.',
-    keywords: 'SecuNova Consulting, mobile app development Calgary, app developer Calgary, iOS development Calgary, Android development Calgary, React Native Calgary, Calgary app development company',
-    features: ['iOS Development', 'Android Development', 'Cross-Platform Apps', 'React Native', 'App Design', 'App Maintenance']
-  },
-  'ui-ux-design': {
-    name: 'UI/UX Design Calgary',
-    title: 'UI/UX Design Calgary | User Experience Design Alberta | SecuNova Inc.',
-    description: 'Professional UI/UX design services in Calgary. User research, wireframing, prototyping, usability testing. Award-winning Calgary UX designers.',
-    keywords: 'SecuNova Consulting, UI UX design Calgary, user experience Calgary, UX designer Calgary, UI designer Calgary, Calgary UX agency, user interface design Calgary',
-    features: ['User Research', 'Wireframing', 'Prototyping', 'Usability Testing', 'Design Systems', 'Accessibility']
-  },
-  'seo-marketing': {
-    name: 'SEO Marketing Calgary',
-    title: 'SEO Marketing Calgary | Digital Marketing Services Alberta | SecuNova Inc.',
-    description: 'SEO and digital marketing services in Calgary. Search engine optimization, content marketing, PPC, social media marketing. Increase traffic and conversions.',
-    keywords: 'SecuNova Consulting, SEO Calgary, search engine optimization Calgary, digital marketing Calgary, SEO services Calgary, Calgary SEO company, PPC Calgary, content marketing Calgary',
-    features: ['Search Engine Optimization', 'Content Marketing', 'PPC Advertising', 'Social Media Marketing', 'Analytics', 'Conversion Optimization']
-  },
-  'branding': {
-    name: 'Branding Services Calgary',
-    title: 'Branding Services Calgary | Brand Identity Design Alberta | SecuNova Inc.',
-    description: 'Professional branding services in Calgary. Logo design, brand identity, brand strategy, visual identity. Build a memorable brand.',
-    keywords: 'SecuNova Consulting, branding Calgary, brand design Calgary, logo design Calgary, brand identity Calgary, Calgary branding agency, visual identity Calgary',
-    features: ['Logo Design', 'Brand Identity', 'Brand Strategy', 'Visual Identity', 'Brand Guidelines', 'Rebranding']
-  },
-  'photography': {
-    name: 'Professional Photography Calgary',
-    title: 'Professional Photography Calgary | Commercial Photography Alberta | SecuNova',
-    description: 'Professional photography services in Calgary. Commercial, corporate, product photography. High-quality images for your business.',
-    keywords: 'SecuNova Consulting, photography Calgary, commercial photography Calgary, corporate photography Calgary, product photography Calgary, professional photographer Calgary',
-    features: ['Commercial Photography', 'Corporate Photography', 'Product Photography', 'Photo Editing', 'Studio Services', 'On-Location Shoots']
-  }
 };

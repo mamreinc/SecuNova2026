@@ -90,7 +90,7 @@ Ready for your own custom website? Contact us today!
 
 - **Website**: [https://secunovainc.com](https://secunovainc.com)
 - **Email**: [hello@secunovainc.com](mailto:hello@secunovainc.com)
-- **Phone**: [(403) 774-1279](tel:4037741279)
+- **Phone**: [(403) 401-1552](tel:4034011552)
 - **Address**: #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7, Canada
 
 ## 🚀 Services We Offer

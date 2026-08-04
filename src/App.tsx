@@ -98,8 +98,8 @@ function App() {
       context={{}}
     >
       <Helmet
-        defaultTitle="SecuNova Inc. - Expert IT Solutions Alberta"
-        titleTemplate="%s | SecuNova Inc."
+        defaultTitle="SecuNova Consulting Calgary | Digital Transformation & Custom Web Development"
+        titleTemplate="%s"
       />
       <SecurityWrapper>
         <Router>

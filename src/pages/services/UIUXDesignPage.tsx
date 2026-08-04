@@ -7,21 +7,39 @@ const UIUXDesignPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>UI/UX Design Services Calgary | User Experience Design Alberta | SecuNova Inc.</title>
-        <meta name="description" content="Professional UI/UX design services in Calgary & Alberta. User research, wireframing, prototyping, usability testing, interface design. Create intuitive, user-friendly digital products that convert. Serving Calgary businesses since 2016." />
-        <meta name="keywords" content="SecuNova Consulting, UI UX design Calgary, user experience design Calgary, user interface design Calgary, UX design Calgary, UI design Calgary, wireframing Calgary, prototyping Calgary, usability testing Calgary, Calgary UX designers, Alberta UI design, interface design Calgary, user research Calgary, design thinking Calgary, Calgary design agency" />
+        <title>UI/UX Design Calgary | Website & App Redesign | SecuNova Consulting</title>
+        <meta name="description" content="UI/UX design and website redesign in Calgary. User research, wireframes, Figma prototypes, and conversion-focused interface design that boosts engagement and credibility." />
+        <meta name="keywords" content="UI UX design Calgary, user experience design Calgary, user interface design Calgary, website redesign Calgary, app UI design, Figma prototyping Calgary, wireframing Calgary, usability testing Calgary, interface design Alberta, conversion-focused design, SecuNova Consulting" />
         <link rel="canonical" href="https://secunovainc.com/services/ui-ux-design" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="UI/UX Design Services Calgary | User Experience Design | SecuNova Inc." />
+        <meta property="og:title" content="UI/UX Design Calgary | Website & App Redesign | SecuNova Consulting" />
         <meta property="og:description" content="Professional UI/UX design in Calgary. User research, wireframing, prototyping. Create intuitive interfaces that users love for Alberta businesses." />
         <meta property="og:url" content="https://secunovainc.com/services/ui-ux-design" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="UI/UX Design Services Calgary | SecuNova Inc." />
+        <meta name="twitter:title" content="UI/UX Design Calgary | SecuNova Consulting" />
         <meta name="twitter:description" content="Professional UI/UX design services. User research, wireframing, prototyping. Calgary & Alberta." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.com/services" },
+              { "@type": "ListItem", "position": 3, "name": "UI/UX Design Calgary", "item": "https://secunovainc.com/services/ui-ux-design" }
+            ]
+          })}
+        </script>
 
         {/* Structured Data */}
         <script type="application/ld+json">

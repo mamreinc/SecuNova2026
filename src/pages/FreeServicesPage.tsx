@@ -109,16 +109,30 @@ const FreeServicesPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <Helmet>
-        <title>Free Website Service for Alberta Small Businesses | SecuNova Inc.</title>
+        <title>Free Website for Alberta Small Businesses | SecuNova Consulting</title>
         <meta
           name="description"
-          content="Complimentary professional website development for small Canadian businesses in Calgary and Alberta. Explore our portfolio of custom-built platforms and apply today."
+          content="Complimentary professional website development for eligible small businesses in Calgary and Alberta with a registered .ca domain. Apply today."
         />
         <meta
           name="keywords"
-          content="free website Calgary, free website Alberta, small business website Alberta, .ca domain website, Calgary web design, SecuNova community initiative"
+          content="free website Calgary, free website Alberta, small business website Alberta, .ca domain website, Calgary web design, SecuNova Consulting community initiative"
         />
         <link rel="canonical" href="https://secunovainc.com/free-services" />
+
+        <meta property="og:title" content="Free Website for Alberta Small Businesses | SecuNova Consulting" />
+        <meta property="og:description" content="100% free professional websites for eligible small Canadian businesses with a .ca domain. Apply today." />
+        <meta property="og:url" content="https://secunovainc.com/free-services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Free Website for Alberta Small Businesses | SecuNova Consulting" />
+        <meta name="twitter:description" content="100% free professional websites for eligible small Canadian businesses." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
       </Helmet>
 
       {/* Hero Section */}

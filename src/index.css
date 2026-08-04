@@ -651,8 +651,8 @@ a {
   .logo-mask-dark {
     display: inline-block;
     background-color: #13213d; /* https://www.color-hex.com/color/13213d */
-    -webkit-mask: url('/iPhone.png') no-repeat center / contain;
-            mask: url('/iPhone.png') no-repeat center / contain;
+    -webkit-mask: url('/logo/secunova-icon.png') no-repeat center / contain;
+            mask: url('/logo/secunova-icon.png') no-repeat center / contain;
     height: 2rem; /* ~ h-8 */
     width: 2rem;  /* keep square for consistency */
     vertical-align: middle;

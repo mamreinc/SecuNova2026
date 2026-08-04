@@ -58,23 +58,27 @@ const ContactPage = () => {
           START: SEO Head Section
           ======================================== */}
       <Helmet>
-        <title>Contact SecuNova | Get Free Consultation | 403-401-1552 | Calgary, AB</title>
-        <meta name="description" content="Contact SecuNova for expert IT & cybersecurity services. Call 403-401-1552 or email hello@secunovainc.com. Located at 1122 3 St SE Ste 1906, Calgary, AB T2G 1H7, CA." />
-        <meta name="keywords" content="contact SecuNova Calgary, SecuNova phone number 403 401 1552, IT support Calgary contact, cybersecurity consultation Calgary, SecuNova email hello@secunovainc.com, SecuNova Calgary office 1122 3 St SE Ste 1906" />
+        <title>Contact SecuNova Consulting Calgary | Free Strategy Call | 403-401-1552</title>
+        <meta name="description" content="Contact SecuNova Consulting in Calgary, AB. Call 403-401-1552 or email hello@secunovainc.com for a free strategy call. Located at #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7." />
+        <meta name="keywords" content="contact SecuNova Consulting Calgary, free strategy call Calgary, consulting firm Calgary contact, SecuNova phone number 403 401 1552, SecuNova email hello@secunovainc.com, SecuNova Calgary office #270 1122 3 St SE Ste 1906" />
         <link rel="canonical" href="https://secunovainc.com/contact" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="Contact SecuNova | Free Consultation | 403-401-1552" />
-        <meta property="og:description" content="Get in touch with SecuNova in Calgary. Call 403-401-1552 or email hello@secunovainc.com." />
+        <meta property="og:title" content="Contact SecuNova Consulting Calgary | Free Strategy Call" />
+        <meta property="og:description" content="Get in touch with SecuNova Consulting in Calgary. Call 403-401-1552 or email hello@secunovainc.com." />
         <meta property="og:url" content="https://secunovainc.com/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="SecuNova" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
         <meta property="og:locale" content="en_CA" />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact SecuNova | 403-401-1552" />
-        <meta name="twitter:description" content="Free consultation. Call 403-401-1552 or email hello@secunovainc.com" />
+        <meta name="twitter:title" content="Contact SecuNova Consulting Calgary | 403-401-1552" />
+        <meta name="twitter:description" content="Free strategy call. Call 403-401-1552 or email hello@secunovainc.com" />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
 
         {/* Additional SEO Tags */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -86,20 +90,21 @@ const ContactPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "name": "Contact SecuNova",
-            "description": "Contact SecuNova for expert consulting, software engineering, and technical project supervision in Calgary, Alberta",
+            "name": "Contact SecuNova Consulting",
+            "description": "Contact SecuNova Consulting for digital transformation consulting, custom software engineering, and technical project supervision in Calgary, Alberta",
             "url": "https://secunovainc.com/contact",
             "mainEntity": {
               "@type": "Organization",
-              "name": "SecuNova",
+              "name": "SecuNova Inc.",
+              "alternateName": "SecuNova Consulting",
               "telephone": "+1-403-401-1552",
               "email": "hello@secunovainc.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "1122 3 St SE Ste 1906",
+                "streetAddress": "#270, 1122 3 St SE Ste 1906",
                 "addressLocality": "Calgary",
                 "addressRegion": "AB",
-                "postalCode": "T2G 1H7",
+                "postalCode": "T2G 0E7",
                 "addressCountry": "CA"
               }
             }
@@ -184,7 +189,7 @@ const ContactPage = () => {
                     </div>
                     <div className="flex-1">
                       <div className="font-semibold text-secunova-dark text-lg mb-1">Mailbox</div>
-                      <div className="text-sm text-gray-700">1122 3 St SE Ste 1906, Calgary, AB T2G 1H7, CA</div>
+                      <div className="text-sm text-gray-700">#270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7, CA</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 pt-4 border-t border-gray-100">

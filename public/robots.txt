@@ -1,64 +1,17 @@
-# robots.txt for SecuNova Inc. - Optimized for SEO
+# robots.txt for SecuNova Consulting
 # https://secunovainc.com/robots.txt
 
 User-agent: *
 Allow: /
 
-# Sitemap location (Important for SEO)
-Sitemap: https://secunovainc.com/sitemap.xml
-
-# Prioritize important service pages
-Allow: /services/
-Allow: /services/technical-support
-Allow: /services/managed-it
-Allow: /services/cybersecurity
-Allow: /services/web-development
-Allow: /services/web-design
-Allow: /services/wordpress
-Allow: /services/mobile-apps
-Allow: /services/ui-ux-design
-Allow: /services/seo-marketing
-Allow: /services/branding
-Allow: /services/photography
-Allow: /about
-Allow: /contact
-Allow: /faq
-
-# Specific directives for major search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-# Block access to admin and private areas
+# Private and admin areas
 Disallow: /admin/
 Disallow: /private/
-Disallow: /brand
 Disallow: /api/
-Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /login
+Disallow: /brand
 Disallow: /_next/
 Disallow: /node_modules/
 
-# Allow important files for SEO
-Allow: /sitemap.xml
-Allow: /robots.txt
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.gif$
-Allow: /*.webp$
-Allow: /*.svg$
-
-# Host directive
-Host: https://secunovainc.com
+# Sitemap location
+Sitemap: https://secunovainc.com/sitemap.xml

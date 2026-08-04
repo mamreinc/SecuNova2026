@@ -1,10 +1,17 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { HomeIcon, AlertCircle } from 'lucide-react';
 
 const NotFoundPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Page Not Found | SecuNova Consulting</title>
+        <meta name="description" content="The page you are looking for does not exist or has been moved." />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
+      </Helmet>
       <section className="relative page-header pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-blue-800/5"></div>
         <div className="container mx-auto px-4 relative">

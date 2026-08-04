@@ -120,27 +120,29 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       <Helmet>
-        <title>SecuNova Inc. Calgary | Consulting & Digital Engineering | Digital Change Partner</title>
-        <meta name="description" content="SecuNova Inc. is a Calgary-based consulting and technology firm helping North American leaders navigate digital change. Strategic consulting, executive programs, custom websites, and growth engineering before technology entropy slows you down." />
-        <meta name="keywords" content="SecuNova Consulting, SecuNova Consulting Calgary, SecuNova Inc Calgary, digital transformation consulting Calgary, consulting firm Alberta, executive training Calgary, business foundations program, startup strategy, custom corporate websites Calgary, high-converting landing pages, B2B website copywriting, SEO content strategy, web development Calgary, Calgary consulting firm, digital engineering, technology consulting Canada" />
+        <title>SecuNova Consulting Calgary | Digital Transformation & Custom Web Development</title>
+        <meta name="description" content="SecuNova Consulting is a Calgary-based consulting firm for digital transformation, executive leadership, custom web development, UI/UX design, and B2B SEO. One senior-led partner for North American leaders." />
+        <meta name="keywords" content="SecuNova Consulting, SecuNova Consulting Calgary, SecuNova Inc Calgary, consulting firm Calgary, IT consulting Calgary, digital transformation consulting Calgary, executive leadership consulting Alberta, custom web development Calgary, UI UX design Calgary, B2B SEO strategy Calgary, digital project management Calgary, technology consulting Canada" />
         <link rel="canonical" href="https://secunovainc.com/" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="SecuNova Inc. Calgary | Consulting & Digital Engineering" />
-        <meta property="og:description" content="A Canadian consulting and technology firm helping organizations navigate digital change. Strategic consulting, executive programs, and digital engineering for North American growth." />
+        <meta property="og:title" content="SecuNova Consulting Calgary | Digital Transformation & Custom Web Development" />
+        <meta property="og:description" content="SecuNova Consulting: digital transformation, executive leadership, custom web development, UI/UX design, and B2B SEO. Calgary, AB." />
         <meta property="og:url" content="https://secunovainc.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://secunovainc.com/logo/secunova-logo.png" />
-        <meta property="og:image:alt" content="SecuNova Inc. - Consulting and Digital Engineering" />
-        <meta property="og:site_name" content="SecuNova Inc." />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="SecuNova Consulting - Digital Transformation & Custom Web Development in Calgary" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
         <meta property="og:locale" content="en_CA" />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="SecuNova Inc. Calgary | Consulting & Digital Engineering" />
-        <meta name="twitter:description" content="Strategic consulting, executive programs, and digital engineering for North American leaders. Calgary, AB." />
-        <meta name="twitter:image" content="https://secunovainc.com/logo/secunova-logo.png" />
-        <meta name="twitter:image:alt" content="SecuNova Inc. Calgary Consulting and Digital Engineering" />
+        <meta name="twitter:title" content="SecuNova Consulting Calgary | Digital Transformation & Custom Web Development" />
+        <meta name="twitter:description" content="SecuNova Consulting: digital transformation, executive leadership, custom web development, UI/UX design, and B2B SEO. Calgary, AB." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
+        <meta name="twitter:image:alt" content="SecuNova Consulting - Digital Transformation & Custom Web Development in Calgary" />
 
         {/* Additional SEO Tags */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -170,11 +172,12 @@ const HomePage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
+            "@id": "https://secunovainc.com",
             "name": "SecuNova Inc.",
-            "alternateName": ["SecuNova", "SecuNova Calgary", "SecuNova IT"],
+            "alternateName": ["SecuNova", "SecuNova Consulting", "SecuNova Calgary", "SecuNova IT"],
             "url": "https://secunovainc.com",
-            "logo": "https://secunovainc.com/iPhone.png",
-            "image": "https://secunovainc.com/iPhone.png",
+            "logo": "https://secunovainc.com/logo/secunova-logo.png",
+            "image": "https://secunovainc.com/og-image.png",
             "description": "A Canadian consulting and technology firm based in Calgary, Alberta. Helping organizations navigate digital change with strategic consulting, executive programs, and digital engineering.",
             "foundingDate": "2016",
             "slogan": "Navigate Digital Change. Before It Costs You Momentum.",

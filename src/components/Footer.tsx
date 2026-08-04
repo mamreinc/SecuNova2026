@@ -169,8 +169,8 @@ const Footer = () => {
               <div>
                 <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Mailbox</p>
                 <p className="text-sm text-white leading-relaxed">
-                  1122 3 St SE Ste 1906<br />
-                  Calgary, AB T2G 1H7, CA
+                  #270, 1122 3 St SE Ste 1906<br />
+                  Calgary, AB T2G 0E7, CA
                 </p>
               </div>
             </div>

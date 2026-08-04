@@ -8,33 +8,51 @@ const SEOMarketingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>B2B Content & SEO Strategy Calgary | Executive B2B Copywriting | SecuNova Inc.</title>
+        <title>B2B SEO Strategy & Content Marketing Calgary | SecuNova Consulting</title>
         <meta
           name="description"
-          content="Persuasive B2B copywriting and high-intent SEO content strategies in Calgary & Alberta. Capture search intent, establish thought leadership, and convert North American decision-makers into active lead pipeline."
+          content="B2B SEO and content strategy in Calgary. High-intent keyword strategy, executive copywriting, technical SEO, and schema markup that turn organic traffic into B2B pipeline."
         />
         <meta
           name="keywords"
-          content="B2B Content Strategy Calgary, B2B Copywriting Alberta, SEO Content Strategy Calgary, B2B SEO Services Canada, Executive Copywriting, High-Intent Keyword Strategy, Thought Leadership Content, SecuNova Inc."
+          content="B2B SEO strategy Calgary, SEO content marketing Calgary, B2B copywriting Alberta, high-intent keyword strategy, technical SEO Canada, thought leadership content, executive copywriting, SecuNova Consulting"
         />
         <link rel="canonical" href="https://secunovainc.com/services/seo-marketing" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="B2B Content & SEO Strategy | Executive Copywriting | SecuNova Inc." />
+        <meta property="og:title" content="B2B SEO Strategy & Content Marketing | SecuNova Consulting" />
         <meta
           property="og:description"
           content="Persuasive B2B copywriting and intent-driven SEO strategies that convert North American decision-makers into high-value clients."
         />
         <meta property="og:url" content="https://secunovainc.com/services/seo-marketing" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="B2B Content & SEO Strategy | SecuNova Inc." />
+        <meta name="twitter:title" content="B2B SEO Strategy & Content Marketing | SecuNova Consulting" />
         <meta
           name="twitter:description"
           content="Persuasive B2B copywriting and intent-focused SEO strategies engineered for North American leaders."
         />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.com/services" },
+              { "@type": "ListItem", "position": 3, "name": "B2B SEO Strategy Calgary", "item": "https://secunovainc.com/services/seo-marketing" }
+            ]
+          })}
+        </script>
 
         {/* Structured Data */}
         <script type="application/ld+json">

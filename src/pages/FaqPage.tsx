@@ -230,22 +230,44 @@ const FaqPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Frequently Asked Questions (FAQ) | SecuNova Inc. Calgary</title>
+        <title>Frequently Asked Questions | SecuNova Consulting Calgary</title>
         <meta
           name="description"
-          content="Find answers to executive questions about SecuNova Inc. services: Strategic Consulting, Custom Web Development, UI/UX Design, B2B SEO, Digital Project Management (PMaaS), and Tech Stack Audits."
+          content="Find answers to executive questions about SecuNova Consulting: digital transformation strategy, custom web development, UI/UX design, B2B SEO, and digital project management (PMaaS) in Calgary."
         />
         <meta
           name="keywords"
-          content="SecuNova FAQ, IT consulting questions, custom web development FAQ, React JS development Calgary, UI UX design FAQ, PMaaS questions, B2B SEO Calgary, tech stack audit"
+          content="SecuNova FAQ, IT consulting questions, custom web development FAQ, React JS development Calgary, UI UX design FAQ, PMaaS questions, B2B SEO Calgary, tech stack audit, SecuNova Consulting"
         />
         <link rel="canonical" href="https://secunovainc.com/faq" />
 
         {/* OpenGraph */}
-        <meta property="og:title" content="Frequently Asked Questions | SecuNova Inc." />
+        <meta property="og:title" content="Frequently Asked Questions | SecuNova Consulting" />
         <meta property="og:description" content="Answers to executive questions on Strategic Consulting, Custom Web Apps, UI/UX Design, B2B SEO, and PMaaS Governance." />
         <meta property="og:url" content="https://secunovainc.com/faq" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Frequently Asked Questions | SecuNova Consulting" />
+        <meta name="twitter:description" content="Executive answers on consulting, custom web apps, UI/UX design, B2B SEO, and PMaaS." />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
+              { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://secunovainc.com/faq" }
+            ]
+          })}
+        </script>
 
         {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

@@ -225,28 +225,43 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Consulting & Digital Engineering Services | SecuNova Inc. Calgary</title>
-        <meta name="description" content="SecuNova Inc. helps North American leaders navigate digital change. Strategic consulting, executive programs, custom corporate websites, high-converting landing pages, UI/UX redesigns, B2B copywriting, and SEO. Calgary, AB." />
-        <meta name="keywords" content="SecuNova Consulting, SecuNova Consulting Calgary, digital transformation consulting Calgary, executive training Alberta, business foundations program, startup strategy Calgary, organizational structure design, custom corporate websites, high-converting landing pages, web maintenance Calgary, UI UX redesign, B2B website copywriting, SEO content strategy, digital transformation audit, tech stack selection, SecuNova Calgary, consulting firm Alberta" />
+        <title>Consulting & Engineering Services Calgary | SecuNova Consulting</title>
+        <meta name="description" content="Explore SecuNova Consulting services in Calgary: digital transformation consulting, executive leadership programs, custom web apps, UI/UX redesign, B2B SEO strategy, and digital project management (PMaaS)." />
+        <meta name="keywords" content="SecuNova Consulting, SecuNova Consulting Calgary, digital transformation consulting Calgary, consulting firm Alberta, custom web development Calgary, UI UX design Calgary, B2B SEO strategy Calgary, digital project management Calgary, PMaaS Calgary, web maintenance Calgary, tech stack audit Calgary, executive leadership consulting Alberta, IT consulting Calgary" />
         <link rel="canonical" href="https://secunovainc.com/services" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="Strategic Consulting & Digital Engineering | SecuNova Inc." />
+        <meta property="og:title" content="Consulting & Engineering Services Calgary | SecuNova Consulting" />
         <meta property="og:description" content="Two pillars. One partner. Strategic consulting for leaders and digital engineering that turns your online presence into your hardest-working salesperson." />
         <meta property="og:url" content="https://secunovainc.com/services" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://secunovainc.com/logo/secunova-logo.png" />
-        <meta property="og:site_name" content="SecuNova Inc." />
+        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="SecuNova Consulting" />
         <meta property="og:locale" content="en_CA" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Strategic Consulting & Digital Engineering | SecuNova Inc." />
+        <meta name="twitter:title" content="Consulting & Engineering Services Calgary | SecuNova Consulting" />
         <meta name="twitter:description" content="Consulting, executive programs, and digital engineering built for North American growth. Calgary, AB." />
-        <meta name="twitter:image" content="https://secunovainc.com/logo/secunova-logo.png" />
+        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
 
         {/* Additional SEO Tags */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.com/services" }
+            ]
+          })}
+        </script>
+
 
         {/* Structured Data for Services Page */}
         <script type="application/ld+json">
