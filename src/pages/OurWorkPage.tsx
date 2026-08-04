@@ -322,13 +322,16 @@ const CaseStudyModal: React.FC<{ product: Product; onClose: () => void }> = ({ p
 
       <div className="p-8 space-y-8">
         {/* Outcome Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {product.outcomeStats.map((stat, i) => (
-            <div key={i} className="rounded-xl bg-blue-50/50 border border-blue-100 p-3.5 text-center">
-              <span className="block text-xl font-bold text-secunova-blue mb-0.5">{stat.value}</span>
-              <span className="block text-xs text-slate-700 font-medium leading-tight">{stat.label}</span>
-            </div>
-          ))}
+        <div className="space-y-2">
+          <span className="text-xs font-semibold text-secunova-blue uppercase tracking-wider block">Key Performance Metrics</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {product.outcomeStats.map((stat, i) => (
+              <div key={i} className="flex items-center justify-between p-3.5 rounded-xl bg-blue-50/50 border border-blue-100/80">
+                <span className="text-xs font-medium text-slate-700">{stat.label}</span>
+                <span className="text-sm font-extrabold text-secunova-blue font-mono ml-2 shrink-0">{stat.value}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Challenge */}
@@ -435,12 +438,12 @@ const ProductCard: React.FC<{ product: Product; index: number; onOpen: (p: Produ
       <p className="text-xs font-semibold text-secunova-light mb-3">{product.tagline}</p>
       <p className="text-sm text-gray-600 leading-relaxed flex-1">{product.pitch.length > 180 ? product.pitch.substring(0, 180) + '...' : product.pitch}</p>
 
-      {/* Outcome stats */}
-      <div className="mt-3 pt-3 grid grid-cols-3 gap-1.5 border-t border-gray-100">
+      {/* Outcome stats - Executive Horizontal Key-Value Metrics */}
+      <div className="mt-4 pt-3.5 border-t border-gray-100/90 space-y-1.5">
         {product.outcomeStats.map((stat, i) => (
-          <div key={i} className="flex flex-col justify-center p-1.5 rounded-lg bg-slate-50 border border-slate-100 text-center">
-            <span className="block text-xs font-extrabold text-secunova-blue leading-none mb-0.5">{stat.value}</span>
-            <span className="block text-[10px] font-medium text-slate-600 leading-tight">{stat.label}</span>
+          <div key={i} className="flex items-center justify-between px-3 py-1.5 rounded-lg bg-slate-50/90 border border-slate-100/80 text-xs">
+            <span className="font-medium text-slate-600 truncate mr-2">{stat.label}</span>
+            <span className="font-bold text-secunova-blue font-mono shrink-0">{stat.value}</span>
           </div>
         ))}
       </div>
