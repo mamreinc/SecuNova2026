@@ -1,263 +1,473 @@
-/*
-========================================
-FAQ PAGE COMPONENT
-Custom Built by SecuNova Inc.
-========================================
-
-Frequently asked questions organized by service category.
-
-Features:
-- Categorized FAQ sections
-- Expandable question/answer format
-- Comprehensive service coverage
-- Easy navigation and search
-
-Built from scratch for optimal user experience.
-========================================
-*/
-
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { 
+  ChevronDown, 
+  Search, 
+  HelpCircle, 
+  Sparkles, 
+  Shield, 
+  Code, 
+  Layout, 
+  TrendingUp, 
+  Briefcase, 
+  FileSearch, 
+  DollarSign, 
+  ArrowRight, 
+  CheckCircle2, 
+  Phone, 
+  Mail 
+} from 'lucide-react';
+import CtaSection from '../components/CtaSection';
 
-/* ========================================
-   START: FAQ PAGE COMPONENT
-   Main FAQ page with categorized questions and answers
-   ======================================== */
-const FaqPage = () => {
-  /* ========================================
-     START: FAQ Data
-     Comprehensive FAQ content organized by service categories
-     ======================================== */
-  const faqs = [
-    {
-      category: 'Getting Started',
-      questions: [
-        { q: 'Who is SecuNova a good fit for?', a: 'SMBs and mid‑market teams that value security, reliability, and measurable outcomes. Common profiles: professional services, construction, healthcare, non‑profit, retail, education and SaaS startups.' },
-        { q: 'How do we start?', a: 'Begin with a short discovery call. We outline goals, risks and priorities, then propose either an assessment, a managed services plan, or a fixed‑scope project.' },
-        { q: 'What does onboarding include?', a: 'Access provisioning, asset and risk inventory, backup and MFA baselines, monitoring setup, ticketing escalation rules, and a 90‑day roadmap.' },
-        { q: 'Where do you work?', a: 'We are Calgary‑based and serve clients across Alberta. Remote delivery is standard; on‑site visits are available as needed.' },
-      ],
-    },
-    {
-      category: 'Support & SLAs',
-      questions: [
-        { q: 'What are your support hours?', a: '24/7 for managed clients. Business hours 9:00-18:00 MT with target first response under 60-120 minutes based on severity. After-hours emergency escalation is available.' },
-        { q: 'How do I open a ticket?', a: 'Use the support portal or email helpdesk@secunovainc.com with your company, contact info, and issue details. Screenshots/logs help accelerate diagnosis.' },
-        { q: 'Do you provide on‑site support?', a: 'Yes, in Calgary and surrounding areas when remote resolution is not sufficient.' },
-        { q: 'Do you have documented SLAs?', a: 'Yes. SLAs define severity levels, response and resolution targets, and escalation paths. We review SLA performance in quarterly business reviews.' },
-      ],
-    },
-    {
-      category: 'Security & Compliance',
-      questions: [
-        { q: 'What is your security baseline?', a: 'MFA everywhere, device hardening, EDR, patching, email security, backups with immutability, least‑privilege access, logging and monitoring.' },
-        { q: 'Do you run security assessments?', a: 'Yes. Vulnerability scans, risk register, control gaps and a remediation roadmap. Recommended quarterly with continuous monitoring.' },
-        { q: 'Do you support compliance (PIPEDA/FOIP, SOC 2, HIPAA, ISO 27001)?', a: 'We align controls and documentation to your framework. We assist with policies, evidence collection and auditor readiness.' },
-        { q: 'Incident response coverage?', a: 'Containment, investigation, communication, recovery and lessons learned. Runbooks and tabletop exercises are included for managed clients.' },
-        { q: 'Data residency?', a: 'We can keep data in Canadian regions when using supported cloud providers and backup platforms.' },
-      ],
-    },
-    {
-      category: 'Cloud & Microsoft/Google',
-      questions: [
-        { q: 'Which clouds do you support?', a: 'Microsoft 365/Azure, Google Workspace/Cloud and AWS. We choose based on workload, budget and compliance.' },
-        { q: 'Do you migrate email and files?', a: 'Yes. Cutover or staged migrations with coexistence where required. We plan DNS changes, identity, and rollback.' },
-        { q: 'Do you manage backups for M365/Google?', a: 'Yes. SaaS backups are configured with retention, immutability and periodic restore tests.' },
-        { q: 'Cost optimization?', a: 'Rightsizing, reserved/committed plans, lifecycle policies and automated cleanup with monthly reports.' },
-      ],
-    },
-    {
-      category: 'Networks & Devices',
-      questions: [
-        { q: 'Do you monitor networks 24/7?', a: 'Yes. Performance, availability and security events. Alerts feed our NOC/SOC with documented triage.' },
-        { q: 'Wi‑Fi and VPN?', a: 'We design secure wireless with segmentation and implement site‑to‑site/user VPN with MFA and device posture checks.' },
-        { q: 'Device management?', a: 'Lifecycle management with RMM/MDM: onboarding, patching, encryption, profiles, and secure deprovisioning.' },
-      ],
-    },
-    {
-      category: 'Web Development & SEO',
-      questions: [
-        { q: 'What stacks do you use?', a: 'React, TypeScript, Node, Tailwind and modern tooling. We focus on accessibility, performance and security.' },
-        { q: 'How long does a website take?', a: 'Typical marketing sites: ~4-6 weeks. Larger sites/apps: 8-12+ weeks depending on scope and integrations.' },
-        { q: 'Do you provide hosting and maintenance?', a: 'Yes. Managed hosting, CI/CD, uptime monitoring, backups and vulnerability patching.' },
-        { q: 'Who owns the code and content?', a: 'You do. We assign IP upon final payment; repositories and assets are shared with your team.' },
-        { q: 'SEO approach?', a: 'Technical SEO (CWV, structure, schema), content strategy and ethical link building with measurable KPIs.' },
-      ],
-    },
-    {
-      category: 'Pricing & Billing',
-      questions: [
-        { q: 'How do you price support?', a: 'Per‑user managed plans starting around $95/user/mo for essentials, with options for advanced security. Hourly ad‑hoc work is available.' },
-        { q: 'Do you offer fixed‑price projects?', a: 'Yes. Clear scope, milestones, and acceptance criteria with weekly demos.' },
-        { q: 'Payment terms?', a: 'Monthly by default; quarterly/annual available. We accept major payment methods.' },
-        { q: 'Cancellation?', a: 'Most agreements allow 30‑day notice after the initial term. We provide offboarding and handover assistance.' },
-      ],
-    },
-    {
-      category: 'Legal & Data',
-      questions: [
-        { q: 'Do you sign NDAs and DPAs?', a: 'Yes. Mutual NDAs and data‑processing addenda are available. We support confidentiality and privacy requirements.' },
-        { q: 'Backups and disaster recovery?', a: 'Versioned, immutable backups with periodic restore tests; DR runbooks for critical systems.' },
-        { q: 'Third‑party access?', a: 'Least‑privilege, time‑bound access with logging. Vendor access follows approval workflows.' },
-      ],
-    },
+interface FaqItem {
+  q: string;
+  a: string;
+  category: string;
+  link?: string;
+  linkText?: string;
+}
+
+const FaqPage: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default
+
+  const categories = [
+    'All',
+    'Strategic Consulting',
+    'Digital Engineering',
+    'UI/UX Design',
+    'B2B SEO & Growth',
+    'PMaaS & IT Governance',
+    'Tech Audits & Security',
+    'Pricing & Retainers'
   ];
-  /* ========================================
-     END: FAQ Data
-     ======================================== */
+
+  const faqs: FaqItem[] = [
+    // 1. Strategic Consulting
+    {
+      category: 'Strategic Consulting',
+      q: 'How does SecuNova Strategic Consulting differ from traditional IT vendor sales?',
+      a: 'We operate as independent technical advocates, not vendors pushing proprietary licenses or managed service subscriptions. We evaluate your digital infrastructure, identify software entropy, and build zero-debt technology roadmaps tailored strictly to your business growth.',
+      link: '/services#strategic-consulting',
+      linkText: 'Explore Strategic Consulting'
+    },
+    {
+      category: 'Strategic Consulting',
+      q: 'What does a Strategic Consulting engagement include?',
+      a: 'Our engagements include executive C-Suite technology alignment, forensic IT stack audits, software vendor evaluation, cloud architecture reviews, and a 90-day execution roadmap designed to eliminate software bloat and protect capital.',
+      link: '/services#strategic-consulting',
+      linkText: 'Learn about Boardroom Advisory'
+    },
+    {
+      category: 'Strategic Consulting',
+      q: 'Can SecuNova evaluate existing vendor contracts and third-party software tools?',
+      a: 'Yes. We perform forensic vendor audits to identify overpriced subscriptions, duplicate software licenses, and non-performing SLAs, helping organizations negotiate better terms or transition to lean, custom-engineered alternatives.'
+    },
+
+    // 2. Digital Engineering & Custom Web Apps
+    {
+      category: 'Digital Engineering',
+      q: 'Why does SecuNova build with pure React.js custom code instead of legacy CMS platforms like WordPress?',
+      a: 'Legacy CMS platforms introduce plugin vulnerabilities, slow page speed, heavy maintenance costs, and database debt. Pure React.js and TypeScript custom applications offer instant page loads (sub-500ms), zero plugin dependencies, tight security, and complete architectural control.',
+      link: '/services/web-development',
+      linkText: 'View Custom Web Development'
+    },
+    {
+      category: 'Digital Engineering',
+      q: 'What is Vibe Coding and how does senior-led execution benefit our project?',
+      a: 'Vibe Coding is our high-velocity engineering methodology combining senior software architectural discipline with modern AI-accelerated dev workflows. This allows us to build production-grade custom applications in weeks rather than months without compromising code quality.',
+      link: '/services/web-development',
+      linkText: 'Read about Vibe Coding'
+    },
+    {
+      category: 'Digital Engineering',
+      q: 'Who owns the intellectual property (IP) and source code upon completion?',
+      a: 'You retain 100% full ownership of all intellectual property, source code, design files, and database schemas. Upon final milestone completion, all GitHub repositories and production deployment credentials are fully transferred to your organization.'
+    },
+    {
+      category: 'Digital Engineering',
+      q: 'Do you build custom API integrations and high-converting marketing funnels?',
+      a: 'Yes. We engineer custom API connectors, CRM integrations, lead capture funnels, and enterprise web applications tailored to your exact operational workflows.'
+    },
+
+    // 3. UI/UX Design
+    {
+      category: 'UI/UX Design',
+      q: 'What is included in a SecuNova UI/UX Design Audit?',
+      a: 'Our UI/UX Audit analyzes user friction points, navigation flow, visual hierarchy, mobile responsiveness, accessibility (WCAG 2.1 compliance), and conversion bottlenecks across your digital assets.',
+      link: '/services/ui-ux-design',
+      linkText: 'Explore UI/UX Design Services'
+    },
+    {
+      category: 'UI/UX Design',
+      q: 'Do you deliver interactive Figma design systems and component libraries?',
+      a: 'Yes. We deliver complete, production-ready Figma design systems with interactive prototypes, typography scales, color tokens, and BEM component rules that developers can implement seamlessly.',
+      link: '/services/ui-ux-design',
+      linkText: 'View Design System Showcase'
+    },
+    {
+      category: 'UI/UX Design',
+      q: 'How does user experience design impact business conversion rates?',
+      a: 'Intuitive UX eliminates cognitive friction, guides high-intent buyers naturally to call-to-action triggers, and builds instant brand authority, driving higher conversion rates and lower customer acquisition costs.'
+    },
+
+    // 4. B2B SEO & Growth
+    {
+      category: 'B2B SEO & Growth',
+      q: 'How does SecuNova approach B2B SEO and high-intent organic traffic acquisition?',
+      a: 'We focus on high-intent B2B search terms rather than vanity traffic volume. We optimize technical SEO, Core Web Vitals (LCP/INP), structured Schema.org markup, and publish executive-grade content that positions your brand as an industry leader.',
+      link: '/services/seo-marketing',
+      linkText: 'Explore B2B SEO Strategy'
+    },
+    {
+      category: 'B2B SEO & Growth',
+      q: 'What tone of voice is used in your B2B executive copywriting?',
+      a: 'We write for North American corporate decision-makers, executives, and technical buyers. Our copy is grounded, professional, direct, and completely free from AI clichés or generic fluff.'
+    },
+    {
+      category: 'B2B SEO & Growth',
+      q: 'How fast can we expect organic search ranking improvements?',
+      a: 'Technical SEO fixes (such as speed optimization and Schema fixes) take effect within 2 to 4 weeks. High-intent B2B keyword ranking improvements typically build strong momentum over 60 to 90 days.'
+    },
+
+    // 5. PMaaS & IT Governance
+    {
+      category: 'PMaaS & IT Governance',
+      q: 'What is Project Management as a Service (PMaaS)?',
+      a: 'PMaaS provides senior project leadership on demand. We take accountability for project governance, vendor oversight, budget discipline, and milestone tracking without requiring a permanent C-suite hire.',
+      link: '/services/digital-project-management',
+      linkText: 'View Digital Project Management'
+    },
+    {
+      category: 'PMaaS & IT Governance',
+      q: 'How does SecuNova protect client capital during complex software migrations?',
+      a: 'We enforce strict milestone sign-offs, independent code quality reviews, scope control, and transparent budget tracking to ensure third-party vendors deliver on contract promises without cost overruns.',
+      link: '/services/digital-project-management',
+      linkText: 'Learn about Vendor Oversight'
+    },
+    {
+      category: 'PMaaS & IT Governance',
+      q: 'Can SecuNova rescue a failing or delayed software development project?',
+      a: 'Yes. We conduct rapid project diagnostics, audit existing codebases and project roadmaps, eliminate blockers, and re-establish disciplined execution to bring stalled projects back on schedule.'
+    },
+
+    // 6. Tech Audits & Security
+    {
+      category: 'Tech Audits & Security',
+      q: 'What is a Forensic Tech Stack Audit?',
+      a: 'A Forensic Tech Stack Audit evaluates your company\'s entire software ecosystem to identify redundant SaaS subscriptions, security vulnerabilities, shadow IT, and performance bottlenecks.',
+      link: '/services#strategic-consulting',
+      linkText: 'Request a Tech Stack Audit'
+    },
+    {
+      category: 'Tech Audits & Security',
+      q: 'How do you ensure security and privacy compliance in custom web builds?',
+      a: 'All custom builds adhere to OWASP security principles, strict SSL encryption, content security policies (CSP), and privacy standards (PIPEDA, FOIP, GDPR). We also offer noindex, noarchive privacy configurations when requested.'
+    },
+    {
+      category: 'Tech Audits & Security',
+      q: 'Do you offer ongoing web application maintenance and monitoring?',
+      a: 'Yes. We provide comprehensive web application maintenance, uptime monitoring, security patching, and continuous performance optimization.'
+    },
+
+    // 7. Pricing & Retainers
+    {
+      category: 'Pricing & Retainers',
+      q: 'How are SecuNova engagements priced?',
+      a: 'We offer transparent fixed-price project quotes for web development and UI/UX design, as well as monthly advisory retainers for Strategic Consulting and PMaaS. You always receive a clear scope and cost estimate upfront with zero hidden fees.'
+    },
+    {
+      category: 'Pricing & Retainers',
+      q: 'Do you offer post-launch support and warranties on custom code?',
+      a: 'Yes. All custom code developments include a post-launch warranty covering bug fixes and adjustments, alongside optional long-term maintenance packages.'
+    },
+    {
+      category: 'Pricing & Retainers',
+      q: 'Where are your operations located, and how do we get started?',
+      a: 'Our office is located in Calgary, Alberta, serving clients across Canada and North America. You can get started by calling us at 403-401-1552 or emailing hello@secunovainc.com to schedule a discovery consultation.',
+      link: '/contact',
+      linkText: 'Book a Consultation'
+    }
+  ];
+
+  // Filter FAQs based on active category and search query
+  const filteredFaqs = useMemo(() => {
+    return faqs.filter(faq => {
+      const matchesCategory = activeCategory === 'All' || faq.category === activeCategory;
+      const matchesSearch = searchQuery === '' || 
+        faq.q.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        faq.a.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [activeCategory, searchQuery, faqs]);
+
+  // Structured Data Schema for FAQPage
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.slice(0, 10).map(faq => ({
+      '@type': 'Question',
+      'name': faq.q,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': faq.a
+      }
+    }))
+  };
+
+  const categoryIcons: Record<string, React.ReactNode> = {
+    'Strategic Consulting': <Shield className="h-4 w-4" />,
+    'Digital Engineering': <Code className="h-4 w-4" />,
+    'UI/UX Design': <Layout className="h-4 w-4" />,
+    'B2B SEO & Growth': <TrendingUp className="h-4 w-4" />,
+    'PMaaS & IT Governance': <Briefcase className="h-4 w-4" />,
+    'Tech Audits & Security': <FileSearch className="h-4 w-4" />,
+    'Pricing & Retainers': <DollarSign className="h-4 w-4" />
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* ========================================
-          START: SEO Head Section
-          Meta tags and page title for search optimization
-          ======================================== */}
+    <div className="min-h-screen bg-white">
       <Helmet>
-        <title>FAQ - SecuNova Inc. Calgary | IT Services Questions | 50+ Specialists | 24/7 Support</title>
-        <meta name="description" content="Frequently asked questions about SecuNova Inc.'s IT services in Calgary. Get answers about our 50+ specialists team, 24/7 technical support, cybersecurity solutions, web development, pricing, service packages, response times, and enterprise-grade solutions for Alberta SMEs. Founded 2016." />
-        <meta name="keywords" content="SecuNova FAQ, IT services questions Calgary, technical support FAQ, cybersecurity questions, web development FAQ, IT support pricing Calgary, SecuNova response time, IT agency FAQ Alberta, enterprise IT questions, SME IT solutions FAQ, SecuNova specialists, Calgary IT FAQ" />
+        <title>Frequently Asked Questions (FAQ) | SecuNova Inc. Calgary</title>
+        <meta
+          name="description"
+          content="Find answers to executive questions about SecuNova Inc. services: Strategic Consulting, Custom Web Development, UI/UX Design, B2B SEO, Digital Project Management (PMaaS), and Tech Stack Audits."
+        />
+        <meta
+          name="keywords"
+          content="SecuNova FAQ, IT consulting questions, custom web development FAQ, React JS development Calgary, UI UX design FAQ, PMaaS questions, B2B SEO Calgary, tech stack audit"
+        />
         <link rel="canonical" href="https://secunovainc.com/faq" />
 
-        {/* OpenGraph Tags */}
-        <meta property="og:title" content="FAQ - SecuNova Inc. Calgary | IT Services Questions Answered" />
-        <meta property="og:description" content="Get answers about SecuNova's IT services. 50+ specialists. 24/7 support. Enterprise solutions. Pricing. Service packages. Response times." />
+        {/* OpenGraph */}
+        <meta property="og:title" content="Frequently Asked Questions | SecuNova Inc." />
+        <meta property="og:description" content="Answers to executive questions on Strategic Consulting, Custom Web Apps, UI/UX Design, B2B SEO, and PMaaS Governance." />
         <meta property="og:url" content="https://secunovainc.com/faq" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://secunovainc.com/iPhone.png" />
-        <meta property="og:site_name" content="SecuNova Inc." />
 
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="FAQ - SecuNova Inc. Calgary" />
-        <meta name="twitter:description" content="Answers to common questions about SecuNova's IT services, pricing, and support in Calgary." />
-
-        {/* Additional SEO Tags */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-
-        {/* Structured Data - FAQPage */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What services does SecuNova Inc. offer?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "SecuNova Inc. provides comprehensive IT services including 24/7 technical support, cybersecurity solutions, web development, mobile app development, cloud solutions, managed IT services, and digital marketing."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Where is SecuNova Inc. located?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "SecuNova Inc. is located in Calgary, Alberta at #270, 1122 3 St SE Ste 1906, T2G 0E7. We serve clients across Alberta and beyond."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How many specialists does SecuNova have?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "SecuNova Inc. has 50+ in-house dedicated specialists with 15+ years of international experience in IT and cybersecurity."
-                }
-              }
-            ]
-          })}
-        </script>
-
-        {/* Structured Data - BreadcrumbList */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://secunovainc.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "FAQ",
-                "item": "https://secunovainc.com/faq"
-              }
-            ]
-          })}
-        </script>
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
-      {/* ========================================
-          END: SEO Head Section
-          ======================================== */}
 
-      {/* ========================================
-          START: Hero Section
-          Page header with FAQ introduction
-          ======================================== */}
-      <section className="relative page-header pb-16 overflow-hidden">
-        {/* Background gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-blue-800/5"></div>
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            {/* Page title */}
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
-              Frequently Asked Questions
+      {/* Hero Section */}
+      <section className="relative min-h-[50vh] flex items-center justify-center pt-28 sm:pt-36 pb-16 overflow-hidden bg-gradient-to-b from-secunova-dark via-secunova-dark to-[#0B121E]">
+        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/80"></div>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full text-sm font-medium mb-6">
+              <HelpCircle className="h-4 w-4 mr-2 text-white" />
+              Executive FAQ Knowledge Base
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+              Frequently Asked <span className="text-secunova-light">Questions</span>
             </h1>
-            {/* Page description */}
-            <p className="text-gray-600 text-lg mb-12">
-              Find answers to common questions about our services and solutions.
+
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+              Straightforward answers about our Strategic Consulting, Custom Web Development, UI/UX Design, B2B SEO, and PMaaS Governance services.
             </p>
+
+            {/* Interactive Search Box */}
+            <div className="relative max-w-2xl mx-auto">
+              <div className="relative flex items-center">
+                <Search className="absolute left-4 h-5 w-5 text-gray-400 pointer-events-none" />
+                <input
+                  type="text"
+                  placeholder="Search questions (e.g. React.js, PMaaS, Pricing, UI/UX, SEO)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-secunova-light transition-all text-base shadow-xl"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-4 text-xs bg-white/20 text-white px-2.5 py-1 rounded-md hover:bg-white/30 transition-colors"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      {/* ========================================
-          END: Hero Section
-          ======================================== */}
 
-      {/* ========================================
-          START: FAQ Content Section
-          Categorized FAQ sections with expandable questions
-          ======================================== */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {faqs.map((category, index) => (
-              <div key={index} className="mb-16">
-                <h2 className="text-2xl font-bold mb-8 text-secunova-dark">{category.category}</h2>
-                <div className="space-y-6">
-                  {category.questions.map((faq, faqIndex) => (
-                    <details
-                      key={faqIndex}
-                      className="group relative overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl"
+      {/* Main FAQ Content Section */}
+      <section className="secunova-section secunova-section--light">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Category Filter Tabs */}
+            <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-12 scrollbar-none">
+              {categories.map((cat, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setActiveCategory(cat);
+                    setOpenIndex(0);
+                  }}
+                  className={`px-4 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap transition-all flex items-center gap-2 border ${
+                    activeCategory === cat
+                      ? 'bg-secunova-blue text-white border-secunova-blue shadow-md'
+                      : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                  }`}
+                >
+                  {cat !== 'All' && categoryIcons[cat]}
+                  <span>{cat}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Results Count Summary */}
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
+              <div className="text-sm font-semibold text-gray-600 flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-secunova-blue" />
+                Showing {filteredFaqs.length} {filteredFaqs.length === 1 ? 'question' : 'questions'}
+                {activeCategory !== 'All' && ` in ${activeCategory}`}
+                {searchQuery && ` for "${searchQuery}"`}
+              </div>
+              {(searchQuery || activeCategory !== 'All') && (
+                <button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setActiveCategory('All');
+                  }}
+                  className="text-xs font-semibold text-secunova-blue hover:underline"
+                >
+                  Reset Filters
+                </button>
+              )}
+            </div>
+
+            {/* Accordions */}
+            {filteredFaqs.length > 0 ? (
+              <div className="space-y-4">
+                {filteredFaqs.map((faq, index) => {
+                  const isOpen = openIndex === index;
+                  return (
+                    <div
+                      key={index}
+                      className={`secunova-card transition-all duration-300 border ${
+                        isOpen
+                          ? 'border-secunova-blue/40 shadow-lg bg-blue-50/20'
+                          : 'border-gray-200 bg-white hover:border-gray-300'
+                      }`}
                     >
-                      <summary className="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-secunova-dark">
-                        <span>{faq.q}</span>
-                        <ChevronDown className="h-5 w-5 text-gray-500 transition-transform duration-300 group-open:rotate-180" />
-                      </summary>
-                      <div className="border-t border-gray-100 px-6 py-6">
-                        <p className="text-gray-600 leading-relaxed">{faq.a}</p>
-                      </div>
-                    </details>
-                  ))}
+                      <button
+                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                        className="w-full text-left p-6 flex items-start justify-between gap-4 focus:outline-none"
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="p-2 rounded-lg bg-blue-50 text-secunova-blue shrink-0 hidden sm:flex">
+                            {categoryIcons[faq.category] || <HelpCircle className="h-4 w-4" />}
+                          </span>
+                          <div>
+                            <span className="text-xs font-bold uppercase tracking-wider text-secunova-blue block mb-1">
+                              {faq.category}
+                            </span>
+                            <h3 className="text-lg sm:text-xl font-bold text-secunova-dark leading-snug">
+                              {faq.q}
+                            </h3>
+                          </div>
+                        </div>
+                        <div className={`p-2 rounded-full transition-transform duration-300 shrink-0 ${
+                          isOpen ? 'rotate-180 bg-secunova-blue text-white' : 'bg-gray-100 text-gray-500'
+                        }`}>
+                          <ChevronDown className="h-5 w-5" />
+                        </div>
+                      </button>
+
+                      {isOpen && (
+                        <div className="px-6 pb-6 pt-2 border-t border-gray-100 text-gray-700 leading-relaxed text-base">
+                          <p className="mb-4">{faq.a}</p>
+                          {faq.link && (
+                            <Link
+                              to={faq.link}
+                              className="inline-flex items-center gap-2 text-sm font-bold text-secunova-blue hover:underline"
+                            >
+                              <span>{faq.linkText || 'Learn More'}</span>
+                              <ArrowRight className="h-4 w-4" />
+                            </Link>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="text-center py-16 bg-gray-50 rounded-2xl border border-gray-200">
+                <HelpCircle className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-secunova-dark mb-2">No matching questions found</h3>
+                <p className="text-gray-600 mb-6 max-w-md mx-auto">
+                  We couldn't find any questions matching your search query. Have a specific question for our engineers?
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button
+                    onClick={() => {
+                      setSearchQuery('');
+                      setActiveCategory('All');
+                    }}
+                    className="btn btn-outline btn-md"
+                  >
+                    Clear Search
+                  </button>
+                  <Link to="/contact" className="btn btn-gradient btn-md">
+                    Contact Us Directly
+                  </Link>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
-      {/* ========================================
-          END: FAQ Content Section
-          ======================================== */}
+
+      {/* Quick Direct Support Contact Section */}
+      <section className="secunova-section secunova-section--gray">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 sm:p-12 border border-gray-200 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-secunova-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block mb-3">
+                Have a Specific Technical Question?
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-secunova-dark mb-2">
+                Speak directly with a Senior Engineer
+              </h3>
+              <p className="text-gray-600 text-base max-w-lg">
+                No salespeople or account managers. Get direct technical answers to your strategy, architecture, or project governance questions.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+              <a
+                href="tel:403-401-1552"
+                className="btn btn-gradient btn-md flex items-center justify-center gap-2"
+              >
+                <Phone className="h-4 w-4 text-white" />
+                <span>403-401-1552</span>
+              </a>
+              <a
+                href="mailto:hello@secunovainc.com"
+                className="btn btn-outline btn-md flex items-center justify-center gap-2"
+              >
+                <Mail className="h-4 w-4 text-secunova-blue" />
+                <span>Email Us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom Executive CTA */}
+      <CtaSection
+        title="Ready to Elevate Your Digital Strategy?"
+        subtitle="Book a technical discovery session with SecuNova's principal engineers in Calgary, AB."
+        ctaText="Schedule Technical Consultation"
+        ctaLink="/contact"
+      />
     </div>
   );
 };
 
-/* ========================================
-   END: FAQ PAGE COMPONENT
-   ======================================== */
 export default FaqPage;
