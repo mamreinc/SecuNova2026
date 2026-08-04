@@ -1,0 +1,66 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  environment = { NODE_VERSION = "18", NETLIFY_NEXT_PLUGIN_SKIP = "true" }
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    # Comprehensive Security Headers
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    X-DNS-Prefetch-Control = "off"
+    X-Download-Options = "noopen"
+    X-Permitted-Cross-Domain-Policies = "none"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=(), bluetooth=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=()"
+    Cross-Origin-Embedder-Policy = "require-corp"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+    Expect-CT = "max-age=86400, enforce"
+    # Enhanced Content Security Policy
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; img-src 'self' data: https: blob: https://images.pexels.com; font-src 'self' data: https: https://fonts.gstatic.com https://fonts.cdnfonts.com; connect-src 'self' https: wss: data: blob:; frame-src 'self' https://www.google.com https://maps.google.com https://*.googleapis.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests; block-all-mixed-content;"
+    # Performance headers
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "*.html"
+    [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "*.js"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.woff2"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.webp"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

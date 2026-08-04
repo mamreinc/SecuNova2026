@@ -1,0 +1,112 @@
+# Security Policy for SecuNova Inc. Website
+# Format: https://www.secrets.org/security.txt
+
+Contact: mailto:security@secunovainc.com
+Contact: tel:+1-403-401-1552
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en, ar
+Canonical: https://secunovainc.com/.well-known/security.txt
+
+## Security Measures Implemented
+
+### Client-Side Security
+- Enhanced Content Security Policy (CSP) with strict directives
+- Comprehensive XSS protection and input sanitization
+- CSRF token generation and validation with secure random generation
+- Advanced rate limiting for form submissions and API calls
+- Secure localStorage wrapper with integrity checks and expiration
+- Real-time DOM mutation monitoring for suspicious activity
+- Enhanced password strength validation
+- Multi-layered suspicious activity pattern detection
+- URL parameter sanitization
+- Network request monitoring and blocking
+- Console abuse prevention
+
+### Server-Side Security Headers
+- X-Frame-Options: DENY (Clickjacking protection)
+- X-XSS-Protection: 1; mode=block (Legacy XSS protection)
+- X-Content-Type-Options: nosniff (MIME type sniffing prevention)
+- Strict-Transport-Security: HSTS enabled with preload and includeSubDomains
+- Referrer-Policy: strict-origin-when-cross-origin
+- Permissions-Policy: Restrictive feature permissions (camera, mic, geolocation, etc.)
+- Cross-Origin-Embedder-Policy: require-corp
+- Cross-Origin-Opener-Policy: same-origin
+- Cross-Origin-Resource-Policy: same-origin
+- Expect-CT: Certificate Transparency enforcement
+- Content-Security-Policy: Comprehensive policy with upgrade-insecure-requests
+- Server signature removal (X-Powered-By, Server headers)
+
+### Data Protection
+- Comprehensive input validation and sanitization on all forms
+- Enhanced email and phone number validation with format checking
+- Secure URL validation with whitelist support
+- HTML content sanitization with DOM-based parsing
+- Secure session management with timeout
+- SHA-256 hashing for sensitive data
+- Secure token generation using crypto.getRandomValues()
+- File name sanitization and validation
+- Dangerous file type blocking
+
+### Attack Prevention
+- Enhanced SQL injection pattern blocking with regex detection
+- Multi-layered XSS attack prevention
+- CSRF protection with secure token mechanisms
+- Brute force login protection with rate limiting
+- Advanced rate limiting on sensitive endpoints with time windows
+- Suspicious user agent blocking with whitelist
+- File access restrictions for sensitive files (.env, .log, .git, etc.)
+- Path traversal attack prevention
+- Command injection pattern blocking
+- File inclusion attack prevention
+- Crypto mining script detection and blocking
+
+### File Security
+- Comprehensive sensitive file access blocking (.env, .log, .ini, .conf, .git, etc.)
+- Directory listing disabled (Options -Indexes)
+- Hidden files access prevention
+- Dangerous file extension blocking (.exe, .bat, .sh, .php, etc.)
+- Server signature hiding
+- Secure file permissions recommended
+
+### Network Security
+- HTTPS enforcement in production
+- Secure cookie configuration
+- Mixed content blocking
+- Insecure request upgrade
+- Certificate Transparency monitoring
+
+### Performance Security
+- Resource optimization to prevent DoS
+- Efficient caching strategies with security considerations
+- Bandwidth protection measures
+- Request validation and sanitization
+
+## Security Best Practices Followed
+1. Defense in depth approach (multiple security layers)
+2. Principle of least privilege (minimal permissions)
+3. Input validation and output encoding (sanitize all inputs)
+4. Secure by default configuration
+5. Regular security monitoring and logging
+6. Error handling without information disclosure
+7. Secure communication (HTTPS enforcement with HSTS)
+8. Session security and timeout management
+9. Content Security Policy with nonce support
+10. Regular security audits and updates
+
+## Security Vulnerability Reporting
+If you discover a security vulnerability, please report it to:
+- Email: security@secunovainc.com
+- Phone: 403-401-1552
+
+Please include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested remediation (if any)
+
+We will respond within 48 hours and provide appropriate recognition for responsible disclosure.
+
+## Security Updates
+This security policy is regularly updated to address new threats and vulnerabilities.
+Last updated: 2025-01-17
+Version: 2.0

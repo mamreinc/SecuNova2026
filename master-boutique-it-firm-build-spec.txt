@@ -1,0 +1,836 @@
+MASTER BOUTIQUE IT FIRM BUILD SPEC
+Unified Arabic + English Implementation Document
+Project: SecuNova Inc. Repositioning
+Date: 2026-04-10
+Version: 1.0
+
+======================================================================
+SECTION 0 - HOW TO USE THIS DOCUMENT
+======================================================================
+AR:
+هذا مستند واحد شامل يحتوي كل ما يلزم لبناء نسخة الموقع الجديدة بفكرة:
+"تحويل الانطباع من مهارات فردية إلى كيان مؤسسي Boutique IT Firm".
+
+استخدامه يكون كالتالي:
+1) Designer: يعتمد أقسام الهوية البصرية، بنية الصفحات، وقواعد النبرة.
+2) Copywriter: يعتمد نصوص الصفحات العربية والإنجليزية وقواعد الصياغة.
+3) Frontend Dev: يعتمد خرائط المكونات، التصميم الموحد، ونظام التنفيذ.
+4) SEO: يعتمد البيانات المنظمة، الميتاداتا، وخطة المحتوى.
+5) PM: يعتمد مراحل التنفيذ، QA، وقائمة الإطلاق.
+
+EN:
+This is a single, complete document for rebuilding the website under a new positioning:
+"From individual-skill perception to institutional Boutique IT Firm authority."
+
+Use by role:
+1) Designer: visual identity, page architecture, and tone system.
+2) Copywriter: Arabic/English page copy and voice rules.
+3) Frontend Dev: component architecture, UI consistency, implementation map.
+4) SEO: metadata, schema, and content strategy.
+5) PM: execution phases, QA, and launch checklist.
+
+======================================================================
+SECTION 1 - STRATEGIC REPOSITIONING (CORE IDEA)
+======================================================================
+AR:
+الفكرة الاستراتيجية:
+الموقع يجب أن يتحدث بلسان SecuNova Inc. كشركة تقنية احترافية (Boutique IT Firm)
+وليس بلسان شخصي مباشر.
+
+التحول المطلوب:
+- من: "موقع يعرض قدرات فردية"
+- إلى: "موقع مؤسسة تقنية موثوقة ذات هيكل، عمليات، ومعايير"
+
+الانطباع المطلوب من أول 5 ثواني:
+- شركة ناضجة
+- واضحة الهيكل
+- موثوقة في الأنظمة الحرجة
+- هادئة وواثقة
+- تقدم خدمة Premium عالية اللمس
+
+EN:
+Strategic direction:
+The website must speak as SecuNova Inc., a structured Boutique IT Firm,
+not as a personal-brand website.
+
+Required shift:
+- From: "individual capability showcase"
+- To: "institutional, process-driven, trusted technology firm"
+
+First 5-second impression must be:
+- Mature company
+- Structured operation
+- Trusted for critical systems
+- Calm, confident authority
+- Premium high-touch service
+
+======================================================================
+SECTION 2 - BRAND POSITIONING FRAME
+======================================================================
+AR:
+الفئة:
+Boutique IT Firm
+
+الوعد المركزي:
+نقدم دعماً تقنياً وأمنياً وإدارياً رفيع المستوى لشركات تريد شريكاً تقنياً موثوقاً
+بدون تعقيد مزودي الخدمات الضخمين.
+
+أركان التموضع:
+1) Managed IT + Support Excellence
+2) Cybersecurity + Risk Reduction
+3) Infrastructure + Continuity
+4) Digital Platforms + Web Systems
+5) Executive Technology Guidance
+
+EN:
+Category:
+Boutique IT Firm
+
+Core promise:
+We deliver premium support, security, and technology operations for businesses that need trusted execution without enterprise-vendor bureaucracy.
+
+Positioning pillars:
+1) Managed IT + Support Excellence
+2) Cybersecurity + Risk Reduction
+3) Infrastructure + Continuity
+4) Digital Platforms + Web Systems
+5) Executive Technology Guidance
+
+======================================================================
+SECTION 3 - VOICE, TONE, AND LANGUAGE RULES
+======================================================================
+AR:
+قواعد إلزامية:
+- استخدم: نحن، فريقنا، الشركة، منظومتنا، معاييرنا.
+- امنع: أنا، خبرتي الشخصية، عملائي كفرد، أسلوبي الفردي.
+
+النبرة:
+- مؤسسية
+- دقيقة
+- هادئة
+- واضحة
+- احترافية
+- خالية من المبالغة
+
+قواعد كتابة العناوين:
+- قصيرة، قوية، واضحة القيمة.
+- تركيز على النتائج: استمرارية العمل، الأمان، الكفاءة، الثقة.
+
+EN:
+Mandatory rules:
+- Use: we, our team, our firm, our standards, our operating model.
+- Avoid: I, my expertise, my clients, founder-centric storytelling.
+
+Tone:
+- Corporate
+- Precise
+- Calm
+- Clear
+- Professional
+- Non-hype
+
+Headline rules:
+- Short, high-clarity, value-driven.
+- Focus on outcomes: continuity, security, reliability, operational performance.
+
+======================================================================
+SECTION 4 - VISUAL SYSTEM (KEEP MATCHED TO CURRENT PROJECT)
+======================================================================
+AR:
+المطلوب بصرياً: مطابقة التصميم الحالي مع إعادة صياغة المحتوى.
+
+الألوان الأساسية:
+- secunova-dark: #101928
+- secunova-blue: #2563EB
+- secunova-light: #037ecc
+- logo dark tint: #13213d
+
+الخط:
+- Montserrat (أساسي)
+- نظام fallback كما هو
+
+المسافات:
+- نفس إيقاع section spacing
+- نفس container width
+- نفس breathing space بين الأقسام
+
+الحواف والظلال:
+- نفس radius system: rounded-lg/xl/2xl/3xl/full
+- نفس shadow language: shadow-sm .. shadow-2xl
+- نفس glass accents: white/10 + backdrop blur
+
+الصور:
+- تقنية مؤسسية
+- اجتماعات تنفيذية
+- بنية تحتية وشبكات
+- دعم ميداني احترافي
+- لا صور ذات طابع شخصي أو freelance
+
+EN:
+Visual requirement: keep design parity with the current system while rewriting content.
+
+Primary colors:
+- secunova-dark: #101928
+- secunova-blue: #2563EB
+- secunova-light: #037ecc
+- logo dark tint: #13213d
+
+Font:
+- Montserrat primary
+- keep current fallback stack
+
+Spacing:
+- keep same section rhythm
+- keep same container width
+- keep generous vertical breathing
+
+Radii and shadows:
+- preserve rounded-lg/xl/2xl/3xl/full usage
+- preserve shadow-sm to shadow-2xl hierarchy
+- preserve white/10 glass accents and blur surfaces
+
+Imagery:
+- enterprise technology scenes
+- executive consultations
+- infrastructure/network contexts
+- professional field support visuals
+- avoid personal-brand/freelancer style imagery
+
+======================================================================
+SECTION 5 - SITE ARCHITECTURE (NEW IA)
+======================================================================
+AR:
+القائمة الرئيسية (Primary Nav):
+- Home
+- Services
+- About
+- Team
+- Reviews
+- Contact
+
+القائمة الثانوية (Secondary):
+- FAQ
+- Privacy & Terms
+- Portfolio (Case Highlights)
+- Strategic Partnerships (اختياري)
+- Specialist Network (اختياري)
+
+ملاحظة:
+أي صفحة تضعف الهيبة المؤسسية يجب نقلها للثانوي أو إعادة صياغتها.
+
+EN:
+Primary navigation:
+- Home
+- Services
+- About
+- Team
+- Reviews
+- Contact
+
+Secondary navigation:
+- FAQ
+- Privacy & Terms
+- Portfolio (Case Highlights)
+- Strategic Partnerships (optional)
+- Specialist Network (optional)
+
+Note:
+Any page weakening institutional authority should be demoted to secondary or rewritten.
+
+======================================================================
+SECTION 6 - PAGE-BY-PAGE BLUEPRINT (AR + EN COPY DIRECTION)
+======================================================================
+
+--------------------------
+PAGE 1 - HOME
+--------------------------
+AR:
+الهدف: ترسيخ الهيبة المؤسسية خلال أول شاشة.
+
+ترتيب الأقسام:
+1) Hero مؤسسي
+2) Proof Bar (أرقام/اعتمادية)
+3) Core Capabilities (3-5)
+4) Why Boutique Model
+5) Selected Testimonials
+6) Final Executive CTA
+
+Hero Copy Direction:
+- Heading: شريكك التقني المؤسسي للنمو الآمن والمستدام
+- Subheading: ندير التقنية والأمن والبنية التحتية بمنهجية واضحة ومسؤولية كاملة
+- CTA Primary: احجز استشارة تنفيذية
+- CTA Secondary: تحدث مع فريقنا
+
+EN:
+Goal: establish institutional authority in the first screen.
+
+Section order:
+1) Institutional Hero
+2) Proof Bar (trust metrics)
+3) Core Capabilities (3-5)
+4) Why Boutique Model
+5) Selected Testimonials
+6) Final Executive CTA
+
+Hero copy direction:
+- Heading: Your institutional technology partner for secure, scalable growth
+- Subheading: We manage technology, security, and infrastructure with clear standards and accountable execution
+- CTA Primary: Book an Executive Consultation
+- CTA Secondary: Speak with Our Team
+
+--------------------------
+PAGE 2 - SERVICES
+--------------------------
+AR:
+الهدف: عرض القدرات كمحاور مؤسسية وليس خدمات متفرقة.
+
+تصنيف الخدمات المقترح:
+A) Managed IT & Support
+B) Cybersecurity & Risk
+C) Infrastructure & Continuity
+D) Digital Platforms & Web Systems
+E) Advisory & Optimization
+
+كل بطاقة يجب أن تحتوي:
+- ماذا نحل
+- كيف ننفذ
+- ما النتيجة
+- CTA: Learn More / Explore Service
+
+EN:
+Goal: present capabilities as institutional service lines, not fragmented offerings.
+
+Recommended service groups:
+A) Managed IT & Support
+B) Cybersecurity & Risk
+C) Infrastructure & Continuity
+D) Digital Platforms & Web Systems
+E) Advisory & Optimization
+
+Each card should include:
+- problem solved
+- delivery approach
+- expected business outcome
+- CTA: Learn More / Explore Service
+
+--------------------------
+PAGE 3 - ABOUT
+--------------------------
+AR:
+الهدف: إثبات النضج المؤسسي.
+
+ترتيب المحتوى:
+1) Who We Are (Company Statement)
+2) Leadership + Operating Structure
+3) Specialist Capacity
+4) Delivery Standards
+5) Why Clients Choose Us
+
+قاعدة مهمة:
+وجود المؤسس يكون ضمن القيادة، وليس محور السرد.
+
+EN:
+Goal: prove institutional maturity.
+
+Content order:
+1) Who We Are
+2) Leadership + Operating Structure
+3) Specialist Capacity
+4) Delivery Standards
+5) Why Clients Choose Us
+
+Critical rule:
+Founder is shown in leadership context, not as the narrative center.
+
+--------------------------
+PAGE 4 - CONTACT
+--------------------------
+AR:
+الهدف: نقطة وصول احترافية هادئة عالية الثقة.
+
+لغة CTA:
+- Speak With Our Team
+- Request a Consultation
+- Discuss Your Environment
+
+إلزامي:
+- SLA/response expectation واضح
+- قنوات اتصال واضحة
+- رسالة تؤكد السرية والمسؤولية
+
+EN:
+Goal: premium, calm, high-trust access point.
+
+CTA language:
+- Speak With Our Team
+- Request a Consultation
+- Discuss Your Environment
+
+Must include:
+- clear response expectation
+- clear contact channels
+- confidentiality and accountability assurance
+
+--------------------------
+PAGE 5 - PORTFOLIO (CASE HIGHLIGHTS)
+--------------------------
+AR:
+الهدف: إثبات القدرة التنفيذية وليس استعراض شخصي.
+
+التسمية المقترحة:
+Case Highlights
+
+بنية كل حالة:
+- Client Context
+- Challenge
+- Intervention
+- Outcome
+- Technologies
+
+EN:
+Goal: institutional proof of execution, not personal portfolio display.
+
+Recommended label:
+Case Highlights
+
+Per case structure:
+- Client Context
+- Challenge
+- Intervention
+- Outcome
+- Technologies
+
+--------------------------
+PAGE 6 - FAQ
+--------------------------
+AR:
+الهدف: معالجة الاعتراضات وتعزيز الثقة.
+
+محاور FAQ:
+- onboarding
+- support model
+- security baseline
+- compliance
+- pricing model
+- ownership/IP
+- incident response
+
+EN:
+Goal: objection handling and trust reinforcement.
+
+FAQ clusters:
+- onboarding
+- support model
+- security baseline
+- compliance
+- pricing model
+- ownership/IP
+- incident response
+
+--------------------------
+PAGE 7 - REVIEWS
+--------------------------
+AR:
+الهدف: إسناد الادعاءات بأدلة اجتماعية.
+
+اختيار التقييمات يجب أن يبرز:
+- الاحتراف
+- الاستجابة
+- الاستقرار
+- وضوح التواصل
+- أثر الأعمال
+
+EN:
+Goal: validate claims with social proof.
+
+Curate reviews that reinforce:
+- professionalism
+- responsiveness
+- stability
+- clarity
+- business outcomes
+
+--------------------------
+PAGE 8 - TEAM
+--------------------------
+AR:
+الهدف: إثبات أن الشركة تعمل بنموذج قيادة مركزية مع شبكة تنفيذ احترافية.
+
+المطلوب:
+- عرض التخصصات
+- وضوح الأدوار
+- إبراز شبكة التنفيذ (شركاء/متخصصون)
+- إظهار عمق القدرة التشغيلية
+
+EN:
+Goal: present a founder-led legal structure with a robust execution network.
+
+Required:
+- clear specialties
+- clear roles
+- partner-enabled delivery model
+- visible operational depth
+
+--------------------------
+PAGE 9 - SERVICE DETAIL PAGES
+--------------------------
+AR:
+القالب الموحد لكل صفحة خدمة:
+1) Hero
+2) Business Problem
+3) Service Components
+4) Delivery Method
+5) Outcomes
+6) Proof
+7) CTA
+
+EN:
+Standard template per service page:
+1) Hero
+2) Business Problem
+3) Service Components
+4) Delivery Method
+5) Outcomes
+6) Proof
+7) CTA
+
+======================================================================
+SECTION 7 - COMPONENT SYSTEM REQUIRED
+======================================================================
+AR:
+مكونات إلزامية:
+- CorporateHero
+- ProofBar
+- ServiceGrid
+- PillBadge
+- OutcomeCards
+- ProcessTimeline
+- TestimonialBlock
+- ExecutiveCTA
+- TeamGrid
+- TrustLogos (اختياري)
+- FAQAccordion
+
+قواعد المكونات:
+- لا مكونات ذات طابع playful
+- كل مكون يدعم authority + clarity
+- الحفاظ على نفس design language الحالية
+
+EN:
+Required components:
+- CorporateHero
+- ProofBar
+- ServiceGrid
+- PillBadge
+- OutcomeCards
+- ProcessTimeline
+- TestimonialBlock
+- ExecutiveCTA
+- TeamGrid
+- TrustLogos (optional)
+- FAQAccordion
+
+Component rules:
+- no playful style blocks
+- each component must reinforce authority + clarity
+- keep existing design language intact
+
+======================================================================
+SECTION 8 - CONTENT PRODUCTION SYSTEM
+======================================================================
+AR:
+نظام كتابة المحتوى لكل صفحة:
+- Headline (1)
+- Subheadline (1)
+- Proof points (3-5)
+- Capability blocks (3-6)
+- Process steps (3-6)
+- CTA primary/secondary
+
+قواعد كتابة الخدمة:
+- صياغة المشكلة بلغة أعمال
+- عرض الحل بلغة تنفيذ
+- عرض النتيجة بلغة KPI/impact
+
+EN:
+Per-page copy production system:
+- Headline (1)
+- Subheadline (1)
+- Proof points (3-5)
+- Capability blocks (3-6)
+- Process steps (3-6)
+- CTA primary/secondary
+
+Service writing rule:
+- business problem framing
+- operational delivery framing
+- KPI/impact outcome framing
+
+======================================================================
+SECTION 9 - SEO + SCHEMA PLAN
+======================================================================
+AR:
+مطلوب لكل صفحة:
+- title فريد
+- meta description فريد
+- canonical صحيح
+- Open Graph + Twitter tags
+- structured data حسب نوع الصفحة
+
+Schema مقترح:
+- Organization (site-wide)
+- ProfessionalService
+- Service (for each service page)
+- FAQPage (FAQ)
+- BreadcrumbList
+- Review / AggregateRating (where valid)
+
+EN:
+Per-page requirements:
+- unique title
+- unique meta description
+- correct canonical
+- OpenGraph + Twitter tags
+- page-relevant structured data
+
+Recommended schema:
+- Organization (site-wide)
+- ProfessionalService
+- Service (service pages)
+- FAQPage (FAQ)
+- BreadcrumbList
+- Review / AggregateRating (where valid)
+
+======================================================================
+SECTION 10 - TECHNICAL IMPLEMENTATION MAP
+======================================================================
+AR:
+المنصة الحالية مناسبة ولا تحتاج إعادة بناء من الصفر.
+
+Keep:
+- React + TypeScript + Vite
+- Tailwind system
+- Existing route structure
+- Shared layout components
+
+Modify:
+- Page copy
+- IA labels/navigation
+- Section ordering on key pages
+- Proof/Trust content
+- Service hierarchy
+- Optional route cleanup (remove weak pages from primary nav)
+
+EN:
+Current stack is already suitable; no full rebuild required.
+
+Keep:
+- React + TypeScript + Vite
+- Tailwind system
+- Existing routes
+- Shared layout components
+
+Modify:
+- page copy
+- IA labels/navigation
+- key section order
+- trust/proof content
+- service hierarchy
+- optional nav/route cleanup
+
+======================================================================
+SECTION 11 - DELIVERY PHASES (EXECUTION PLAN)
+======================================================================
+AR:
+Phase 1 - Strategy Lock
+- freeze positioning
+- finalize IA
+- finalize voice rules
+
+Phase 2 - Copy Architecture
+- homepage + services core copy
+- about/team corporate rewrite
+- CTA and trust language system
+
+Phase 3 - UI Adaptation
+- align section hierarchy
+- replace imagery
+- update badges/cards/process blocks
+
+Phase 4 - Service Page Standardization
+- apply unified service template
+- align outcomes and proofs
+
+Phase 5 - SEO + Schema
+- metadata rewrite
+- schema validation
+- internal linking pass
+
+Phase 6 - QA + Launch
+- content QA
+- visual QA
+- mobile QA
+- performance QA
+- final launch
+
+EN:
+Phase 1 - Strategy Lock
+- freeze positioning
+- finalize IA
+- finalize voice rules
+
+Phase 2 - Copy Architecture
+- homepage and service-line copy
+- about/team institutional rewrite
+- CTA and trust language system
+
+Phase 3 - UI Adaptation
+- section hierarchy alignment
+- image replacement
+- badges/cards/process updates
+
+Phase 4 - Service Standardization
+- unified service template rollout
+- outcome/proof alignment
+
+Phase 5 - SEO + Schema
+- metadata rewrite
+- schema validation
+- internal linking pass
+
+Phase 6 - QA + Launch
+- content QA
+- visual QA
+- mobile QA
+- performance QA
+- final launch
+
+======================================================================
+SECTION 12 - QA CHECKLIST (MUST PASS)
+======================================================================
+AR:
+Messaging QA:
+- لا توجد صياغة فردية
+- كل الصفحات تتحدث بصوت المؤسسة
+- الهيبة المؤسسية واضحة في العناوين الأولى
+
+Visual QA:
+- نظام الألوان مطابق
+- الخط مطابق
+- spacing/radius/shadow مطابق
+- الصور مناسبة للهوية الجديدة
+
+UX QA:
+- CTA واضح
+- flow منطقي
+- no dead ends
+
+SEO QA:
+- title/description/canonical صحيح
+- schema صالح
+- no duplicate metadata
+
+EN:
+Messaging QA:
+- no individual-centric wording
+- all pages speak in institutional voice
+- first-screen authority is clear
+
+Visual QA:
+- color system matched
+- font matched
+- spacing/radius/shadow matched
+- imagery aligned with new identity
+
+UX QA:
+- clear CTA path
+- logical flow
+- no dead-end sections
+
+SEO QA:
+- valid title/description/canonical
+- valid schema
+- no duplicate metadata
+
+======================================================================
+SECTION 13 - FINAL HANDOFF PACKAGE (WHAT TO DELIVER)
+======================================================================
+AR:
+يجب تسليم الحزمة التالية:
+1) Updated sitemap
+2) Final bilingual copy deck (AR/EN)
+3) Final UI mapping by page
+4) Asset list (images/icons)
+5) SEO metadata sheet
+6) Schema plan sheet
+7) QA report
+8) Launch checklist
+
+EN:
+Deliverables package must include:
+1) updated sitemap
+2) final bilingual copy deck (AR/EN)
+3) final UI page mapping
+4) asset list (images/icons)
+5) SEO metadata sheet
+6) schema plan sheet
+7) QA report
+8) launch checklist
+
+======================================================================
+SECTION 14 - READY-TO-USE MASTER COPY STARTERS (BILINGUAL)
+======================================================================
+AR:
+Primary Hero Headline Options:
+- شريكك التقني المؤسسي للنمو الآمن والمستدام
+- SecuNova Inc. بنية تقنية موثوقة لأعمال تعتمد على الاستمرارية
+- ندير تقنيتك بمعايير مؤسسية وثقة تنفيذية
+
+Primary Subheadline Options:
+- نقدم دعماً تقنياً وأمنياً وبنية تشغيلية متقدمة للشركات التي تحتاج جودة تنفيذ عالية.
+- من الدعم اليومي إلى الحماية المتقدمة: فريقنا يدير بيئتك التقنية بهدوء ودقة.
+- شركة Boutique IT Firm تقدم خدمة عالية اللمس مع انضباط مؤسسي.
+
+Primary CTA Options:
+- احجز استشارة تنفيذية
+- تحدث مع فريقنا
+- ابدأ تقييم بيئتك التقنية
+
+EN:
+Primary Hero Headline Options:
+- Your institutional technology partner for secure, scalable growth
+- SecuNova Inc. trusted technology infrastructure for continuity-driven businesses
+- We manage your technology with corporate standards and executive accountability
+
+Primary Subheadline Options:
+- We deliver premium support, security, and operational technology for businesses that require high-trust execution.
+- From daily support to advanced protection, our team runs your technology environment with precision.
+- A Boutique IT Firm model with high-touch service and institutional discipline.
+
+Primary CTA Options:
+- Book an Executive Consultation
+- Speak with Our Team
+- Start Your Technology Environment Assessment
+
+======================================================================
+SECTION 15 - NON-NEGOTIABLE RULES
+======================================================================
+AR:
+1) ممنوع أي نبرة تجعل الموقع يبدو شخصياً.
+2) الصياغة يجب أن تعكس أنها شركة يقودها شخص واحد قانونياً، مع إبراز منظومة عمل مؤسسية وعدم إظهار اعتماد تشغيلي هش.
+3) يجب أن يظهر "النظام التشغيلي" في كل صفحة.
+4) يجب أن تكون الخدمات مصاغة كقدرات مؤسسية.
+5) يجب الحفاظ على التصميم البصري الحالي مع تحديث الرسائل.
+
+EN:
+1) No personal-brand tone anywhere.
+2) Acknowledge the one-person corporation structure while presenting a robust, institutional operating model.
+3) Operational system maturity must be visible on every page.
+4) Services must read as institutional capabilities.
+5) Keep the existing visual system; update messaging and framing.
+
+======================================================================
+END OF MASTER SPEC
+======================================================================
+
+This file is intentionally complete so one team can execute design, copy, development, and SEO from a single source of truth.

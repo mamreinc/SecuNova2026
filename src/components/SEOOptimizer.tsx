@@ -1,0 +1,184 @@
+/*
+========================================
+SEO OPTIMIZER COMPONENT
+Custom Built by SecuNova Inc.
+========================================
+
+Advanced SEO optimization utilities and components.
+
+Features:
+- Dynamic meta tag generation
+- Keyword optimization
+- Content analysis
+- Performance monitoring
+- Schema markup generation
+
+Built from scratch for maximum search visibility.
+========================================
+*/
+
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+
+interface SEOOptimizerProps {
+  title: string;
+  description: string;
+  keywords: string;
+  canonicalUrl: string;
+  ogImage?: string;
+  structuredData?: any;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  noIndex?: boolean;
+  children?: React.ReactNode;
+  ogType?: string;
+  article?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    section?: string;
+    tags?: string[];
+  };
+}
+
+/**
+ * Helper function to generate BreadcrumbList schema
+ */
+export const generateBreadcrumbsSchema = (items: Array<{ name: string; url: string }>) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+};
+
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title,
+  description,
+  keywords,
+  canonicalUrl,
+  ogImage = "https://secunovainc.com/iPhone.png",
+  structuredData,
+  breadcrumbs,
+  noIndex = false,
+  children,
+  ogType = "website",
+  article
+}) => {
+  // Ensure title is optimized for search engines
+  const optimizedTitle = title.length > 60 ? title.substring(0, 57) + '...' : title;
+  const optimizedDescription = description.length > 160 ? description.substring(0, 157) + '...' : description;
+
+  return (
+    <>
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>{optimizedTitle}</title>
+        <meta name="title" content={optimizedTitle} />
+        <meta name="description" content={optimizedDescription} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Robots */}
+        <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
+        <meta name="googlebot" content={noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content={ogType} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={optimizedTitle} />
+        <meta property="og:description" content={optimizedDescription} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={optimizedTitle} />
+        <meta property="og:site_name" content="SecuNova Inc." />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:locale:alternate" content="fr_CA" />
+
+        {/* Article Meta Tags */}
+        {article && (
+          <>
+            {article.publishedTime && <meta property="article:published_time" content={article.publishedTime} />}
+            {article.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
+            {article.author && <meta property="article:author" content={article.author} />}
+            {article.section && <meta property="article:section" content={article.section} />}
+            {article.tags && article.tags.map((tag, index) => (
+              <meta key={index} property="article:tag" content={tag} />
+            ))}
+          </>
+        )}
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={optimizedTitle} />
+        <meta name="twitter:description" content={optimizedDescription} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image:alt" content={optimizedTitle} />
+        <meta name="twitter:site" content="@SecuNova" />
+        <meta name="twitter:creator" content="@SecuNova" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="author" content="SecuNova Inc." />
+        <meta name="publisher" content="SecuNova Inc." />
+        <meta name="language" content="English" />
+        <meta name="geo.region" content="CA-AB" />
+        <meta name="geo.placename" content="Calgary" />
+        <meta name="geo.position" content="51.0447;-114.0719" />
+        <meta name="ICBM" content="51.0447, -114.0719" />
+
+        {/* Mobile & Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        <meta name="theme-color" content="#1e40af" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        {/* Security Headers */}
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        {/* Performance & Caching */}
+        <meta http-equiv="Cache-Control" content="public, max-age=31536000" />
+
+        {/* Verification Tags */}
+        <meta name="google-site-verification" content="your-google-verification-code" />
+        <meta name="msvalidate.01" content="your-bing-verification-code" />
+
+        {/* Preconnect to External Domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Alternate Languages */}
+        <link rel="alternate" hrefLang="en" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="fr" href={canonicalUrl.replace('secunovainc.com', 'secunovainc.com/fr')} />
+        <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+        
+        {/* Structured Data */}
+        {structuredData && (
+          <script type="application/ld+json">
+            {JSON.stringify(structuredData)}
+          </script>
+        )}
+        
+        {/* Breadcrumbs Schema */}
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify(generateBreadcrumbsSchema(breadcrumbs))}
+          </script>
+        )}
+      </Helmet>
+      {children}
+    </>
+  );
+};
+
+export default SEOOptimizer;

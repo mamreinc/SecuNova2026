@@ -1,0 +1,454 @@
+BOUTIQUE IT FIRM DESIGN MATCH SPECIFICATION
+Arabic + English Reference
+Project Reference: secupdate
+Date: 2026-04-10
+
+==================================================
+ARABIC
+==================================================
+
+اسم الملف المرجعي:
+دليل مطابقة التصميم لموقع شركة تقنية احترافية Boutique IT Firm
+
+الهدف:
+هذا الملف يحدد العناصر التي يجب مطابقتها بصرياً مع المشروع الحالي، مع السماح بإعادة صياغة المحتوى النصي بالكامل ليتناسب مع شركة تقنية احترافية متخصصة.
+
+1. الهدف من المطابقة
+يجب أن تكون المطابقة في الجوانب التالية:
+- نفس الألوان الأساسية والثانوية
+- نفس الخط الرئيسي
+- نفس نظام المسافات الداخلية والخارجية
+- نفس أنصاف أقطار الحواف
+- نفس الظلال ودرجات العمق
+- نفس منطق الصور والخلفيات
+- نفس أسلوب توزيع الأقسام داخل الصفحة
+- نفس الإحساس العام: مؤسسي، تقني، نظيف، احترافي، عالي الثقة
+
+المحتوى النصي لا يلزم أن يكون مطابقاً.
+يمكن إعادة كتابته بالكامل ليناسب شركة Boutique IT Firm، بشرط الحفاظ على نفس القالب البصري.
+
+2. الألوان الأساسية للهوية
+الألوان المخصصة في المشروع:
+- secunova-dark = #101928
+- secunova-blue = #2563EB
+- secunova-light = #037ecc
+- dark logo tint = #13213d
+
+الاستخدام الصحيح:
+- secunova-dark: للخلفيات الداكنة، العناوين الداكنة، الفوتر، بعض أقسام Hero
+- secunova-blue: اللون الرئيسي للأزرار والروابط والعناصر التفاعلية
+- secunova-light: لون accent ثانوي للشارات، التمييز، وبعض النصوص المهمة
+- الأبيض والرماديات: للأسطح العامة، الكروت، الخلفيات الفاتحة، والفواصل
+
+الألوان المساندة المستخدمة في المشروع:
+- أبيض: #ffffff
+- رماديات مختلفة من Tailwind مثل gray-50, gray-100, gray-200, gray-300, gray-400, gray-500, gray-600, gray-700, gray-800
+- ألوان حالات وتوضيح: blue-100, blue-200, blue-500, blue-600, green-100, green-400, green-500, red-50, red-200, red-600, orange-500, yellow-500, purple-500, indigo-600, teal-500, pink-500, rose-600
+
+قواعد مهمة:
+- لا تغير لوحة الألوان إذا كان الهدف نسخة مطابقة بصرياً.
+- يمكن فقط تبديل الصور والنصوص، لكن يجب إبقاء النظام اللوني نفسه.
+
+3. الخط Typography
+الخط الرئيسي في المشروع:
+- Montserrat
+
+Fallback stack:
+- -apple-system
+- BlinkMacSystemFont
+- Segoe UI
+- Roboto
+- Helvetica Neue
+- Arial
+- sans-serif
+
+مبدأ الاستخدام:
+- عناوين واضحة وقوية
+- نصوص نظيفة ومريحة
+- إحساس مؤسسي حديث
+- لا تستخدم خطاً بديلاً إذا كان الهدف المطابقة البصرية
+
+4. نظام المسافات Spacing System
+المشروع يستخدم مزيجاً من Tailwind مع متغيرات CSS.
+
+قيم spacing الأساسية:
+- 4px
+- 8px
+- 12px
+- 16px
+- 20px
+- 24px
+- 32px
+- 40px
+- 48px
+
+أنماط المسافات الأساسية:
+- section-padding: مسافات عمودية كبيرة بين الأقسام
+- page-header: مسافة علوية كبيرة بسبب النافبار الثابت
+- container موحد بعرض max-w-7xl تقريباً
+
+القاعدة العامة:
+- الأقسام تتنفس جيداً
+- لا يوجد ازدحام بصري
+- البطاقات لها padding سخي
+- النصوص تترك مساحة مريحة حولها
+
+5. الحواف ونصف القطر Border Radius
+أنصاف الأقطار المستخدمة بكثرة:
+- rounded-lg
+- rounded-xl
+- rounded-2xl
+- rounded-3xl
+- rounded-full
+
+طريقة الاستخدام:
+- الأزرار: rounded-lg أو rounded-xl
+- البطاقات: rounded-xl أو rounded-2xl
+- الحاويات المميزة أو premium blocks: rounded-3xl
+- الشارات والباجات: rounded-full
+
+قاعدة المطابقة:
+- لا تستخدم حواف حادة أو مسطحة
+- الشكل العام يجب أن يبقى ناعماً وحديثاً
+
+6. الظلال والعمق Shadows
+المشروع يعتمد على ظلال ناعمة تعطي عمقاً احترافياً:
+- shadow-sm
+- shadow-md
+- shadow-lg
+- shadow-xl
+- shadow-2xl
+
+كما توجد ظلال مخصصة في بعض التأثيرات مثل glow وhover.
+
+أسلوب الاستخدام:
+- البطاقات الأساسية: ظل خفيف إلى متوسط
+- العناصر التفاعلية عند hover: ظل أقوى
+- لا يجب المبالغة في الظلال خارج النمط الحالي
+
+7. الصور والخلفيات
+لكي يكون الموقع مطابقاً بصرياً، يجب أن تكون الصور من نفس الفئة البصرية:
+- صور تقنية مؤسسية احترافية
+- فرق عمل تقنية أو اجتماعات استشارية
+- بيئات مكتبية حديثة
+- شاشات وأنظمة وتحليلات أو بنية تحتية تقنية
+- server rooms أو network environments ولكن بصورة نظيفة وأنيقة
+
+خصائص الصور المطلوبة:
+- عالية الجودة
+- واقعية وغير مبالغ فيها
+- يمكن تغطيتها بـ dark overlay دون تشويه
+- تحتوي مساحات فارغة مناسبة للنصوص فوقها
+- ألوانها محايدة أو باردة نسبياً
+
+قواعد الخلفيات:
+- أقسام Hero وCTA: صورة خلفية + طبقة overlay داكنة قوية
+- باقي الأقسام: خلفية بيضاء أو gray-50
+- الكروت: بيضاء مع حدود ناعمة أو ظل خفيف
+
+8. الأسلوب البصري العام
+الإحساس العام للمشروع هو:
+- Corporate
+- Premium
+- Technical
+- Clean
+- Confident
+- Trust-driven
+
+العناصر التي تصنع هذا الإحساس:
+- تدرجات داكنة في الأقسام المهمة
+- بطاقات بيضاء مرتبة
+- أيقونات Lucide نظيفة
+- Glassmorphism خفيف باستخدام white/10 وbackdrop blur
+- عناوين قوية ونصوص مرتبة
+- مسافات واسعة
+- حركة بسيطة وغير مزعجة
+
+9. بنية الصفحة القياسية
+معظم الصفحات تتبع هذا الترتيب:
+- Hero Section
+- Value Proposition أو Overview
+- Feature Cards أو Service Blocks
+- Testimonials / Reviews أو Trust Section
+- CTA موحد في النهاية
+
+هذا الترتيب يجب الحفاظ عليه لضمان التطابق البنيوي، حتى لو تغير النص.
+
+10. المكونات المشتركة التي يجب الإبقاء على منطقها
+- Navbar: شريط علوي + تنقل رئيسي + Dropdown أو Mega Menu
+- Footer: فوتر داكن منظم وغني بالروابط ومعلومات التواصل
+- CTA Section: قسم نهائي بخلفية صورة وتدرج داكن وزرين رئيسيين
+- Cards System: كروت بيضاء ذات حواف كبيرة وظلال ناعمة
+- Badge Pills: شارات صغيرة شبه زجاجية مع حدود لونية خفيفة
+- Review Sections: بطاقات أو شرائح تقييمات بخلفية نظيفة ومنسقة
+- Hero Overlays: طبقات داكنة فوق الصور مع نص أبيض أو أزرق فاتح
+
+11. ما الذي يمكن تغييره لشركة Boutique IT Firm
+يمكن تغيير ما يلي بحرية:
+- اسم الشركة
+- النصوص والعناوين والوصف
+- أسماء الخدمات
+- صور الأشخاص أو صور الخلفيات
+- شهادات العملاء والمراجعات
+- الـ SEO metadata
+- الرسائل التسويقية والموقع الجغرافي
+
+لكن يجب عدم تغيير ما يلي إذا أردت مطابقة التصميم:
+- نظام الألوان
+- الخط
+- المسافات الرئيسية
+- شكل الأزرار والبطاقات
+- نوع الظلال
+- منطق الـ overlays والتدرجات
+- نظام الأقسام العام
+
+12. توصيات مباشرة لإعادة التصميم بالمحتوى الجديد
+إذا كان المحتوى سيعاد صياغته لشركة Boutique IT Firm، فالأفضل استخدام نفس البناء التالي:
+- Hero يركز على Private IT Support, Managed Security, Fractional IT Leadership, Concierge Technical Services
+- قسم خدمات أساسية بثلاث أو أربع بطاقات
+- قسم يشرح الفارق بين الشركة المتخصصة والشركات التقليدية
+- قسم Social Proof أو مراجعات مختارة
+- CTA نهائي واضح للحجز أو الاستشارة
+
+13. صور مناسبة لنسخة Boutique IT Firm
+اختر صوراً تعكس:
+- الاستشارة التقنية المباشرة
+- العلاقات طويلة الأمد مع العملاء
+- الدعم التنفيذي أو الإداري عالي المستوى
+- الأمن السيبراني وإدارة البنية التحتية
+- فرق صغيرة عالية الخبرة بدلاً من فرق ضخمة عامة
+
+14. قاعدة التنفيذ الصحيحة
+أفضل طريقة للحصول على نسخة مطابقة:
+- نسخ نظام التصميم أولاً
+- ثم بناء مكونات قابلة لإعادة الاستخدام
+- ثم استبدال النصوص والصور فقط
+- ثم ضبط SEO والرسائل حسب الشركة الجديدة
+
+15. الخلاصة العربية
+إذا كان الهدف إعادة إنتاج موقع مطابق بصرياً لمشروع secupdate ولكن بمحتوى جديد لشركة Boutique IT Firm، فيجب اعتبار هذا المشروع مرجع تصميم كامل، وليس مجرد مصدر إلهام. المطلوب هو الحفاظ على الهوية البصرية، البنية، الإيقاع، التدرجات، الخطوط، المسافات، والأجواء العامة، مع تغيير المحتوى النصي والصور بما يناسب العلامة الجديدة.
+
+==================================================
+ENGLISH
+==================================================
+
+Reference Title:
+Design Match Guide for a Professional Boutique IT Firm Website
+
+Purpose:
+This document defines the visual elements that must remain matched to the current project while allowing the written content to be fully rewritten for a professional Boutique IT Firm.
+
+1. Matching Objective
+The following must remain visually matched:
+- Same primary and secondary colors
+- Same main font
+- Same spacing system
+- Same border radii
+- Same shadows and depth
+- Same image logic and background treatment
+- Same section ordering and layout rhythm
+- Same overall feeling: corporate, technical, clean, premium, high-trust
+
+The text content does not need to remain the same.
+It can be completely rewritten for a Boutique IT Firm, as long as the visual system stays aligned with the existing project.
+
+2. Core Brand Colors
+Custom project colors:
+- secunova-dark = #101928
+- secunova-blue = #2563EB
+- secunova-light = #037ecc
+- dark logo tint = #13213d
+
+Correct usage:
+- secunova-dark: dark backgrounds, dark headings, footer, some hero sections
+- secunova-blue: primary action color for buttons, links, and interactive elements
+- secunova-light: secondary accent for pills, highlights, and emphasized text
+- white and grays: general surfaces, cards, light backgrounds, separators
+
+Supporting colors used in the project:
+- White: #ffffff
+- Tailwind grays such as gray-50, gray-100, gray-200, gray-300, gray-400, gray-500, gray-600, gray-700, gray-800
+- Supporting state/accent colors: blue-100, blue-200, blue-500, blue-600, green-100, green-400, green-500, red-50, red-200, red-600, orange-500, yellow-500, purple-500, indigo-600, teal-500, pink-500, rose-600
+
+Important rule:
+- Do not change the palette if the goal is a visually matched version.
+- You may replace text and imagery, but the color system should stay intact.
+
+3. Typography
+Primary font in the project:
+- Montserrat
+
+Fallback stack:
+- -apple-system
+- BlinkMacSystemFont
+- Segoe UI
+- Roboto
+- Helvetica Neue
+- Arial
+- sans-serif
+
+Usage principle:
+- Strong, clear headings
+- Clean, readable body text
+- Modern corporate tone
+- Do not replace the font if visual parity is the goal
+
+4. Spacing System
+The project uses a mix of Tailwind utilities and CSS variables.
+
+Base spacing values:
+- 4px
+- 8px
+- 12px
+- 16px
+- 20px
+- 24px
+- 32px
+- 40px
+- 48px
+
+Primary spacing patterns:
+- section-padding: generous vertical spacing between sections
+- page-header: extra top spacing because of the fixed navbar
+- unified container around max-w-7xl
+
+General rule:
+- Sections should breathe
+- No visual crowding
+- Cards should have generous padding
+- Text blocks should have comfortable surrounding space
+
+5. Border Radius
+Most frequently used radii:
+- rounded-lg
+- rounded-xl
+- rounded-2xl
+- rounded-3xl
+- rounded-full
+
+Usage pattern:
+- Buttons: rounded-lg or rounded-xl
+- Cards: rounded-xl or rounded-2xl
+- Premium or highlighted blocks: rounded-3xl
+- Pills and badges: rounded-full
+
+Matching rule:
+- Avoid sharp corners
+- The overall form language should stay soft and modern
+
+6. Shadows and Depth
+The project uses soft but clear elevation:
+- shadow-sm
+- shadow-md
+- shadow-lg
+- shadow-xl
+- shadow-2xl
+
+There are also custom glow-style shadows in hover states and decorative effects.
+
+Usage pattern:
+- Standard cards: light to medium elevation
+- Hover states: stronger depth
+- Do not exaggerate shadow styles beyond the established design language
+
+7. Images and Backgrounds
+To visually match the project, imagery must come from the same visual category:
+- Professional enterprise technology photos
+- Technical teams or consulting meetings
+- Modern office settings
+- Screens, dashboards, infrastructure, or technical operations
+- Server rooms or network environments presented in a clean and refined way
+
+Required image qualities:
+- High quality
+- Realistic, not overly staged
+- Able to support a dark overlay without breaking
+- Must provide negative space for text overlays
+- Prefer neutral or cool-toned color balance
+
+Background rules:
+- Hero and CTA sections: background image plus strong dark overlay
+- General sections: white or gray-50 backgrounds
+- Cards: white surfaces with soft borders or subtle shadows
+
+8. Overall Visual Language
+The project feels:
+- Corporate
+- Premium
+- Technical
+- Clean
+- Confident
+- Trust-driven
+
+The elements that create this feeling:
+- Dark gradients in key sections
+- Organized white cards
+- Clean Lucide icons
+- Light glassmorphism via white/10 and backdrop blur
+- Strong headings and orderly text blocks
+- Generous spacing
+- Subtle, restrained motion
+
+9. Standard Page Structure
+Most pages follow this order:
+- Hero Section
+- Value Proposition or Overview
+- Feature Cards or Service Blocks
+- Testimonials / Reviews or Trust Section
+- Unified CTA at the bottom
+
+This structure should remain intact to preserve visual and architectural parity, even when the text changes.
+
+10. Shared Components Whose Logic Should Be Preserved
+- Navbar: top utility bar plus main navigation plus dropdown or mega menu
+- Footer: structured dark footer with rich links and contact information
+- CTA Section: closing section with background image, dark gradient, and two main actions
+- Cards System: white cards with large radii and soft shadows
+- Badge Pills: small semi-glass pills with subtle colored borders
+- Review Sections: clean testimonial cards or review sliders
+- Hero Overlays: dark overlays over photography with white or light blue text
+
+11. What Can Change for a Boutique IT Firm
+The following can change freely:
+- Company name
+- Headlines, descriptions, and page copy
+- Service names
+- Team imagery or background photography
+- Client reviews and proof points
+- SEO metadata
+- Marketing messaging and location positioning
+
+The following should not change if design matching is required:
+- Color system
+- Font
+- Core spacing rhythm
+- Button and card form language
+- Shadow language
+- Overlay and gradient treatment
+- General section system
+
+12. Direct Recommendations for Rewriting Content
+If the content is being repositioned for a Boutique IT Firm, keep the current design and use a similar content architecture:
+- Hero focused on Private IT Support, Managed Security, Fractional IT Leadership, Concierge Technical Services
+- Three or four core service cards
+- A section explaining the difference between a specialist boutique firm and traditional providers
+- A social proof or selected testimonials section
+- A strong final CTA for consultation or booking
+
+13. Suitable Images for the Boutique IT Firm Version
+Choose imagery that reflects:
+- Direct technical consulting
+- Long-term client relationships
+- Executive or high-touch operational support
+- Cybersecurity and infrastructure management
+- Small, highly experienced expert teams rather than generic large teams
+
+14. Correct Execution Approach
+The best way to achieve a matched version is:
+- Copy the design system first
+- Build reusable components
+- Replace only the text and images
+- Then adapt SEO and messaging to the new company
+
+15. English Summary
+If the goal is to recreate a website that visually matches the secupdate project while using rewritten copy for a Boutique IT Firm, this project should be treated as a complete design reference, not just inspiration. Preserve the visual identity, structure, rhythm, gradients, typography, spacing, and overall atmosphere, while updating the written content and imagery for the new brand.

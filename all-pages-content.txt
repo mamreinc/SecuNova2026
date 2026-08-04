@@ -1,0 +1,980 @@
+SECUPDATE PROJECT - COMPREHENSIVE PAGE CONTENT DOCUMENT
+Last Updated: April 10, 2026
+Source: /Volumes/MACOS/GitHub/secupdate/src/pages
+
+This document consolidates all page content into one file.
+Each page is separated clearly by section boundaries so you can identify where a page begins and where it ends.
+
+========================================
+PROJECT OVERVIEW & ROUTING STATUS
+========================================
+
+MAIN PAGES (12 routed pages):
+1. HomePage - ROUTED (/)
+2. ServicesPage - ROUTED (/services)
+3. AboutPage - ROUTED (/about)
+4. ContactPage - ROUTED (/contact)
+5. PortfolioPage - ROUTED (/portfolio)
+6. FaqPage - ROUTED (/faq)
+7. PrivacyTermsPage - ROUTED (/privacy-terms)
+8. JoinUsPage - ROUTED (/join-us)
+9. FreelancerPage - ROUTED (/freelancer)
+10. OurTeamPage - ROUTED (/about/team)
+11. ReviewsPage - ROUTED (/reviews)
+12. NotFoundPage - ROUTED (/* wildcard for 404)
+
+SERVICE PAGES (12 routed service pages):
+1. TechnicalSupportPage - ROUTED (/services/technical-support)
+2. CybersecurityPage - ROUTED (/services/cybersecurity)
+3. WebDesignPage - ROUTED (/services/web-design)
+4. WebDevelopmentPage - ROUTED (/services/web-development)
+5. MobileAppsPage - ROUTED (/services/mobile-apps)
+6. UIUXDesignPage - ROUTED (/services/ui-ux-design)
+7. BrandingPage - ROUTED (/services/branding)
+8. SEOMarketingPage - ROUTED (/services/seo-marketing)
+9. WordPressPage - ROUTED (/services/wordpress)
+10. PhotographyPage - ROUTED (/services/photography)
+11. ManagedITServicesPage - ROUTED (/services/managed-it)
+12. HomeTechSupportPage - ROUTED (/services/home-tech-support)
+
+NOT ROUTED:
+- ITSupportManagedPage (present in directory but not connected in App.tsx)
+
+========================================
+PAGE START
+Page Name: HomePage
+File: src/pages/HomePage.tsx
+Route: /
+Status: ROUTED
+Purpose: Main landing page with strong value proposition, social proof, and results-driven messaging.
+----------------------------------------
+Main Content:
+- Page Title: SecuNova Inc. Calgary | Premier IT & Cybersecurity Solutions | 50+ Certified Specialists
+- Hero Section with three core service cards:
+  * Technical Support - Expert 24/7 IT support and system optimization
+  * Cybersecurity - Advanced protection for digital assets
+  * Web Development - Custom websites and applications
+- Hero Slider (auto-rotating every 4 seconds):
+  * Managed IT - 24/7 monitoring, patch management, IT roadmapping
+  * WordPress & Web Design - High-converting websites built for speed and SEO
+  * Web Development - Scalable React and TypeScript applications
+  * Cybersecurity - Continuous threat defense and incident response
+  * Mobile Apps - Native and cross-platform mobile experiences
+  * SEO & Marketing - Data-driven digital marketing
+- Social proof and client reviews organized by service type
+- Enterprise expertise with agency agility messaging
+Shared Components Used:
+- Navbar
+- Footer
+- LazySection
+- OptimizedImage
+- ReviewsPage data integration
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: ServicesPage
+File: src/pages/ServicesPage.tsx
+Route: /services
+Status: ROUTED
+Purpose: Comprehensive services overview page with interactive hero slider and categorized service grid.
+----------------------------------------
+Main Content:
+- Hero Slider with three rotatable slides:
+  * Infrastructure & Security: Protect, Stabilize, Scale with Confidence
+  * Web & Platform Engineering: Build Fast, Reliable Digital Platforms
+  * Creative & Growth: Design, Brand, and Grow Your Reach
+- Service categories:
+  INFRASTRUCTURE & SECURITY:
+  * Technical Support
+  * Managed IT Services
+  * Home Tech Support
+  * Cybersecurity
+  WEB & DIGITAL PLATFORM DEVELOPMENT:
+  * Web Development
+  * Web Design
+  * WordPress Solutions
+  * Mobile Applications
+  CREATIVE & DIGITAL STRATEGY:
+  * UI/UX Design
+  * Branding
+  * SEO & Marketing
+  * Photography
+- Each service card includes description, three features, and Learn More link
+- Company statistics and trust indicators
+Shared Components Used:
+- Navbar
+- CtaSection
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: AboutPage
+File: src/pages/AboutPage.tsx
+Route: /about
+Status: ROUTED
+Purpose: Company overview, leadership, team structure, and credibility.
+----------------------------------------
+Main Content:
+- Page Title: About SecuNova Inc. Calgary | Premier IT & Cybersecurity Agency | 50+ Specialists Since 2016
+- Hero Section with message around Enterprise Expertise and Agency Agility
+- Company background: founded in Europe in 2016, moved to Calgary in 2021
+- Key statistics:
+  * 50+ Dedicated Specialists
+  * 15+ Years Experience
+  * 100+ Projects Delivered
+  * 24/7 Support Available
+- Leadership Team:
+  * Maisen Alamrein - Founder & Team Lead
+  * Rajesh Singh - CEO
+  * Marie Dubois - CTO
+  * Kwame Osei - CISO
+  * Yuki Tanaka - COO
+  * Hassan Al-Rashid - CFO
+- Full Team across admin, security, development, DevOps, UX/UI, cloud, support, project management, QA, and data
+- Contractor Network across security, WordPress, mobile, SEO, graphics, network administration, content writing, automation, business analysis, and marketing
+- Team specialization groups with estimated counts
+- Core Values:
+  * Security First
+  * Client Success
+  * Quality Excellence
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: ContactPage
+File: src/pages/ContactPage.tsx
+Route: /contact
+Status: ROUTED
+Purpose: Lead generation and contact conversion page.
+----------------------------------------
+Main Content:
+- Page Title: Contact SecuNova Inc. Calgary | Get Free IT Consultation | (403) 774-1279 | 24/7 Support
+- Hero Section:
+  * Headline: Let's Build Something Great Together
+  * Subheading about transforming IT infrastructure with a free consultation
+  * Primary CTA: Call (403) 774-1279
+  * Secondary CTA: Send Email
+  * Promise: Response within 2 hours during business hours
+- Contact Methods:
+  * Phone - immediate team contact
+  * Email - hello@secunovainc.com
+- Office Information:
+  * Address: #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7
+  * Open in Maps
+  * Business Hours: Mon-Fri 9:00-18:00 MT
+  * Emergency Support: 24/7
+- Office imagery on the right side
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: PortfolioPage
+File: src/pages/PortfolioPage.tsx
+Route: /portfolio
+Status: ROUTED
+Purpose: Portfolio showcase and project capability page.
+----------------------------------------
+Main Content:
+- Page Title: SecuNova Inc. Portfolio Calgary | 100+ IT Projects | Web Development & Cybersecurity Excellence
+- Hero Section:
+  * Badge: Professional Portfolio
+  * Headline: Our Work Speaks For Itself
+  * Subheading about 50+ professional projects across industries
+- Service showcase areas:
+  * Custom Web Development
+  * UI/UX Design
+  * WordPress Solutions
+  * Cybersecurity
+  * Mobile Applications
+  * System Integration
+- Live project examples:
+  * SecuNova Inc. Website
+  * YYC Echo
+  * Alberta Arabic Guide
+  * MoonYYC
+- Each project includes status, URL, description, and technology stack
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: FaqPage
+File: src/pages/FaqPage.tsx
+Route: /faq
+Status: ROUTED
+Purpose: FAQ page answering common service, support, pricing, and process questions.
+----------------------------------------
+Main Content:
+- Page Title: FAQ - SecuNova Inc. Calgary | IT Services Questions | 50+ Specialists | 24/7 Support
+- Hero Section:
+  * Headline: Frequently Asked Questions
+  * Subheading: Find answers to common questions about our services and solutions
+- FAQ Categories:
+  CATEGORY 1: GETTING STARTED
+  * Who is SecuNova a good fit for?
+  * How do we start?
+  * What does onboarding include?
+  * Where do you work?
+  CATEGORY 2: SUPPORT & SLAS
+  * What are support hours?
+  * How do I open a ticket?
+  * Do you provide on-site support?
+  * Do you have documented SLAs?
+  CATEGORY 3: SECURITY & COMPLIANCE
+  * What is security baseline?
+  * Do you run security assessments?
+  * Do you support compliance frameworks?
+  * Incident response coverage?
+  * Data residency?
+  CATEGORY 4: CLOUD & MICROSOFT/GOOGLE
+  * Which clouds supported?
+  * Do you migrate email and files?
+  * Do you manage backups for M365/Google?
+  * Cost optimization?
+  CATEGORY 5: NETWORKS & DEVICES
+  * Do you monitor networks 24/7?
+  * Wi-Fi and VPN?
+  * Device management?
+  CATEGORY 6: WEB DEVELOPMENT & SEO
+  * What stacks used?
+  * How long for website?
+  * Do you provide hosting?
+  * Who owns code and content?
+  * SEO approach?
+  CATEGORY 7: PRICING & BILLING
+  * How do you price support?
+  * Do you offer fixed-price?
+  * Payment terms?
+  * Cancellation?
+  CATEGORY 8: LEGAL & DATA
+  * Do you sign NDAs and DPAs?
+  * Backups and disaster recovery?
+  * Third-party access?
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: PrivacyTermsPage
+File: src/pages/PrivacyTermsPage.tsx
+Route: /privacy-terms
+Status: ROUTED
+Purpose: Privacy policy and terms of service page.
+----------------------------------------
+Main Content:
+- Page Title: Privacy Policy & Terms of Service | SecuNova Inc. Calgary Alberta IT Company
+- Privacy Policy section:
+  * Information Collection
+  * Use of Information
+  * Data Security
+- Payment Security & Privacy:
+  * We do not store payment information
+  * Payments processed through Square
+  * Banking partners include RBC, TD, BMO, Scotiabank, CIBC, National Bank, Equitable, Laurentian Bank
+- Customer Calls & Support Services:
+  * Third-party call handling service
+  * SecuNova does not store caller information or recordings
+- Terms of Service:
+  * Service agreement
+  * User responsibilities
+  * Service level agreements
+  * Limitation of liability
+  * Changes to terms
+- Contact for privacy questions: info@secunovainc.com
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: JoinUsPage
+File: src/pages/JoinUsPage.tsx
+Route: /join-us
+Status: ROUTED
+Purpose: Investment and partnership opportunity page.
+----------------------------------------
+Main Content:
+- Page Title: Join SecuNova Inc. Calgary | Investment & Partnership Opportunities
+- Hero Section:
+  * Badge: Ground Floor Opportunity
+  * Headline: Join Our Journey To Success
+  * Description about a revolutionary IT company launched in 2025
+- Foundation Metrics:
+  * 10+ Years Combined Experience
+  * $12B Alberta IT Market Size
+  * 2025 Founded & Ready to Scale
+- Investment Opportunities:
+  * Early-Stage Investment
+    - Equity, management access, updates, growth potential
+  * Co-Founder & Leadership
+    - Equity, leadership authority, division ownership, influence over culture
+- Why Join SecuNova Now:
+  * Experienced Leadership
+  * Massive Market Opportunity
+  * Early Mover Advantage
+- Investment details:
+  * Seed Investment
+  * Strategic Partnership
+  * Leadership Opportunities
+- Next Steps:
+  * Initial Conversation
+  * Business Model Review
+  * Partnership Structure
+  * Launch & Growth
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: FreelancerPage
+File: src/pages/FreelancerPage.tsx
+Route: /freelancer
+Status: ROUTED
+Purpose: Freelancer recruitment and network expansion page.
+----------------------------------------
+Main Content:
+- Page Title: Join SecuNova Network Calgary | Freelance IT Opportunities Alberta | Independent Professionals
+- Hero Section:
+  * Badge: Join Our Professional Network
+  * Headline: Freelance IT Opportunities
+  * Subheading about premium opportunities for independent professionals
+- Network Benefits:
+  * Premium Project Opportunities
+  * Professional Network
+  * Competitive Compensation
+  * Professional Growth
+- Application Requirements:
+  * 3+ years experience
+  * Portfolio
+  * English communication
+  * Reliable workspace and internet
+  * Independent work discipline
+  * Professional references
+  * Relevant certifications
+  * Commitment to quality standards
+- Application Process:
+  * Submit Application
+  * Skills Assessment
+  * Interview Process
+  * Network Onboarding
+- Network Culture:
+  * Quality-focused environment
+  * Collaborative network
+  * Professional development
+- Contact actions:
+  * Apply Now via network@secunovainc.com
+  * Discuss Opportunities by phone
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: OurTeamPage
+File: src/pages/OurTeamPage.tsx
+Route: /about/team
+Status: ROUTED
+Purpose: Team showcase page with names, roles, and emails.
+----------------------------------------
+Main Content:
+- Page Title: Our Team | SecuNova Inc. Calgary Leadership & Technical Specialists
+- Hero Section:
+  * Headline: Our Team
+  * Subheading: Meet the professionals who make SecuNova exceptional
+- Team Members Grid:
+  * David Felix - Associate Founder
+  * Max Alamrein - Founder & CEO
+  * Mia - Receptionist & Administrative Assistant
+  * Rasid - Cyber Threat Intelligence Analyst
+  * Rajesh - Infrastructure Automation Lead
+  * Adebayo - Custom Development Specialist
+  * Ryan - Compliance & Documentation Analyst
+  * Li Wei - Data Analyst & Analytics Lead
+- Each card shows name, role, and email link
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: ReviewsPage
+File: src/pages/ReviewsPage.tsx
+Route: /reviews
+Status: ROUTED
+Purpose: Client reviews and testimonials hub.
+----------------------------------------
+Main Content:
+- Page Title: Client Reviews | SecuNova Inc. Calgary – 100+ Verified Testimonials
+- Aggregate Rating: 4.9/5 from 100+ reviews
+- Review Categories:
+  * Home Tech Support
+  * Web Development
+  * Web Design
+  * Cybersecurity
+  * Managed IT
+  * Technical Support
+  * SEO & Marketing
+  * UI/UX Design
+  * Branding
+  * WordPress
+  * Mobile Apps
+  * Photography
+- Sample reviews included for Home Tech Support, Web Development, and Cybersecurity
+- Review submission form:
+  * Name
+  * Location
+  * Service
+  * Rating
+  * Review text
+- Pagination with load more behavior
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+- Reviews data source
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: NotFoundPage
+File: src/pages/NotFoundPage.tsx
+Route: /*
+Status: ROUTED
+Purpose: 404 error page for unmatched routes.
+----------------------------------------
+Main Content:
+- Page Title: Page Not Found | SecuNova Inc.
+- Headline: Page Not Found
+- Description: The page you're looking for doesn't exist or has been moved
+- Primary action: Back to Home
+- Secondary support area:
+  * Need Help?
+  * Contact Support link
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: TechnicalSupportPage
+File: src/pages/services/TechnicalSupportPage.tsx
+Route: /services/technical-support
+Status: ROUTED
+Purpose: 24/7 technical support services page.
+----------------------------------------
+Main Content:
+- Page Title: 24/7 Technical Support Calgary | IT Support Services Alberta
+- Hero Section:
+  * Badge: 24/7 Technical Support
+  * Headline: 24/7 Technical Support
+  * Subheading: Professional IT support and maintenance for Calgary businesses
+- Key Features:
+  * 24/7 Availability
+  * Secure Solutions
+  * Proven Results
+- Support Services:
+  * Remote Support
+  * Help Desk Services
+  * On-Site Support
+  * Device Management
+- Response Times:
+  * Critical - 15 minutes
+  * High - 1 hour
+  * Medium - 4 hours
+  * Low - 24 hours
+- Additional coverage:
+  * Computer Repair & Maintenance
+  * Network Setup & Security
+  * Cloud Services & Migration
+  * Server Management
+  * Data Backup & Recovery
+  * Cybersecurity Services
+  * Business IT Solutions
+  * Home IT Services
+- Industries served include SMBs, healthcare, retail, legal, education, startups, and more
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+- Reviews integration
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: CybersecurityPage
+File: src/pages/services/CybersecurityPage.tsx
+Route: /services/cybersecurity
+Status: ROUTED
+Purpose: Cybersecurity services page covering protection, detection, compliance, and response.
+----------------------------------------
+Main Content:
+- Page Title: Cybersecurity Services Calgary | Cyber Security Solutions Alberta
+- Hero Section:
+  * Badge: Enterprise Cybersecurity
+  * Headline: Protect Your Business From Cyber Threats
+  * Subheading: Enterprise-grade security from penetration testing to monitoring
+- Expected Outcomes:
+  * Reduced Risk
+  * Compliance Ready
+  * Operational Continuity
+- Four Service Pillars:
+  * Assess & Validate
+  * Protect & Prevent
+  * Detect & Respond
+  * Recover & Govern
+- Major sections:
+  * Vulnerability Assessment & Penetration Testing
+  * Security Monitoring & Incident Response
+  * Compliance & Governance
+- Frameworks supported:
+  * NIST CSF
+  * CIS Controls v8
+  * ISO/IEC 27001
+  * SOC 2
+- Engagement Models:
+  * Security Assessment
+  * Managed Detection & Response
+  * vCISO Services
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: WebDesignPage
+File: src/pages/services/WebDesignPage.tsx
+Route: /services/web-design
+Status: ROUTED
+Purpose: Professional responsive and conversion-focused web design services.
+----------------------------------------
+Main Content:
+- Page Title: Web Design Services Calgary | Professional Website Design Alberta
+- Hero Section:
+  * Badge: Professional Web Design
+  * Headline: Web Design That Converts
+  * Subheading: Beautiful user-focused designs that transform visitors into customers
+- Design Philosophy:
+  * Mobile-First Design
+  * Lightning Fast
+  * User-Centric UX
+  * Conversion Focused
+  * Brand Identity
+  * Accessibility First
+- Design Services:
+  * Responsive Web Design
+  * Custom Design & Branding
+  * E-Commerce Design
+- Design Process:
+  * Discovery & Research
+  * Wireframing & Strategy
+  * Visual Design Concepts
+  * Prototyping & Testing
+  * Development & Implementation
+  * Launch & Optimization
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+- LiveProjectsMarquee
+- OptimizedImage
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: WebDevelopmentPage
+File: src/pages/services/WebDevelopmentPage.tsx
+Route: /services/web-development
+Status: ROUTED
+Purpose: Custom web development services using modern frameworks and scalable architecture.
+----------------------------------------
+Main Content:
+- Page Title: Web Development Services Calgary | Custom Website Development Alberta
+- Hero Section:
+  * Badge: Professional Web Development
+  * Headline: Custom Web Development
+  * Subheading: Enterprise-grade applications built with React, TypeScript, and cutting-edge tech
+- Core Principles:
+  * Modern Tech Stack
+  * Scalable Architecture
+  * Security First
+  * Cloud Native
+  * API Development
+  * Quality Assurance
+- Business Outcomes:
+  * Business Outcomes First
+  * Scalable by Design
+  * Security & Compliance
+- Four Service Pillars:
+  * Conversion Websites
+  * Web Apps & Platforms
+  * Performance & SEO
+  * Care & Growth
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+- LiveProjectsMarquee
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: MobileAppsPage
+File: src/pages/services/MobileAppsPage.tsx
+Route: /services/mobile-apps
+Status: ROUTED
+Purpose: Mobile app development for iOS, Android, and cross-platform delivery.
+----------------------------------------
+Main Content:
+- Page Title: Mobile App Development Calgary | iOS & Android App Development Alberta
+- Hero Section:
+  * Badge: Professional Mobile Development
+  * Headline: Mobile Apps That Users Love
+  * Subheading: Native iOS and Android apps delivering exceptional UX
+- Development Principles:
+  * Native iOS Development
+  * Native Android Development
+  * Cross-Platform Solutions
+  * Performance Optimized
+  * User-Centric Design
+  * App Store Success
+- Service Categories:
+  * Native iOS & Android Development
+  * Cross-Platform Solutions
+  * App Store Success
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: UIUXDesignPage
+File: src/pages/services/UIUXDesignPage.tsx
+Route: /services/ui-ux-design
+Status: ROUTED
+Purpose: Research-driven UI/UX design for digital products.
+----------------------------------------
+Main Content:
+- Page Title: UI/UX Design Services Calgary | User Experience Design Alberta
+- Hero Section:
+  * Badge: Professional UI/UX Design
+  * Headline: Design That Users Love
+  * Subheading: Data-driven UI/UX for intuitive experiences
+- Key message:
+  * 88% of users won't return after a bad experience
+- Core Services:
+  * User Research
+  * Information Architecture
+  * Wireframing & Prototyping
+  * Visual Design
+  * Usability Testing
+  * Analytics & Optimization
+- Main service groups:
+  * User Research & Wireframing
+  * High-Fidelity Design & Prototyping
+  * Testing & Optimization
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: BrandingPage
+File: src/pages/services/BrandingPage.tsx
+Route: /services/branding
+Status: ROUTED
+Purpose: Branding and identity design services.
+----------------------------------------
+Main Content:
+- Page Title: Branding Services Calgary | Brand Identity & Logo Design Alberta
+- Hero Section:
+  * Badge: Professional Branding
+  * Headline: Build a Brand That Resonates
+  * Subheading: Strategic brand identity building attention and connection
+- Core message:
+  * A brand is more than a logo
+- Branding Services:
+  * Brand Strategy
+  * Logo Design
+  * Visual Identity
+  * Brand Guidelines
+  * Marketing Collateral
+  * Brand Refresh
+- Service Groups:
+  * Logo Design & Visual Identity
+  * Brand Strategy & Guidelines
+  * Brand Refresh & Evolution
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: SEOMarketingPage
+File: src/pages/services/SEOMarketingPage.tsx
+Route: /services/seo-marketing
+Status: ROUTED
+Purpose: SEO and digital marketing services for traffic, leads, and conversions.
+----------------------------------------
+Main Content:
+- Page Title: SEO & Digital Marketing Calgary | Search Engine Optimization Alberta
+- Hero Section:
+  * Badge: Professional SEO & Marketing
+  * Headline: Grow Your Business With SEO & Marketing
+  * Subheading: Data-driven strategies driving traffic and revenue
+- Market reality:
+  * 75% of users never scroll past the first page of search results
+- Core Services:
+  * Search Engine Optimization
+  * PPC Advertising
+  * Content Marketing
+  * Social Media Marketing
+  * Analytics & Reporting
+  * Conversion Optimization
+- Service Groups:
+  * Search Engine Optimization
+  * PPC & Paid Advertising
+  * Content & Social Marketing
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: WordPressPage
+File: src/pages/services/WordPressPage.tsx
+Route: /services/wordpress
+Status: ROUTED
+Purpose: Custom WordPress development and WooCommerce services.
+----------------------------------------
+Main Content:
+- Page Title: WordPress Development Services Calgary | Custom WordPress & WooCommerce Alberta
+- Hero Section:
+  * Headline: Custom WordPress Development
+  * Subheading: Custom themes, plugin development, WooCommerce stores, optimization
+- Service Categories:
+  * Core WordPress Development
+  * E-Commerce Solutions
+  * Design & User Experience
+  * Performance & Optimization
+- Key service examples:
+  * Custom themes
+  * Plugin development
+  * Payment integration
+  * Custom web design
+  * Responsive design
+  * Speed optimization
+  * Core Web Vitals improvements
+  * Website migration
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+- prioritizedReviews integration
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: PhotographyPage
+File: src/pages/services/PhotographyPage.tsx
+Route: /services/photography
+Status: ROUTED
+Purpose: Professional photography for corporate, product, and business use.
+----------------------------------------
+Main Content:
+- Page Title: Professional Photography Services Calgary | Corporate & Product Photography Alberta
+- Hero Section:
+  * Badge: Professional Photography
+  * Headline: Professional Photography
+  * Subheading: Corporate, product, and brand photography elevating marketing
+- Main categories:
+  * Product & E-Commerce
+  * Corporate & Headshots
+  * Business & Event Photography
+- Key offers include executive portraits, team photos, high-resolution product imagery, and branded business photography
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: ManagedITServicesPage
+File: src/pages/services/ManagedITServicesPage.tsx
+Route: /services/managed-it
+Status: ROUTED
+Purpose: Comprehensive managed IT services page.
+----------------------------------------
+Main Content:
+- Page Title: Managed IT Services Calgary | Complete IT Management Alberta
+- Hero Section:
+  * Badge: Professional Managed IT Services
+  * Headline: Managed IT Services
+  * Subheading: Comprehensive IT management keeping business running smoothly
+- Core Focus:
+  * Proactive monitoring
+  * Maintenance
+  * 24/7 support
+  * Network management
+  * Cloud solutions
+  * Cybersecurity
+  * Backup and disaster recovery
+  * Help desk
+- Service Areas:
+  * Proactive Security & Monitoring
+  * Infrastructure Management
+  * Cloud Services & Migration
+  * Help Desk & User Support
+- Benefits:
+  * Reduced Downtime
+  * Cost Predictability
+  * Enhanced Security
+  * Scalable Solutions
+  * Expert Access
+  * Compliance Ready
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: HomeTechSupportPage
+File: src/pages/services/HomeTechSupportPage.tsx
+Route: /services/home-tech-support
+Status: ROUTED
+Purpose: Residential and on-site technical support page.
+----------------------------------------
+Main Content:
+- Page Title: Home Tech Support Calgary | On-Site IT Services
+- Hero Section:
+  * Headline: We Come to You - Same Day, Every Time
+  * Subheading: Expert computer repair, network setup, tech support at home or office
+  * Promise Badge: We arrive within 2 hours for emergency calls
+- Service Coverage Areas:
+  * Calgary
+  * Airdrie
+  * Chestermere
+  * Cochrane
+- Call-to-Action Buttons:
+  * Call (403) 774-1279
+  * View Services
+- Key Highlights:
+  * Same-Day Service
+  * Licensed & Insured
+  * Fast Response
+- Main Services:
+  * Computer Repair
+  * Network & Wi-Fi Setup
+  * OS Installation
+  * Security Cameras
+- Additional Services:
+  * Printer Setup
+  * Smart TV Setup
+  * Tech Training
+  * Maintenance
+- Service Process:
+  * Contact Us
+  * Schedule Visit
+  * Expert Service
+  * Follow-up
+- Certifications:
+  * CompTIA A+
+  * Google IT Support
+  * Microsoft Certified
+Shared Components Used:
+- Helmet
+- Navbar
+- Footer
+- prioritizedReviews integration
+PAGE END
+========================================
+
+========================================
+PAGE START
+Page Name: ITSupportManagedPage
+File: src/pages/services/ITSupportManagedPage.tsx
+Route: Not Routed
+Status: NOT ROUTED
+Purpose: Combined IT support and managed IT services page currently present in codebase but not linked in the application router.
+----------------------------------------
+Main Content:
+- Combined enterprise/small-business positioning
+- Unified technical support plus managed IT messaging
+- Multiple service packages for different business sizes
+- Appears to overlap with TechnicalSupportPage and ManagedITServicesPage
+Shared Components Used:
+- Not active in current routing
+PAGE END
+========================================
+
+========================================
+END OF DOCUMENT
+========================================
+
+DOCUMENT STATISTICS:
+- Total Routed Pages Documented: 24
+- Additional Not Routed Page Documented: 1
+- All pages are grouped in one file with explicit PAGE START and PAGE END markers
+- This document is intended as a single-source reference for content extraction and restructuring
