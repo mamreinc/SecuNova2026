@@ -49,22 +49,22 @@ const AboutPage: React.FC = () => {
 
   const TRUST_ITEMS = [
     {
-      icon: <Lock className="w-6 h-6 text-secunova-blue" />,
+      icon: <Lock className="w-6 h-6 text-white" />,
       title: "NDA-First Engagements",
       desc: "Every discussion starts with a mutual non-disclosure agreement. Your strategy, sensitive data, and technical IP are protected from day zero."
     },
     {
-      icon: <Globe className="w-6 h-6 text-secunova-light" />,
+      icon: <Globe className="w-6 h-6 text-white" />,
       title: "100% Intellectual Property Ownership",
       desc: "You own every line of code, design file, and deployment asset. No recurring license fees to us, no proprietary traps, and zero vendor lock-in."
     },
     {
-      icon: <Building className="w-6 h-6 text-secunova-blue" />,
+      icon: <Building className="w-6 h-6 text-white" />,
       title: "Canadian-Owned & Calgary-Based",
       desc: "A federally registered Canadian consulting and technology firm headquartered in Calgary, Alberta. Senior-led and committed to Canadian business excellence."
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-secunova-light" />,
+      icon: <ShieldCheck className="w-6 h-6 text-white" />,
       title: "Vendor-Independent Guidance",
       desc: "We accept zero commissions or referral kickbacks from software vendors. Our technical recommendations serve your business objectives exclusively."
     },
@@ -387,7 +387,7 @@ const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {TRUST_ITEMS.map((item, idx) => (
               <div key={idx} className="flex items-start gap-5 p-8 rounded-2xl bg-gray-800/80 border border-gray-700/80 hover:border-secunova-blue/50 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-secunova-blue/20 flex items-center justify-center flex-shrink-0 text-secunova-light mt-1">
+                <div className="w-12 h-12 rounded-xl bg-secunova-blue border border-blue-400/30 flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-blue-500/20 mt-1">
                   {item.icon}
                 </div>
                 <div>
