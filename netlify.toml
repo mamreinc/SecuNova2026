@@ -1,5 +1,6 @@
 [build]
-  command = "npm run build"
+  # Installs headless Chrome's runtime libraries, then runs the build (incl. prerendering)
+  command = "bash scripts/build.sh"
   publish = "dist"
   environment = { NODE_VERSION = "18", NETLIFY_NEXT_PLUGIN_SKIP = "true" }
 

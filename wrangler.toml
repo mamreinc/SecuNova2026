@@ -1,0 +1,10 @@
+# ========================================
+# Cloudflare Pages configuration
+# Used when deploying with: wrangler pages deploy
+# (or the Cloudflare dashboard; set the build
+# command to: bash scripts/build.sh and the
+# build output directory to: dist)
+# ========================================
+name = "secunova"
+compatibility_date = "2026-08-04"
+pages_build_output_dir = "dist"

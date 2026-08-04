@@ -1,0 +1,4 @@
+# Cloudflare Pages does not need a catch-all SPA rewrite: it serves the
+# index.html fallback automatically for any unmatched path (this project
+# ships no top-level 404.html). Existing prerendered pages are served as
+# static files, which take priority over these rules.

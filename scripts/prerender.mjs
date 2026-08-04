@@ -94,14 +94,49 @@ const server = createServer(async (req, res) => {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+async function launchBrowser() {
+  const attempts = [
+    {
+      label: 'puppeteer bundled chrome',
+      options: {
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+      },
+    },
+    {
+      label: `PUPPETEER_EXECUTABLE_PATH (${process.env.PUPPETEER_EXECUTABLE_PATH || 'unset'})`,
+      options: {
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+      },
+      condition: () => !!process.env.PUPPETEER_EXECUTABLE_PATH,
+    },
+  ];
+
+  for (const attempt of attempts) {
+    if (attempt.condition && !attempt.condition()) continue;
+    try {
+      const browser = await puppeteer.launch(attempt.options);
+      console.log(`[prerender] launched browser via ${attempt.label}`);
+      return browser;
+    } catch (e) {
+      console.warn(`[prerender] could not launch browser via ${attempt.label}: ${e.message.split('\n')[0]}`);
+    }
+  }
+  return null;
+}
+
 async function main() {
   await new Promise((resolve) => server.listen(PORT, resolve));
   console.log(`[prerender] serving ${DIST} on http://localhost:${PORT}`);
 
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-  });
+  const browser = await launchBrowser();
+  if (!browser) {
+    console.warn('[prerender] no usable browser found. Skipping prerendering (SPA fallback will serve the site).');
+    server.close();
+    return;
+  }
 
   for (const route of ROUTES) {
     const page = await browser.newPage();

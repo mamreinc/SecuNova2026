@@ -48,8 +48,7 @@ const OWN_PRODUCTS: Product[] = [
     name: 'Nova',
     tagline: 'Your computer. Your rules. Your agent.',
     category: 'own',
-    badge: 'Flagship',
-    year: '2024',
+    year: '2026',
     heroLabel: 'macOS AI Agent',
     pitch: 'Nova is a native macOS AI agent that reads your screen, controls your mouse and keyboard, manages your files, and handles your email. One purchase, yours forever.',
     challenge: 'Most AI automation tools are cloud-dependent subscription services that send your commands, keystrokes, and file contents to remote servers. Power users and privacy-conscious professionals are left choosing between convenience and control.',
@@ -75,8 +74,7 @@ const OWN_PRODUCTS: Product[] = [
     name: 'Career OS',
     tagline: 'Your job search, engineered.',
     category: 'own',
-    badge: 'Popular',
-    year: '2024',
+    year: '2026',
     heroLabel: 'Tactical Career Automation',
     pitch: 'Career OS automates the most time-consuming parts of your job search. It tailors your resume to every job posting, scores it for ATS compatibility, and tracks your applications, all running client-side with no accounts required.',
     challenge: 'Job seekers spend hours manually tailoring resumes for each role, only to have them rejected by Applicant Tracking Systems before a human ever reads them.',
@@ -102,7 +100,7 @@ const OWN_PRODUCTS: Product[] = [
     name: 'SecuBoost',
     tagline: 'A leaner, faster Mac. No strings attached.',
     category: 'own',
-    year: '2023',
+    year: '2026',
     heroLabel: 'macOS Performance Suite',
     pitch: 'SecuBoost is a native macOS performance and security suite. It cleans your system, monitors your resources in real time, and protects your sensitive files, all running 100% offline with no telemetry and no subscriptions.',
     challenge: 'Mac cleanup and security tools are almost universally subscription-based, collect usage analytics, or rely on outdated heuristics that flag harmless files and miss real threats.',
@@ -128,7 +126,7 @@ const OWN_PRODUCTS: Product[] = [
     name: 'Journalism Audit Platform',
     tagline: 'Content verification built for media that can\'t afford to be wrong.',
     category: 'own',
-    year: '2024',
+    year: '2026',
     heroLabel: 'Enterprise AI Platform',
     pitch: 'A private AI platform designed for media organizations that need to verify content, detect fabricated sources, and audit editorial integrity without exposing sensitive stories to public AI models.',
     challenge: 'Newsrooms are under pressure to verify content faster while facing unprecedented levels of synthetic media, fabricated quotes, and AI-generated misinformation.',
@@ -154,7 +152,7 @@ const OWN_PRODUCTS: Product[] = [
     name: 'SecuNova Lead Finder',
     tagline: 'Sales intelligence you actually own.',
     category: 'own',
-    year: '2024',
+    year: '2026',
     heroLabel: 'Proprietary Revenue Intelligence Engine',
     pitch: 'A custom-built lead discovery system that moves your entire sales intelligence pipeline into a privately owned environment: eliminating SaaS subscription costs and putting your company data under your control.',
     challenge: 'Sales teams pay thousands of dollars monthly to SaaS platforms that provide lead data they don\'t own, can\'t customize, and can\'t take with them when they cancel.',
@@ -180,7 +178,7 @@ const OWN_PRODUCTS: Product[] = [
     name: 'CanadaQuest',
     tagline: 'The citizenship exam, reimagined.',
     category: 'own',
-    year: '2023',
+    year: '2026',
     heroLabel: 'Civic Intelligence Platform',
     pitch: 'CanadaQuest transforms the standard Canadian citizenship training experience into a modern, AI-powered learning hub. Practice exams, study guides, and real-time feedback, all running offline on your device.',
     challenge: 'The existing citizenship training tools available to Canadian applicants were outdated, poorly designed, and required internet access.',
@@ -424,7 +422,6 @@ const ProductCard: React.FC<{ product: Product; index: number; onOpen: (p: Produ
       {/* Header */}
       <div className="flex items-start justify-between mb-5">
         <div className="flex items-center gap-3">
-          <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">{product.year}</span>
           {product.badge && (
             <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-secunova-blue text-white">
               {product.badge}
