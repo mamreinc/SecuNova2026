@@ -104,7 +104,7 @@ const ProductDetailPage: React.FC = () => {
 
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue text-white pt-28 pb-16 md:pt-36 md:pb-24">
+      <section className="relative bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue text-white pt-36 sm:pt-40 md:pt-48 pb-16 md:pb-24">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -379,61 +379,7 @@ const ProductDetailPage: React.FC = () => {
         </section>
       )}
 
-      {/* Video & Media Showcase Gallery (If additional media exists) */}
-      {galleryMedia.length > 0 && (
-        <section className="py-16 md:py-24 bg-gray-900 text-white">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-semibold text-secunova-light uppercase tracking-wider block mb-2">In Production</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Live Video & Media Demos
-              </h2>
-              <p className="text-blue-200 mt-4">
-                Watch real execution and user experience demonstrations for {product.name}.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {galleryMedia.map((slot, i) => (
-                <div key={i} className="bg-black rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
-                  {slot.type === 'video' && slot.src ? (
-                    <div className="relative aspect-video w-full">
-                      <video
-                        src={slot.src}
-                        autoPlay
-                        muted
-                        loop
-                        controls
-                        playsInline
-                        preload="auto"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ) : slot.src ? (
-                    <div className="relative aspect-video w-full">
-                      <img
-                        src={slot.src}
-                        alt={slot.caption || `${product.name} screenshot`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="aspect-video bg-gray-800 flex items-center justify-center p-6 text-center text-gray-400">
-                      <Play className="h-12 w-12 text-secunova-blue mb-2" />
-                      <p className="text-sm">{slot.caption}</p>
-                    </div>
-                  )}
-                  {slot.caption && (
-                    <div className="p-4 bg-gray-950 text-xs text-gray-300 font-medium border-t border-gray-800">
-                      {slot.caption}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Outcome & Impact Section */}
       <section className="py-16 md:py-24 bg-white border-b border-gray-200">

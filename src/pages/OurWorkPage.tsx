@@ -9,6 +9,7 @@ import {
   Briefcase, Target, Code
 } from 'lucide-react';
 import { getDownloadCount, incrementDownloadCount } from '../utils/downloadTracker';
+import CtaSection from '../components/CtaSection';
 
 /* ─── Product data pulled from secunova.ca source ─── */
 

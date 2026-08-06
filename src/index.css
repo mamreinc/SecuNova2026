@@ -410,7 +410,7 @@ img[loading="lazy"].loaded {
      call-to-action across the site.
      ======================================== */
   .btn {
-    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 text-sm min-h-[44px] min-w-[44px];
+    @apply inline-flex items-center justify-center font-semibold rounded-xl px-6 py-3.5 transition-all duration-300 text-sm min-h-[44px] min-w-[44px] cursor-pointer;
   }
 
   .btn-gradient {
