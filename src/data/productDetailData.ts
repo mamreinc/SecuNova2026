@@ -168,7 +168,7 @@ export const PRODUCT_DETAIL_DATA: Record<string, ProductDetailData> = {
     outcome: "SecuBoost users get a measurably faster Mac without handing their usage data to a third party or paying monthly fees for features that should have been free.",
     outcomeStats: [
       { value: "0", label: "Telemetry or Tracking" },
-      { value: "1x", label: "Payment. No Subscription." },
+      { value: "100%", label: "Free (No Subscriptions)" },
       { value: "100%", label: "Offline Operation" },
     ],
     features: [
