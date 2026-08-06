@@ -4,9 +4,10 @@ import { Helmet } from 'react-helmet-async';
 import {
   ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Shield, Cpu, Lock,
   Zap, Globe, Settings, FileText, Search, TrendingUp, Layout, BarChart2,
-  Database, BookOpen, Star, Users, Play, Code, CheckCircle
+  Database, BookOpen, Star, Users, Play, Code, CheckCircle, Download, ArrowDown, ShieldCheck, Sparkles
 } from 'lucide-react';
 import { PRODUCT_DETAIL_DATA, ProductMediaSlot } from '../data/productDetailData';
+import { getDownloadCount, incrementDownloadCount } from '../utils/downloadTracker';
 import CtaSection from '../components/CtaSection';
 
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -33,6 +34,34 @@ const ProductDetailPage: React.FC = () => {
   const navigate = useNavigate();
 
   const product = productId ? PRODUCT_DETAIL_DATA[productId] : undefined;
+
+  const [downloadCountNum, setDownloadCountNum] = React.useState<number>(() =>
+    productId ? getDownloadCount(productId) : 100
+  );
+
+  React.useEffect(() => {
+    if (!productId) return;
+    setDownloadCountNum(getDownloadCount(productId));
+
+    const handleUpdate = (e: Event) => {
+      const customEvt = e as CustomEvent<{ productId: string; count: number }>;
+      if (customEvt.detail?.productId === productId) {
+        setDownloadCountNum(customEvt.detail.count);
+      }
+    };
+
+    window.addEventListener('secunova_download_updated', handleUpdate);
+    return () => {
+      window.removeEventListener('secunova_download_updated', handleUpdate);
+    };
+  }, [productId]);
+
+  const handleDownloadClick = () => {
+    if (productId) {
+      const updated = incrementDownloadCount(productId);
+      setDownloadCountNum(updated);
+    }
+  };
 
   if (!product) {
     return (
@@ -72,21 +101,10 @@ const ProductDetailPage: React.FC = () => {
         <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
       </Helmet>
 
-      {/* Top Nav Bar / Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200 pt-28 pb-4">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <Link
-            to="/about/our-work"
-            className="inline-flex items-center text-sm font-semibold text-secunova-blue hover:text-secunova-dark transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Our Work & Products
-          </Link>
-        </div>
-      </div>
+
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue text-white py-16 md:py-24">
+      <section className="relative bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue text-white pt-28 pb-16 md:pt-36 md:pb-24">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -126,8 +144,44 @@ const ProductDetailPage: React.FC = () => {
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-wrap gap-4 pt-6">
-                {product.externalLink ? (
+              <div className="flex flex-wrap items-center gap-4 pt-6">
+                {product.downloadUrl ? (
+                  <div className="flex flex-col items-start gap-3">
+                    <a
+                      href={product.downloadUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleDownloadClick}
+                      className="group relative inline-flex items-center gap-3.5 px-7 py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 text-white font-bold text-base shadow-xl shadow-teal-500/25 hover:shadow-teal-500/40 hover:-translate-y-0.5 transition-all duration-300 border border-white/20 overflow-hidden"
+                    >
+                      <span className="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+                      <div className="relative p-2 rounded-lg bg-white/20 backdrop-blur-md group-hover:scale-110 transition-transform duration-300">
+                        <Download className="h-5 w-5 text-white" />
+                      </div>
+                      <div className="relative text-left">
+                        <span className="block text-base font-extrabold leading-tight tracking-wide">
+                          {product.downloadLabel || `Download ${product.name} for macOS`}
+                        </span>
+                        <span className="block text-[11px] font-medium text-emerald-100/90 mt-0.5">
+                          {product.version ? `${product.version} ` : ''}{product.fileSize ? `• ${product.fileSize} ` : ''}• Direct Download (Google Drive)
+                        </span>
+                      </div>
+                      <ArrowDown className="relative h-4 w-4 ml-1 opacity-80 group-hover:translate-y-1 transition-transform" />
+                    </a>
+
+                    {/* Download count under the button */}
+                    {product.downloadCount && (
+                      <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs text-blue-100 font-medium">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                        </span>
+                        <Download className="h-3.5 w-3.5 text-emerald-400" />
+                        <span>Over <strong className="text-white font-bold">{downloadCountNum.toLocaleString()}+</strong> Downloads</span>
+                      </div>
+                    )}
+                  </div>
+                ) : product.externalLink ? (
                   <a
                     href={product.externalLink}
                     target="_blank"
@@ -143,9 +197,6 @@ const ProductDetailPage: React.FC = () => {
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 )}
-                <Link to="/contact" className="btn btn-outline-light inline-flex items-center gap-2">
-                  <span>Inquire About Technical Specs</span>
-                </Link>
               </div>
             </div>
 
@@ -157,9 +208,12 @@ const ProductDetailPage: React.FC = () => {
                     <div className="relative aspect-video w-full">
                       <video
                         src={heroMedia.src}
+                        autoPlay
+                        muted
+                        loop
                         controls
                         playsInline
-                        preload="metadata"
+                        preload="auto"
                         className="w-full h-full object-cover rounded-2xl"
                       />
                     </div>
@@ -238,6 +292,93 @@ const ProductDetailPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Dedicated App Download Card Showcase Section */}
+      {product.downloadUrl && (
+        <section className="py-16 md:py-24 bg-gradient-to-b from-gray-950 via-secunova-dark to-gray-950 text-white relative overflow-hidden border-y border-white/10">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div className="container mx-auto px-4 max-w-4xl relative z-10">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/15 rounded-3xl p-8 md:p-12 shadow-2xl text-center flex flex-col items-center">
+              
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-6">
+                <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+                <span>Official Direct Download • macOS Native</span>
+              </div>
+
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+                Get {product.name} Today
+              </h2>
+              <p className="text-blue-100 text-base md:text-lg max-w-2xl leading-relaxed mb-8">
+                Download the native macOS performance and security suite directly. 100% offline, zero telemetry, and zero subscriptions.
+              </p>
+
+              {/* Main Download CTA */}
+              <div className="flex flex-col items-center gap-4">
+                <a
+                  href={product.downloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleDownloadClick}
+                  className="group relative inline-flex items-center gap-4 px-9 py-5 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 text-white font-extrabold text-lg shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-1 transition-all duration-300 border border-white/20 overflow-hidden"
+                >
+                  <div className="p-2.5 rounded-xl bg-white/20 backdrop-blur-md group-hover:scale-110 transition-transform duration-300">
+                    <Download className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <span className="block leading-tight font-extrabold">{product.downloadLabel || `Download ${product.name}`}</span>
+                    <span className="block text-xs font-normal text-emerald-100/90 mt-0.5">
+                      Direct Google Drive Download {product.fileSize ? `(${product.fileSize})` : ''}
+                    </span>
+                  </div>
+                  <ArrowDown className="h-5 w-5 ml-2 opacity-90 group-hover:translate-y-1 transition-transform" />
+                </a>
+
+                {/* Download count under button */}
+                {product.downloadCount && (
+                  <div className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/10 border border-white/15 text-sm text-blue-100 font-medium mt-1">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                    </span>
+                    <Download className="h-4 w-4 text-emerald-400" />
+                    <span>Total Downloads: <strong className="text-white font-black text-base">{downloadCountNum.toLocaleString()}</strong></span>
+                  </div>
+                )}
+              </div>
+
+              {/* Trust & Spec Pills */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10 w-full max-w-3xl border-t border-white/10 pt-8 text-xs text-blue-100">
+                <div className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <ShieldCheck className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Zero Telemetry</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <Lock className="h-4 w-4 text-cyan-400 shrink-0" />
+                  <span>AES-256 Encryption</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <Cpu className="h-4 w-4 text-secunova-light shrink-0" />
+                  <span>Apple Silicon & Intel</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <CheckCircle className="h-4 w-4 text-teal-400 shrink-0" />
+                  <span>macOS 11.0+ Compatible</span>
+                </div>
+              </div>
+
+              {/* Software Disclaimer Note */}
+              <div className="mt-8 pt-6 border-t border-white/10 text-center max-w-2xl">
+                <p className="text-[11px] text-blue-200/70 leading-relaxed font-normal">
+                  <strong className="text-blue-100 font-semibold">Disclaimer & Software Notice:</strong> SecuBoost is provided "as is" without warranties of any kind. All system cleaning and AES-256 vault encryption operations execute 100% locally on your device. SecuNova does not collect, transmit, or store user data or encryption keys, and assumes no liability for downloads or redistribution obtained from third-party sources outside our official website.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Video & Media Showcase Gallery (If additional media exists) */}
       {galleryMedia.length > 0 && (
         <section className="py-16 md:py-24 bg-gray-900 text-white">
@@ -259,9 +400,12 @@ const ProductDetailPage: React.FC = () => {
                     <div className="relative aspect-video w-full">
                       <video
                         src={slot.src}
+                        autoPlay
+                        muted
+                        loop
                         controls
                         playsInline
-                        preload="metadata"
+                        preload="auto"
                         className="w-full h-full object-cover"
                       />
                     </div>

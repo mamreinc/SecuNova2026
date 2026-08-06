@@ -35,6 +35,11 @@ export interface ProductDetailData {
   techStack: string[];
   mediaSlots: ProductMediaSlot[];
   externalLink?: string;
+  downloadUrl?: string;
+  downloadCount?: string;
+  downloadLabel?: string;
+  version?: string;
+  fileSize?: string;
   testimonial?: { quote: string; name: string; role: string };
 }
 
@@ -155,7 +160,7 @@ export const PRODUCT_DETAIL_DATA: Record<string, ProductDetailData> = {
     name: "SecuBoost",
     tagline: "A leaner, faster Mac. No strings attached.",
     category: "own",
-    year: "2023",
+    year: "2026",
     heroLabel: "macOS Performance Suite",
     pitch: "SecuBoost is a native macOS performance and security suite. It cleans your system, monitors your resources in real time, and protects your sensitive files, all running 100% offline with no telemetry and no subscriptions.",
     challenge: "Mac optimization software is dominated by subscription-heavy, bloated apps that run background daemons and phone home with user data. Users want clean, native utilities that do their job and stay quiet.",
@@ -199,6 +204,11 @@ export const PRODUCT_DETAIL_DATA: Record<string, ProductDetailData> = {
       },
     ],
     techStack: ["Swift", "SwiftUI", "CryptoKit", "DiskArbitration", "IOKit"],
+    downloadUrl: "https://drive.google.com/file/d/1rkkI6cI-Djd3Ti5nvfkhERgyLdQpRW9-/view?usp=sharing",
+    downloadCount: "100+",
+    downloadLabel: "Download SecuBoost for macOS",
+    version: "v1.0.0 Pro",
+    fileSize: "14.2 MB",
     mediaSlots: [
       { type: "video", src: "/SecuBoost.mp4", caption: "SecuBoost: product overview and system cleaner walkthrough", aspect: "aspect-video" },
     ],

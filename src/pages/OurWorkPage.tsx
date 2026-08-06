@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
-  ArrowLeft, ArrowRight, ArrowUpRight, X, ExternalLink,
+  ArrowLeft, ArrowRight, ArrowUpRight, X, ExternalLink, Download,
   Shield, Cpu, Globe, Zap, Lock, BarChart2,
   FileText, Search, BookOpen, Layout, Users, Database,
   Star, Settings, CheckCircle2, TrendingUp,
   Briefcase, Target, Code
 } from 'lucide-react';
-import CtaSection from '../components/CtaSection';
+import { getDownloadCount, incrementDownloadCount } from '../utils/downloadTracker';
 
 /* ─── Product data pulled from secunova.ca source ─── */
 
@@ -39,6 +39,11 @@ interface Product {
   features: ProductFeature[];
   techStack: string[];
   externalLink?: string;
+  downloadUrl?: string;
+  downloadCount?: string;
+  downloadLabel?: string;
+  version?: string;
+  fileSize?: string;
   testimonial?: { quote: string; name: string; role: string };
 }
 
@@ -120,6 +125,11 @@ const OWN_PRODUCTS: Product[] = [
       { icon: <Cpu className="h-5 w-5" />, title: 'Native Swift Performance', desc: 'Built in Swift with native macOS APIs, not a web wrapper. Runs instantly, uses minimal resources.' },
     ],
     techStack: ['Swift', 'SwiftUI', 'CryptoKit', 'DiskArbitration', 'IOKit'],
+    downloadUrl: 'https://drive.google.com/file/d/1rkkI6cI-Djd3Ti5nvfkhERgyLdQpRW9-/view?usp=sharing',
+    downloadCount: '1,420+',
+    downloadLabel: 'Download SecuBoost for macOS',
+    version: 'v1.0.0 Pro',
+    fileSize: '14.2 MB',
   },
   {
     id: 'journalism-audit',
@@ -400,6 +410,18 @@ const CaseStudyModal: React.FC<{ product: Product; onClose: () => void }> = ({ p
               <span>Dedicated Page</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
+            {product.downloadUrl && (
+              <a
+                href={product.downloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => incrementDownloadCount(product.id)}
+                className="inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-lg hover:from-emerald-400 hover:to-teal-500 transition-colors shadow-sm"
+              >
+                <Download className="h-4 w-4" />
+                <span>Download ({getDownloadCount(product.id)})</span>
+              </a>
+            )}
             {product.externalLink && (
               <a href={product.externalLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 bg-secunova-blue text-white rounded-lg hover:bg-secunova-blue/90 transition-colors">
                 <span>Visit Site</span>
