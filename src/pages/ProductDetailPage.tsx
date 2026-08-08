@@ -1,12 +1,29 @@
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
-  ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Shield, Cpu, Lock,
+  ArrowRight, ArrowUpRight, CheckCircle2, Shield, Cpu, Lock,
   Zap, Globe, Settings, FileText, Search, TrendingUp, Layout, BarChart2,
   Database, BookOpen, Star, Users, Play, Code, CheckCircle, Download, ArrowDown, ShieldCheck, Sparkles
 } from 'lucide-react';
-import { PRODUCT_DETAIL_DATA, ProductMediaSlot } from '../data/productDetailData';
+import { PRODUCT_DETAIL_DATA } from '../data/productDetailData';
 import { getDownloadCount, incrementDownloadCount } from '../utils/downloadTracker';
 import CtaSection from '../components/CtaSection';
 
@@ -31,7 +48,6 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 
 const ProductDetailPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
-  const navigate = useNavigate();
 
   const product = productId ? PRODUCT_DETAIL_DATA[productId] : undefined;
 
@@ -68,15 +84,11 @@ const ProductDetailPage: React.FC = () => {
       <div className="min-h-screen bg-white flex flex-col items-center justify-center p-8 text-center pt-32">
         <h1 className="text-3xl font-bold text-secunova-dark mb-4">Project Not Found</h1>
         <p className="text-gray-600 mb-6">The requested product or case study could not be found.</p>
-        <Link to="/about/our-work" className="btn btn-gradient">
-          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Our Work
-        </Link>
       </div>
     );
   }
 
   const heroMedia = product.mediaSlots[0];
-  const galleryMedia = product.mediaSlots.slice(1);
 
   return (
     <div className="min-h-screen bg-white">
@@ -121,7 +133,7 @@ const ProductDetailPage: React.FC = () => {
                 )}
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+              <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
                 {product.name}
               </h1>
 

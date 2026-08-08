@@ -1,7 +1,23 @@
-import React from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ClipboardCheck, Target, CheckCircle, Users, BarChart, Shield, Zap, Clock, AlertTriangle, TrendingUp, Briefcase, FileText, Network, Star, Phone, User, MapPin, Award, Code, Sparkles, Quote, BadgeCheck, Globe, Layers, Cpu, CheckCircle2, PhoneCall } from 'lucide-react';
+import { ArrowRight, ClipboardCheck, Target, CheckCircle, Users, BarChart, Shield, Clock, AlertTriangle, TrendingUp, FileText, Network, Star, Phone, User } from 'lucide-react';
 import CtaSection from '../../components/CtaSection';
 
 const DigitalProjectManagementPage = () => {
@@ -143,7 +159,7 @@ const DigitalProjectManagementPage = () => {
                 Digital Project Management
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
                 Your Projects, Delivered.
                 <span className="block text-secunova-light">On Time. On Budget. Zero Surprises.</span>
               </h1>
@@ -330,10 +346,10 @@ const DigitalProjectManagementPage = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-blue-50 text-secunova-blue border border-blue-100 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
                 <User className="h-4 w-4" />
-                <span>Direct Founder Leadership</span>
+                <span>Direct Senior Leadership</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark tracking-tight mb-4">
-                Meet Your Principal Project Manager
+                SecuNova Principal Project Management
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
                 Senior expertise bridging complex IT infrastructure and high-performance digital delivery with complete transparency and accountability.
@@ -342,56 +358,26 @@ const DigitalProjectManagementPage = () => {
 
             {/* Profile Card Container */}
             <div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-                
-                {/* Image Column */}
-                <div className="lg:col-span-5">
-                  <div className="relative mx-auto max-w-md lg:max-w-none">
-                    <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md aspect-[4/5] bg-gray-100">
-                      <img
-                        src="/img/Founder.jpg"
-                        alt="Maisen Alamrein - Principal IT Solutions & Digital Project Manager"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    {/* Stats Strip under photo */}
-                    <div className="grid grid-cols-3 gap-3 mt-4">
-                      <div className="bg-gray-50 border border-gray-200/80 rounded-xl p-3 text-center">
-                        <div className="text-xl font-bold text-secunova-blue">10+ Yrs</div>
-                        <div className="text-xs text-gray-500 font-medium mt-0.5">Global Experience</div>
-                      </div>
-                      <div className="bg-gray-50 border border-gray-200/80 rounded-xl p-3 text-center">
-                        <div className="text-xl font-bold text-secunova-blue">95%+</div>
-                        <div className="text-xs text-gray-500 font-medium mt-0.5">On-Time Delivery</div>
-                      </div>
-                      <div className="bg-gray-50 border border-gray-200/80 rounded-xl p-3 text-center">
-                        <div className="text-xl font-bold text-secunova-blue">100%</div>
-                        <div className="text-xs text-gray-500 font-medium mt-0.5">Scope Compliance</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+              <div className="space-y-10">
                 {/* Content Column */}
-                <div className="lg:col-span-7 space-y-6">
+                <div className="space-y-6">
                   <div>
                     <div className="inline-block bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-md mb-2">
                       Calgary, Alberta • Principal Consultant
                     </div>
-                    <h3 className="text-3xl font-bold text-secunova-dark">Maisen Alamrein</h3>
+                    <h3 className="text-3xl font-bold text-secunova-dark">SecuNova Consulting</h3>
                     <p className="text-secunova-blue font-semibold mt-1 text-base">
                       Principal IT Solutions & Digital Project Manager
                     </p>
                   </div>
 
                   <p className="text-gray-600 text-base leading-relaxed">
-                    Based in Calgary, I provide senior-level project oversight for organizations seeking reliable digital execution. Every SecuNova engagement is directed personally by me, eliminating junior account handoffs and ensuring direct accountability from kickoff to post-launch support.
+                    Based in Calgary, SecuNova provides senior-level project oversight for organizations seeking reliable digital execution. Every SecuNova engagement is directed by our senior team, eliminating junior account handoffs and ensuring direct accountability from kickoff to post-launch support.
                   </p>
 
                   <div className="bg-blue-50/60 border-l-4 border-secunova-blue p-5 rounded-r-xl">
                     <p className="text-gray-700 text-sm md:text-base italic leading-relaxed">
-                      &ldquo;My philosophy is straightforward: deliver resilient, scalable technology that clients actually own, control, and understand. We eliminate budget overruns and hidden technical debt.&rdquo;
+                      &ldquo;Our philosophy is straightforward: deliver resilient, scalable technology that clients actually own, control, and understand. We eliminate budget overruns and hidden technical debt.&rdquo;
                     </p>
                   </div>
 
@@ -415,6 +401,22 @@ const DigitalProjectManagementPage = () => {
                           </div>
                         </div>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Delivery Track Record */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="bg-gray-50 border border-gray-200/80 rounded-xl p-3 text-center">
+                      <div className="text-xl font-bold text-secunova-blue">10+ Yrs</div>
+                      <div className="text-xs text-gray-500 font-medium mt-0.5">Global Experience</div>
+                    </div>
+                    <div className="bg-gray-50 border border-gray-200/80 rounded-xl p-3 text-center">
+                      <div className="text-xl font-bold text-secunova-blue">95%+</div>
+                      <div className="text-xs text-gray-500 font-medium mt-0.5">On-Time Delivery</div>
+                    </div>
+                    <div className="bg-gray-50 border border-gray-200/80 rounded-xl p-3 text-center">
+                      <div className="text-xl font-bold text-secunova-blue">100%</div>
+                      <div className="text-xs text-gray-500 font-medium mt-0.5">Scope Compliance</div>
                     </div>
                   </div>
 

@@ -25,7 +25,7 @@
     "build": "tsc && vite build && node scripts/prerender.mjs",
     "analyze": "vite build --mode analyze",
     "start": "NODE_ENV=production node server.js",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {

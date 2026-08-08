@@ -1,7 +1,23 @@
-import React from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { HomeIcon, AlertCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 const NotFoundPage = () => {
   return (
@@ -34,13 +50,6 @@ const NotFoundPage = () => {
               <p className="text-gray-600 text-lg mb-8">
                 We couldn't find what you were looking for, but we're here to help you get back on track.
               </p>
-              <Link
-                to="/"
-                className="btn btn-gradient btn-lg"
-              >
-                <HomeIcon className="h-5 w-5 mr-2" />
-                Back to Home
-              </Link>
             </div>
             
             <div className="border-t border-gray-200 pt-8">

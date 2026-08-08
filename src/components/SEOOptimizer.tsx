@@ -1,22 +1,20 @@
-/*
-========================================
-SEO OPTIMIZER COMPONENT
-Custom Built by SecuNova Inc.
-========================================
-
-Advanced SEO optimization utilities and components.
-
-Features:
-- Dynamic meta tag generation
-- Keyword optimization
-- Content analysis
-- Performance monitoring
-- Schema markup generation
-
-Built from scratch for maximum search visibility.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -26,7 +24,7 @@ interface SEOOptimizerProps {
   keywords: string;
   canonicalUrl: string;
   ogImage?: string;
-  structuredData?: any;
+  structuredData?: object;
   breadcrumbs?: Array<{ name: string; url: string }>;
   noIndex?: boolean;
   children?: React.ReactNode;
@@ -43,7 +41,7 @@ interface SEOOptimizerProps {
 /**
  * Helper function to generate BreadcrumbList schema
  */
-export const generateBreadcrumbsSchema = (items: Array<{ name: string; url: string }>) => {
+const generateBreadcrumbsSchema = (items: Array<{ name: string; url: string }>) => {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -69,17 +67,13 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   ogType = "website",
   article
 }) => {
-  // Ensure title is optimized for search engines
-  const optimizedTitle = title.length > 60 ? title.substring(0, 57) + '...' : title;
-  const optimizedDescription = description.length > 160 ? description.substring(0, 157) + '...' : description;
-
   return (
     <>
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>{optimizedTitle}</title>
-        <meta name="title" content={optimizedTitle} />
-        <meta name="description" content={optimizedDescription} />
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <link rel="canonical" href={canonicalUrl} />
         
@@ -90,12 +84,12 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         {/* Open Graph */}
         <meta property="og:type" content={ogType} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={optimizedTitle} />
-        <meta property="og:description" content={optimizedDescription} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content={optimizedTitle} />
+        <meta property="og:image:alt" content={title} />
         <meta property="og:site_name" content="SecuNova Consulting" />
         <meta property="og:locale" content="en_CA" />
         <meta property="og:locale:alternate" content="fr_CA" />
@@ -116,10 +110,10 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={canonicalUrl} />
-        <meta name="twitter:title" content={optimizedTitle} />
-        <meta name="twitter:description" content={optimizedDescription} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:image:alt" content={optimizedTitle} />
+        <meta name="twitter:image:alt" content={title} />
         <meta name="twitter:site" content="@SecuNova" />
         <meta name="twitter:creator" content="@SecuNova" />
         
@@ -141,16 +135,9 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
 
         {/* Security Headers */}
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta http-equiv="X-Frame-Options" content="DENY" />
         <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-
-        {/* Performance & Caching */}
-        <meta http-equiv="Cache-Control" content="public, max-age=31536000" />
-
-        {/* Verification Tags */}
-        <meta name="google-site-verification" content="your-google-verification-code" />
-        <meta name="msvalidate.01" content="your-bing-verification-code" />
 
         {/* Preconnect to External Domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -159,7 +146,6 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
 
         {/* Alternate Languages */}
         <link rel="alternate" hrefLang="en" href={canonicalUrl} />
-        <link rel="alternate" hrefLang="fr" href={canonicalUrl.replace('secunovainc.com', 'secunovainc.com/fr')} />
         <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
         
         {/* Structured Data */}

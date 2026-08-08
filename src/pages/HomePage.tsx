@@ -1,14 +1,20 @@
-/*
-========================================
-HOMEPAGE - PROFESSIONAL & MARKET-READY
-Custom Built by SecuNova Inc.
-========================================
-
-Enhanced homepage with strong value proposition, social proof,
-and results-driven messaging for maximum market impact.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -39,12 +45,6 @@ const HERO_WORK = [
     tagline: 'macOS Performance Suite',
     video: '/SecuBoost.mp4',
     year: '2023',
-  },
-  {
-    name: 'MoonYYC',
-    tagline: 'The settlement guide Calgary immigrants actually needed.',
-    video: '/MoonYYC.mp4',
-    year: '2024',
   },
 ];
 
@@ -365,7 +365,7 @@ const HomePage = () => {
                   <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-white">Strategy + Engineering, one firm</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-6xl xl:text-[4.75rem] font-bold text-white leading-[0.98] tracking-tight hero-title-optimized">
+                <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-white leading-[1.05] tracking-tight hero-title-optimized">
                   <span className="hero-line">We navigate the change.</span>
                   <span className="hero-line text-white">You capture the advantage.</span>
                 </h1>

@@ -1,4 +1,20 @@
-import React from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 
 export interface OutcomeStat {
   value: string;
@@ -365,179 +381,5 @@ export const PRODUCT_DETAIL_DATA: Record<string, ProductDetailData> = {
     ],
     techStack: ["Next.js", "TypeScript", "PWA / Service Worker", "IndexedDB", "Tailwind CSS"],
     mediaSlots: [],
-  },
-  moonyyc: {
-    id: "moonyyc",
-    name: "MoonYYC",
-    tagline: "The settlement guide Calgary immigrants actually needed.",
-    category: "client",
-    year: "2024",
-    heroLabel: "Client Project · Civic Tech",
-    externalLink: "https://moonyyc.ca",
-    pitch: "MoonYYC is a comprehensive, AI-powered digital guide for newcomers, immigrants, and international students arriving in Calgary, built and delivered end-to-end as a complete managed package.",
-    challenge: "Newcomers to Calgary were navigating an overwhelming patchwork of government websites, outdated PDFs, and language barriers just to access basic settlement information. There was no single, reliable, community-trusted resource in their language.",
-    solution: "We designed and built MoonYYC as a complete package: full content architecture, an AI-powered Q&A assistant, multilingual support across four languages, and a fast static delivery setup that works on any connection speed. The client owns everything.",
-    outcome: "MoonYYC became Calgary's most referenced digital settlement guide for multilingual newcomers within its first year, and is actively maintained by the client's team using the handoff documentation we delivered.",
-    outcomeStats: [
-      { value: "95+", label: "Lighthouse Score" },
-      { value: "4", label: "Languages Supported" },
-      { value: "#1", label: "Digital Settlement Guide" },
-    ],
-    features: [
-      {
-        iconName: "Globe",
-        title: "Multilingual Content",
-        desc: "Arabic, English, French, and Somali. Each language version is a first-class experience, not a translation afterthought.",
-      },
-      {
-        iconName: "Zap",
-        title: "AI-Powered Q&A Assistant",
-        desc: "A private AI assistant answers settlement questions in natural language, drawing from the site's curated knowledge base.",
-      },
-      {
-        iconName: "Layout",
-        title: "Step-by-Step Settlement Guides",
-        desc: "Structured checklists covering housing, healthcare, education, employment, and government services.",
-      },
-      {
-        iconName: "Shield",
-        title: "Emergency Contact Directory",
-        desc: "Verified emergency contacts and community resources, organized by situation and location.",
-      },
-      {
-        iconName: "TrendingUp",
-        title: "Performance-First Build",
-        desc: "Static delivery with Cloudflare CDN ensures the site loads fast even on slow mobile connections.",
-      },
-      {
-        iconName: "Users",
-        title: "Community Resources Hub",
-        desc: "A curated directory of Calgary-based community organizations, verified and maintained by the client.",
-      },
-    ],
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini API", "Cloudflare", "i18n"],
-    mediaSlots: [
-      { type: "video", src: "/MoonYYC.mp4", caption: "MoonYYC: complete platform video walkthrough", aspect: "aspect-video" },
-    ],
-    testimonial: {
-      quote: "We needed something that our community could actually use in their language on their phone without needing to know where to look. MoonYYC made that happen.",
-      name: "MoonYYC Team",
-      role: "Client",
-    },
-  },
-  yycecho: {
-    id: "yycecho",
-    name: "YYC Echo",
-    tagline: "Local stories. Your platform. Your data.",
-    category: "client",
-    year: "2023",
-    heroLabel: "Client Project · Media",
-    externalLink: "https://yycecho.ca",
-    pitch: "YYC Echo is a self-hosted, minimalist podcast platform built for a Calgary media team that was done paying platform fees and ready to own their audience data completely.",
-    challenge: "The YYC Echo team was hosted on a major podcast platform that charged growing monthly fees, gave them no control over design, and offered zero access to their own listener data. They were renting their audience.",
-    solution: "We moved them to a fully self-hosted setup: a custom-built player, RSS feed management, listener analytics piped to their own dashboard, and a clean editorial interface. Everything runs under their domain and is hosted on their own infrastructure.",
-    outcome: "YYC Echo now owns every byte of their content and every data point about their audience. Platform fees dropped to zero. The design is entirely their own.",
-    outcomeStats: [
-      { value: "100%", label: "Data Ownership" },
-      { value: "0", label: "Platform Fees" },
-      { value: "Full", label: "Design Control" },
-    ],
-    features: [
-      {
-        iconName: "Layout",
-        title: "Custom Audio Player",
-        desc: "A lightweight, accessible audio player designed to match the brand and work on any device.",
-      },
-      {
-        iconName: "Database",
-        title: "Self-Hosted RSS Management",
-        desc: "Generate and manage your own RSS feed. Stay compatible with Apple Podcasts, Spotify, and every major directory.",
-      },
-      {
-        iconName: "BarChart2",
-        title: "First-Party Analytics",
-        desc: "Listener data flows directly to a private dashboard with zero third-party analytics platforms in the chain.",
-      },
-      {
-        iconName: "Globe",
-        title: "CDN-Optimized Delivery",
-        desc: "Audio files served from Cloudflare R2 for fast delivery worldwide with no bandwidth surprises.",
-      },
-      {
-        iconName: "Shield",
-        title: "100% Code Ownership",
-        desc: "Every file, deployment config, and credential was fully transferred to the client.",
-      },
-      {
-        iconName: "FileText",
-        title: "Editorial CMS",
-        desc: "A simple CMS interface for publishing new episodes, writing show notes, and managing the archive.",
-      },
-    ],
-    techStack: ["Next.js", "TypeScript", "Cloudflare R2", "RSS", "Tailwind CSS"],
-    mediaSlots: [
-      { type: "image", src: "/yycecho.png", caption: "YYC Echo: platform homepage & player", aspect: "aspect-video" },
-      { type: "video", src: "/hero_home.mp4", caption: "Podcast playback and distribution showcase", aspect: "aspect-video" },
-    ],
-  },
-  abarabic: {
-    id: "abarabic",
-    name: "AB Arabic",
-    tagline: "A province's worth of information, finally in Arabic.",
-    category: "client",
-    year: "2023",
-    heroLabel: "Client Project · Community Portal",
-    externalLink: "https://abarabic.ca",
-    pitch: "AB Arabic is the go-to government and civic information portal in Arabic for Alberta residents, covering immigration, education, health, and business in a fast, accessible, RTL-native design.",
-    challenge: "Alberta's Arabic-speaking community had no reliable, accurate, native-language portal for government services and civic information. They were relying on machine-translated pages full of errors, or navigating English-only government sites with no language support.",
-    solution: "We built AB Arabic as a content-first platform with a clean editorial architecture, fast static delivery, and a fully RTL layout that treated Arabic as a primary language, not an afterthought. The content structure was designed around how Arabic speakers actually search for and consume civic information.",
-    outcome: "AB Arabic became the go-to reference for Alberta's Arabic-speaking community and is actively used by settlement organizations across the province as a trusted resource for their clients.",
-    metrics: [
-      { value: "RTL", label: "Native Arabic Layout" },
-      { value: "#1", label: "Arabic Guide in Alberta" },
-      { value: "100%", label: "Handed Over to Client" },
-    ],
-    features: [
-      {
-        iconName: "Globe",
-        title: "RTL-First Design",
-        desc: "The entire layout, typography, and navigation was designed for Arabic as a primary language, not retrofitted.",
-      },
-      {
-        iconName: "BookOpen",
-        title: "Government Services Guide",
-        desc: "Comprehensive, verified guides to Alberta government services in clear, accurate Arabic.",
-      },
-      {
-        iconName: "Users",
-        title: "Community Resources Directory",
-        desc: "A curated directory of Arabic-speaking community organizations and support services across Alberta.",
-      },
-      {
-        iconName: "TrendingUp",
-        title: "Performance-First Build",
-        desc: "95+ Lighthouse score. Optimized for mobile users on slower connections.",
-      },
-      {
-        iconName: "Search",
-        title: "Topic-Organized Architecture",
-        desc: "Information organized by topic including immigration, health, education, and business, rather than government department.",
-      },
-      {
-        iconName: "Shield",
-        title: "Full Ownership Delivered",
-        desc: "Complete codebase, hosting access, and content CMS handed to the client at project close.",
-      },
-    ],
-    techStack: ["Next.js", "TypeScript", "i18n / RTL", "Cloudflare", "Tailwind CSS"],
-    mediaSlots: [
-      { type: "image", src: "/abarabic.png", caption: "AB Arabic: homepage layout & services directory", aspect: "aspect-video" },
-      { type: "video", src: "/hero-video.mp4", caption: "Multilingual platform experience video", aspect: "aspect-video" },
-    ],
-    testimonial: {
-      quote: "Our clients use AB Arabic every day. It became the first thing we recommend to every newcomer we work with.",
-      name: "AB Arabic Partner Organization",
-      role: "Community Partner",
-    },
   },
 };

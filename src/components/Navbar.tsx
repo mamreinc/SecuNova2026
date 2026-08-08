@@ -1,40 +1,47 @@
-/*
-========================================
-NAVIGATION COMPONENT
-Custom Built by SecuNova Inc.
-========================================
-
-Main navigation system with responsive design.
-
-Features:
-- Top bar with contact information
-- Main navigation with dropdowns
-- Mobile-responsive menu
-- Security-enhanced input handling
-- Scroll-based styling changes
-
-Built from scratch for optimal user experience.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, LifeBuoy, Users, PhoneCall, Gift, Globe, TrendingUp, DollarSign, UserPlus, HelpCircle, Code, Palette, Smartphone, Camera, Server, Zap, Crown, RefreshCw, GraduationCap, Lightbulb, Wrench, PenTool, FileText, ClipboardCheck, Boxes, Briefcase, Info } from 'lucide-react';
+import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, LifeBuoy, Users, PhoneCall, Gift, Globe, DollarSign, UserPlus, HelpCircle, Code, Crown, RefreshCw, GraduationCap, PenTool, FileText, ClipboardCheck, Briefcase } from 'lucide-react';
 import Logo from './Logo';
 
-const sanitizeInput = (input: string): string => {
-  return input
-    .replace(/[<>'"&]/g, (match) => {
-      const entities: { [key: string]: string } = {
-        '<': '<',
-        '>': '>',
-        '"': '"',
-        "'": "'",
-        '&': '&'
-      };
-      return entities[match] || match;
-    });
-};
+interface NavDropdownItem {
+  name: string;
+  path: string;
+  hasNestedDropdown?: boolean;
+  nestedItems?: Array<{ name: string; path: string }>;
+}
+
+interface NavMegaCategory {
+  category: string;
+  icon: React.ReactNode;
+  items: Array<{ name: string; path: string; icon?: React.ReactNode }>;
+}
+
+interface NavLink {
+  name: string;
+  path: string;
+  icon: React.ReactNode;
+  hasDropdown?: boolean;
+  isMegaMenu?: boolean;
+  megaMenuItems?: NavMegaCategory[];
+  dropdownItems?: NavDropdownItem[];
+}
 
 const TopBar = () => {  
 
@@ -100,7 +107,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { name: 'Home', path: '/', icon: <Home className="h-4 w-4 mr-1.5" /> },
     { 
       name: 'Services',
@@ -380,13 +387,16 @@ const Navbar = () => {
             <button
               className="lg:hidden focus:outline-none text-secunova-dark hover:text-secunova-blue transition-colors touch-target"
               onClick={toggleMenu}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
           {isOpen && (
-            <nav className="mobile-menu lg:hidden absolute top-14 sm:top-16 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50">
+            <nav id="mobile-menu" className="mobile-menu lg:hidden absolute top-14 sm:top-16 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50">
               <div className="flex flex-col py-2 sm:py-4 max-h-screen overflow-y-auto">
                 {navLinks.map((link) => (
                   <div key={link.name}>

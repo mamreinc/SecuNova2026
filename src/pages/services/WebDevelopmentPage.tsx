@@ -1,7 +1,23 @@
-import React from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Code, Zap, Shield, Rocket, Database, Cloud, CheckCircle, CheckCircle2, Monitor, Globe, Server, Target, Cpu, Sparkles, Layers } from 'lucide-react';
+import { Code, Zap, Shield, Cloud, CheckCircle, CheckCircle2, Target, Cpu, Sparkles } from 'lucide-react';
 import CtaSection from '../../components/CtaSection';
 
 const WebDevelopmentPage = () => {
@@ -100,7 +116,7 @@ const WebDevelopmentPage = () => {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="max-w-5xl mx-auto text-center text-white">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-[1.15] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-[1.15] tracking-tight">
               Custom <span className="text-secunova-light">Web App</span>
             </h1>
 

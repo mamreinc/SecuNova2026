@@ -1,3 +1,20 @@
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -14,7 +31,6 @@ import {
   FileSearch, 
   DollarSign, 
   ArrowRight, 
-  CheckCircle2, 
   Phone, 
   Mail 
 } from 'lucide-react';
@@ -44,7 +60,7 @@ const FaqPage: React.FC = () => {
     'Pricing & Retainers'
   ];
 
-  const faqs: FaqItem[] = [
+  const faqs = useMemo<FaqItem[]>(() => [
     // 1. Strategic Consulting
     {
       category: 'Strategic Consulting',
@@ -190,7 +206,7 @@ const FaqPage: React.FC = () => {
       link: '/contact',
       linkText: 'Book a Consultation'
     }
-  ];
+  ], []);
 
   // Filter FAQs based on active category and search query
   const filteredFaqs = useMemo(() => {
@@ -283,7 +299,7 @@ const FaqPage: React.FC = () => {
               Executive FAQ Knowledge Base
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
               Frequently Asked <span className="text-secunova-light">Questions</span>
             </h1>
 

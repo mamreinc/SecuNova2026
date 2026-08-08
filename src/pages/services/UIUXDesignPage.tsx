@@ -1,7 +1,23 @@
-import React from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Layers, Users, Eye, Lightbulb, Zap, BarChart, CheckCircle, FileSearch, Smartphone, Palette, FileText } from 'lucide-react';
+import { Layers, Users, Eye, Lightbulb, Zap, BarChart, CheckCircle, Palette, FileText } from 'lucide-react';
 
 const UIUXDesignPage = () => {
   return (
@@ -90,7 +106,7 @@ const UIUXDesignPage = () => {
                   Professional UI/UX Design
                 </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
                     Design That
                 <span className="block text-secunova-light">Users Love</span>
                   </h1>
@@ -326,7 +342,7 @@ const UIUXDesignPage = () => {
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
                   <img
-                    src="https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=1200&q=85"
+                    src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85"
                     alt="Design Systems & Developer Handoff"
                     className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                   />

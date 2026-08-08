@@ -1,14 +1,20 @@
-/*
- ========================================
- PRERENDER SCRIPT - SecuNova Consulting
- Renders every static SPA route into its own
- static index.html so search engines and social
- crawlers see the full HTML + meta tags immediately.
-
- Uses the project's top-level puppeteer (modern).
- ========================================
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
  */
-
 import { createServer } from 'node:http';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
@@ -34,9 +40,6 @@ const ROUTES = [
   '/about/our-work/journalism-audit',
   '/about/our-work/lead-finder',
   '/about/our-work/canadaquest',
-  '/about/our-work/moonyyc',
-  '/about/our-work/yycecho',
-  '/about/our-work/abarabic',
   '/contact',
   '/faq',
   '/free-services',
@@ -68,6 +71,85 @@ const MIME = {
   '.ico': 'image/x-icon',
   '.txt': 'text/plain',
   '.xml': 'application/xml',
+};
+
+// Canonical domain for all on-page metadata. Each route gets exactly one
+// canonical / og:url / twitter:url tag pointing at its own URL.
+const SITE_BASE = 'https://secunovainc.com';
+
+/**
+ * Removes all but the last occurrence of a tag matching the given attribute
+ * selector. The static SPA shell ships homepage metadata and react-helmet
+ * appends its per-route tags without removing those shell tags, so every
+ * prerendered page currently carries duplicate description / og: / twitter:
+ * / robots tags. Crawlers and social parsers generally read the first match,
+ * which is the shell's homepage value, so the per-route values are shadowed.
+ * Helmet's tags are appended last, so we keep the last occurrence.
+ */
+const dedupeTags = (html, tagName, attrName) => {
+  const re = new RegExp(`<${tagName}[^>]*${attrName}[^>]*>`, 'gi');
+  const matches = [...html.matchAll(re)].map((m) => m[0]);
+  if (matches.length <= 1) return html;
+  for (const tag of matches.slice(0, -1)) {
+    html = html.replace(tag, '');
+  }
+  return html;
+};
+
+const DEDUPE_SELECTORS = [
+  ['meta', 'name="description"'],
+  ['meta', 'name="keywords"'],
+  ['meta', 'property="og:title"'],
+  ['meta', 'property="og:description"'],
+  ['meta', 'property="og:image"'],
+  ['meta', 'property="og:image:width"'],
+  ['meta', 'property="og:image:height"'],
+  ['meta', 'property="og:image:alt"'],
+  ['meta', 'property="og:site_name"'],
+  ['meta', 'property="og:type"'],
+  ['meta', 'property="og:locale"'],
+  ['meta', 'name="twitter:title"'],
+  ['meta', 'name="twitter:description"'],
+  ['meta', 'name="twitter:image"'],
+  ['meta', 'name="twitter:image:alt"'],
+  ['meta', 'name="twitter:card"'],
+  ['meta', 'name="robots"'],
+  ['meta', 'name="googlebot"'],
+  ['meta', 'name="bingbot"'],
+  ['meta', 'name="author"'],
+  ['meta', 'name="publisher"'],
+  ['meta', 'name="geo.region"'],
+  ['meta', 'name="geo.placename"'],
+  ['meta', 'name="geo.position"'],
+  ['meta', 'name="ICBM"'],
+  ['meta', 'name="theme-color"'],
+  ['meta', 'name="viewport"'],
+  ['meta', 'name="language"'],
+  ['meta', 'name="mobile-web-app-capable"'],
+  ['meta', 'name="apple-mobile-web-app-capable"'],
+  ['meta', 'name="apple-mobile-web-app-status-bar-style"'],
+];
+
+/**
+ * Normalizes the prerendered head so every route serves exactly one canonical,
+ * og:url, and twitter:url tag, each pointing at that route's own URL, and no
+ * duplicate per-route meta tags. Search engines treat conflicting canonicals
+ * as unreliable, so we strip all three and inject a single authoritative set.
+ */
+const sanitizeHead = (html, route) => {
+  const canonicalUrl = route === '/' ? `${SITE_BASE}/` : `${SITE_BASE}${route}`;
+  let cleaned = html
+    .replace(/<link[^>]*rel="canonical"[^>]*>/gi, '')
+    .replace(/<meta[^>]*property="og:url"[^>]*>/gi, '')
+    .replace(/<meta[^>]*name="twitter:url"[^>]*>/gi, '');
+  for (const [tagName, attrName] of DEDUPE_SELECTORS) {
+    cleaned = dedupeTags(cleaned, tagName, attrName);
+  }
+  const canonicalTags =
+    `    <link rel="canonical" href="${canonicalUrl}" />\n` +
+    `    <meta property="og:url" content="${canonicalUrl}" />\n` +
+    `    <meta name="twitter:url" content="${canonicalUrl}" />\n`;
+  return cleaned.replace('<head>', `<head>\n${canonicalTags}`);
 };
 
 // Minimal static file server with SPA fallback.
@@ -172,7 +254,7 @@ async function main() {
       ).catch(() => {});
       await sleep(2500);
 
-      const html = await page.content();
+      const html = sanitizeHead(await page.content(), route);
 
       const outputPath =
         route === '/' ? join(DIST, 'index.html') : join(DIST, route, 'index.html');

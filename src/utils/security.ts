@@ -1,23 +1,20 @@
-/*
-========================================
-SECURITY UTILITIES
-Built by SecuNova Inc.
-========================================
-
-Comprehensive security utilities for input validation,
-sanitization, and protection against common attacks.
-
-Features:
-- Input sanitization
-- XSS prevention
-- CSRF token generation
-- Rate limiting
-- Data validation
-
-Built from scratch for maximum security.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 // Input sanitization to prevent XSS attacks
 export const sanitizeInput = (input: string): string => {
   if (typeof input !== 'string') return '';
@@ -54,8 +51,8 @@ export const validateEmail = (email: string): boolean => {
 export const validatePhone = (phone: string): boolean => {
   if (!phone || typeof phone !== 'string') return false;
   
-  const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-  const cleanPhone = phone.replace(/[\s\-\(\)\.]/g, '');
+  const phoneRegex = /^\+?[1-9]\d{0,15}$/;
+  const cleanPhone = phone.replace(/[\s()-]/g, '');
   
   return phoneRegex.test(cleanPhone) && cleanPhone.length >= 10 && cleanPhone.length <= 16;
 };
@@ -101,7 +98,7 @@ export const rateLimiter = new RateLimiter();
 
 // Secure localStorage wrapper
 export const secureStorage = {
-  set: (key: string, value: any): void => {
+  set: <T,>(key: string, value: T): void => {
     try {
       const serializedValue = JSON.stringify({
         data: value,
@@ -109,12 +106,12 @@ export const secureStorage = {
         checksum: btoa(JSON.stringify(value)) // Simple integrity check
       });
       localStorage.setItem(key, serializedValue);
-    } catch (error) {
+    } catch {
       console.warn('SecureStorage: Failed to save data');
     }
   },
   
-  get: (key: string): any => {
+  get: <T,>(key: string): T | null => {
     try {
       const item = localStorage.getItem(key);
       if (!item) return null;
@@ -135,7 +132,7 @@ export const secureStorage = {
       }
       
       return parsed.data;
-    } catch (error) {
+    } catch {
       localStorage.removeItem(key);
       return null;
     }
@@ -217,10 +214,10 @@ export const detectSuspiciousActivity = (input: string): boolean => {
     
     // SQL Injection patterns - more specific
     /(\b(SELECT|INSERT|UPDATE|DELETE|DROP|CREATE|ALTER|EXEC|EXECUTE)\b[\s\S]{0,100}(FROM|INTO|SET|VALUES|WHERE|UNION|SCRIPT)\b)/gi,
-    /(\-\-\s*$|;\s*DROP\s+TABLE|;\s*DELETE\s+FROM|\/\*[\s\S]*?\*\/)/gi,
+    /(--\s*$|;\s*DROP\s+TABLE|;\s*DELETE\s+FROM|\/\*[\s\S]*?\*\/)/gi,
     
     // Command Injection patterns - more specific
-    /\|\s*(rm|cat|wget|curl|nc|bash|sh)\s|\&\s*(rm|cat|wget|curl|nc|bash|sh)\s/gi,
+    /\|\s*(rm|cat|wget|curl|nc|bash|sh)\s|&\s*(rm|cat|wget|curl|nc|bash|sh)\s/gi,
     /`[^`]*(rm|cat|wget|curl|nc|bash|sh|ls|cd)[^`]*`/gi,
     
     // Path traversal - more specific
@@ -312,6 +309,7 @@ export const validateSecureURL = (url: string): boolean => {
     const allowedProtocols = ['http:', 'https:'];
     const allowedDomains = [
       'secunovainc.com',
+      'secunova.ca',
       'fonts.googleapis.com',
       'fonts.gstatic.com',
       'fonts.cdnfonts.com',
@@ -325,7 +323,7 @@ export const validateSecureURL = (url: string): boolean => {
     }
     
     // Check if domain is in whitelist (for production)
-    if (process.env.NODE_ENV === 'production') {
+    if (import.meta.env.PROD) {
       return allowedDomains.some(domain => urlObj.hostname.includes(domain));
     }
     

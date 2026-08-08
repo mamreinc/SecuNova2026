@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { 
-  TrendingUp, Users, Crown, DollarSign, Target, Globe, Star, ArrowRight, 
-  CheckCircle, Award, Mail, Phone, MapPin, Lightbulb, Building2, Briefcase, 
-  Shield, Code, BarChart, Network, Zap, Handshake, ArrowUpRight, Lock, PieChart, Check
+  Users, Crown, DollarSign, Star, ArrowRight, 
+  Mail, Phone, Lightbulb, Briefcase, 
+  Shield, Code, Network, Handshake, ArrowUpRight, Lock, PieChart, Check
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
+type PartnershipTrackId = 'investors' | 'cofounders' | 'subcontractors' | 'referrals';
 
 const JoinUsPage = () => {
-  const [activeTab, setActiveTab] = useState<'investors' | 'cofounders' | 'subcontractors' | 'referrals'>('investors');
+  const [activeTab, setActiveTab] = useState<PartnershipTrackId>('investors');
 
   const PARTNERSHIP_TRACKS = [
     {
@@ -202,7 +220,7 @@ const JoinUsPage = () => {
               Strategic Growth & Partnership Pathways
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
               Build, Invest & Scale With <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-sky-300 to-secunova-light">SecuNova Inc.</span>
             </h1>
 
@@ -268,7 +286,7 @@ const JoinUsPage = () => {
             {PARTNERSHIP_TRACKS.map((track) => (
               <button
                 key={track.id}
-                onClick={() => setActiveTab(track.id as any)}
+                onClick={() => setActiveTab(track.id as PartnershipTrackId)}
                 className={`px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                   activeTab === track.id
                     ? 'bg-secunova-blue text-white shadow-md'

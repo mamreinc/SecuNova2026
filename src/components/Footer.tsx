@@ -1,26 +1,39 @@
-/*
-========================================
-FOOTER COMPONENT
-Custom Built by SecuNova Inc.
-========================================
-
-Site footer with company information and navigation.
-
-Features:
-- Company branding and description
-- Service links and navigation
-- Contact information
-- Social media links
-- Cybersecurity themed design elements
-
-Built from scratch for professional presentation.
-========================================
-*/
-
-import React from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Shield, Lock } from 'lucide-react';
 import Logo from './Logo';
+
+const seededRandom = (seed: number) => {
+  let state = seed;
+  return () => {
+    state = (state * 9301 + 49297) % 233280;
+    return state / 233280;
+  };
+};
+
+const rand = seededRandom(20260807);
+const binaryGrid = Array.from({ length: 100 }, () => {
+  const top = Math.round(rand() * 1000) / 10;
+  const left = Math.round(rand() * 1000) / 10;
+  const digit = rand() > 0.5 ? '1' : '0';
+  return { top, left, digit };
+});
 
 const Footer = () => {
   return (
@@ -33,10 +46,10 @@ const Footer = () => {
           <Lock className="h-full w-full text-secunova-blue" />
         </div>
         
-        <div className="absolute inset-0 text-xs opacity-5 overflow-hidden">
-          {Array(100).fill(0).map((_, i) => (
-            <div key={i} style={{position: 'absolute', top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%`}}>
-              {Math.random() > 0.5 ? '1' : '0'}
+        <div className="absolute inset-0 text-xs opacity-5 overflow-hidden" aria-hidden="true">
+          {binaryGrid.map((cell, index) => (
+            <div key={index} style={{position: 'absolute', top: `${cell.top}%`, left: `${cell.left}%`}}>
+              {cell.digit}
             </div>
           ))}
         </div>

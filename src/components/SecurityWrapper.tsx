@@ -1,22 +1,20 @@
-/*
-========================================
-SECURITY WRAPPER COMPONENT
-Built by SecuNova Inc.
-========================================
-
-Security wrapper component that implements client-side
-security measures and monitoring.
-
-Features:
-- XSS protection
-- Content validation
-- Security monitoring
-- Error boundary with security context
-
-Built from scratch for comprehensive protection.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React, { Component, ReactNode } from 'react';
 import { detectSuspiciousActivity, getSecurityConfig } from '../utils/security';
 
@@ -31,6 +29,7 @@ interface SecurityWrapperState {
 
 class SecurityWrapper extends Component<SecurityWrapperProps, SecurityWrapperState> {
   private securityConfig = getSecurityConfig();
+  private contentProtectionCleanup: (() => void) | null = null;
   
   constructor(props: SecurityWrapperProps) {
     super(props);
@@ -284,7 +283,7 @@ class SecurityWrapper extends Component<SecurityWrapperProps, SecurityWrapperSta
     window.addEventListener('beforeprint', handleBeforePrint);
 
     // Store cleanup function
-    (this as any).contentProtectionCleanup = () => {
+    this.contentProtectionCleanup = () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('selectstart', handleSelectStart);
       document.removeEventListener('dragstart', handleDragStart);
@@ -302,8 +301,8 @@ class SecurityWrapper extends Component<SecurityWrapperProps, SecurityWrapperSta
 
   componentWillUnmount() {
     // Cleanup content protection
-    if ((this as any).contentProtectionCleanup) {
-      (this as any).contentProtectionCleanup();
+    if (this.contentProtectionCleanup) {
+      this.contentProtectionCleanup();
     }
   }
 
@@ -350,7 +349,7 @@ class SecurityWrapper extends Component<SecurityWrapperProps, SecurityWrapperSta
                   // Don't block the page, just remove the suspicious element
                   try {
                     element.remove();
-                  } catch (e) {
+                  } catch {
                     // If removal fails, then we might have a real security issue
                 this.setState({
                   hasSecurityError: true,
@@ -398,31 +397,34 @@ class SecurityWrapper extends Component<SecurityWrapperProps, SecurityWrapperSta
     // Monitor fetch requests for suspicious activity
     const originalFetch = window.fetch;
     window.fetch = async (...args) => {
-      const url = typeof args[0] === 'string' ? args[0] : args[0].url;
-      
+      const first = args[0];
+      const url =
+        typeof first === 'string' ? first : (first as { url?: string }).url ?? '';
+
       // Log security events for monitoring
       if (url.includes('javascript:') || url.includes('data:text/html')) {
         console.warn('Security: Suspicious fetch request blocked');
         throw new Error('Suspicious network request detected');
       }
-      
+
       return originalFetch.apply(this, args);
     };
   }
 
   private preventConsoleAbuse() {
     // In production, disable console in non-debug mode
-    if (this.securityConfig.enforceHTTPS && process.env.NODE_ENV === 'production') {
+    if (this.securityConfig.enforceHTTPS && import.meta.env.PROD) {
       // Store original console methods
       const originalConsole = { ...console };
-      
+
       // Override console methods to prevent information leakage
-      ['debug', 'info', 'log'].forEach(method => {
+      const silentMethods = ['debug', 'info', 'log'] as const;
+      silentMethods.forEach((method) => {
         console[method] = () => {};
       });
       
       // Keep error and warn for development purposes but sanitize
-      console.error = (...args: any[]) => {
+      console.error = () => {
         originalConsole.error('[Sanitized Error]');
       };
     }

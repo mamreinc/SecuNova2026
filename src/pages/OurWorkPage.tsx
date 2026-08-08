@@ -1,12 +1,29 @@
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
-  ArrowLeft, ArrowRight, ArrowUpRight, X, ExternalLink, Download,
+  ArrowRight, ArrowUpRight, X, Download,
   Shield, Cpu, Globe, Zap, Lock, BarChart2,
-  FileText, Search, BookOpen, Layout, Users, Database,
+  FileText, Search, BookOpen, Layout, Database,
   Star, Settings, CheckCircle2, TrendingUp,
-  Briefcase, Target, Code
+  Briefcase
 } from 'lucide-react';
 import { getDownloadCount, incrementDownloadCount } from '../utils/downloadTracker';
 import CtaSection from '../components/CtaSection';
@@ -212,100 +229,6 @@ const OWN_PRODUCTS: Product[] = [
   },
 ];
 
-const CLIENT_PROJECTS: Product[] = [
-  {
-    id: 'moonyyc',
-    name: 'MoonYYC',
-    tagline: 'The settlement guide Calgary immigrants actually needed.',
-    category: 'client',
-    year: '2024',
-    heroLabel: 'Client Project · Civic Tech',
-    externalLink: 'https://moonyyc.ca',
-    pitch: 'MoonYYC is a comprehensive, AI-powered digital guide for newcomers, immigrants, and international students arriving in Calgary, built and delivered end-to-end as a complete managed package.',
-    challenge: 'Newcomers to Calgary were navigating an overwhelming patchwork of government websites, outdated PDFs, and language barriers just to access basic settlement information.',
-    solution: 'We designed and built MoonYYC as a complete package: full content architecture, an AI-powered Q&A assistant, multilingual support across four languages, and a fast static delivery setup.',
-    outcome: 'MoonYYC became Calgary\'s most referenced digital settlement guide for multilingual newcomers within its first year.',
-    outcomeStats: [
-      { value: '95+', label: 'Lighthouse Score' },
-      { value: '4', label: 'Languages Supported' },
-      { value: '#1', label: 'Digital Settlement Guide' },
-    ],
-    features: [
-      { icon: <Globe className="h-5 w-5" />, title: 'Multilingual Content', desc: 'Arabic, English, French, and Somali: each language version is a first-class experience.' },
-      { icon: <Zap className="h-5 w-5" />, title: 'AI-Powered Q&A Assistant', desc: 'A private AI assistant answers settlement questions drawing from the site\'s curated knowledge base.' },
-      { icon: <Layout className="h-5 w-5" />, title: 'Step-by-Step Settlement Guides', desc: 'Structured checklists covering housing, healthcare, education, employment, and government services.' },
-      { icon: <Shield className="h-5 w-5" />, title: 'Emergency Contact Directory', desc: 'Verified emergency contacts and community resources, organized by situation and location.' },
-      { icon: <TrendingUp className="h-5 w-5" />, title: 'Performance-First Build', desc: 'Static delivery with Cloudflare CDN ensures fast loading even on slow mobile connections.' },
-      { icon: <Users className="h-5 w-5" />, title: 'Community Resources Hub', desc: 'A curated directory of Calgary-based community organizations, verified and maintained by the client.' },
-    ],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Gemini API', 'Cloudflare', 'i18n'],
-    testimonial: {
-      quote: 'We needed something that our community could actually use: in their language, on their phone, without needing to know where to look. MoonYYC made that happen.',
-      name: 'MoonYYC Team',
-      role: 'Client',
-    },
-  },
-  {
-    id: 'yycecho',
-    name: 'YYC Echo',
-    tagline: 'Local stories. Your platform. Your data.',
-    category: 'client',
-    year: '2023',
-    heroLabel: 'Client Project · Media',
-    externalLink: 'https://yycecho.ca',
-    pitch: 'YYC Echo is a self-hosted, minimalist podcast platform built for a Calgary media team that was done paying platform fees and ready to own their audience data completely.',
-    challenge: 'The YYC Echo team was hosted on a major podcast platform that charged growing monthly fees, gave them no control over design, and gave them no access to their own listener data.',
-    solution: 'We moved them to a fully self-hosted setup: a custom-built player, RSS feed management, listener analytics piped to their own dashboard, and a clean editorial interface.',
-    outcome: 'YYC Echo now owns every byte of their content and every data point about their audience. Platform fees dropped to zero.',
-    outcomeStats: [
-      { value: '100%', label: 'Data Ownership' },
-      { value: '0', label: 'Platform Fees' },
-      { value: 'Full', label: 'Design Control' },
-    ],
-    features: [
-      { icon: <Layout className="h-5 w-5" />, title: 'Custom Audio Player', desc: 'A lightweight, accessible audio player designed to match the brand and work on any device.' },
-      { icon: <Database className="h-5 w-5" />, title: 'Self-Hosted RSS Management', desc: 'Generate and manage your own RSS feed. Compatible with Apple Podcasts, Spotify, and all major directories.' },
-      { icon: <BarChart2 className="h-5 w-5" />, title: 'First-Party Analytics', desc: 'Listener data flows directly to a private dashboard: no third-party analytics platforms.' },
-      { icon: <Globe className="h-5 w-5" />, title: 'CDN-Optimized Delivery', desc: 'Audio files served from Cloudflare R2: fast delivery worldwide with no bandwidth surprises.' },
-      { icon: <Shield className="h-5 w-5" />, title: '100% Code Ownership', desc: 'Every file, every deployment config, every credential: fully transferred to the client.' },
-      { icon: <FileText className="h-5 w-5" />, title: 'Editorial CMS', desc: 'A simple CMS interface for publishing new episodes, writing show notes, and managing the archive.' },
-    ],
-    techStack: ['Next.js', 'TypeScript', 'Cloudflare R2', 'RSS', 'Tailwind CSS'],
-  },
-  {
-    id: 'abarabic',
-    name: 'AB Arabic',
-    tagline: 'A province\'s worth of information, finally in Arabic.',
-    category: 'client',
-    year: '2023',
-    heroLabel: 'Client Project · Community Portal',
-    externalLink: 'https://abarabic.ca',
-    pitch: 'AB Arabic is the go-to government and civic information portal in Arabic for Alberta residents: covering immigration, education, health, and business, delivered in a fast, accessible, RTL-native design.',
-    challenge: 'Alberta\'s Arabic-speaking community had no reliable, accurate, native-language portal for government services and civic information.',
-    solution: 'We built AB Arabic as a content-first platform with a clean editorial architecture, fast static delivery, and a fully RTL layout that treated Arabic as a primary language, not an afterthought.',
-    outcome: 'AB Arabic became the go-to reference for Alberta\'s Arabic-speaking community and is actively used by settlement organizations across the province.',
-    outcomeStats: [
-      { value: '95+', label: 'Lighthouse Score' },
-      { value: 'RTL', label: 'Native Arabic Layout' },
-      { value: '#1', label: 'Arabic Guide in Alberta' },
-    ],
-    features: [
-      { icon: <Globe className="h-5 w-5" />, title: 'RTL-First Design', desc: 'The entire layout, typography, and navigation was designed for Arabic as a primary language.' },
-      { icon: <BookOpen className="h-5 w-5" />, title: 'Government Services Guide', desc: 'Comprehensive, verified guides to Alberta government services in clear, accurate Arabic.' },
-      { icon: <Users className="h-5 w-5" />, title: 'Community Resources Directory', desc: 'A curated directory of Arabic-speaking community organizations and support services across Alberta.' },
-      { icon: <TrendingUp className="h-5 w-5" />, title: 'Performance-First Build', desc: '95+ Lighthouse score. Optimized for mobile users on slower connections.' },
-      { icon: <Search className="h-5 w-5" />, title: 'Topic-Organized Architecture', desc: 'Information organized by topic: immigration, health, education, business, not by government department.' },
-      { icon: <Shield className="h-5 w-5" />, title: 'Full Ownership Delivered', desc: 'Complete codebase, hosting access, and content CMS handed to the client at project close.' },
-    ],
-    techStack: ['Next.js', 'TypeScript', 'i18n / RTL', 'Cloudflare', 'Tailwind CSS'],
-    testimonial: {
-      quote: 'Our clients use AB Arabic every day. It became the first thing we recommend to every newcomer we work with.',
-      name: 'AB Arabic Partner Organization',
-      role: 'Community Partner',
-    },
-  },
-];
-
 /* ─── Case Study Modal ─── */
 const CaseStudyModal: React.FC<{ product: Product; onClose: () => void }> = ({ product, onClose }) => (
   <div
@@ -437,22 +360,11 @@ const CaseStudyModal: React.FC<{ product: Product; onClose: () => void }> = ({ p
 );
 
 /* ─── Product Card ─── */
-const ProductCard: React.FC<{ product: Product; index: number; onOpen: (p: Product) => void }> = ({ product, index, onOpen }) => (
+const ProductCard: React.FC<{ product: Product; onOpen: (p: Product) => void }> = ({ product, onOpen }) => (
   <div className="group relative h-full flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-secunova-blue/30">
     <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-secunova-blue/5 to-secunova-light/5 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
 
     <div className="p-7 flex flex-col flex-1 relative">
-      {/* Header */}
-      <div className="flex items-start justify-between mb-5">
-        <div className="flex items-center gap-3">
-          {product.badge && (
-            <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-secunova-blue text-white">
-              {product.badge}
-            </span>
-          )}
-        </div>
-      </div>
-
       {/* Name + tagline */}
       <h3 className="text-xl font-bold text-secunova-dark mb-2 group-hover:text-secunova-blue transition-colors">{product.name}</h3>
       <p className="text-xs font-semibold text-secunova-light mb-3">{product.tagline}</p>
@@ -510,8 +422,8 @@ const OurWorkPage = () => {
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>Our Work & Products | SecuNova Consulting Calgary</title>
-        <meta name="description" content="Explore SecuNova Consulting's product portfolio: Nova macOS AI agent, Career OS, SecuBoost, Journalism Audit Platform, Lead Finder, CanadaQuest, and client projects MoonYYC, YYC Echo, AB Arabic. Custom software, zero-debt architecture, full IP transfer." />
-        <meta name="keywords" content="SecuNova products, Nova macOS AI agent, Career OS, SecuBoost, CanadaQuest, MoonYYC, YYC Echo, AB Arabic, custom software Calgary, zero-debt architecture, privacy-first software" />
+        <meta name="description" content="Explore SecuNova Consulting's proprietary products: Nova macOS AI agent, Career OS, SecuBoost, Journalism Audit Platform, Lead Finder, CanadaQuest. Custom software, zero-debt architecture, full IP ownership." />
+        <meta name="keywords" content="SecuNova products, Nova macOS AI agent, Career OS, SecuBoost, CanadaQuest, custom software Calgary, zero-debt architecture, privacy-first software" />
         <link rel="canonical" href="https://secunovainc.com/about/our-work" />
 
         <meta property="og:title" content="Our Work & Products | SecuNova Consulting" />
@@ -532,8 +444,8 @@ const OurWorkPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "SecuNova Products & Client Work",
-            "description": "Proprietary software products and client case studies from SecuNova Inc.",
+            "name": "SecuNova Products & Work",
+            "description": "Proprietary software products engineered by SecuNova Inc.",
             "provider": {
               "@type": "LocalBusiness",
               "name": "SecuNova Inc.",
@@ -559,24 +471,20 @@ const OurWorkPage = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10 w-full">
           <div className="max-w-6xl mx-auto w-full">
-            <Link to="/about" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-all duration-300">
-              <ArrowLeft className="h-4 w-4 mr-2 text-white" />
-              Back to About
-            </Link>
             <div className="text-center text-white">
               <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full text-sm font-medium mb-6">
                 <Briefcase className="h-4 w-4 mr-2 text-white" />
                 Our Work
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
                 Proof of Execution.
                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-secunova-light to-white">
                   Products we own, platforms we delivered.
                 </span>
               </h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                Before we advise anyone on technology, we ship it ourselves. The first section is software we
-                built, own, and use internally. The second is what we delivered for clients and handed over completely.
+                Before we advise anyone on technology, we ship it ourselves. These are SecuNova
+                products and platforms, engineered end to end in-house.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                 <Link to="/contact" className="btn btn-gradient btn-lg">
@@ -589,69 +497,28 @@ const OurWorkPage = () => {
         </div>
       </section>
 
-      {/* ── SECTION 1: OWN PRODUCTS ─── */}
+      {/* ── PORTFOLIO: OWN PRODUCTS + CLIENT PROJECTS ─── */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-16">
               <div>
-                <div className="inline-flex items-center bg-secunova-blue/10 text-secunova-blue px-6 py-3 rounded-full text-sm font-semibold mb-6">
-                  Built for Ourselves
-                </div>
                 <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark leading-tight">
-                  Software we use,{' '}
+                  Our Work.{' '}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">
-                    own, and sell outright.
+                    Engineered by SecuNova.
                   </span>
                 </h2>
               </div>
               <p className="text-gray-600 max-w-sm md:self-end leading-relaxed">
-                These are products we built because the market alternatives did not meet our standards. One-time
-                purchase, lifetime ownership, zero subscriptions, and the same rigor we bring to every client mandate.
+                A selection of software engineered end to end by SecuNova, built to the same
+                production standards and rigor we bring to every client mandate.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {OWN_PRODUCTS.map((product, i) => (
-                <ProductCard key={product.id} product={product} index={i} onOpen={setActiveModal} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── DIVIDER ─── */}
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="border-t border-gray-200" />
-        </div>
-      </div>
-
-      {/* ── SECTION 2: CLIENT PROJECTS ─── */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row items-start justify-between gap-6 mb-16">
-              <div>
-                <div className="inline-flex items-center bg-secunova-light/10 text-secunova-light px-6 py-3 rounded-full text-sm font-semibold mb-6">
-                  Built for Clients
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark leading-tight">
-                  Real projects.{' '}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">
-                    Real outcomes. Full ownership transferred.
-                  </span>
-                </h2>
-              </div>
-              <p className="text-gray-600 max-w-sm md:self-end leading-relaxed">
-                Every project below was delivered as a complete package, managed, built, audited, and handed
-                over. The client owns everything. Click any card to read the full case study.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {CLIENT_PROJECTS.map((product, i) => (
-                <ProductCard key={product.id} product={product} index={i} onOpen={setActiveModal} />
+              {OWN_PRODUCTS.map((product) => (
+                <ProductCard key={product.id} product={product} onOpen={setActiveModal} />
               ))}
             </div>
 

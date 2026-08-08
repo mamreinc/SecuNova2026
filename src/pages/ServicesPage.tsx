@@ -1,26 +1,27 @@
-/*
-========================================
-SERVICES PAGE COMPONENT
-Custom Built by SecuNova Inc.
-========================================
-
-Reorganized service architecture built around two strategic pillars:
-
-  Pillar I  - Strategic Consulting & Executive Programs
-  Pillar II - Digital Engineering & Growth Solutions
-
-Conversion-focused, executive-grade copy for the North American
-corporate market. Built from scratch for professional presentation.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
-  Crown, Code, ArrowRight, CheckCircle, Lightbulb,
+  Crown, Code, ArrowRight, CheckCircle,
   GraduationCap, RefreshCw, Globe, Wrench, PenTool, FileText,
-  ClipboardCheck, Boxes, Network, Target, Zap, Phone, Mail
+  ClipboardCheck, Network, Target, Zap, Phone, Mail
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 
@@ -338,7 +339,7 @@ const ServicesPage = () => {
                 Two Pillars. One Partner.
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
                 Strategy For Leaders.
                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-secunova-light to-white">Engineering For Growth.</span>
               </h1>

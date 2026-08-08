@@ -1,23 +1,20 @@
-/*
-========================================
-CONTACT PAGE COMPONENT
-Custom Built by SecuNova Inc.
-========================================
-
-Professional contact page with strategic layout
-for maximum conversions and user engagement.
-
-Features:
-- Multi-section professional layout
-- Strategic contact method placement
-- Service-focused contact options
-- Enhanced visual hierarchy
-- Security-enhanced form handling
-
-Built from scratch with security focus.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, Clock, MessageCircle, Globe } from 'lucide-react';
 
@@ -124,7 +121,7 @@ const ContactPage = () => {
               <MessageCircle className="h-4 w-4 mr-2 text-white" />
               Get in Touch
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Let's Build Something
               <span className="block text-secunova-light">Great Together</span>
             </h1>

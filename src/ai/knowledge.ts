@@ -1,4 +1,21 @@
 /**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
+/**
  * SecuNova AI Services Knowledge Base & Intent Matcher
  * Strictly focused on SecuNova Services & Business Inquiries (English Only)
  */
@@ -212,12 +229,12 @@ export const knowledgeBase: KnowledgeItem[] = [
     title: 'Proprietary Products & Client Work',
     category: 'products',
     keywords: [
-      'products', 'our work', 'nova', 'career os', 'secuboost', 'moonyyc',
-      'abarabic', 'yycecho', 'portfolio', 'case studies',
+      'products', 'our work', 'nova', 'career os', 'secuboost',
+      'portfolio', 'case studies',
       'منتجاتنا', 'أعمالنا', 'مشاريعنا', 'نماذج أعمال'
     ],
     answerEn:
-      'SecuNova develops proprietary privacy-first software products (such as Nova AI agent, Career OS, SecuBoost) and delivers custom client builds with 100% intellectual property transfer (e.g. MoonYYC, AB Arabic).',
+      'SecuNova develops proprietary privacy-first software products (such as Nova AI agent, Career OS, SecuBoost) and delivers custom client builds with 100% intellectual property transfer.',
     answerAr:
       'تطور SecuNova منتجات برمجية خاصة تتميز بالخصوصية (مثل Nova AI و Career OS و SecuBoost)، بالإضافة لتنفيذ مشاريع مخصصة للعملاء مع نقل الملكية الفكرية بالكامل.',
     ctaEn: 'View our complete product portfolio on Our Work page.',

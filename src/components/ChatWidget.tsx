@@ -1,12 +1,28 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  MessageSquare, X, Send, Sparkles, Clock, User, Phone, Mail, Building,
-  Shield, CheckCircle, ArrowRight, ExternalLink, HelpCircle, Briefcase, Code, Lock
+  X, Send, Sparkles, User, Shield, ArrowRight
 } from 'lucide-react';
 import {
   searchKnowledge, isArabicText, isOffTopicQuery,
-  SUPPORT_EMAIL, SUPPORT_PHONE, KnowledgeItem
+  SUPPORT_PHONE, KnowledgeItem
 } from '../ai/knowledge';
 
 interface ChatMessage {
@@ -35,7 +51,6 @@ const ChatWidget: React.FC = () => {
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [profile, setProfile] = useState<{ name: string; email: string; phone: string; company?: string } | null>(null);
   const [showProfileForm, setShowProfileForm] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '' });
   const [formError, setFormError] = useState('');
@@ -145,13 +160,6 @@ const ChatWidget: React.FC = () => {
       setFormError('Please fill in your name, email, and phone number.');
       return;
     }
-
-    setProfile({
-      name: form.name.trim(),
-      email: form.email.trim(),
-      phone: form.phone.trim(),
-      company: form.company.trim()
-    });
 
     setShowProfileForm(false);
     setFormError('');

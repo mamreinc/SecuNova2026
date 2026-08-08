@@ -1,51 +1,34 @@
-import React from 'react';
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import {
   Gift, Globe, ArrowRight, CheckCircle, CheckCircle2, Flag,
-  ExternalLink, Shield, Zap, Sparkles, Phone, Mail,
-  Layers, MapPin, Award, FileText, Laptop, Layout, Building2, Check, Code
+  ExternalLink, Shield, Zap, Phone, Mail,
+  MapPin, Laptop, Layout, Building2, Code
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 
 const PORTFOLIO_SITES = [
   {
-    id: 'moonyyc',
-    name: 'MoonYYC',
-    domain: 'moonyyc.ca',
-    url: 'https://moonyyc.ca',
-    category: 'Civic Tech & Multilingual Guide',
-    tagline: 'Calgary Settlement & Newcomer Digital Guide',
-    description: 'AI-powered settlement platform serving newcomers in Calgary across 4 languages (Arabic, English, French, Somali) with private AI Q&A.',
-    metrics: ['95+ Lighthouse Score', '4 Languages', '#1 Settlement Guide'],
-    tags: ['Civic Platform', 'AI Integration', 'Multilingual']
-  },
-  {
-    id: 'abarabic',
-    name: 'AB Arabic',
-    domain: 'abarabic.ca',
-    url: 'https://abarabic.ca',
-    category: 'Civic Information Portal',
-    tagline: 'Alberta Civic & Government Information in Arabic',
-    description: 'Native RTL civic portal delivering verified information on health, immigration, and education for Alberta residents.',
-    metrics: ['RTL Native', '95+ Performance Score', 'Province-wide Reach'],
-    tags: ['RTL Design', 'Government Services', 'Community Hub']
-  },
-  {
-    id: 'yycecho',
-    name: 'YYC Echo',
-    domain: 'yycecho.ca',
-    url: 'https://yycecho.ca',
-    category: 'Media & Podcast Platform',
-    tagline: 'Calgary Independent Media Platform',
-    description: 'Self-hosted minimalist podcast and audio platform eliminating recurring SaaS fees and giving full audience data ownership.',
-    metrics: ['100% Data Ownership', '0 Platform Fees', 'Custom Audio Engine'],
-    tags: ['Media CMS', 'Self-Hosted', 'First-Party Analytics']
-  },
-  {
     id: 'canadaquest',
     name: 'CanadaQuest',
     domain: 'canadaquest.app',
+    url: 'https://canadaquest.app',
     category: 'Civic Education Platform',
     tagline: 'Adaptive Canadian Citizenship Exam Engine',
     description: 'Modern offline-first citizenship training hub with full curriculum coverage, practice exam simulation, and accessibility standards.',
@@ -144,7 +127,7 @@ const FreeServicesPage = () => {
               <span>SecuNova Community Initiative</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-secunova-dark tracking-tight leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-secunova-dark tracking-tight leading-tight mb-6">
               Free Professional Websites for <br className="hidden sm:inline" />
               <span className="text-secunova-blue">Small Canadian Businesses</span>
             </h1>

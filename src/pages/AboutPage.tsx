@@ -1,9 +1,26 @@
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
   Compass, Users, ShieldCheck, ArrowRight, MapPin, Briefcase, Lock, Globe, Building,
-  CheckCircle2, Sparkles, Target, Zap, Shield, Award, Play, Code
+  CheckCircle2, Sparkles, Play, Code
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 
@@ -134,7 +151,7 @@ const AboutPage: React.FC = () => {
               <span>Canadian Consulting & Technology Firm, Calgary, AB</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
               Engineering Digital Change{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-light via-blue-200 to-white block mt-2">
                 With Authority & Precision.

@@ -1,28 +1,39 @@
-/*
-========================================
-SEO SCHEMA COMPONENT
-Custom Built by SecuNova Inc.
-========================================
-
-Structured data components for enhanced SEO.
-
-Features:
-- Organization schema
-- Service schema
-- Local business schema
-- FAQ schema
-- Breadcrumb schema
-
-Built from scratch for optimal search visibility.
-========================================
-*/
-
+/**
+ * ============================================================================
+ * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by SecuNova.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) SecuNova. All rights reserved.
+ * ============================================================================
+ */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface SEOSchemaProps {
   type: 'organization' | 'service' | 'faq' | 'breadcrumb' | 'localbusiness' | 'webpage' | 'article';
-  data?: any;
+  data?: SEOSchemaData;
+}
+
+interface SEOSchemaData {
+  name?: string;
+  description?: string;
+  url?: string;
+  title?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  image?: string;
+  services?: Array<{ name: string; description?: string }>;
+  faqs?: Array<{ question: string; answer: string }>;
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
 const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
@@ -95,14 +106,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           ],
           "sameAs": [
             "https://ca.linkedin.com/company/secunovac"
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127",
-            "bestRating": "5",
-            "worstRating": "1"
-          }
+          ]
         };
 
       case 'service':
@@ -131,7 +135,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": data?.faqs?.map((faq: any) => ({
+          "mainEntity": data?.faqs?.map((faq) => ({
             "@type": "Question",
             "name": faq.question,
             "acceptedAnswer": {
@@ -145,7 +149,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          "itemListElement": data?.breadcrumbs?.map((crumb: any, index: number) => ({
+          "itemListElement": data?.breadcrumbs?.map((crumb, index) => ({
             "@type": "ListItem",
             "position": index + 1,
             "name": crumb.name,
@@ -185,12 +189,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
             }
           ],
           "image": "https://secunovainc.com/logo/secunova-logo.png",
-          "description": "A Canadian consulting and technology firm in Calgary, AB. Strategic consulting, executive programs, custom corporate websites, and growth engineering.",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127"
-          }
+          "description": "A Canadian consulting and technology firm in Calgary, AB. Strategic consulting, executive programs, custom corporate websites, and growth engineering."
         };
 
       case 'webpage':
