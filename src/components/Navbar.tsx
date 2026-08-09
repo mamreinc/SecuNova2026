@@ -1,6 +1,24 @@
+/**
+ * ============================================================================
+ * MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) MaxPhaos Marketing. All rights reserved.
+ * ============================================================================
+ */
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, Users, PhoneCall, Globe, Crown, RefreshCw, GraduationCap, PenTool, FileText, ClipboardCheck, Shield, Code, Cpu, Target } from 'lucide-react';
+import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, Users, PhoneCall, Globe, Crown, RefreshCw, GraduationCap, PenTool, FileText, ClipboardCheck, Shield, Code, Cpu, Target, Calendar } from 'lucide-react';
 import Logo from './Logo';
 
 interface NavDropdownItem {
@@ -42,8 +60,6 @@ const TopBar = () => {
         </div>
 
         <div className="flex items-center space-x-6">
-          <span className="text-slate-400 text-[11px] uppercase tracking-wider hidden xl:inline">Strategic Advisory &amp; Digital Transformation</span>
-          <div className="hidden xl:block h-3 w-px bg-white/20"></div>
           <Link to="/login" className="flex items-center text-slate-300 hover:text-secunova-light transition-colors font-medium">
             <User className="h-3.5 w-3.5 mr-1.5 text-secunova-light" />
             Client Portal
@@ -302,9 +318,10 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center flex-shrink-0">
               <Link
                 to="/contact"
-                className="btn btn-gradient btn-md text-xs uppercase tracking-wider font-bold shadow-md hover:shadow-lg transition-all whitespace-nowrap"
+                className="btn btn-gradient btn-sm text-[11px] xl:text-xs uppercase tracking-wider font-bold shadow-xs hover:shadow-md transition-all whitespace-nowrap px-4 py-2 rounded-xl flex items-center"
               >
-                Schedule a Consultation
+                <Calendar className="h-3.5 w-3.5 mr-1.5" />
+                Book Consultation
               </Link>
             </div>
 
@@ -378,10 +395,11 @@ const Navbar = () => {
             <div className="pt-4 border-t border-gray-100">
               <Link
                 to="/contact"
-                className="btn btn-gradient w-full justify-center text-xs uppercase tracking-wider font-bold min-h-[48px]"
+                className="btn btn-gradient w-full justify-center text-xs uppercase tracking-wider font-bold min-h-[44px] flex items-center"
                 onClick={() => setIsOpen(false)}
               >
-                Schedule a Consultation
+                <Calendar className="h-4 w-4 mr-2" />
+                Book Consultation
               </Link>
             </div>
           </div>

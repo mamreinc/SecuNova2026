@@ -1,9 +1,9 @@
 /**
  * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
  * ----------------------------------------------------------------------------
  * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
+ * 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
  *
  * CORE ARCHITECTURAL ETHOS:
  * - 100% Bespoke Code: Built strictly to client specifications from scratch.
@@ -12,7 +12,7 @@
  *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
  * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
  *
- * Copyright (c) SecuNova. All rights reserved.
+ * Copyright (c) MaxPhaos Marketing. All rights reserved.
  * ============================================================================
  */
 import { createServer } from 'node:http';
@@ -23,7 +23,7 @@ import puppeteer from 'puppeteer';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const DIST = normalize(join(__dirname, '..', 'dist'));
-const PORT = process.env.PRERENDER_PORT || '4199';
+let activePort = process.env.PRERENDER_PORT ? parseInt(process.env.PRERENDER_PORT, 10) : 0;
 
 const ROUTES = [
   '/',
@@ -207,8 +207,9 @@ async function launchBrowser() {
 }
 
 async function main() {
-  await new Promise((resolve) => server.listen(PORT, resolve));
-  console.log(`[prerender] serving ${DIST} on http://localhost:${PORT}`);
+  await new Promise((resolve) => server.listen(activePort, resolve));
+  activePort = server.address().port;
+  console.log(`[prerender] serving ${DIST} on http://localhost:${activePort}`);
 
   const browser = await launchBrowser();
   if (!browser) {
@@ -224,7 +225,7 @@ async function main() {
 
     page.on('request', (req) => {
       const url = req.url();
-      const isSameOrigin = url.startsWith(`http://localhost:${PORT}`);
+      const isSameOrigin = url.startsWith(`http://localhost:${activePort}`);
       const isBlocked = BLOCK_PREFIXES.some((p) => url.startsWith(p));
       if (isBlocked) {
         req.abort();
@@ -236,7 +237,7 @@ async function main() {
     });
 
     try {
-      await page.goto(`http://localhost:${PORT}${route}`, {
+      await page.goto(`http://localhost:${activePort}${route}`, {
         waitUntil: 'domcontentloaded',
         timeout: 45000,
       });

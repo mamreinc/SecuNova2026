@@ -1,3 +1,21 @@
+/**
+ * ============================================================================
+ * MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) MaxPhaos Marketing. All rights reserved.
+ * ============================================================================
+ */
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -106,10 +124,10 @@ const PillarHeader: React.FC<PillarHeaderProps> = ({ index, label, title, descri
           <span className="px-2 py-0.5 rounded-md bg-secunova-blue text-white text-xs">{index}</span>
         </span>
       </div>
-      <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark mb-5 leading-tight">
+      <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark mb-5 leading-tight tracking-tight">
         {title}
       </h2>
-      <p className="text-lg md:text-xl text-secunova-dark/70 max-w-3xl leading-relaxed">
+      <p className="text-lg md:text-xl text-slate-700 max-w-3xl leading-relaxed">
         {description}
       </p>
     </div>
@@ -119,11 +137,11 @@ const PillarHeader: React.FC<PillarHeaderProps> = ({ index, label, title, descri
 const ServicesPage = () => {
   const strategicServices = [
     {
-      title: 'Strategic Advisory & Business Planning',
+      title: 'Executive Technology & Governance Advisory',
       description:
-        'Long-term strategic plans aligned with corporate objectives: digital roadmaps, organizational change management, feasibility studies, and innovation-led business models.',
+        'Long-term strategic plans aligned with enterprise objectives: digital roadmaps, change governance, feasibility studies, and capital allocation frameworks.',
       icon: <Lightbulb className="h-6 w-6" />,
-      highlights: ['Digital roadmaps & readiness assessment', 'Organizational change management', 'Feasibility studies & innovation models'],
+      highlights: ['Digital roadmaps & maturity audits', 'Change management governance', 'Feasibility studies & capital modeling'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
       badge: 'Core Practice',
@@ -131,27 +149,27 @@ const ServicesPage = () => {
     {
       title: 'Digital Transformation & Process Optimization',
       description:
-        'Business process reengineering (BPR), cloud transformation across AWS and GCP, AI and RPA automation integration, and advanced data analytics strategies.',
+        'Business process reengineering (BPR), cloud transformation across AWS and GCP, AI automation integration, and data architecture strategies.',
       icon: <RefreshCw className="h-6 w-6" />,
-      highlights: ['Business process reengineering (BPR)', 'Cloud strategies (AWS & GCP)', 'AI, RPA & advanced data analytics'],
+      highlights: ['Business process reengineering (BPR)', 'Multi-cloud migration strategies', 'AI & workflow automation integration'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'light' as const,
     },
     {
-      title: 'Cybersecurity & Risk Management',
+      title: 'Cybersecurity Risk & Compliance Governance',
       description:
-        'Cyber risk assessments, governance and compliance frameworks, and business continuity and disaster recovery (BCDR) planning for operational resilience.',
+        'Forensic risk audits, regulatory compliance frameworks (SOC 2, ISO 27001, PIPEDA), threat vector mitigation, and business continuity architecture.',
       icon: <Shield className="h-6 w-6" />,
-      highlights: ['Cyber risk assessment & remediation', 'Governance & regulatory compliance', 'Business continuity & BCDR planning'],
-      path: '/services/strategic-advisory-pmaas',
+      highlights: ['Cyber risk posture assessments', 'Regulatory compliance & audits', 'Business continuity (BCDR) planning'],
+      path: '/services/enterprise-audits',
       accent: 'blue' as const,
     },
     {
-      title: 'Customer Experience & Digital Solutions',
+      title: 'Enterprise Platforms & Bespoke Engineering',
       description:
-        'Integrated CX strategy across every channel and expert oversight for digital products, websites, and applications that precisely meet market needs.',
+        'Architecting custom digital applications, web portals, and software platforms engineered with sub-second performance and total client IP ownership.',
       icon: <Globe className="h-6 w-6" />,
-      highlights: ['CX strategy & journey architecture', 'Digital product & platform oversight', 'Precise market-fit delivery'],
+      highlights: ['100% custom web application architecture', 'Sub-second performance engineering', 'Full client IP & codebase handoff'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'dark' as const,
     },
@@ -159,75 +177,75 @@ const ServicesPage = () => {
 
   const pmaasServices = [
     {
-      title: 'Project Leadership',
+      title: 'Senior Delivery Leadership',
       description:
-        'Professional project managers who lead digital and technical initiatives from planning through delivery, handover, and closure.',
+        'Experienced project directors who lead complex digital and technical initiatives from scope definition through delivery and final closure.',
       icon: <Users className="h-6 w-6" />,
-      highlights: ['End-to-end project ownership', 'Delivery & closure management', 'Digital initiative leadership'],
+      highlights: ['End-to-end initiative leadership', 'Scope & delivery governance', 'Vendor oversight & accountability'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
       badge: 'PMaaS',
     },
     {
-      title: 'Resource Allocation',
+      title: 'Resource Allocation & Control',
       description:
-        'Roles and tasks assigned based on team capability and efficiency to eliminate waste in time and energy.',
+        'Task assignment based on team specialization and capacity, eliminating friction and maximizing operational velocity.',
       icon: <Scale className="h-6 w-6" />,
-      highlights: ['Capability-based assignment', 'Zero time or energy waste', 'Optimized team utilization'],
+      highlights: ['Capability-matched task assignment', 'Elimination of execution bottlenecks', 'Optimized resource utilization'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'dark' as const,
     },
     {
-      title: 'Budget & Cost Control',
+      title: 'Budget & Capital Protection',
       description:
-        'Precision monitoring of project financial flows and strict control of expenses so approved budgets are never exceeded.',
+        'Precision monitoring of financial burn rates and strict cost controls ensuring approved project budgets are never exceeded.',
       icon: <BarChart className="h-6 w-6" />,
-      highlights: ['Financial flow monitoring', 'Expense control & forecasting', 'Budget compliance assurance'],
+      highlights: ['Continuous financial tracking', 'Expense forecasting & control', 'Board budget compliance'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'light' as const,
     },
     {
-      title: 'Risk Management',
+      title: 'Proactive Risk Governance',
       description:
-        'Anticipating potential obstacles and building proactive plans before risks can impact project delivery.',
+        'Anticipating technical dependencies and building mitigation plans before risks impact critical project milestones.',
       icon: <Shield className="h-6 w-6" />,
-      highlights: ['Proactive obstacle anticipation', 'Pre-emptive mitigation plans', 'Delivery impact protection'],
+      highlights: ['Early risk factor identification', 'Pre-emptive mitigation plans', 'Milestone protection'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
     },
     {
-      title: 'Quality Assurance',
+      title: 'Systematic Quality Assurance',
       description:
-        'Reviewing and delivering software and technical outputs against the highest agreed quality standards.',
+        'Rigorous peer reviews and testing protocols verifying that software outputs meet strict architectural standards.',
       icon: <Award className="h-6 w-6" />,
-      highlights: ['Highest agreed quality standards', 'Rigorous output review', 'Technical excellence delivery'],
+      highlights: ['Peer-reviewed code quality', 'Strict testing benchmarks', 'Sub-second performance standards'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'dark' as const,
     },
     {
-      title: 'Governance & Reporting',
+      title: 'Executive Dashboards & Reporting',
       description:
-        'Regular, transparent reports to senior leadership on completion rate, time spent, and key performance indicators (KPIs).',
+        'Transparent periodic reporting providing C-suite executives clear visibility into completion velocity, KPIs, and deliverables.',
       icon: <LineChart className="h-6 w-6" />,
-      highlights: ['Transparent periodic reporting', 'Completion & time metrics', 'KPI tracking for leadership'],
+      highlights: ['C-suite periodic reporting', 'Completion rate tracking', 'Quantitative KPI dashboards'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'light' as const,
     },
     {
-      title: 'Agile & Waterfall Methodologies',
+      title: 'Agile & Hybrid Frameworks',
       description:
-        'The right methodology for every project: fast iterative agile cycles or precisely scheduled engineering plans.',
+        'Deploying the ideal methodology for your operational environment: rapid iterative sprints or structured milestone delivery.',
       icon: <Zap className="h-6 w-6" />,
-      highlights: ['Adaptive agile cycles', 'Scheduled waterfall plans', 'Methodology-fit selection'],
+      highlights: ['Iterative sprint orchestration', 'Structured milestone planning', 'Tailored governance model'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
     },
     {
-      title: 'Timeline & Milestone Enforcement',
+      title: 'Milestone & Schedule Integrity',
       description:
-        'Rigorous schedule management that enforces strict delivery timelines and milestone commitments.',
+        'Enforcing strict schedule discipline and milestone completion commitments to ensure on-time system launches.',
       icon: <Clock className="h-6 w-6" />,
-      highlights: ['Strict timeline enforcement', 'Milestone commitment tracking', 'Delivery velocity assurance'],
+      highlights: ['Strict schedule management', 'Milestone commitment tracking', 'Predictable launch timelines'],
       path: '/services/strategic-advisory-pmaas',
       accent: 'dark' as const,
     },
@@ -236,37 +254,37 @@ const ServicesPage = () => {
   const pmaasAdvantages = [
     {
       icon: <RefreshCw className="h-5 w-5" />,
-      title: 'High Operational Flexibility',
-      description: 'Scale your project management team up or down with project demand, with no long-term hiring commitments.',
+      title: 'Operational Flexibility',
+      description: 'Scale delivery resources up or down seamlessly based on project requirements without fixed headcount burden.',
     },
     {
       icon: <TrendingUp className="h-5 w-5" />,
-      title: 'Lower Costs',
-      description: 'Avoid fixed full-time salaries and pay for value and actual delivered results instead.',
+      title: 'Capital Efficiency',
+      description: 'Replace fixed executive compensation overhead with value-driven investment tied directly to milestone outputs.',
     },
     {
       icon: <Clock className="h-5 w-5" />,
-      title: 'Immediate Access to Expertise',
-      description: 'Tap specialized capabilities experienced in complex technical standards and digital transformation.',
+      title: 'Immediate Senior Expertise',
+      description: 'Gain instant access to battle-tested advisors skilled in cloud engineering, compliance, and enterprise delivery.',
     },
     {
       icon: <Target className="h-5 w-5" />,
-      title: 'Focus on Core Operations',
-      description: 'Let your internal team and leadership drive growth while the PMaaS team handles execution.',
+      title: 'Uninterrupted Focus',
+      description: 'Allow internal leadership to focus on core growth while our PMaaS team governs execution details.',
     },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Services | SecuNova Inc. | Strategic Advisory &amp; PMaaS</title>
-        <meta name="description" content="SecuNova Inc. delivers Strategic Advisory &amp; Digital Transformation and Project Management as a Service (PMaaS) to restructure organizations for the digital age." />
-        <meta name="keywords" content="SecuNova Inc., SecuNova Consulting, strategic advisory Calgary, digital transformation roadmap, PMaaS Canada, business process reengineering, cloud transformation, cybersecurity governance" />
+        <title>Services &amp; Practice Areas | SecuNova Inc. | Advisory &amp; PMaaS</title>
+        <meta name="description" content="SecuNova Inc. delivers Strategic Advisory, Digital Transformation, Cybersecurity Governance, and Project Management as a Service (PMaaS) for North American enterprises." />
+        <meta name="keywords" content="SecuNova Inc, strategic advisory Calgary, digital transformation roadmap, PMaaS Canada, business process reengineering, cybersecurity audit Calgary" />
         <link rel="canonical" href="https://secunovainc.com/services" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="Services | SecuNova Consulting | Strategic Advisory &amp; PMaaS" />
-        <meta property="og:description" content="Two service lines: Strategic Advisory &amp; Digital Transformation, and Project Management as a Service (PMaaS)." />
+        <meta property="og:title" content="Services &amp; Practice Areas | SecuNova Inc." />
+        <meta property="og:description" content="Two core practice areas: Strategic Advisory &amp; Digital Transformation, and Project Management as a Service (PMaaS)." />
         <meta property="og:url" content="https://secunovainc.com/services" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://secunovainc.com/og-image.png" />
@@ -285,12 +303,12 @@ const ServicesPage = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
+      <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="SecuNova Strategic Advisory and Digital Transformation"
-            className="w-full h-full object-cover opacity-30"
+            alt="SecuNova Strategic Advisory &amp; Enterprise Governance"
+            className="w-full h-full object-cover opacity-25"
             loading="eager"
             fetchPriority="high"
             decoding="async"
@@ -299,23 +317,23 @@ const ServicesPage = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10 w-full">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest text-secunova-light mb-6">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-widest text-secunova-light mb-6">
               <Crown className="h-4 w-4 mr-2" />
-              Two Service Lines
+              Institutional Practice Areas
             </div>
 
-            <h1 className="hero-heading mb-6">
-              Advisory. Transformation. <br />
-              <span className="text-secunova-light">On-Demand Delivery.</span>
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 leading-tight">
+              Strategic Advisory. <br />
+              <span className="text-secunova-light">Governed Project Delivery.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              SecuNova restructures and develops organizations through strategic advisory and digital transformation, backed by flexible project management expertise that executes on time and on budget.
+            <p className="text-lg md:text-xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed">
+              SecuNova Inc. elevates enterprise performance through senior strategic advisory and Project Management as a Service (PMaaS), executing initiatives on schedule and within approved authorizations.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-              <Link to="/contact" className="btn btn-gradient btn-lg">
-                Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4 text-white" />
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+              <Link to="/contact" className="btn btn-gradient btn-lg text-white">
+                Schedule Executive Briefing <ArrowRight className="ml-2 h-4 w-4 text-white" />
               </Link>
               <a href="tel:403-401-1552" className="btn btn-outline-light btn-lg text-white">
                 <Phone className="mr-2 h-4 w-4" /> 403-401-1552
@@ -331,9 +349,9 @@ const ServicesPage = () => {
           <div className="max-w-7xl mx-auto">
             <PillarHeader
               index="01"
-              label="Service Line"
-              title="Strategic Advisory & Digital Transformation"
-              description="A wide range of advanced services that restructure and develop organizations to strengthen competitive advantage and operational efficiency in the digital age, from digital roadmaps and process reengineering to cybersecurity governance and customer experience."
+              label="Practice Area"
+              title="Strategic Advisory &amp; Digital Transformation"
+              description="Senior technology advisory services designed to modernize infrastructure, reengineer legacy workflows, enforce risk compliance, and architect custom software platforms for North American enterprises."
               icon={<Crown className="h-4 w-4" />}
             />
 
@@ -354,11 +372,11 @@ const ServicesPage = () => {
 
             <div className="mt-12 bg-gradient-to-r from-secunova-blue/5 to-secunova-light/5 border border-secunova-blue/20 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-xl font-bold text-secunova-dark mb-2">Ready to reshape your organization for the digital age?</h3>
-                <p className="text-secunova-dark/70 text-sm">Schedule a direct briefing with our strategic advisory practice.</p>
+                <h3 className="text-xl font-bold text-secunova-dark mb-2">Ready to modernize your technical architecture?</h3>
+                <p className="text-slate-600 text-sm">Schedule a strategic briefing with our senior advisory team.</p>
               </div>
-              <Link to="/services/strategic-advisory-pmaas" className="btn btn-gradient btn-lg">
-                View Full Specifications <ArrowRight className="ml-2 h-4 w-4" />
+              <Link to="/services/strategic-advisory-pmaas" className="btn btn-gradient btn-lg text-white">
+                View Advisory Specifications <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -371,9 +389,9 @@ const ServicesPage = () => {
           <div className="max-w-7xl mx-auto">
             <PillarHeader
               index="02"
-              label="Service Line"
+              label="Practice Area"
               title="Project Management as a Service (PMaaS)"
-              description="A flexible operational model giving your organization access to experienced project management expertise on demand, without hiring a permanent team. Execute projects at maximum efficiency while reducing costs and guaranteeing adherence to timelines and budgets."
+              description="On-demand project leadership model providing access to senior project directors without permanent headcount commitments. We enforce strict schedule discipline, budget oversight, and technical quality standards."
               icon={<ClipboardCheck className="h-4 w-4" />}
             />
 
@@ -395,7 +413,7 @@ const ServicesPage = () => {
             {/* Strategic Advantages */}
             <div className="mt-14 bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
               <div className="bg-gradient-to-r from-secunova-blue/10 to-secunova-light/10 px-8 py-6 border-b border-gray-100">
-                <h3 className="text-2xl font-bold text-secunova-dark">Strategic Advantages of the PMaaS Model</h3>
+                <h3 className="text-2xl font-bold text-secunova-dark">Strategic Advantages of PMaaS Governance</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
                 {pmaasAdvantages.map((adv, i) => (
@@ -404,7 +422,7 @@ const ServicesPage = () => {
                       {adv.icon}
                     </div>
                     <h4 className="font-bold text-secunova-dark mb-2">{adv.title}</h4>
-                    <p className="text-sm text-secunova-dark/70 leading-relaxed">{adv.description}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{adv.description}</p>
                   </div>
                 ))}
               </div>
@@ -413,25 +431,25 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Featured Portfolio: Engineered & Delivered Under Our Leadership */}
+      {/* Featured Track Record */}
       <section id="internal-rnd" className="secunova-section secunova-section--dark">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <PillarHeader
               index="03"
-              label="Technical Mastery"
-              title="Our Work. Engineered & Delivered Under Our Leadership"
-              description="A showcase of software systems and digital platforms engineered, architected, and brought to market under SecuNova's direct technical standards and strategic stewardship."
+              label="Technical Track Record"
+              title="Supervised Systems &amp; Technical Architecture"
+              description="A showcase of enterprise software systems, internal R&amp;D platforms, and digital solutions engineered under SecuNova's direct technical standards and project leadership."
               icon={<Code className="h-4 w-4" />}
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                 <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
-                  Supervised Delivery · 2026
+                  ACTIVE R&amp;D · 2026
                 </span>
-                <h4 className="text-lg font-bold text-white mb-2">Nova</h4>
-                <p className="text-xs text-blue-100 mb-4">Native macOS AI agent engineered for local execution (Swift, Core ML, AppleScript) with zero cloud data transfer.</p>
+                <h4 className="text-lg font-bold text-white mb-2">Nova macOS AI Agent</h4>
+                <p className="text-xs text-blue-100/90 mb-4">Native macOS artificial intelligence platform built in Swift and Core ML for local execution with zero cloud data transmission.</p>
                 <Link to="/our-work/nova" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
                   View Tech Architecture <ArrowRight className="h-3 w-3" />
                 </Link>
@@ -439,10 +457,10 @@ const ServicesPage = () => {
 
               <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                 <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
-                  Supervised Delivery · 2025
+                  SUPERVISED DELIVERY · 2025
                 </span>
-                <h4 className="text-lg font-bold text-white mb-2">Career OS</h4>
-                <p className="text-xs text-blue-100 mb-4">Automated career management and ATS resume tailoring platform (Next.js, TypeScript, IndexedDB) running client-side.</p>
+                <h4 className="text-lg font-bold text-white mb-2">Career OS Engine</h4>
+                <p className="text-xs text-blue-100/90 mb-4">High-performance client-side application delivered under our PMaaS discipline using Next.js and TypeScript.</p>
                 <Link to="/our-work/career-os" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
                   View Tech Architecture <ArrowRight className="h-3 w-3" />
                 </Link>
@@ -450,51 +468,18 @@ const ServicesPage = () => {
 
               <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                 <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
-                  Supervised Delivery · 2025
+                  SUPERVISED DELIVERY · 2025
                 </span>
-                <h4 className="text-lg font-bold text-white mb-2">SecuBoost</h4>
-                <p className="text-xs text-blue-100 mb-4">High-performance native macOS utility and security suite operating 100 percent offline (Swift, SwiftUI, CryptoKit).</p>
+                <h4 className="text-lg font-bold text-white mb-2">SecuBoost Security Suite</h4>
+                <p className="text-xs text-blue-100/90 mb-4">Native macOS performance and security application built with SwiftUI and CryptoKit operating 100 percent offline.</p>
                 <Link to="/our-work/secuboost" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
-                  View Tech Architecture <ArrowRight className="h-3 w-3" />
-                </Link>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
-                  Supervised Delivery · 2025
-                </span>
-                <h4 className="text-lg font-bold text-white mb-2">Journalism Audit Platform</h4>
-                <p className="text-xs text-blue-100 mb-4">Private AI content verification platform for media organizations (Python, FastAPI, LangChain) requiring editorial integrity.</p>
-                <Link to="/our-work/journalism-audit" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
-                  View Tech Architecture <ArrowRight className="h-3 w-3" />
-                </Link>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
-                  Supervised Delivery · 2025
-                </span>
-                <h4 className="text-lg font-bold text-white mb-2">SecuNova Lead Finder</h4>
-                <p className="text-xs text-blue-100 mb-4">Custom sales intelligence and lead discovery system (Python, PostgreSQL, Redis) eliminating recurring SaaS fees.</p>
-                <Link to="/our-work/lead-finder" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
-                  View Tech Architecture <ArrowRight className="h-3 w-3" />
-                </Link>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
-                  Supervised Delivery · 2025
-                </span>
-                <h4 className="text-lg font-bold text-white mb-2">CanadaQuest</h4>
-                <p className="text-xs text-blue-100 mb-4">AI-powered Canadian citizenship training platform (Next.js, TypeScript, PWA) built for offline civic learning.</p>
-                <Link to="/our-work/canadaquest" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
                   View Tech Architecture <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
             </div>
 
             <div className="mt-10 text-center">
-              <Link to="/about/our-work" className="btn btn-gradient btn-lg">
+              <Link to="/about/our-work" className="btn btn-gradient btn-lg text-white">
                 View Full Track Record <ArrowRight className="ml-2 h-4 w-4 text-white" />
               </Link>
             </div>

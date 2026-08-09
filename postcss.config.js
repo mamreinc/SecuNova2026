@@ -1,9 +1,9 @@
 /**
  * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
  * ----------------------------------------------------------------------------
  * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
+ * 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
  *
  * CORE ARCHITECTURAL ETHOS:
  * - 100% Bespoke Code: Built strictly to client specifications from scratch.
@@ -12,7 +12,7 @@
  *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
  * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
  *
- * Copyright (c) SecuNova. All rights reserved.
+ * Copyright (c) MaxPhaos Marketing. All rights reserved.
  * ============================================================================
  */
 export default {

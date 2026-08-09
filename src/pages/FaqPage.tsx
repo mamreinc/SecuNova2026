@@ -1,3 +1,21 @@
+/**
+ * ============================================================================
+ * MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) MaxPhaos Marketing. All rights reserved.
+ * ============================================================================
+ */
+
 import { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -125,7 +143,7 @@ const FaqPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
+      <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
 
         <div className="container mx-auto px-4 relative z-10 w-full">

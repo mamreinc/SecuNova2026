@@ -1,5 +1,23 @@
+/**
+ * ============================================================================
+ * MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) MaxPhaos Marketing. All rights reserved.
+ * ============================================================================
+ */
+
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Linkedin, Lock } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Lock, ShieldCheck, Award } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -22,20 +40,24 @@ const Footer = () => {
             <div className="mb-6">
               <Logo theme="dark" size="md" />
             </div>
-            <p className="text-sm text-white/90 mb-6 leading-relaxed max-w-sm">
-              SecuNova Inc. is a Calgary-based advisory firm guiding organizations through strategic consulting, digital transformation, and on-demand project management, engineered to raise competitive advantage and operational efficiency in the digital age.
+            <p className="text-sm text-blue-100/90 mb-6 leading-relaxed max-w-sm">
+              SecuNova Inc. is a Calgary-based boutique IT advisory firm delivering executive strategic consulting, PMaaS execution, cybersecurity risk governance, and high-performance digital systems across North America.
             </p>
             
-            <div className="flex flex-wrap gap-2">
+            <div className="flex items-center gap-3">
               <a 
                 href="https://ca.linkedin.com/company/secunovac" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-secunova-blue p-2.5 rounded-lg transition-all duration-300 hover:scale-110 touch-target"
-                aria-label="LinkedIn"
+                className="bg-white/10 hover:bg-secunova-blue p-2.5 rounded-lg transition-all duration-300 hover:scale-105 touch-target"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin className="h-5 w-5 text-white" />
               </a>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-secunova-light">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                <span>Enterprise Governance</span>
+              </div>
             </div>
           </div>
 
@@ -47,22 +69,22 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Strategic Advisory &amp; Business Planning
+                  Executive Technology Advisory
                 </Link>
               </li>
               <li>
                 <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
-                  Digital Transformation &amp; Process Optimization
+                  Digital Transformation Roadmaps
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/enterprise-audits" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Cybersecurity &amp; Risk Mitigation
                 </Link>
               </li>
               <li>
                 <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
-                  Cybersecurity &amp; Risk Management
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
-                  Customer Experience &amp; Digital Solutions
+                  Enterprise Cloud Architecture
                 </Link>
               </li>
             </ul>
@@ -71,61 +93,61 @@ const Footer = () => {
           {/* Project Management as a Service */}
           <div>
             <h3 className="h-11 flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-6">
-              PMaaS
+              PMaaS &amp; Delivery
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Project Leadership &amp; Resource Allocation
+                  Senior Project Leadership
                 </Link>
               </li>
               <li>
                 <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
-                  Budget &amp; Cost Control
+                  Budget &amp; Capital Protection
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/enterprise-audits" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Governance &amp; Quality Assurance
                 </Link>
               </li>
               <li>
                 <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
-                  Risk Management &amp; Quality Assurance
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
-                  Agile &amp; Waterfall Methodologies
+                  Agile &amp; Waterfall Orchestration
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Practice & Organization */}
+          {/* Organization & Track Record */}
           <div>
             <h3 className="h-11 flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-6">
-              Organization &amp; Track Record
+              Organization
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/about" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  About SecuNova
+                  About SecuNova Inc.
                 </Link>
               </li>
               <li>
                 <Link to="/about/our-work" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Track Record &amp; Supervised Delivery
+                  Supervised Track Record
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Executive Contact
+                  Executive Consultation Briefing
                 </Link>
               </li>
               <li>
                 <Link to="/faq" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  FAQ
+                  Enterprise FAQ
                 </Link>
               </li>
               <li>
                 <Link to="/join-us" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Investors &amp; Partners
+                  Careers &amp; Partners
                 </Link>
               </li>
             </ul>
@@ -140,10 +162,10 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-secunova-light" />
               </div>
               <div>
-                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Mailing Address</p>
+                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Headquarters</p>
                 <p className="text-sm text-white leading-relaxed">
                   #270, 1122 3 St SE Ste 1906<br />
-                  Calgary, AB T2G 0E7, CA
+                  Calgary, AB T2G 0E7, Canada
                 </p>
               </div>
             </div>
@@ -163,7 +185,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-secunova-light" />
               </div>
               <div>
-                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Direct Email</p>
+                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Executive Inquiries</p>
                 <a href="mailto:hello@secunovainc.com" className="text-sm text-white hover:text-secunova-light transition-colors">
                   hello@secunovainc.com
                 </a>
@@ -176,9 +198,9 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-blue-200">
           <p>© {new Date().getFullYear()} SecuNova Inc. All rights reserved. Registered in Calgary, AB, Canada.</p>
           <div className="flex items-center space-x-6 mt-4 sm:mt-0">
-            <Link to="/join-us" className="hover:text-white transition-colors">Investors &amp; Partners</Link>
-            <Link to="/privacy-terms" className="hover:text-white transition-colors">Privacy Policy &amp; Terms of Service</Link>
-            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
+            <Link to="/join-us" className="hover:text-white transition-colors">Partners</Link>
+            <Link to="/privacy-terms" className="hover:text-white transition-colors">Privacy &amp; Terms</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Executive Contact</Link>
           </div>
         </div>
       </div>

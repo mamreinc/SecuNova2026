@@ -1,15 +1,26 @@
+<!--
+============================================================================
+MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+----------------------------------------------------------------------------
+All design, software architecture, UI/UX components, and source code are
+100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+
+CORE ARCHITECTURAL ETHOS:
+- 100% Bespoke Code: Built strictly to client specifications from scratch.
+- Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+- Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+  engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+- Full IP & Repository Handoff: 100% client asset and codebase ownership.
+
+Copyright (c) MaxPhaos Marketing. All rights reserved.
+============================================================================
+-->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo/secunova-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- 
-    SecuNova Inc. - Custom Website
-    Security Notice: This site implements comprehensive security measures
-    including CSP, HSTS, XSS protection, and data validation.
-    -->
     
     <!-- Enhanced Security Meta Tags - Comprehensive Protection -->
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -20,12 +31,11 @@
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
     <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
     
-    <!-- Enhanced Content Security Policy - Stricter Configuration -->
+    <!-- Enhanced Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; img-src 'self' data: https: blob: https://images.pexels.com; font-src 'self' data: https: https://fonts.gstatic.com https://fonts.cdnfonts.com; connect-src 'self' https: wss: data: blob:; frame-src 'self' https://www.google.com https://maps.google.com https://*.googleapis.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests; block-all-mixed-content;">
     
     <!-- Critical CSS to prevent white flash -->
     <style>
-      /* Critical styles to prevent white page flash */
       html {
         background-color: #ffffff;
         margin: 0;
@@ -43,13 +53,11 @@
         min-height: 100vh;
       }
       
-      /* Prevent flash of unstyled content */
       #root {
         min-height: 100vh;
         background: transparent;
       }
       
-      /* Critical navigation styles */
       .header {
         position: fixed;
         width: 100%;
@@ -59,19 +67,16 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       }
       
-      /* Prevent layout shift */
       .hero-section {
         min-height: 100vh;
         padding-top: 12rem;
         padding-bottom: 8rem;
       }
       
-      /* Smooth transitions */
       * {
         box-sizing: border-box;
       }
       
-      /* Optimize font rendering */
       body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -80,10 +85,10 @@
     </style>
     
     <!-- Primary Meta Tags -->
-    <title>SecuNova Consulting Calgary | Enterprise IT Governance & Advisory</title>
-    <meta name="title" content="SecuNova Consulting Calgary | Enterprise IT Governance & Advisory">
-    <meta name="description" content="SecuNova Consulting is a Calgary-based advisory firm providing strategic advisory, PMaaS, and enterprise IT and security audits. Independent oversight that protects budgets and directs digital transformation.">
-    <meta name="keywords" content="SecuNova Consulting, SecuNova Consulting Calgary, SecuNova Inc Calgary, consulting firm Calgary, IT consulting Calgary, strategic advisory Calgary, PMaaS Calgary, digital transformation roadmap Calgary, IT operations governance, enterprise IT audit Calgary, IT security audit Calgary, security posture review, subscription bloat audit, technology expense audit, compliance advisory Alberta, IT governance Canada">
+    <title>SecuNova Inc. | Enterprise IT Governance, Strategic Advisory &amp; Cybersecurity Risk</title>
+    <meta name="title" content="SecuNova Inc. | Enterprise IT Governance, Strategic Advisory &amp; Cybersecurity Risk">
+    <meta name="description" content="SecuNova Inc. is a Calgary-based boutique IT advisory firm delivering high-trust strategic advisory, PMaaS, cybersecurity audits, and digital systems execution for Canadian and North American enterprises.">
+    <meta name="keywords" content="SecuNova Inc, SecuNova Consulting, IT advisory Calgary, strategic consulting Canada, enterprise cybersecurity risk, PMaaS Calgary, digital transformation roadmap, IT governance Canada, cloud architecture advisory">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="bingbot" content="index, follow">
@@ -99,32 +104,32 @@
     <link rel="alternate" hreflang="x-default" href="https://secunovainc.com">
 
     <!-- Custom Website Attribution -->
-    <meta name="designer" content="SecuNova Inc. - Bespoke Digital Solutions">
-    <meta name="developer" content="SecuNova Inc. - Full-Stack Development Team">
-    <meta name="generator" content="Custom React Application - Built from Scratch by SecuNova Inc.">
+    <meta name="designer" content="MaxPhaos Marketing - Bespoke Architecture">
+    <meta name="developer" content="MaxPhaos Marketing - Senior Engineering">
+    <meta name="generator" content="Custom React Application - 100% Bespoke Code by MaxPhaos Marketing">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secunovainc.com/">
-    <meta property="og:title" content="SecuNova Consulting Calgary | Enterprise IT Governance & Advisory">
-    <meta property="og:description" content="SecuNova Consulting provides strategic advisory, PMaaS, and enterprise IT and security audits in Calgary. Independent oversight that protects budgets and directs digital transformation.">
+    <meta property="og:title" content="SecuNova Inc. | Enterprise IT Governance &amp; Strategic Advisory">
+    <meta property="og:description" content="High-trust strategic advisory, PMaaS, cybersecurity risk governance, and digital systems architecture for North American enterprises.">
     <meta property="og:image" content="https://secunovainc.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="SecuNova Consulting - Enterprise IT Governance & Advisory in Calgary">
-    <meta property="og:site_name" content="SecuNova Consulting">
+    <meta property="og:image:alt" content="SecuNova Inc. - Enterprise IT Governance &amp; Strategic Advisory">
+    <meta property="og:site_name" content="SecuNova Inc.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secunovainc.com/">
-    <meta property="twitter:title" content="SecuNova Consulting Calgary | Enterprise IT Governance & Advisory">
-    <meta property="twitter:description" content="SecuNova Consulting: strategic advisory, PMaaS, and enterprise IT and security audits. Calgary, AB.">
+    <meta property="twitter:title" content="SecuNova Inc. | Enterprise IT Governance &amp; Strategic Advisory">
+    <meta property="twitter:description" content="Boutique IT firm delivering senior strategic advisory, PMaaS, and enterprise cybersecurity risk governance.">
     <meta property="twitter:image" content="https://secunovainc.com/og-image.png">
-    <meta property="twitter:image:alt" content="SecuNova Consulting - Enterprise IT Governance & Advisory in Calgary">
+    <meta property="twitter:image:alt" content="SecuNova Inc. - Enterprise IT Governance &amp; Advisory">
     <meta name="twitter:site" content="@SecuNova">
     <meta name="twitter:creator" content="@SecuNova">
 
-    <!-- Additional SEO Meta Tags - Optimized for Services -->
+    <!-- Additional SEO Meta Tags -->
     <meta name="geo.region" content="CA-AB">
     <meta name="geo.placename" content="Calgary">
     <meta name="geo.position" content="51.0447;-114.0719">
@@ -147,45 +152,37 @@
     <meta name="business:contact_data:phone_number" content="+14034011552">
     <meta name="business:contact_data:email" content="hello@secunovainc.com">
 
-    <!-- Brand Font: Montserrat - Optimized Loading -->
+    <!-- Brand Font: Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-      /* Font optimization - Montserrat from Google Fonts */
       body {
         font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        font-display: swap; /* Show fallback immediately, swap when loaded */
+        font-display: swap;
       }
     </style>
     
-    <!-- Preload critical resources - Optimized for Performance -->
+    <!-- Preload critical resources -->
     <link rel="preconnect" href="https://images.pexels.com" crossorigin>
     <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
     <link rel="dns-prefetch" href="https://images.pexels.com">
     <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
     
-    <!-- Preload critical hero image for homepage - Optimized size -->
-    <link rel="preload" as="image" href="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200&fm=webp&q=85" fetchpriority="high" imagesrcset="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=800&fm=webp&q=85 800w, https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200&fm=webp&q=85 1200w" imagesizes="100vw">
-    
-    <!-- Resource Hints for Faster Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "@id": "https://secunovainc.com",
-        "name": "SecuNova Consulting",
-        "alternateName": ["SecuNova Inc.", "SecuNova", "SecuNova Calgary", "SecuNova Consulting Calgary"],
+        "name": "SecuNova Inc.",
+        "alternateName": ["SecuNova", "SecuNova Consulting", "SecuNova Calgary"],
         "foundingDate": "2016",
         "image": "https://secunovainc.com/logo/secunova-logo.png",
-        "description": "SecuNova Consulting is a Calgary-based advisory firm providing strategic advisory, PMaaS, and enterprise IT and security audits. Independent oversight that protects budgets, directs digital transformation, and keeps enterprise operations resilient.",
-        "slogan": "Independent Governance for the Digital Enterprise.",
+        "description": "SecuNova Inc. is a Calgary-based boutique IT advisory firm delivering high-trust strategic advisory, PMaaS, cybersecurity risk audits, and digital transformation.",
+        "slogan": "Institutional Governance & Executive Technology Execution.",
         "logo": "https://secunovainc.com/logo/secunova-logo.png",
         "address": {
           "@type": "PostalAddress",
@@ -211,103 +208,14 @@
         "priceRange": "$$$",
         "currenciesAccepted": "CAD, USD",
         "knowsAbout": [
-          "Strategic Advisory",
+          "Strategic Technology Advisory",
           "Project Management as a Service",
           "Digital Transformation Roadmaps",
-          "IT Operations & Cloud Governance",
-          "Enterprise IT & Security Audits",
-          "IT Security Posture Reviews",
-          "Technology Expense & Subscription Audits",
-          "Compliance & Risk Advisory"
+          "Cybersecurity & IT Risk Governance",
+          "Enterprise IT Infrastructure Audits",
+          "SOC 2 & ISO 27001 Readiness",
+          "Technology Expense Optimization"
         ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "SecuNova Consulting Services",
-          "itemListElement": [
-            {
-              "@type": "OfferCatalog",
-              "name": "Strategic Advisory & PMaaS",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Strategic Advisory & PMaaS Calgary",
-                    "description": "Independent strategic advisory and project management as a service. We direct digital transformation roadmaps, enforce vendor oversight, and protect capital through governed delivery.",
-                    "provider": "SecuNova Consulting",
-                    "areaServed": ["Calgary", "Alberta", "Canada", "United States"]
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Digital Transformation Roadmaps Calgary",
-                    "description": "Executive-level roadmaps that sequence technology investment, de-risk change, and direct the digital agenda with board-ready reporting.",
-                    "provider": "SecuNova Consulting",
-                    "areaServed": ["Calgary", "Alberta", "Canada", "United States"]
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "IT Operations & Cloud Governance Calgary",
-                    "description": "Governance frameworks for cloud architecture strategy, business continuity, and risk mitigation that keep enterprise operations resilient.",
-                    "provider": "SecuNova Consulting",
-                    "areaServed": ["Calgary", "Alberta", "Canada", "United States"]
-                  }
-                }
-              ]
-            },
-            {
-              "@type": "OfferCatalog",
-              "name": "Enterprise IT & Security Audits",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Enterprise IT & Security Audits Calgary",
-                    "description": "Forensic audits of infrastructure, security posture, and technology spend. We expose exposure, eliminate subscription bloat, and deliver an actionable audit-ready roadmap.",
-                    "provider": "SecuNova Consulting",
-                    "areaServed": ["Calgary", "Alberta", "Canada", "United States"]
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "IT Security Posture Reviews Calgary",
-                    "description": "Independent reviews of your security posture with prioritized remediation that keeps leadership and regulators satisfied.",
-                    "provider": "SecuNova Consulting",
-                    "areaServed": ["Calgary", "Alberta", "Canada", "United States"]
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Technology Expense & Subscription Audits Calgary",
-                    "description": "We eliminate software subscription bloat and reclaim capital hidden in redundant licenses, unused tools, and overlapping vendors.",
-                    "provider": "SecuNova Consulting",
-                    "areaServed": ["Calgary", "Alberta", "Canada", "United States"]
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Compliance & Risk Advisory Calgary",
-                    "description": "Compliance advisory that maps controls to regulatory expectations, reduces exposure, and prepares your enterprise for audit.",
-                    "provider": "SecuNova Consulting",
-                    "areaServed": ["Calgary", "Alberta", "Canada", "United States"]
-                  }
-                }
-              ]
-            }
-          ]
-        },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -321,12 +229,6 @@
     </script>
   </head>
   <body>
-    <!-- 
-    Custom React Application Root
-    Built entirely from scratch by SecuNova Inc.
-    No templates or pre-built themes used.
-    -->
-    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
