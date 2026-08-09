@@ -49,7 +49,7 @@ export default {
       colors: {
         'secunova-dark': '#101928',
         'secunova-blue': '#2563EB',
-        'secunova-light': '#037ecc',
+        'secunova-light': '#38BDF8',
       },
       screens: {
         'xs': '475px',

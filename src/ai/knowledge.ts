@@ -1,21 +1,4 @@
 /**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
-/**
  * SecuNova AI Services Knowledge Base & Intent Matcher
  * Strictly focused on SecuNova Services & Business Inquiries (English Only)
  */
@@ -56,156 +39,159 @@ export function isOffTopicQuery(query: string): boolean {
 export const knowledgeBase: KnowledgeItem[] = [
   {
     id: 'digital-transformation',
-    title: 'Digital Transformation Consulting',
+    title: 'Digital Transformation & Process Optimization',
     category: 'strategic',
     keywords: [
-      'digital transformation', 'transformation consulting', 'digital strategy',
-      'system inefficiency', 'technology entropy', 'modernization', 'change management',
-      'التحول الرقمي', 'استشارات التحول الرقمي', 'استراتيجية رقمية', 'تدهور تقني'
+      'digital transformation', 'transformation consulting', 'digital strategy', 'roadmap',
+      'business process reengineering', 'bpr', 'cloud transformation', 'cloud migration',
+      'ai automation', 'rpa', 'data analytics', 'change management',
+      'التحول الرقمي', 'استشارات التحول الرقمي', 'استراتيجية رقمية', 'خارطة طريق رقمية', 'إعادة هندسة العمليات'
     ],
     answerEn:
-      'We help leaders and organizations adapt to rapid technological changes and build sustainable digital strategies that eliminate system inefficiency and prevent technology entropy.',
+      'We reengineer business processes, plan cloud migrations across AWS and GCP, integrate AI and RPA automation, and build data analytics strategies that raise efficiency and cut operational costs in the digital age.',
     answerAr:
-      'نساعد القادة والمؤسسات على التكيف مع التغيرات التكنولوجية السريعة وبناء استراتيجيات رقمية مستدامة تحمي المؤسسة من الكفاءة المنخفضة والتدهور التقني.',
-    ctaEn: 'Explore Digital Transformation Consulting.',
-    ctaAr: 'استكشف استشارات التحول الرقمي.',
-    link: '/services'
+      'نعيد هندسة العمليات التجارية، ونخطط للانتقال إلى الحوسبة السحابية عبر AWS و GCP، وندمج الذكاء الاصطناعي وأتمتة العمليات الروبوتية، ونبني استراتيجيات التحليلات المتقدمة لرفع الكفاءة وخفض التكاليف التشغيلية.',
+    ctaEn: 'Explore Digital Transformation & Process Optimization.',
+    ctaAr: 'استكشف التحول الرقمي وإعادة هندسة العمليات.',
+    link: '/services/strategic-advisory-pmaas'
   },
   {
-    id: 'executive-leadership-innovation',
-    title: 'Executive Leadership & Innovation Consulting',
+    id: 'it-operations-cloud-governance',
+    title: 'IT Operations & Cloud Governance',
     category: 'strategic',
     keywords: [
-      'executive leadership', 'executive training', 'c-suite training', 'leadership programs', 'digital fluency',
-      'decision making', 'executive education', 'innovation consulting', 'collaboration', 'co-create custom technology',
-      'تدريب التنفيذيين', 'برامج القيادة الرقمية', 'استشارات الابتكار', 'التعاون التقني', 'ابتكار الحلول'
+      'it operations', 'cloud governance', 'cloud architecture', 'business continuity',
+      'risk mitigation', 'governance', 'cloud strategy', 'disaster recovery',
+      'حوكمة تكنولوجيا المعلومات', 'حوكمة السحابة', 'استمرارية الأعمال', 'استراتيجية السحابة', 'تخفيف المخاطر'
     ],
     answerEn:
-      'We empower executives and leadership teams with strategic digital fluency while co-creating custom technology solutions tailored exactly to your organization\'s operational needs and vision.',
+      'We provide ongoing governance of IT operations, cloud architecture, business continuity, and risk mitigation, keeping your technology estate aligned with your corporate risk tolerance.',
     answerAr:
-      'نمكن التنفيذيين وصناع القرار بالمعرفة الرقمية الاستراتيجية إلى جانب الابتكار والإنتاج المشترك لحلول تقنية مخصصة تناسب رؤية وملاءمة المؤسسة.',
-    ctaEn: 'Inquire about Executive Leadership & Innovation Consulting.',
-    ctaAr: 'استفسر عن استشارات القيادة والابتكار للتنفيذيين.',
-    link: '/contact'
+      'نقدم حوكمة مستمرة لعمليات تكنولوجيا المعلومات ومعمارية السحابة واستمرارية الأعمال وتخفيف المخاطر، مع إبقاء البنية التقنية متوافقة مع مستويات المخاطر المعتمدة في مؤسستك.',
+    ctaEn: 'Inquire about IT Operations & Cloud Governance.',
+    ctaAr: 'استفسر عن حوكمة عمليات تكنولوجيا المعلومات والسحابة.',
+    link: '/services/strategic-advisory-pmaas'
   },
   {
-    id: 'digital-project-management',
-    title: 'Digital Project Management & PMaaS',
+    id: 'strategic-advisory-pmaas',
+    title: 'Strategic Advisory & PMaaS',
     category: 'strategic',
     keywords: [
-      'project management', 'pmaas', 'strategic shield', 'technical project supervision',
-      'project manager', 'agile pm', 'waterfall', 'vendor oversight', 'delivery management',
-      'project governance', 'milestone tracking', 'risk management', 'project recovery'
+      'project management', 'pmaas', 'strategic advisory', 'project leadership',
+      'resource allocation', 'budget control', 'vendor oversight', 'delivery management',
+      'project governance', 'milestone tracking', 'risk management', 'quality assurance',
+      'agile', 'waterfall', 'project recovery',
+      'إدارة المشاريع', 'إدارة المشاريع كخدمة', 'الاستشارات الاستراتيجية', 'حوكمة المشاريع', 'إدارة الميزانيات'
     ],
     answerEn:
-      'Our Digital Project Management service (including PMaaS - Project Management as a Service) embeds senior SecuNova consultants into your engagements. We enforce vendor accountability, protect budgets, eliminate scope creep, and ensure on-time delivery.',
+      'PMaaS is a flexible operational model: we provide project leadership, resource allocation, budget & cost control, risk management, quality assurance, governance & reporting, and Agile or Waterfall delivery, on demand and without a permanent project management team.',
     answerAr:
-      'تتضمن خدمة إدارة المشاريع الرقمية (PMaaS - إدارة المشاريع كخدمة) إسناد خبراء SecuNova لكفالة تنفيذ مشاريعك بدقة. نحن نضمن مساجلة الموردين، حماية الميزانية، منع انحراف النطاق، والتسليم في المواعيد المحددة.',
-    ctaEn: 'Learn more about PMaaS on our Digital Project Management page.',
-    ctaAr: 'تعرف على نماذج تعاقد PMaaS من خلال صفحة إدارة المشاريع الرقمية.',
-    link: '/services/digital-project-management'
+      'إدارة المشاريع كخدمة (PMaaS) هي نموذج تشغيلي مرن: نوفر قيادة المشاريع، وتخصيص الموارد، والتحكم بالميزانية والتكاليف، وإدارة المخاطر، وضمان الجودة، وحوكمة المشاريع والتقارير، وتطبيق منهجيات Agile أو Waterfall عند الطلب دون فريق دائم.',
+    ctaEn: 'Learn more about Strategic Advisory & PMaaS.',
+    ctaAr: 'تعرف على الاستشارات الاستراتيجية وخدمة إدارة المشاريع.',
+    link: '/services/strategic-advisory-pmaas'
   },
   {
-    id: 'custom-web-app',
-    title: 'Custom Web App (Websites & Landing Pages)',
-    category: 'engineering',
+    id: 'enterprise-it-security-audits',
+    title: 'Enterprise IT & Security Audits',
+    category: 'security',
     keywords: [
-      'custom web app', 'web application', 'corporate websites', 'react.js', 'wordpress', 'vibe coding', 'ai-augmented',
-      'landing page', 'high converting', 'funnels', 'google ads', 'meta ads', 'paid campaigns', 'lead generation',
-      'تطبيقات الويب المخصصة', 'مواقع الشركات', 'صفحات الهبوط', 'برمجة رياكت'
+      'enterprise audit', 'it audit', 'security audit', 'infrastructure audit', 'forensic audit',
+      'attack surface', 'vulnerability', 'remediation plan', 'technical audit',
+      'تدقيق تكنولوجيا المعلومات', 'تدقيق أمني', 'تدقيق البنية التحتية', 'أسطح الهجوم', 'خطة المعالجة'
     ],
     answerEn:
-      'We build custom Web Apps, React.js applications, enterprise platforms, and high-converting landing page funnels using senior-led AI-augmented workflows (Vibe Coding) for maximum performance and ROI.',
+      'We conduct forensic audits of your entire IT infrastructure. We identify vulnerabilities, map the attack surface, and deliver a prioritized remediation plan tied to business risk.',
     answerAr:
-      'نبني تطبيقات ويب مخصصة (Custom Web Apps) ومواقع شركات وصفحات هبوط عالية التحويل باستخدام تقنيات React.js وبنية وسير عمل مدعوم بالذكاء الاصطناعي لتحقيق أعلى كفاءة وأداء.',
-    ctaEn: 'Explore Custom Web App development.',
-    ctaAr: 'استكشف خدمات تطوير تطبيقات الويب المخصصة.',
-    link: '/services/web-development'
+      'نقوم بتدقيق جنائي شامل للبنية التحتية لتقنية المعلومات لديك. نحدد نقاط الضعف ونرسم خريطة أسطح الهجوم ونقدم خطة معالجة مرتبة حسب الأولوية ومرتبطة بمخاطر الأعمال.',
+    ctaEn: 'Explore Enterprise IT & Security Audits.',
+    ctaAr: 'استكشف تدقيق تكنولوجيا المعلومات والأمن للمؤسسات.',
+    link: '/services/enterprise-it-security-audits'
   },
   {
-    id: 'web-maintenance',
-    title: 'Web Maintenance & Performance Optimization',
-    category: 'engineering',
+    id: 'security-posture-reviews',
+    title: 'IT Security Posture Reviews',
+    category: 'security',
     keywords: [
-      'web maintenance', 'performance optimization', 'site speed', 'security updates',
-      'uptime monitoring', 'bug fixes', 'retainer',
-      'صيانة المواقع', 'تحسين الأداء', 'سرعة الموقع', 'تحديثات الأمان'
+      'security posture', 'security assessment', 'access control', 'identity review',
+      'incident readiness', 'controls review', 'security baseline',
+      'تقييم الوضع الأمني', 'مراجعة الضوابط الأمنية', 'مراجعة الوصول', 'جاهزية الحوادث'
     ],
     answerEn:
-      'Offering monthly retainer packages for site speed enhancements, security updates, uptime monitoring, and technical bug fixes to keep your digital assets bulletproof.',
+      'An objective review of your security controls, access policies, and incident readiness against current enterprise standards. No product pitches, just evidence.',
     answerAr:
-      'تقديم باقات صيانة شهرية تشمل تسريع المواقع، تحديثات الأمان، مراقبة الجاهزية 24/7، وإصلاح الأخطاء البرمجية.',
-    ctaEn: 'Explore website maintenance retainers.',
-    ctaAr: 'استكشف باقات صيانة المواقع.',
-    link: '/services/managed-it'
+      'مراجعة موضوعية لضوابطك الأمنية وسياسات الوصول وجاهزية الحوادث وفق المعايير المؤسسية الحالية. بدون ترويج لمنتجات، فقط أدلة.',
+    ctaEn: 'Request an IT Security Posture Review.',
+    ctaAr: 'اطلب مراجعة الوضع الأمني لتقنية المعلومات.',
+    link: '/services/enterprise-it-security-audits'
   },
   {
-    id: 'ui-ux-redesigns',
-    title: 'Website & App UI/UX Redesigns',
-    category: 'engineering',
+    id: 'technology-expense-audits',
+    title: 'Technology Expense & Subscription Audits',
+    category: 'security',
     keywords: [
-      'ui ux redesign', 'figma', 'wireframes', 'mockups', 'interface redesign',
-      'human-centric design', 'user engagement',
-      'إعادة تصميم الواجهات', 'تصميم UI UX', 'فيجما', 'تجربة المستخدم'
+      'subscription bloat', 'cost reduction', 'expense audit', 'software licences', 'saas audit',
+      'recurring spend', 'cost recovery', 'renewals',
+      'الاشتراكات الزائدة', 'تدقيق المصاريف', 'تراخيص البرمجيات', 'تقليل التكاليف', 'استرداد التكاليف'
     ],
     answerEn:
-      'Auditing existing platforms and delivering modern, human-centric interface wireframes and high-fidelity mockups (using Figma) that boost user engagement and credibility.',
+      'A forensic line-item audit of your software subscriptions and recurring technology spend. We eliminate bloat and reclaim budget without reducing capability.',
     answerAr:
-      'تدقيق المنصات الحالية وتقديم مخططات هيكلية ونماذج عالية الدقة (باستخدام Figma) تركز على الإنسان لرفع التفاعل والمصداقية.',
-    ctaEn: 'Check UI/UX redesign offerings.',
-    ctaAr: 'اطلع على عروض إعادة تصميم الواجهات.',
-    link: '/services/ui-ux-design'
+      'تدقيق جنائي تفصيلي لاشتراكاتك البرمجية ونفقاتك التقنية المتكررة. نحذف الهدر ونسترد الميزانية دون خفض القدرات.',
+    ctaEn: 'Request a Technology Expense Audit.',
+    ctaAr: 'اطلب تدقيق المصاريف التقنية والاشتراكات.',
+    link: '/services/enterprise-it-security-audits'
   },
   {
-    id: 'b2b-copywriting',
-    title: 'B2B Website Copywriting',
-    category: 'engineering',
+    id: 'compliance-risk-advisory',
+    title: 'Compliance & Risk Advisory',
+    category: 'security',
     keywords: [
-      'copywriting', 'b2b copywriting', 'localized English', 'persuasive copy',
-      'zero generic ai phrasing', 'content creation',
-      'كتابة المحتوى', 'كتابة إعلانية', 'محتوى B2B', 'صياغة نصوص'
+      'compliance', 'risk advisory', 'regulatory', 'controls', 'audit readiness',
+      'documentation', 'governance',
+      'الامتثال', 'استشارات المخاطر', 'الضوابط', 'جاهزية التدقيق', 'التوثيق'
     ],
     answerEn:
-      'Crafting persuasive, authoritative, and localized copy (English) that speaks directly to North American decision-makers, completely free of generic AI phrasing.',
+      'Practical advisory that translates regulatory obligations into concrete controls, documentation, and governance so your enterprise stays audit-ready.',
     answerAr:
-      'صياغة نصوص ترويجية ومحتوى بليغ وموجه خصيصًا لصناع القرار في أمريكا الشمالية باللغة الإنجليزية، بعيدًا عن العبارات الآلية المبتذلة.',
-    ctaEn: 'Learn more about B2B copywriting.',
-    ctaAr: 'تعرف على خدمة كتابة المحتوى B2B.',
-    link: '/services/seo-marketing'
+      'استشارات عملية تحوّل الالتزامات التنظيمية إلى ضوابط وتوثيق وحوكمة ملموسة لإبقاء مؤسستك جاهزة للتدقيق.',
+    ctaEn: 'Explore Compliance & Risk Advisory.',
+    ctaAr: 'استكشف استشارات الامتثال والمخاطر.',
+    link: '/services/enterprise-it-security-audits'
   },
   {
-    id: 'seo-content-strategy',
-    title: 'SEO Content Strategy',
-    category: 'engineering',
+    id: 'board-ready-reporting',
+    title: 'Board-Ready Audit Reporting',
+    category: 'security',
     keywords: [
-      'seo content', 'organic traffic', 'search strategy', 'blog posts',
-      'service page content', 'target focused',
-      'استراتيجية SEO', 'محتوى السيو', 'زيارات عضوية', 'تصدر نتائج البحث'
+      'board reporting', 'executive summary', 'risk ratings', 'audit report', 'executive reporting',
+      'risk register', 'actionable findings',
+      'تقارير مجلس الإدارة', 'ملخص تنفيذي', 'تقييم المخاطر', 'تقرير التدقيق', 'التوصيات'
     ],
     answerEn:
-      'Writing target-focused blog posts or service page content structured to capture organic search traffic and convert visitors into active pipeline opportunities.',
+      'Every audit concludes with board-ready reporting: clear risk ratings, priorities, and financial impact written for executives and directors, with ownership and estimated effort for each action.',
     answerAr:
-      'كتابة المقالات وصفحات الخدمات الموجهة بهيكل مدروس لجلب الزيارات العضوية من محركات البحث وتحويلها إلى فرص عمل مؤكدة.',
-    ctaEn: 'Explore SEO content strategies.',
-    ctaAr: 'استكشف استراتيجيات محتوى SEO.',
-    link: '/services/seo-marketing'
+      'ينتهي كل تدقيق بتقرير جاهز لمجلس الإدارة: تقييمات مخاطر واضحة وأولويات وأثر مالي مكتوبة للتنفيذيين، مع تحديد المسؤول والجهد التقديري لكل إجراء.',
+    ctaEn: 'Request a board-ready audit proposal.',
+    ctaAr: 'اطلب عرض تدقيق جاهزًا لمجلس الإدارة.',
+    link: '/services/enterprise-it-security-audits'
   },
   {
-    id: 'digital-architecture-tech-stack-audits',
-    title: 'Digital Architecture & Tech Stack Audits',
+    id: 'vendor-contract-review',
+    title: 'IT Vendor & Contract Review',
     category: 'strategic',
     keywords: [
-      'digital architecture audit', 'tech stack audit', 'digital audit', 'security assessment',
-      'subscription bloat', 'cost reduction', 'software selection', 'tool vetting',
-      'تدقيق البنية الرقمية', 'تدقيق التقنيات', 'إلغاء الاشتراكات الزائدة', 'تقليل التكاليف', 'فحص الأمان'
+      'vendor review', 'contract review', 'sla', 'vendor oversight', 'licence audit',
+      'negotiation', 'supplier management', 'software selection', 'tool vetting',
+      'مراجعة الموردين', 'مراجعة العقود', 'اتفاقيات مستوى الخدمة', 'تفاوض', 'إدارة الموردين'
     ],
     answerEn:
-      'We conduct comprehensive forensic audits of your digital footprint, security posture, and software stack to eliminate subscription bloat, optimize infrastructure costs, and provide actionable technical roadmaps.',
+      'We independently review vendor contracts and SLAs to identify overpriced subscriptions, duplicate licences, and non-performing agreements, and advise on renegotiation or transition.',
     answerAr:
-      'نقدم خدمات تدقيق جنائي وحيادي شامل للبصمة الرقمية والبنية التكنولوجية، لإلغاء الاشتراكات البرمجية الزائدة وتأمين الأنظمة وتزويدكم بخريطة طريق استراتيجية للتوسع.',
-    ctaEn: 'Request a Digital Architecture & Tech Stack Audit.',
-    ctaAr: 'اطلب تدقيق البنية الرقمية والتقنيات الآن.',
-    link: '/contact'
+      'نراجع عقود الموردين واتفاقيات مستوى الخدمة بشكل مستقل لتحديد الاشتراكات المبالغ فيها والتراخيص المكررة والاتفاقيات غير الملتزمة، وننصح بإعادة التفاوض أو التحول.',
+    ctaEn: 'Request an IT Vendor & Contract Review.',
+    ctaAr: 'اطلب مراجعة الموردين والعقود التقنية.',
+    link: '/services/strategic-advisory-pmaas'
   },
   {
     id: 'cybersecurity-architecture',
@@ -217,12 +203,12 @@ export const knowledgeBase: KnowledgeItem[] = [
       'الأمن السيبراني', 'حماية البيانات', 'اختبار الاختراق', 'تدقيق أمني', 'امتثال'
     ],
     answerEn:
-      'We design defense-in-depth security architectures, conduct vulnerability assessments, penetration testing, and prepare your organization for SOC 2, ISO 27001, and NIST compliance. We protect your digital infrastructure from evolving threats.',
+      'We conduct vulnerability assessments, penetration testing, and security posture reviews, and prepare your organization for SOC 2, ISO 27001, and NIST compliance. We protect your digital infrastructure from evolving threats.',
     answerAr:
-      'نقوم بتصميم معماريات أمنية متكاملة (Defense-in-Depth)، وإجراء تقييمات الثغرات واختبارات الاختراق، وإعداد مؤسستك للامتثال لمعايير SOC 2 و ISO 27001 و NIST لحماية البنية التحتية من التهديدات.',
+      'نقوم بإجراء تقييمات الثغرات واختبارات الاختراق ومراجعات الوضع الأمني، وإعداد مؤسستك للامتثال لمعايير SOC 2 و ISO 27001 و NIST لحماية البنية التحتية من التهديدات.',
     ctaEn: 'Schedule a free cybersecurity risk assessment with our team.',
     ctaAr: 'احجز تقييمًا مجانيًا للمخاطر السيبرانية مع فريقنا المختص.',
-    link: '/services/digital-project-management'
+    link: '/services/enterprise-it-security-audits'
   },
   {
     id: 'products-portfolio',

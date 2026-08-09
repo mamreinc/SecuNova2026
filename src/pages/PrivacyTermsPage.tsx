@@ -1,20 +1,3 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import { Helmet } from 'react-helmet-async';
 import { Shield, Lock, FileCheck, Phone } from 'lucide-react';
 
@@ -28,21 +11,21 @@ const PrivacyTermsPage = () => {
         <link rel="canonical" href="https://secunovainc.com/privacy-terms" />
       </Helmet>
 
-      <section className="relative page-header pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-blue-800/5"></div>
-        <div className="container mx-auto px-4 relative">
+      <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
-              Privacy Policy & Terms
+            <h1 className="hero-heading mb-6">
+              Privacy Policy &amp; <span className="text-secunova-light">Terms</span>
             </h1>
-            <p className="text-gray-600 text-lg mb-8">
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
               Your privacy and security are important to us. Learn how we protect your data and the terms governing our services.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="secunova-section secunova-section--gray">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-12">
             {/* Privacy Policy */}
@@ -214,17 +197,17 @@ const PrivacyTermsPage = () => {
             </div>
 
             {/* Contact Section */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md p-8 md:p-10 border border-blue-200">
+            <div className="bg-gradient-to-br from-secunova-blue/10 to-secunova-light/15 rounded-2xl shadow-md p-8 md:p-10 border border-secunova-blue/20">
               <div className="flex items-center mb-6">
                 <Lock className="h-8 w-8 text-secunova-blue mr-3" />
-                <h3 className="text-2xl font-bold text-secunova-dark">Questions About Privacy & Terms?</h3>
+                <h3 className="text-2xl font-bold text-secunova-dark">Questions About Privacy &amp; Terms?</h3>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                 If you have any questions about our privacy policy or terms of service, please contact our privacy team.
               </p>
               <a
                 href="mailto:info@secunovainc.com"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-secunova-blue to-secunova-light hover:from-secunova-light hover:to-secunova-blue transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
               >
                 Contact Privacy Team
               </a>

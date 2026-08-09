@@ -1,99 +1,48 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import { Helmet } from 'react-helmet-async';
-import { Mail, Phone, MapPin, Clock, MessageCircle, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, CheckCircle2, MessageSquare, Globe } from 'lucide-react';
+import CtaSection from '../components/CtaSection';
 
-/* ========================================
-   START: CONTACT PAGE COMPONENT
-   Professional contact page with strategic layout
-   ======================================== */
 const ContactPage = () => {
-  /* ========================================
-     START: Contact Methods Data
-     ======================================== */
-
   const contactMethods = [
     {
-      icon: <Phone className="h-8 w-8 text-secunova-light" />,
-      title: 'Call Direct',
-      description: 'Speak with our team immediately',
+      icon: <Phone className="h-6 w-6 text-secunova-blue" />,
+      title: 'Telephone Consultation',
+      description: 'Direct executive telephone access for enterprise inquiries.',
       contact: '403-401-1552',
-      action: 'tel:403-401-1552',
-      color: 'from-secunova-light/10 to-secunova-light/20 hover:from-secunova-light/20 hover:to-secunova-light/30'
+      action: 'tel:403-401-1552'
     },
     {
-      icon: <Mail className="h-8 w-8 text-secunova-blue" />,
-      title: 'Email Us',
-      description: 'Send us a detailed message',
+      icon: <Mail className="h-6 w-6 text-secunova-light" />,
+      title: 'Electronic Briefing',
+      description: 'Email our senior leadership directly regarding engagement terms.',
       contact: 'hello@secunovainc.com',
-      action: 'mailto:hello@secunovainc.com',
-      color: 'from-secunova-blue/10 to-secunova-blue/20 hover:from-secunova-blue/20 hover:to-secunova-blue/30'
+      action: 'mailto:hello@secunovainc.com'
     }
   ];
-  /* ========================================
-     END: Contact Methods Data
-     ======================================== */
 
   return (
     <div className="min-h-screen bg-white">
-      {/* ========================================
-          START: SEO Head Section
-          ======================================== */}
       <Helmet>
-        <title>Contact SecuNova Consulting Calgary | Free Strategy Call | 403-401-1552</title>
-        <meta name="description" content="Contact SecuNova Consulting in Calgary, AB. Call 403-401-1552 or email hello@secunovainc.com for a free strategy call. Located at #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7." />
-        <meta name="keywords" content="contact SecuNova Consulting Calgary, free strategy call Calgary, consulting firm Calgary contact, SecuNova phone number 403 401 1552, SecuNova email hello@secunovainc.com, SecuNova Calgary office #270 1122 3 St SE Ste 1906" />
+        <title>Contact SecuNova Inc. | SecuNova Consulting Calgary | Advisory Firm</title>
+        <meta name="description" content="Contact SecuNova Inc. (operating as SecuNova Consulting), a Calgary-based advisory firm. Call 403-401-1552 or email hello@secunovainc.com for strategic advisory, digital transformation, and PMaaS." />
+        <meta name="keywords" content="SecuNova Inc., SecuNova Consulting, consulting firm Calgary, contact SecuNova, strategic advisory Calgary, digital transformation, PMaaS consultation" />
         <link rel="canonical" href="https://secunovainc.com/contact" />
 
-        {/* OpenGraph Tags */}
-        <meta property="og:title" content="Contact SecuNova Consulting Calgary | Free Strategy Call" />
-        <meta property="og:description" content="Get in touch with SecuNova Consulting in Calgary. Call 403-401-1552 or email hello@secunovainc.com." />
+        <meta property="og:title" content="Contact SecuNova Consulting | Strategic Advisory &amp; Digital Transformation" />
+        <meta property="og:description" content="Direct engagement channels for executives seeking strategic advisory, digital transformation, and PMaaS." />
         <meta property="og:url" content="https://secunovainc.com/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="SecuNova Consulting" />
-        <meta property="og:locale" content="en_CA" />
 
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact SecuNova Consulting Calgary | 403-401-1552" />
-        <meta name="twitter:description" content="Free strategy call. Call 403-401-1552 or email hello@secunovainc.com" />
-        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
-
-        {/* Additional SEO Tags */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <meta name="geo.region" content="CA-AB" />
-        <meta name="geo.placename" content="Calgary" />
-
-        {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
             "name": "Contact SecuNova Consulting",
-            "description": "Contact SecuNova Consulting for digital transformation consulting, custom software engineering, and technical project supervision in Calgary, Alberta",
+            "description": "Direct contact channels for enterprise IT strategic advisory, PMaaS, and forensic audits.",
             "url": "https://secunovainc.com/contact",
             "mainEntity": {
               "@type": "Organization",
               "name": "SecuNova Inc.",
-              "alternateName": "SecuNova Consulting",
               "telephone": "+1-403-401-1552",
               "email": "hello@secunovainc.com",
               "address": {
@@ -108,61 +57,57 @@ const ContactPage = () => {
           })}
         </script>
       </Helmet>
-      {/* ========================================
-          END: SEO Head Section
-          ======================================== */}
 
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden flex items-center justify-center pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-br from-secunova-blue via-secunova-dark to-secunova-blue">
-        <div className="absolute inset-0 bg-[url('/contact.png')] bg-cover bg-center opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full text-sm font-medium mb-6">
-              <MessageCircle className="h-4 w-4 mr-2 text-white" />
-              Get in Touch
+      <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10 w-full">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-secunova-light mb-6">
+              <MessageSquare className="h-4 w-4 mr-2" />
+              Executive Contact &amp; Consultations
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-              Let's Build Something
-              <span className="block text-secunova-light">Great Together</span>
+
+            <h1 className="hero-heading mb-6">
+              Begin Your <br />
+              <span className="text-secunova-light">Transformation Journey</span>
             </h1>
-            <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Ready to transform your technical strategy and eliminate digital entropy? Contact us today for a straightforward consultation.
+
+            <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto mb-8">
+              Direct access to senior SecuNova partners for executives and leadership teams in Calgary and across Canada.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:403-401-1552"
-                className="btn btn-white btn-lg"
-              >
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="tel:403-401-1552" className="btn btn-gradient btn-lg text-white">
                 <Phone className="mr-2 h-5 w-5 text-white" />
                 Call 403-401-1552
               </a>
-              <a
-                href="mailto:hello@secunovainc.com"
-                className="btn btn-outline-light btn-lg"
-              >
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Send Message
+              <a href="mailto:hello@secunovainc.com" className="btn btn-outline-light btn-lg text-white">
+                <Mail className="mr-2 h-5 w-5" />
+                Email Advisory Brief
               </a>
             </div>
-            <p className="text-sm text-blue-200 mt-6">
-              <Clock className="inline h-4 w-4 mr-1" />
-              Same business day response guarantee
+            <p className="text-xs text-blue-200 mt-6 flex items-center justify-center gap-1">
+              <Clock className="h-4 w-4 text-secunova-light" />
+              Same business day executive response guarantee
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Information Section */}
-      <section className="py-16 bg-white">
+      {/* Contact Methods & Details */}
+      <section className="secunova-section secunova-section--light">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-secunova-dark mb-2">How to Reach Us</h2>
-              <p className="text-gray-600">Choose the method that works best for you</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-secunova-dark mb-2">Direct Engagement Channels</h2>
+              <p className="text-gray-600 text-sm">Reach out to discuss strategic advisory, digital transformation, or PMaaS terms</p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* Contact cards */}
               <div className="space-y-4">
                 {contactMethods.map((m, i) => (
                   <a key={i} href={m.action} className="flex items-center justify-between bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:border-secunova-blue/30 transition-all duration-300 group">
@@ -185,8 +130,11 @@ const ContactPage = () => {
                       <MapPin className="h-6 w-6 text-secunova-blue" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-semibold text-secunova-dark text-lg mb-1">Mailbox</div>
-                      <div className="text-sm text-gray-700">#270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7, CA</div>
+                      <div className="font-semibold text-secunova-dark text-lg mb-1">Mailing Address</div>
+                      <div className="text-sm text-gray-700 font-mono">#270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7, CA</div>
+                      <p className="text-xs text-gray-600 mt-2 leading-relaxed">
+                        We operate on a fully remote basis, conducting client consultations via Zoom or Google Meet. When an in-person meeting is necessary, we are pleased to travel to your location or arrange a private meeting room at the Calgary Public Library.
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 pt-4 border-t border-gray-100">
@@ -200,36 +148,37 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                {/* Remote & Meeting Notice */}
                 <div className="bg-blue-50/80 rounded-2xl p-6 border border-blue-200/80 shadow-sm">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-10 h-10 bg-secunova-blue/15 rounded-xl flex items-center justify-center text-secunova-blue">
                       <Globe className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="font-semibold text-secunova-dark text-base mb-1">Remote & In-Person Meetings</div>
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        We operate on a fully remote basis, conducting client consultations via Zoom or Google Meet. When an in-person meeting is necessary, we are pleased to travel to your location or arrange a private meeting room at the Calgary Public Library.
+                      <div className="font-bold text-secunova-dark text-sm mb-1">Calgary &amp; National Canadian Practice</div>
+                      <p className="text-xs text-secunova-dark/70 leading-relaxed">
+                        Headquartered in Calgary, Alberta, serving client enterprise accounts across Western and Eastern Canada.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Office image */}
-              <div className="w-full">
-                <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
-                  <img
-                    src="/contact.png"
-                    alt="SecuNova Inc. Calgary Office - Modern workspace with mountain views at 1122 3rd St SE"
-                    className="w-full h-auto rounded-2xl"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      if (!target.src.includes('office.png')) {
-                        target.src = '/office.png';
-                      }
-                    }}
-                  />
+              {/* Consultation Details Card */}
+              <div className="bg-gradient-to-br from-secunova-dark to-gray-900 text-white rounded-2xl p-8 shadow-xl border border-gray-800">
+                <h3 className="text-2xl font-bold mb-4">Advisory Engagement Protocol</h3>
+                <p className="text-blue-100 text-sm leading-relaxed mb-6">
+                  SecuNova operates on a direct executive consultation model. Every inquiry is reviewed by a senior director to assess strategic, technical, and financial alignment.
+                </p>
+                <div className="space-y-4 text-xs text-blue-100 border-t border-white/10 pt-6">
+                  <div className="flex items-center gap-2 font-semibold text-white">
+                    <CheckCircle2 className="h-4 w-4 text-secunova-light" /> 100% Confidentiality &amp; NDA Standard
+                  </div>
+                  <div className="flex items-center gap-2 font-semibold text-white">
+                    <CheckCircle2 className="h-4 w-4 text-secunova-light" /> Direct Senior Partner Lead
+                  </div>
+                  <div className="flex items-center gap-2 font-semibold text-white">
+                    <CheckCircle2 className="h-4 w-4 text-secunova-light" /> Board-Ready Documentation Standards
+                  </div>
                 </div>
               </div>
             </div>
@@ -237,20 +186,9 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Organization Information */}
-      <section className="border-t border-gray-100 bg-gray-50">
-        <div className="container mx-auto px-4 py-4">
-          <p className="text-xs text-gray-500 text-center leading-relaxed">
-            Business Number: <span className="font-medium text-gray-700">714343225</span> · Corporation
-            Number: <span className="font-medium text-gray-700">2026915245</span>
-          </p>
-        </div>
-      </section>
+      <CtaSection />
     </div>
   );
 };
 
-/* ========================================
-   END: CONTACT PAGE COMPONENT
-   ======================================== */
 export default ContactPage;

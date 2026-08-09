@@ -2,3 +2,13 @@
 # index.html fallback automatically for any unmatched path (this project
 # ships no top-level 404.html). Existing prerendered pages are served as
 # static files, which take priority over these rules.
+
+# Retired service routes redirect to the new governance pillars (permanent).
+/services/web-development          /services/strategic-advisory-pmaas      301
+/services/ui-ux-design             /services/strategic-advisory-pmaas      301
+/services/digital-project-management /services/strategic-advisory-pmaas   301
+/services/seo-marketing            /services/enterprise-it-security-audits 301
+
+# Retired free website initiative (permanent).
+/free-services                     /contact                                301
+

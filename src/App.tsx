@@ -1,22 +1,5 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -26,24 +9,20 @@ import LoadingSpinner from './components/LoadingSpinner';
 import SecurityWrapper from './components/SecurityWrapper';
 const ChatWidget = React.lazy(() => import('./components/ChatWidget'));
 
-// Lazy load pages for better performance with prefetch hints
-const HomePage = React.lazy(() => import(/* webpackPrefetch: true */ './pages/HomePage'));
-const ServicesPage = React.lazy(() => import(/* webpackPrefetch: true */ './pages/ServicesPage'));
+// Lazy load pages for performance
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage'));
-const ContactPage = React.lazy(() => import(/* webpackPrefetch: true */ './pages/ContactPage'));
+const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const FaqPage = React.lazy(() => import('./pages/FaqPage'));
 const PrivacyTermsPage = React.lazy(() => import('./pages/PrivacyTermsPage'));
-const FreeServicesPage = React.lazy(() => import('./pages/FreeServicesPage'));
 const JoinUsPage = React.lazy(() => import('./pages/JoinUsPage'));
 const BrandPage = React.lazy(() => import('./pages/BrandPage'));
-const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 // Service Pages
-const WebDevelopmentPage = React.lazy(() => import('./pages/services/WebDevelopmentPage'));
-const UIUXDesignPage = React.lazy(() => import(/* webpackPrefetch: true */ './pages/services/UIUXDesignPage'));
-const SEOMarketingPage = React.lazy(() => import(/* webpackPrefetch: true */ './pages/services/SEOMarketingPage'));
-const DigitalProjectManagementPage = React.lazy(() => import(/* webpackPrefetch: true */ './pages/services/DigitalProjectManagementPage'));
+const StrategicAdvisoryPage = React.lazy(() => import('./pages/services/StrategicAdvisoryPage'));
+const EnterpriseAuditsPage = React.lazy(() => import('./pages/services/EnterpriseAuditsPage'));
 
 // About Sub-Pages
 const OurWorkPage = React.lazy(() => import('./pages/OurWorkPage'));
@@ -75,28 +54,13 @@ const PageLoadingFallback = () => (
   </div>
 );
 
-/**
- * Main Application Component
- * 
- * This component orchestrates the entire application routing and layout.
- * Features:
- * - Bilingual support (English/French)
- * - Dynamic navigation based on language
- * - External redirect handling
- * - SEO optimization with React Helmet
- * - Custom scroll management
- * - AI chat integration
- * - Lazy loading for performance
- * 
- * Built from scratch by SecuNova Inc.
- */
 function App() {
   return (
     <HelmetProvider
       context={{}}
     >
       <Helmet
-        defaultTitle="SecuNova Consulting Calgary | Digital Transformation & Custom Web Development"
+        defaultTitle="SecuNova Inc. | Strategic Advisory & Digital Transformation Calgary"
         titleTemplate="%s"
       />
       <SecurityWrapper>
@@ -119,10 +83,8 @@ function App() {
                       <Routes>
                         <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
                         <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} />
-                        <Route path="/services/web-development" element={<PageTransition><WebDevelopmentPage /></PageTransition>} />
-                        <Route path="/services/ui-ux-design" element={<PageTransition><UIUXDesignPage /></PageTransition>} />
-                        <Route path="/services/seo-marketing" element={<PageTransition><SEOMarketingPage /></PageTransition>} />
-                        <Route path="/services/digital-project-management" element={<PageTransition><DigitalProjectManagementPage /></PageTransition>} />
+                        <Route path="/services/strategic-advisory-pmaas" element={<PageTransition><StrategicAdvisoryPage /></PageTransition>} />
+                        <Route path="/services/enterprise-it-security-audits" element={<PageTransition><EnterpriseAuditsPage /></PageTransition>} />
                         <Route path="/support" element={<PageTransition><ContactPage /></PageTransition>} />
                         <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
                         <Route path="/about/our-work" element={<PageTransition><OurWorkPage /></PageTransition>} />
@@ -133,10 +95,9 @@ function App() {
                         <Route path="/login" element={<PageTransition><LoginPage /></PageTransition>} />
                         <Route path="/faq" element={<PageTransition><FaqPage /></PageTransition>} />
                         <Route path="/privacy-terms" element={<PageTransition><PrivacyTermsPage /></PageTransition>} />
-                        <Route path="/free-services" element={<PageTransition><FreeServicesPage /></PageTransition>} />
                         <Route path="/join-us" element={<PageTransition><JoinUsPage /></PageTransition>} />
                         <Route path="/brand" element={<PageTransition><BrandPage /></PageTransition>} />
-                        <Route path="*" element={<PageTransition><NotFoundPage /></PageTransition>} />
+                        <Route path="*" element={<Navigate to="/" replace />} />
                       </Routes>
                     </Suspense>
                   </main>

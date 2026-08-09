@@ -46,25 +46,15 @@ Last Updated: March 24, 2026
 
 **Contents:**
 - Base SEO configuration (site name, URLs, contact info, social links)
-- Service-specific SEO data for all 13 service pages
+- Service-specific SEO data for the service pages
 - Schema generation helpers
 - Breadcrumb generation functions
 - FAQ schema helpers
 - Local business schema generator
 
 **Services Configured:**
-1. Technical Support
-2. Home Tech Support
-3. Managed IT Services (2 pages)
-4. Cybersecurity
-5. Web Development
-6. Web Design
-7. WordPress Development
-8. Mobile App Development
-9. UI/UX Design
-10. SEO & Marketing
-11. Branding
-12. Photography
+1. Strategic Advisory & PMaaS
+2. Enterprise IT & Security Audits
 
 ---
 
@@ -88,8 +78,8 @@ Last Updated: March 24, 2026
 **Pages Included:**
 - Homepage
 - About, Services, Contact, Portfolio, Our Team
-- All 13 service pages
-- FAQ, Free Services, Join Us, Freelancer, Ask Support
+- Service pages
+- FAQ, Join Us, Freelancer, Ask Support
 - Privacy & Terms
 
 ---

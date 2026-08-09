@@ -1,27 +1,7 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
-/* ========================================
-   START: CTA SECTION COMPONENT
-   Reusable call-to-action section for page endings
-   ======================================== */
 interface CtaSectionProps {
   title?: string;
   subtitle?: string;
@@ -32,20 +12,19 @@ interface CtaSectionProps {
 const CtaSection = ({
   title,
   subtitle,
-  ctaText = 'Book Your Free Strategy Call',
+  ctaText = 'Book Executive Advisory Consultation',
   ctaLink = '/contact'
 }: CtaSectionProps) => {
-  const headingTitle = title ?? 'Get Your Free';
-  const headingSubtitle = subtitle ?? 'An honest assessment of where your organization stands and the fastest path forward. No pressure, no obligation, just senior-level guidance from the start.';
+  const headingTitle = title ?? 'Get Your Digital Transformation Briefing';
+  const headingSubtitle = subtitle ?? 'An honest, independent assessment of where your organization stands and the fastest path to digital maturity. Zero pressure, zero software reseller pitch.';
   return (
-    <section className="relative min-h-[50vh] overflow-hidden flex items-center justify-center py-16 md:py-24">
+    <section className="secunova-section secunova-section--dark relative min-h-[50vh] overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0">
-        <img
-          src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        <OptimizedImage
+          src="/images/strategic_hero_bg.png"
           alt="Professional IT Consultation"
-          className="w-full h-full object-cover"
-          loading="lazy"
-          decoding="async"
+          className="w-full h-full object-cover opacity-30"
+          priority={false}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/85"></div>
       </div>
@@ -55,14 +34,11 @@ const CtaSection = ({
           <div className="text-center text-white">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full text-sm font-medium mb-6 text-white">
               <Phone className="h-4 w-4 mr-2 text-white" />
-              Ready to Get Started?
+              Ready to Transform &amp; Execute?
             </div>
             
             <h2 className="text-3xl md:text-5xl font-bold mb-5 leading-tight text-white">
               {headingTitle}
-              {title === undefined && (
-                <span className="block text-white">Strategy Call</span>
-              )}
             </h2>
             
             <p className="text-xl text-white max-w-2xl mx-auto mb-8 leading-relaxed">
@@ -95,7 +71,4 @@ const CtaSection = ({
   );
 };
 
-/* ========================================
-   END: CTA SECTION COMPONENT
-   ======================================== */
 export default CtaSection;

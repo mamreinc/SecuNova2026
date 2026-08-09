@@ -1,20 +1,3 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -43,8 +26,9 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "SecuNova Inc.",
-          "alternateName": ["SecuNova", "Secu Nova", "SecuNova IT"],
+          "name": "SecuNova Consulting",
+          "legalName": "SecuNova Inc.",
+          "alternateName": ["SecuNova", "SecuNova Inc."],
           "url": "https://secunovainc.com",
           "logo": {
             "@type": "ImageObject",
@@ -53,13 +37,9 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
             "height": "800"
           },
           "image": "https://secunovainc.com/logo/secunova-logo.png",
-          "description": "A Canadian consulting and technology firm in Calgary, Alberta. Helping organizations navigate digital change with strategic consulting, executive programs, and digital engineering.",
-          "foundingDate": "2016",
-          "foundingLocation": {
-            "@type": "Place",
-            "name": "Poland, Europe"
-          },
-          "slogan": "Navigate Digital Change. Before It Costs You Momentum.",
+          "description": "Canadian IT advisory and executive governance firm based in Calgary, AB. Strategic advisory, PMaaS, enterprise IT and security audits, and proprietary internal R&D.",
+          "foundingDate": "2025",
+          "slogan": "Strategic Shield & Governance for Enterprise IT.",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "#270, 1122 3 St SE Ste 1906",
@@ -81,27 +61,12 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
               "email": "hello@secunovainc.com",
               "availableLanguage": ["English", "French"],
               "areaServed": "CA-AB",
-              "contactOption": "TollFree",
               "hoursAvailable": {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
-                ],
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "09:00",
                 "closes": "17:00"
               }
-            },
-            {
-              "@type": "ContactPoint",
-              "telephone": "+1-403-401-1552",
-              "contactType": "emergency",
-              "availableLanguage": ["English"],
-              "areaServed": "CA-AB",
-              "hoursAvailable": "24/7"
             }
           ],
           "sameAs": [
@@ -113,8 +78,8 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": data?.name || "IT Services",
-          "description": data?.description || "Professional IT services",
+          "name": data?.name || "Strategic Advisory & IT Audits",
+          "description": data?.description || "Strategic advisory, PMaaS, and enterprise IT audits",
           "provider": {
             "@type": "Organization",
             "name": "SecuNova Inc.",
@@ -126,7 +91,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "IT Services",
+            "name": "IT Advisory & Governance Services",
             "itemListElement": data?.services || []
           }
         };
@@ -162,7 +127,8 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "@id": "https://secunovainc.com",
-          "name": "SecuNova Inc.",
+          "name": "SecuNova Consulting",
+          "legalName": "SecuNova Inc.",
           "url": "https://secunovainc.com",
           "telephone": "+1-403-401-1552",
           "email": "hello@secunovainc.com",
@@ -189,7 +155,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
             }
           ],
           "image": "https://secunovainc.com/logo/secunova-logo.png",
-          "description": "A Canadian consulting and technology firm in Calgary, AB. Strategic consulting, executive programs, custom corporate websites, and growth engineering."
+          "description": "Canadian IT advisory and governance firm in Calgary, AB. Strategic advisory, PMaaS, and enterprise IT forensic audits."
         };
 
       case 'webpage':
@@ -197,17 +163,13 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": data?.title || "SecuNova Inc.",
-          "description": data?.description || "Premier IT services in Calgary",
+          "description": data?.description || "Enterprise IT Advisory & Governance in Calgary",
           "url": data?.url || "https://secunovainc.com",
           "inLanguage": "en-CA",
           "isPartOf": {
             "@type": "WebSite",
             "name": "SecuNova Inc.",
             "url": "https://secunovainc.com"
-          },
-          "about": {
-            "@type": "Organization",
-            "name": "SecuNova Inc."
           },
           "publisher": {
             "@type": "Organization",

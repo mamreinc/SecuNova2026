@@ -1,57 +1,17 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Shield, Lock } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Lock } from 'lucide-react';
 import Logo from './Logo';
-
-const seededRandom = (seed: number) => {
-  let state = seed;
-  return () => {
-    state = (state * 9301 + 49297) % 233280;
-    return state / 233280;
-  };
-};
-
-const rand = seededRandom(20260807);
-const binaryGrid = Array.from({ length: 100 }, () => {
-  const top = Math.round(rand() * 1000) / 10;
-  const left = Math.round(rand() * 1000) / 10;
-  const digit = rand() > 0.5 ? '1' : '0';
-  return { top, left, digit };
-});
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-secunova-dark to-secunova-dark text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96">
-          <Shield className="h-full w-full text-secunova-blue" />
-        </div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 opacity-30">
+    <footer className="bg-secunova-dark text-white relative overflow-hidden">
+      {/* Background Graphic */}
+      <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none transform translate-x-1/4 translate-y-1/4">
+        <div className="w-[600px] h-[600px] border-[40px] border-white rounded-full"></div>
+      </div>
+      <div className="absolute left-1/4 top-0 opacity-5 pointer-events-none">
+        <div className="w-96 h-96">
           <Lock className="h-full w-full text-secunova-blue" />
-        </div>
-        
-        <div className="absolute inset-0 text-xs opacity-5 overflow-hidden" aria-hidden="true">
-          {binaryGrid.map((cell, index) => (
-            <div key={index} style={{position: 'absolute', top: `${cell.top}%`, left: `${cell.left}%`}}>
-              {cell.digit}
-            </div>
-          ))}
         </div>
       </div>
       
@@ -63,7 +23,7 @@ const Footer = () => {
               <Logo theme="dark" size="md" />
             </div>
             <p className="text-sm text-white/90 mb-6 leading-relaxed max-w-sm">
-              A Calgary-based consulting & technology firm helping organizations navigate digital change and take ownership of their digital infrastructure.
+              SecuNova Inc. is a Calgary-based advisory firm guiding organizations through strategic consulting, digital transformation, and on-demand project management, engineered to raise competitive advantage and operational efficiency in the digital age.
             </p>
             
             <div className="flex flex-wrap gap-2">
@@ -79,93 +39,93 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Strategic Consulting */}
+          {/* Strategic Advisory */}
           <div>
             <h3 className="h-11 flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-6">
-              Strategic Consulting
+              Strategic Advisory
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services#strategic-consulting" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Digital Transformation Consulting
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white hover:text-secunova-light transition-colors">
+                  Strategic Advisory &amp; Business Planning
                 </Link>
               </li>
               <li>
-                <Link to="/services#strategic-consulting" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Executive Leadership & Innovation
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Digital Transformation &amp; Process Optimization
                 </Link>
               </li>
               <li>
-                <Link to="/services/digital-project-management" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Digital Project Management
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Cybersecurity &amp; Risk Management
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Customer Experience &amp; Digital Solutions
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Digital Engineering */}
+          {/* Project Management as a Service */}
           <div>
             <h3 className="h-11 flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-6">
-              Digital Engineering
+              PMaaS
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/web-development" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Custom Web App Development
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white hover:text-secunova-light transition-colors">
+                  Project Leadership &amp; Resource Allocation
                 </Link>
               </li>
               <li>
-                <Link to="/services/ui-ux-design" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  UI/UX Redesigns
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Budget &amp; Cost Control
                 </Link>
               </li>
               <li>
-                <Link to="/services/seo-marketing" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  B2B Content & SEO Strategy
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Risk Management &amp; Quality Assurance
                 </Link>
               </li>
               <li>
-                <Link to="/services#digital-engineering" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Web Maintenance & Performance
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#digital-engineering" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Digital Architecture Audits
+                <Link to="/services/strategic-advisory-pmaas" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                  Agile &amp; Waterfall Methodologies
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Practice & Organization */}
           <div>
             <h3 className="h-11 flex items-center text-sm font-semibold uppercase tracking-wider text-white mb-6">
-              Company
+              Organization &amp; Track Record
             </h3>
             <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Home
-                </Link>
-              </li>
               <li>
                 <Link to="/about" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  About Us
+                  About SecuNova
                 </Link>
               </li>
               <li>
                 <Link to="/about/our-work" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Our Work
+                  Track Record &amp; Supervised Delivery
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  Contact
+                  Executive Contact
                 </Link>
               </li>
               <li>
                 <Link to="/faq" className="text-sm text-white hover:text-secunova-light transition-colors">
                   FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="/join-us" className="text-sm text-white hover:text-secunova-light transition-colors">
+                  Investors &amp; Partners
                 </Link>
               </li>
             </ul>
@@ -175,36 +135,36 @@ const Footer = () => {
         {/* Contact Strip */}
         <div className="border-t border-gray-800 mt-12 lg:mt-16 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-start">
+            <div className="flex items-center">
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                 <MapPin className="h-5 w-5 text-secunova-light" />
               </div>
               <div>
-                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Mailbox</p>
+                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Mailing Address</p>
                 <p className="text-sm text-white leading-relaxed">
                   #270, 1122 3 St SE Ste 1906<br />
                   Calgary, AB T2G 0E7, CA
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
+            <div className="flex items-center">
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                 <Phone className="h-5 w-5 text-secunova-light" />
               </div>
               <div>
-                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Call Us</p>
+                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Direct Telephone</p>
                 <a href="tel:403-401-1552" className="text-sm text-white hover:text-secunova-light transition-colors">
                   403-401-1552
                 </a>
               </div>
             </div>
-            <div className="flex items-start">
+            <div className="flex items-center">
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                 <Mail className="h-5 w-5 text-secunova-light" />
               </div>
               <div>
-                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Email Us</p>
-                <a href="mailto:hello@secunovainc.com" className="text-sm text-white hover:text-secunova-light transition-colors break-all">
+                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Direct Email</p>
+                <a href="mailto:hello@secunovainc.com" className="text-sm text-white hover:text-secunova-light transition-colors">
                   hello@secunovainc.com
                 </a>
               </div>
@@ -212,20 +172,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-white/90 text-center md:text-left">
-              © {new Date().getFullYear()} SecuNova Inc. All rights reserved.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              <Link to="/privacy-terms" className="text-xs text-white hover:text-secunova-light transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/privacy-terms" className="text-xs text-white hover:text-secunova-light transition-colors">
-                Terms of Service
-              </Link>
-            </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-blue-200">
+          <p>© {new Date().getFullYear()} SecuNova Inc. All rights reserved. Registered in Calgary, AB, Canada.</p>
+          <div className="flex items-center space-x-6 mt-4 sm:mt-0">
+            <Link to="/join-us" className="hover:text-white transition-colors">Investors &amp; Partners</Link>
+            <Link to="/privacy-terms" className="hover:text-white transition-colors">Privacy Policy &amp; Terms of Service</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
           </div>
         </div>
       </div>

@@ -1,20 +1,3 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -24,6 +7,7 @@ import {
   searchKnowledge, isArabicText, isOffTopicQuery,
   SUPPORT_PHONE, KnowledgeItem
 } from '../ai/knowledge';
+import { sanitizeInput, validateEmail, validatePhone } from '../utils/security';
 
 interface ChatMessage {
   id: string;
@@ -39,11 +23,11 @@ const ASSISTANT_NAME = 'SecuNova AI Advisor';
 const ASSISTANT_TITLE = 'Services & Solutions Assistant';
 
 const INITIAL_PROMPTS_EN = [
-  '📋 What is Digital Project Management (PMaaS)?',
-  '🔒 Tell me about Cybersecurity Architecture & Audits',
-  '💻 What Web & Mobile Development services do you offer?',
-  '💡 How can I book a Free Strategy Session?',
-  '💰 What are your Pricing & Engagement models?'
+  'What is Project Management as a Service (PMaaS)?',
+  'Tell me about Strategic Advisory & Digital Transformation',
+  'Explain Cybersecurity & Risk Management',
+  'What services does SecuNova offer?',
+  'How do I schedule a consultation?'
 ];
 
 const ChatWidget: React.FC = () => {
@@ -64,7 +48,7 @@ const ChatWidget: React.FC = () => {
     const welcomeMsg: ChatMessage = {
       id: 'welcome-1',
       role: 'assistant',
-      content: 'Hello! I am SecuNova\'s AI Advisor. I am exclusively configured to answer inquiries in English regarding our digital engineering, cybersecurity, PMaaS, executive training, and strategic consulting services.',
+      content: 'Hello! I am SecuNova\'s AI Advisor. I am exclusively configured to answer inquiries in English regarding our strategic advisory, PMaaS, and enterprise IT and security audit services.',
       timestamp: new Date(),
       suggestedPrompts: INITIAL_PROMPTS_EN
     };
@@ -115,7 +99,7 @@ const ChatWidget: React.FC = () => {
         botResponse = {
           id: `bot-${Date.now()}`,
           role: 'assistant',
-          content: 'I am SecuNova\'s AI Services Advisor and I am exclusively configured to answer inquiries regarding SecuNova\'s digital & consulting services (such as PMaaS, Cybersecurity, Web & Mobile Development, and Managed IT). How can I assist you with our services today?',
+          content: 'I am SecuNova\'s AI Services Advisor and I am exclusively configured to answer inquiries regarding SecuNova\'s consulting and digital services, such as Strategic Advisory, Digital Transformation, PMaaS, and Enterprise IT and Security Audits. How can I assist you with our services today?',
           timestamp: new Date(),
           suggestedPrompts: INITIAL_PROMPTS_EN
         };
@@ -132,15 +116,15 @@ const ChatWidget: React.FC = () => {
             cta: match.ctaEn,
             link: match.link,
             timestamp: new Date(),
-            suggestedPrompts: ['What are your pricing & engagement models?', 'How do I book a free strategy call?']
+            suggestedPrompts: ['Tell me about Enterprise IT & Security Audits', 'How do I schedule a consultation?']
           };
         } else {
           // Fallback response focusing on services scope
           botResponse = {
             id: `bot-${Date.now()}`,
             role: 'assistant',
-            content: `We offer a full suite of enterprise services including Digital Project Management (PMaaS), Custom Web & Mobile Development, Cybersecurity Architecture, and Managed IT Support. Feel free to ask about any of these services or schedule a free strategy session at ${SUPPORT_PHONE}.`,
-            cta: 'Contact our sales team for a custom proposal.',
+            content: `We offer a full suite of enterprise advisory services including Strategic Advisory & Business Planning, Digital Transformation & Process Optimization, Cybersecurity & Risk Management, and Project Management as a Service (PMaaS). Feel free to ask about any of these services or call us at ${SUPPORT_PHONE}.`,
+            cta: 'Contact our team for a custom proposal.',
             link: '/services',
             timestamp: new Date()
           };
@@ -156,8 +140,20 @@ const ChatWidget: React.FC = () => {
   // Submit Lead Form
   const handleProfileSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.email.trim() || !form.phone.trim()) {
-      setFormError('Please fill in your name, email, and phone number.');
+    const name = sanitizeInput(form.name);
+    const email = sanitizeInput(form.email);
+    const phone = sanitizeInput(form.phone);
+
+    if (!name) {
+      setFormError('Please enter your name.');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setFormError('Please enter a valid email address.');
+      return;
+    }
+    if (!validatePhone(phone)) {
+      setFormError('Please enter a valid phone number.');
       return;
     }
 
@@ -167,14 +163,14 @@ const ChatWidget: React.FC = () => {
     const confirmMsg: ChatMessage = {
       id: `bot-confirm-${Date.now()}`,
       role: 'assistant',
-      content: `Thank you, ${form.name}! Your contact information has been registered. Our senior consulting team will reach out to you at ${form.email} regarding your service request.`,
+      content: `Thank you, ${name}! Your contact information has been registered. Our senior consulting team will reach out to you at ${email} regarding your service request.`,
       timestamp: new Date()
     };
     setMessages(prev => [...prev, confirmMsg]);
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans" id="chat-widget-root">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 font-sans" id="chat-widget-root">
       
       {/* Floating Trigger Button */}
       {!open && (
@@ -199,7 +195,7 @@ const ChatWidget: React.FC = () => {
 
           {/* Hover Tooltip */}
           <span className="absolute right-16 bg-secunova-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            AI Services Advisor 💬
+            AI Services Advisor
           </span>
         </button>
       )}
@@ -208,7 +204,7 @@ const ChatWidget: React.FC = () => {
       {open && (
         <div
           ref={chatContainerRef}
-          className="flex flex-col w-[360px] sm:w-[420px] h-[580px] max-h-[85vh] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300"
+          className="flex flex-col w-[calc(100vw-2rem)] max-w-[420px] h-[540px] sm:h-[580px] max-h-[85vh] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden chat-panel-enter"
           id="chat-widget-panel"
         >
           {/* Header Bar */}
@@ -249,7 +245,7 @@ const ChatWidget: React.FC = () => {
 
           {/* Profile / Contact Form Modal Overlay */}
           {showProfileForm && (
-            <div className="bg-gray-50 border-b border-gray-200 p-4 animate-in slide-in-from-top-2 duration-200">
+            <div className="bg-gray-50 border-b border-gray-200 p-4">
               <div className="flex items-center justify-between mb-3">
                 <h4 className="text-xs font-bold text-secunova-dark uppercase tracking-wider flex items-center gap-1.5">
                   <User className="h-4 w-4 text-secunova-blue" />

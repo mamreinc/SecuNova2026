@@ -1,29 +1,43 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Palette, Type, Shield, Download, Check, Copy, Layers, Crown, Image as ImageIcon, Sparkles, Sun, Moon } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Palette, Type, Shield, Download, Check, Copy, Layers, Crown, Image as ImageIcon, Sparkles, Sun, Moon, Lock, Key, AlertCircle, ArrowRight } from 'lucide-react';
 import Logo from '../components/Logo';
 import CtaSection from '../components/CtaSection';
 
 const BrandPage: React.FC = () => {
   const [copiedHex, setCopiedHex] = React.useState<string | null>(null);
   const [downloadingFormat, setDownloadingFormat] = React.useState<string | null>(null);
+
+  // Owner Security Authorization Gate
+  const [isAuthorized, setIsAuthorized] = React.useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const key = urlParams.get('key');
+      const validKeys = ['@amrein321@', '@amrein321', 'amrein321', 'secunova2026'];
+      if (key && validKeys.includes(key.toLowerCase())) {
+        localStorage.setItem('secunova_brand_auth', 'unlocked');
+        return true;
+      }
+      return localStorage.getItem('secunova_brand_auth') === 'unlocked';
+    }
+    return false;
+  });
+
+  const [passcode, setPasscode] = React.useState<string>('');
+  const [authError, setAuthError] = React.useState<string | null>(null);
+
+  const handleUnlock = (e: React.FormEvent) => {
+    e.preventDefault();
+    const validKeys = ['@amrein321@', '@amrein321', 'amrein321', 'secunova2026'];
+    if (validKeys.includes(passcode.trim().toLowerCase())) {
+      localStorage.setItem('secunova_brand_auth', 'unlocked');
+      setIsAuthorized(true);
+      setAuthError(null);
+    } else {
+      setAuthError('Access Denied: Invalid Owner Passcode');
+    }
+  };
 
   const handleCopyHex = (hex: string) => {
     navigator.clipboard.writeText(hex);
@@ -300,33 +314,33 @@ const BrandPage: React.FC = () => {
       if (!isLight) {
         // Dark Banners
         if (baseBannerId === 'consulting') {
-          headline = 'NAVIGATE DIGITAL CHANGE BEFORE IT COSTS YOU MOMENTUM.';
-          subheadline = 'Digital Transformation · Executive Innovation · Project Management (PMaaS)';
-          tagText = 'SECUNOVA CONSULTING · BOARDROOM ADVISORY';
-          footerText = 'secunovainc.com/services  |  North American Operations';
+          headline = 'INDEPENDENT GOVERNANCE FOR THE DIGITAL ENTERPRISE.';
+          subheadline = 'Strategic Advisory & PMaaS · Digital Transformation Roadmaps · IT Operations & Cloud Governance';
+          tagText = 'SECUNOVA CONSULTING · ENTERPRISE GOVERNANCE';
+          footerText = 'secunovainc.com/services/strategic-advisory-pmaas  |  North American Operations';
         } else if (baseBannerId === 'engineering') {
-          headline = 'PURE CUSTOM CODE. ZERO CMS BLOAT.';
-          subheadline = 'Custom React.js Applications · High-Converting Funnels · Tech Stack Audits';
-          tagText = 'DIGITAL ENGINEERING · VIBE CODING ARCHITECTURE';
-          footerText = 'secunovainc.com/services/web-development  |  100% Custom Code';
+          headline = 'KNOW YOUR EXPOSURE. PROTECT THE ENTERPRISE.';
+          subheadline = 'Forensic IT & Security Audits · Subscription Bloat Elimination · Compliance Advisory';
+          tagText = 'ENTERPRISE AUDITS · INDEPENDENT & FORENSIC';
+          footerText = 'secunovainc.com/services/enterprise-it-security-audits  |  Independent Findings';
         }
       } else {
         // Light White Banners - Comprehensive Service Coverage & Ultra-Strong Copywriting
         if (baseBannerId === 'executive') {
-          headline = 'HIGH-VELOCITY CUSTOM WEB APPS. ZERO CMS BLOAT.';
-          subheadline = 'Enterprise React.js Apps · High-Converting Marketing Funnels · UI/UX Design & Figma Redesigns';
-          tagText = 'DIGITAL ENGINEERING · VIBE CODING ARCHITECTURE';
-          footerText = 'secunovainc.com/services/web-development  |  Calgary, AB';
+          headline = 'INDEPENDENT ADVISORY. FORENSIC AUDITS. GOVERNED DELIVERY.';
+          subheadline = 'Strategic Advisory & PMaaS · Enterprise IT & Security Audits · Subscription Bloat Elimination';
+          tagText = 'SECUNOVA CONSULTING · ENTERPRISE GOVERNANCE';
+          footerText = 'secunovainc.com/services/strategic-advisory-pmaas  |  Calgary, AB';
         } else if (baseBannerId === 'consulting') {
-          headline = 'NAVIGATE DIGITAL CHANGE. PROTECT CAPITAL. DELIVER RESULTS.';
-          subheadline = 'Digital Transformation Strategy · Executive Leadership Consulting · Independent PMaaS & Vendor Oversight';
-          tagText = 'SECUNOVA CONSULTING · BOARDROOM & PMaaS ADVISORY';
-          footerText = 'secunovainc.com/services/digital-project-management  |  North American Operations';
+          headline = 'PROTECT CAPITAL. DIRECT THE TRANSFORMATION. DELIVER RESULTS.';
+          subheadline = 'Digital Transformation Roadmaps · Independent PMaaS & Vendor Oversight · IT Operations Governance';
+          tagText = 'SECUNOVA CONSULTING · STRATEGIC ADVISORY & PMAAS';
+          footerText = 'secunovainc.com/services/strategic-advisory-pmaas  |  North American Operations';
         } else if (baseBannerId === 'engineering') {
-          headline = 'CONVERT HIGH-INTENT B2B TRAFFIC. ELIMINATE SOFTWARE BLOAT.';
-          subheadline = 'Engineered B2B Content & Organic SEO · Forensic Tech Stack & Security Audits · Web Maintenance';
-          tagText = 'B2B GROWTH · SEO & TECH STACK AUDITS';
-          footerText = 'secunovainc.com/services/seo-marketing  |  Direct Consultation: 403-401-1552';
+          headline = 'KNOW YOUR EXPOSURE. RECLAIM YOUR BUDGET. STAY AUDIT-READY.';
+          subheadline = 'Forensic Enterprise IT & Security Audits · Subscription Bloat Elimination · Compliance & Risk Advisory';
+          tagText = 'ENTERPRISE AUDITS · INDEPENDENT & FORENSIC';
+          footerText = 'secunovainc.com/services/enterprise-it-security-audits  |  Direct Consultation: 403-401-1552';
         }
       }
 
@@ -441,37 +455,104 @@ const BrandPage: React.FC = () => {
       size: '1.5rem / 24px',
       weight: '700 Bold',
       lineHeight: '1.3',
-      sample: 'Strategic Consulting & Digital Engineering'
+      sample: 'Strategic Advisory & Enterprise Audits'
     },
     {
       level: 'Card Title (H4)',
       size: '1.25rem / 20px',
       weight: '700 Bold',
       lineHeight: '1.3',
-      sample: 'Custom Web Application Development'
+      sample: 'Enterprise IT & Security Audits'
     },
     {
       level: 'Body Lead',
       size: '1.125rem / 18px',
       weight: '400 Regular / 500 Medium',
       lineHeight: '1.6',
-      sample: 'SecuNova builds enterprise-grade custom web applications with senior-led Vibe Coding.'
+      sample: 'SecuNova delivers independent governance with senior-led advisory and forensic audits.'
     },
     {
       level: 'Body Standard',
       size: '0.9375rem / 15px',
       weight: '400 Regular',
       lineHeight: '1.6',
-      sample: 'Pure React & TypeScript custom code designed to eliminate software entropy and CMS bloat.'
+      sample: 'Roadmaps, PMaaS, and audit-ready reporting designed to eliminate waste and software entropy.'
     },
     {
       level: 'Caption & Badge',
       size: '0.75rem / 12px',
       weight: '600 SemiBold',
       lineHeight: '1.0',
-      sample: 'Pillar II · Digital Engineering'
+      sample: 'Pillar II · Enterprise Audits'
     }
   ];
+
+  if (!isAuthorized) {
+    return (
+      <div className="min-h-screen bg-[#0B132B] text-white flex items-center justify-center px-4 py-16">
+        <Helmet>
+          <title>Owner Security Portal | SecuNova Inc.</title>
+          <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+        </Helmet>
+        <div className="max-w-md w-full bg-slate-900/90 border border-slate-700/80 rounded-3xl p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-40 h-40 bg-secunova-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div className="text-center mb-8">
+            <div className="w-16 h-16 bg-secunova-blue/15 border border-secunova-blue/30 rounded-2xl flex items-center justify-center mx-auto mb-4 text-secunova-light shadow-lg">
+              <Lock className="h-8 w-8" />
+            </div>
+            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 bg-white/10 text-secunova-light border border-white/20 rounded-full inline-block mb-3">
+              SecuNova Owner Portal
+            </span>
+            <h1 className="text-2xl font-bold text-white mb-2">Owner Authentication</h1>
+            <p className="text-xs text-blue-100/80 leading-relaxed">
+              This brand design suite is private and restricted exclusively to SecuNova leadership. Please enter your Owner Passcode to proceed.
+            </p>
+          </div>
+
+          <form onSubmit={handleUnlock} className="space-y-4">
+            <div>
+              <label htmlFor="owner-passcode" className="block text-xs font-semibold text-blue-100 uppercase tracking-wider mb-2">
+                Owner Passcode
+              </label>
+              <div className="relative">
+                <input
+                  id="owner-passcode"
+                  type="password"
+                  value={passcode}
+                  onChange={(e) => setPasscode(e.target.value)}
+                  placeholder="Enter passcode..."
+                  className="w-full bg-slate-800/90 border border-slate-700 rounded-xl px-4 py-3.5 pl-11 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-secunova-light transition-all"
+                  autoFocus
+                />
+                <Key className="h-5 w-5 text-slate-400 absolute left-3.5 top-3.5" />
+              </div>
+            </div>
+
+            {authError && (
+              <div className="flex items-center gap-2 text-red-400 bg-red-500/10 border border-red-500/20 p-3 rounded-xl text-xs font-medium">
+                <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                <span>{authError}</span>
+              </div>
+            )}
+
+            <button
+              type="submit"
+              className="w-full btn btn-gradient py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider justify-center"
+            >
+              Unlock Brand Assets <ArrowRight className="h-4 w-4 ml-2 text-white" />
+            </button>
+          </form>
+
+          <div className="mt-8 pt-6 border-t border-slate-800 text-center">
+            <Link to="/" className="text-xs text-slate-400 hover:text-white transition-colors">
+              &larr; Return to Homepage
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -483,7 +564,7 @@ const BrandPage: React.FC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center pt-28 sm:pt-36 pb-16 overflow-hidden bg-gradient-to-b from-secunova-dark via-secunova-dark to-[#0B121E]">
+      <section className="relative min-h-[70vh] flex items-center justify-center pt-32 sm:pt-36 pb-16 overflow-hidden bg-gradient-to-b from-secunova-dark via-secunova-dark to-[#0B121E]">
         <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/80"></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="max-w-5xl mx-auto text-center text-white">
@@ -492,11 +573,11 @@ const BrandPage: React.FC = () => {
               Brand Design System & LinkedIn Banners
             </div>
             
-            <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight">
+            <h1 className="hero-heading mb-6">
               LinkedIn Company Banners & <span className="text-secunova-light">Brand Suite</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
               Official corporate brand standards and LinkedIn Company Page Banners (exact 1584 x 396 px). Download high-definition HD PNG banners in both <strong>Dark Theme</strong> and <strong>Light White Theme</strong> covering all SecuNova services.
             </p>
           </div>
@@ -515,7 +596,7 @@ const BrandPage: React.FC = () => {
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 LinkedIn Company Cover Banners
               </h2>
-              <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+              <p className="text-blue-100 text-lg max-w-3xl mx-auto">
                 Ready-to-upload, high-resolution LinkedIn cover banners in both Dark and Light White themes with executive copywriting. Aligned to LinkedIn's exact 1584 × 396 specifications.
               </p>
             </div>
@@ -558,10 +639,10 @@ const BrandPage: React.FC = () => {
 
                     <div className="relative z-10 my-auto">
                       <h4 className="text-sm sm:text-xl md:text-2xl font-black text-white leading-tight mb-1 sm:mb-2 tracking-tight">
-                        STRATEGY FOR LEADERS. ENGINEERING FOR GROWTH.
+                        STRATEGIC OVERSIGHT. ENTERPRISE-GRADE GOVERNANCE.
                       </h4>
                       <p className="text-[10px] sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-                        Your Strategic Technical Shield in Calgary, AB · Zero CMS Debt · Senior-Led Execution
+                        Independent Advisory · Forensic IT & Security Audits · Senior-Led Delivery
                       </p>
                     </div>
 
@@ -595,21 +676,21 @@ const BrandPage: React.FC = () => {
                     <div className="relative z-10 flex items-center justify-between">
                       <Logo variant="horizontal" size="md" theme="dark" subtext="CONSULTING" showLink={false} />
                       <span className="hidden sm:inline-block text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-sky-500/20 text-sky-200 border border-sky-400/30 px-3 py-1 rounded-full">
-                        Boardroom Advisory
+                        Enterprise Governance
                       </span>
                     </div>
 
                     <div className="relative z-10 my-auto">
                       <h4 className="text-sm sm:text-xl md:text-2xl font-black text-white leading-tight mb-1 sm:mb-2 tracking-tight">
-                        NAVIGATE DIGITAL CHANGE BEFORE IT COSTS YOU MOMENTUM.
+                        INDEPENDENT GOVERNANCE FOR THE DIGITAL ENTERPRISE.
                       </h4>
                       <p className="text-[10px] sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-                        Digital Transformation · Executive Innovation · Project Management as a Service (PMaaS)
+                        Strategic Advisory & PMaaS · Digital Transformation Roadmaps · IT Operations & Cloud Governance
                       </p>
                     </div>
 
                     <div className="relative z-10 flex items-center justify-between text-[10px] sm:text-xs text-white/80 font-semibold border-t border-white/10 pt-2">
-                      <span>secunovainc.com/services</span>
+                      <span>secunovainc.com/services/strategic-advisory-pmaas</span>
                       <span>North American Operations</span>
                     </div>
                   </div>
@@ -624,22 +705,22 @@ const BrandPage: React.FC = () => {
                 Light Theme Covers (Clean White Backgrounds · Full Service Suite)
               </h3>
               <div className="space-y-10">
-                {/* Light Banner 1: Digital Engineering, Web Apps & UI/UX Design */}
+                {/* Light Banner 1: Enterprise Governance, Advisory & Audits */}
                 <div className="bg-white rounded-2xl p-6 shadow-2xl border border-gray-200 text-secunova-dark">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
                     <div>
                       <span className="text-xs font-bold uppercase tracking-wider text-secunova-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-                        Option 03 · Custom Web Apps, Vibe Coding & UI/UX Design
+                        Option 03 · Strategic Advisory, PMaaS & Enterprise Audits
                       </span>
-                      <h4 className="text-xl font-bold text-secunova-dark mt-2">Digital Engineering & Web Architecture Cover (White)</h4>
+                      <h4 className="text-xl font-bold text-secunova-dark mt-2">Enterprise Governance Cover (White)</h4>
                     </div>
                     <button
-                      onClick={() => handleDownloadLinkedInCover('executive-light', 'secunova-web-engineering-linkedin-cover-white-1584x396.png')}
-                      disabled={downloadingFormat === 'secunova-web-engineering-linkedin-cover-white-1584x396.png'}
+                      onClick={() => handleDownloadLinkedInCover('executive-light', 'secunova-governance-linkedin-cover-white-1584x396.png')}
+                      disabled={downloadingFormat === 'secunova-governance-linkedin-cover-white-1584x396.png'}
                       className="btn btn-gradient btn-md flex items-center justify-center gap-2 self-start md:self-auto"
                     >
                       <Download className="h-4 w-4" />
-                      <span>{downloadingFormat === 'secunova-web-engineering-linkedin-cover-white-1584x396.png' ? 'Generating 1584x396 PNG...' : 'Download White PNG (1584×396)'}</span>
+                      <span>{downloadingFormat === 'secunova-governance-linkedin-cover-white-1584x396.png' ? 'Generating 1584x396 PNG...' : 'Download White PNG (1584×396)'}</span>
                     </button>
                   </div>
 
@@ -647,42 +728,42 @@ const BrandPage: React.FC = () => {
                     <div className="relative z-10 flex items-center justify-between">
                       <Logo variant="horizontal" size="md" theme="light" showLink={false} />
                       <span className="hidden sm:inline-block text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-blue-100 text-secunova-blue border border-blue-200 px-3 py-1 rounded-full">
-                        DIGITAL ENGINEERING · VIBE CODING ARCHITECTURE
+                        ENTERPRISE GOVERNANCE
                       </span>
                     </div>
 
                     <div className="relative z-10 my-auto">
                       <h4 className="text-sm sm:text-xl md:text-2xl font-black text-secunova-dark leading-tight mb-1 sm:mb-2 tracking-tight">
-                        HIGH-VELOCITY CUSTOM WEB APPS. ZERO CMS BLOAT.
+                        INDEPENDENT ADVISORY. FORENSIC AUDITS. GOVERNED DELIVERY.
                       </h4>
                       <p className="text-[10px] sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-                        Enterprise React.js Apps · High-Converting Marketing Funnels · UI/UX Design & Figma Redesigns
+                        Strategic Advisory & PMaaS · Enterprise IT & Security Audits · Subscription Bloat Elimination
                       </p>
                     </div>
 
                     <div className="relative z-10 flex items-center justify-between text-[10px] sm:text-xs text-secunova-dark/80 font-semibold border-t border-gray-200 pt-2">
-                      <span>secunovainc.com/services/web-development</span>
-                      <span>Calgary, AB · 100% Custom Code</span>
+                      <span>secunovainc.com/services/strategic-advisory-pmaas</span>
+                      <span>Calgary, AB · Independent Oversight</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Light Banner 2: SecuNova Consulting & IT Governance (PMaaS) */}
+                {/* Light Banner 2: Strategic Advisory & PMaaS Governance */}
                 <div className="bg-white rounded-2xl p-6 shadow-2xl border border-gray-200 text-secunova-dark">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
                     <div>
                       <span className="text-xs font-bold uppercase tracking-wider text-secunova-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-                        Option 04 · Strategic Consulting & Digital Project Management (PMaaS)
+                        Option 04 · Strategic Advisory & PMaaS Governance
                       </span>
-                      <h4 className="text-xl font-bold text-secunova-dark mt-2">SecuNova Consulting & PMaaS Governance Cover (White)</h4>
+                      <h4 className="text-xl font-bold text-secunova-dark mt-2">Strategic Advisory & PMaaS Cover (White)</h4>
                     </div>
                     <button
-                      onClick={() => handleDownloadLinkedInCover('consulting-light', 'secunova-consulting-pmaas-linkedin-cover-white-1584x396.png')}
-                      disabled={downloadingFormat === 'secunova-consulting-pmaas-linkedin-cover-white-1584x396.png'}
+                      onClick={() => handleDownloadLinkedInCover('consulting-light', 'secunova-strategic-advisory-linkedin-cover-white-1584x396.png')}
+                      disabled={downloadingFormat === 'secunova-strategic-advisory-linkedin-cover-white-1584x396.png'}
                       className="btn btn-gradient btn-md flex items-center justify-center gap-2 self-start md:self-auto"
                     >
                       <Download className="h-4 w-4" />
-                      <span>{downloadingFormat === 'secunova-consulting-pmaas-linkedin-cover-white-1584x396.png' ? 'Generating 1584x396 PNG...' : 'Download White PNG (1584×396)'}</span>
+                      <span>{downloadingFormat === 'secunova-strategic-advisory-linkedin-cover-white-1584x396.png' ? 'Generating 1584x396 PNG...' : 'Download White PNG (1584×396)'}</span>
                     </button>
                   </div>
 
@@ -690,42 +771,42 @@ const BrandPage: React.FC = () => {
                     <div className="relative z-10 flex items-center justify-between">
                       <Logo variant="horizontal" size="md" theme="light" subtext="CONSULTING" showLink={false} />
                       <span className="hidden sm:inline-block text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-sky-100 text-secunova-blue border border-sky-200 px-3 py-1 rounded-full">
-                        SECUNOVA CONSULTING · BOARDROOM & PMaaS ADVISORY
+                        STRATEGIC ADVISORY & PMAAS
                       </span>
                     </div>
 
                     <div className="relative z-10 my-auto">
                       <h4 className="text-sm sm:text-xl md:text-2xl font-black text-secunova-dark leading-tight mb-1 sm:mb-2 tracking-tight">
-                        NAVIGATE DIGITAL CHANGE. PROTECT CAPITAL. DELIVER RESULTS.
+                        PROTECT CAPITAL. DIRECT THE TRANSFORMATION. DELIVER RESULTS.
                       </h4>
                       <p className="text-[10px] sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-                        Digital Transformation Strategy · Executive Leadership Consulting · Independent PMaaS & Vendor Oversight
+                        Digital Transformation Roadmaps · Independent PMaaS & Vendor Oversight · IT Operations Governance
                       </p>
                     </div>
 
                     <div className="relative z-10 flex items-center justify-between text-[10px] sm:text-xs text-secunova-dark/80 font-semibold border-t border-gray-200 pt-2">
-                      <span>secunovainc.com/services/digital-project-management</span>
+                      <span>secunovainc.com/services/strategic-advisory-pmaas</span>
                       <span>North American Operations</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Light Banner 3: B2B Organic SEO, Copywriting & Tech Stack Audits */}
+                {/* Light Banner 3: Enterprise IT & Security Audits */}
                 <div className="bg-white rounded-2xl p-6 shadow-2xl border border-gray-200 text-secunova-dark">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
                     <div>
                       <span className="text-xs font-bold uppercase tracking-wider text-secunova-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-                        Option 05 · B2B Content, SEO & Tech Stack Forensic Audits
+                        Option 05 · Enterprise IT & Security Audits
                       </span>
-                      <h4 className="text-xl font-bold text-secunova-dark mt-2">B2B Content, SEO Strategy & Tech Stack Audit Cover (White)</h4>
+                      <h4 className="text-xl font-bold text-secunova-dark mt-2">Enterprise IT & Security Audit Cover (White)</h4>
                     </div>
                     <button
-                      onClick={() => handleDownloadLinkedInCover('engineering-light', 'secunova-seo-audit-linkedin-cover-white-1584x396.png')}
-                      disabled={downloadingFormat === 'secunova-seo-audit-linkedin-cover-white-1584x396.png'}
+                      onClick={() => handleDownloadLinkedInCover('engineering-light', 'secunova-enterprise-audit-linkedin-cover-white-1584x396.png')}
+                      disabled={downloadingFormat === 'secunova-enterprise-audit-linkedin-cover-white-1584x396.png'}
                       className="btn btn-gradient btn-md flex items-center justify-center gap-2 self-start md:self-auto"
                     >
                       <Download className="h-4 w-4" />
-                      <span>{downloadingFormat === 'secunova-seo-audit-linkedin-cover-white-1584x396.png' ? 'Generating 1584x396 PNG...' : 'Download White PNG (1584×396)'}</span>
+                      <span>{downloadingFormat === 'secunova-enterprise-audit-linkedin-cover-white-1584x396.png' ? 'Generating 1584x396 PNG...' : 'Download White PNG (1584×396)'}</span>
                     </button>
                   </div>
 
@@ -733,21 +814,21 @@ const BrandPage: React.FC = () => {
                     <div className="relative z-10 flex items-center justify-between">
                       <Logo variant="horizontal" size="md" theme="light" showLink={false} />
                       <span className="hidden sm:inline-block text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-blue-100 text-secunova-blue border border-blue-200 px-3 py-1 rounded-full">
-                        B2B GROWTH · SEO & TECH STACK AUDITS
+                        ENTERPRISE AUDITS · INDEPENDENT & FORENSIC
                       </span>
                     </div>
 
                     <div className="relative z-10 my-auto">
                       <h4 className="text-sm sm:text-xl md:text-2xl font-black text-secunova-dark leading-tight mb-1 sm:mb-2 tracking-tight">
-                        CONVERT HIGH-INTENT B2B TRAFFIC. ELIMINATE SOFTWARE BLOAT.
+                        KNOW YOUR EXPOSURE. RECLAIM YOUR BUDGET. STAY AUDIT-READY.
                       </h4>
                       <p className="text-[10px] sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-                        Engineered B2B Content & Organic SEO · Forensic Tech Stack & Security Audits · Web Maintenance
+                        Forensic Enterprise IT & Security Audits · Subscription Bloat Elimination · Compliance & Risk Advisory
                       </p>
                     </div>
 
                     <div className="relative z-10 flex items-center justify-between text-[10px] sm:text-xs text-secunova-dark/80 font-semibold border-t border-gray-200 pt-2">
-                      <span>secunovainc.com/services/seo-marketing</span>
+                      <span>secunovainc.com/services/enterprise-it-security-audits</span>
                       <span>Direct Consultation: 403-401-1552</span>
                     </div>
                   </div>
@@ -844,7 +925,7 @@ const BrandPage: React.FC = () => {
                   <div className="secunova-card__body mt-4">
                     <h4 className="secunova-card__title text-base mb-1 text-white">SecuNova Consulting (Dark Inverse)</h4>
                     <p className="secunova-card__description">
-                      High-contrast dark theme logo variant with bright cyan "CONSULTING" subtitle. Optimized for executive dark headers and dark web applications.
+                      High-contrast dark theme logo variant with bright cyan "CONSULTING" subtitle. Optimized for executive dark headers and enterprise client presentations.
                     </p>
                   </div>
                 </div>
@@ -1194,7 +1275,7 @@ const BrandPage: React.FC = () => {
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 Production-Ready BEM CSS Rules
               </h2>
-              <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+              <p className="text-blue-100 text-lg max-w-3xl mx-auto">
                 Strict layout contracts enforcing vertical rhythm, icon alignment, and bottom-locked CTAs across all pages.
               </p>
             </div>

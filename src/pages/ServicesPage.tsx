@@ -1,27 +1,10 @@
-/**
- * ============================================================================
- * PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
- * ----------------------------------------------------------------------------
- * All design, software architecture, UI/UX components, and source code are
- * 100% custom-engineered and designed exclusively by SecuNova.
- *
- * CORE ARCHITECTURAL ETHOS:
- * - 100% Bespoke Code: Built strictly to client specifications from scratch.
- * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
- * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
- *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
- * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
- *
- * Copyright (c) SecuNova. All rights reserved.
- * ============================================================================
- */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
-  Crown, Code, ArrowRight, CheckCircle,
-  GraduationCap, RefreshCw, Globe, Wrench, PenTool, FileText,
-  ClipboardCheck, Network, Target, Zap, Phone, Mail
+  Crown, Shield, ArrowRight, CheckCircle,
+  RefreshCw, Globe, Target, Zap, Phone, Code, Lightbulb, Scale, Users,
+  Award, LineChart, ClipboardCheck, BarChart, TrendingUp, Clock
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 
@@ -98,7 +81,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, hig
 
       <div className="secunova-card__footer">
         <span className="inline-flex items-center text-secunova-blue font-semibold transition-all group-hover:gap-3 gap-2 text-sm">
-          Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          Explore Specifications <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </span>
       </div>
     </Link>
@@ -136,120 +119,157 @@ const PillarHeader: React.FC<PillarHeaderProps> = ({ index, label, title, descri
 const ServicesPage = () => {
   const strategicServices = [
     {
-      title: 'Digital Transformation Consulting',
+      title: 'Strategic Advisory & Business Planning',
       description:
-        'Helping leaders and organizations adapt to rapid technological changes and build sustainable digital strategies to prevent system inefficiency and technological entropy.',
-      icon: <RefreshCw className="h-6 w-6" />,
-      highlights: ['Digital strategy & roadmap', 'Technology change management', 'System inefficiency recovery'],
-      path: '/contact',
+        'Long-term strategic plans aligned with corporate objectives: digital roadmaps, organizational change management, feasibility studies, and innovation-led business models.',
+      icon: <Lightbulb className="h-6 w-6" />,
+      highlights: ['Digital roadmaps & readiness assessment', 'Organizational change management', 'Feasibility studies & innovation models'],
+      path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
+      badge: 'Core Practice',
     },
     {
-      title: 'Executive Leadership & Innovation Consulting',
+      title: 'Digital Transformation & Process Optimization',
       description:
-        'Empowering C-suite executives and leadership teams with strategic digital fluency while co-creating custom technology solutions tailored to your organization\'s unique operational vision.',
-      icon: <GraduationCap className="h-6 w-6" />,
-      highlights: ['Executive digital fluency & C-suite training', 'Collaborative technology co-creation', 'Workflow-driven innovation frameworks'],
-      path: '/contact',
+        'Business process reengineering (BPR), cloud transformation across AWS and GCP, AI and RPA automation integration, and advanced data analytics strategies.',
+      icon: <RefreshCw className="h-6 w-6" />,
+      highlights: ['Business process reengineering (BPR)', 'Cloud strategies (AWS & GCP)', 'AI, RPA & advanced data analytics'],
+      path: '/services/strategic-advisory-pmaas',
       accent: 'light' as const,
     },
     {
-      title: 'Digital Project Management (PMaaS)',
+      title: 'Cybersecurity & Risk Management',
       description:
-        'Independent technical project supervision for business engagements. Our senior consultants enforce milestones, protect budgets, and deliver strict vendor oversight.',
-      icon: <ClipboardCheck className="h-6 w-6" />,
-      highlights: ['Project Management as a Service', 'Vendor oversight & accountability', 'Capital & budget protection'],
-      path: '/services/digital-project-management',
+        'Cyber risk assessments, governance and compliance frameworks, and business continuity and disaster recovery (BCDR) planning for operational resilience.',
+      icon: <Shield className="h-6 w-6" />,
+      highlights: ['Cyber risk assessment & remediation', 'Governance & regulatory compliance', 'Business continuity & BCDR planning'],
+      path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
-      badge: 'Strategic Shield PMaaS',
+    },
+    {
+      title: 'Customer Experience & Digital Solutions',
+      description:
+        'Integrated CX strategy across every channel and expert oversight for digital products, websites, and applications that precisely meet market needs.',
+      icon: <Globe className="h-6 w-6" />,
+      highlights: ['CX strategy & journey architecture', 'Digital product & platform oversight', 'Precise market-fit delivery'],
+      path: '/services/strategic-advisory-pmaas',
+      accent: 'dark' as const,
     },
   ];
 
-  const engineeringServices = [
+  const pmaasServices = [
     {
-      title: 'Custom Web App',
+      title: 'Project Leadership',
       description:
-        'Custom web applications, enterprise platforms, and high-converting funnels built using modern React.js architectures and senior-led AI workflows for maximum performance and conversion.',
-      icon: <Globe className="h-6 w-6" />,
-      highlights: ['Custom React.js & Web Applications', 'Enterprise platforms & conversion funnels', 'High-performance AI-augmented engineering'],
-      path: '/services/web-development',
+        'Professional project managers who lead digital and technical initiatives from planning through delivery, handover, and closure.',
+      icon: <Users className="h-6 w-6" />,
+      highlights: ['End-to-end project ownership', 'Delivery & closure management', 'Digital initiative leadership'],
+      path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
+      badge: 'PMaaS',
     },
     {
-      title: 'Vibe Coding & Custom Web Engineering',
+      title: 'Resource Allocation',
       description:
-        'High-velocity custom web development built with Vibe Coding (senior-led AI-augmented code architecture). Pure custom React.js code that eliminates slow CMS software, plugin vulnerabilities, and database bloat. Fully managed retainer packages available.',
-      icon: <Code className="h-6 w-6" />,
-      highlights: ['100% Pure Custom Code (Zero Slow CMS / WordPress)', 'High-Velocity AI-Augmented Engineering', 'Fully Managed Content & Hosting Retainers'],
-      path: '/services/web-development',
-      accent: 'blue' as const,
-      badge: 'Vibe Coding',
-    },
-    {
-      title: 'Web Maintenance & Performance Optimization',
-      description:
-        'Offering monthly retainer packages for site speed enhancements, security updates, 24/7 uptime monitoring, and technical bug fixes to ensure zero business disruption.',
-      icon: <Wrench className="h-6 w-6" />,
-      highlights: ['Monthly retainer care', 'Speed & Core Web Vitals optimization', 'Security updates & bug fixes'],
-      path: '/contact',
+        'Roles and tasks assigned based on team capability and efficiency to eliminate waste in time and energy.',
+      icon: <Scale className="h-6 w-6" />,
+      highlights: ['Capability-based assignment', 'Zero time or energy waste', 'Optimized team utilization'],
+      path: '/services/strategic-advisory-pmaas',
       accent: 'dark' as const,
     },
     {
-      title: 'Website & App UI/UX Redesigns',
+      title: 'Budget & Cost Control',
       description:
-        'Auditing existing platforms and delivering modern, human-centric interface wireframes and high-fidelity mockups (using Figma) that boost user engagement and credibility.',
-      icon: <PenTool className="h-6 w-6" />,
-      highlights: ['Human-centric UX audit', 'Figma wireframes & high-fidelity mockups', 'Engagement & credibility lift'],
-      path: '/services/ui-ux-design',
-      accent: 'blue' as const,
-    },
-    {
-      title: 'B2B Content & SEO Strategy',
-      description:
-        'Engineered B2B messaging and SEO content strategies designed to capture high-intent search traffic, establish industry thought leadership, and convert North American decision-makers.',
-      icon: <FileText className="h-6 w-6" />,
-      highlights: ['High-intent organic search acquisition', 'Persuasive executive B2B copywriting', 'Zero generic AI filler / Localized English'],
-      path: '/services/seo-marketing',
+        'Precision monitoring of project financial flows and strict control of expenses so approved budgets are never exceeded.',
+      icon: <BarChart className="h-6 w-6" />,
+      highlights: ['Financial flow monitoring', 'Expense control & forecasting', 'Budget compliance assurance'],
+      path: '/services/strategic-advisory-pmaas',
       accent: 'light' as const,
     },
     {
-      title: 'Digital Architecture & Tech Stack Audits',
+      title: 'Risk Management',
       description:
-        'Comprehensive forensic audits of your digital footprint, security posture, and software stack. We eliminate bloated subscription costs and engineer actionable roadmaps for scalable infrastructure.',
-      icon: <ClipboardCheck className="h-6 w-6" />,
-      highlights: ['Digital footprint & security risk audit', 'Software subscription bloat elimination', 'Actionable tech stack roadmap'],
-      path: '/contact',
+        'Anticipating potential obstacles and building proactive plans before risks can impact project delivery.',
+      icon: <Shield className="h-6 w-6" />,
+      highlights: ['Proactive obstacle anticipation', 'Pre-emptive mitigation plans', 'Delivery impact protection'],
+      path: '/services/strategic-advisory-pmaas',
       accent: 'blue' as const,
+    },
+    {
+      title: 'Quality Assurance',
+      description:
+        'Reviewing and delivering software and technical outputs against the highest agreed quality standards.',
+      icon: <Award className="h-6 w-6" />,
+      highlights: ['Highest agreed quality standards', 'Rigorous output review', 'Technical excellence delivery'],
+      path: '/services/strategic-advisory-pmaas',
+      accent: 'dark' as const,
+    },
+    {
+      title: 'Governance & Reporting',
+      description:
+        'Regular, transparent reports to senior leadership on completion rate, time spent, and key performance indicators (KPIs).',
+      icon: <LineChart className="h-6 w-6" />,
+      highlights: ['Transparent periodic reporting', 'Completion & time metrics', 'KPI tracking for leadership'],
+      path: '/services/strategic-advisory-pmaas',
+      accent: 'light' as const,
+    },
+    {
+      title: 'Agile & Waterfall Methodologies',
+      description:
+        'The right methodology for every project: fast iterative agile cycles or precisely scheduled engineering plans.',
+      icon: <Zap className="h-6 w-6" />,
+      highlights: ['Adaptive agile cycles', 'Scheduled waterfall plans', 'Methodology-fit selection'],
+      path: '/services/strategic-advisory-pmaas',
+      accent: 'blue' as const,
+    },
+    {
+      title: 'Timeline & Milestone Enforcement',
+      description:
+        'Rigorous schedule management that enforces strict delivery timelines and milestone commitments.',
+      icon: <Clock className="h-6 w-6" />,
+      highlights: ['Strict timeline enforcement', 'Milestone commitment tracking', 'Delivery velocity assurance'],
+      path: '/services/strategic-advisory-pmaas',
+      accent: 'dark' as const,
+    },
+  ];
+
+  const pmaasAdvantages = [
+    {
+      icon: <RefreshCw className="h-5 w-5" />,
+      title: 'High Operational Flexibility',
+      description: 'Scale your project management team up or down with project demand, with no long-term hiring commitments.',
+    },
+    {
+      icon: <TrendingUp className="h-5 w-5" />,
+      title: 'Lower Costs',
+      description: 'Avoid fixed full-time salaries and pay for value and actual delivered results instead.',
+    },
+    {
+      icon: <Clock className="h-5 w-5" />,
+      title: 'Immediate Access to Expertise',
+      description: 'Tap specialized capabilities experienced in complex technical standards and digital transformation.',
+    },
+    {
+      icon: <Target className="h-5 w-5" />,
+      title: 'Focus on Core Operations',
+      description: 'Let your internal team and leadership drive growth while the PMaaS team handles execution.',
     },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Consulting & Engineering Services Calgary | SecuNova Consulting</title>
-        <meta name="description" content="Explore SecuNova Consulting services in Calgary: digital transformation consulting, executive leadership programs, custom web apps, UI/UX redesign, B2B SEO strategy, and digital project management (PMaaS)." />
-        <meta name="keywords" content="SecuNova Consulting, SecuNova Consulting Calgary, digital transformation consulting Calgary, consulting firm Alberta, custom web development Calgary, UI UX design Calgary, B2B SEO strategy Calgary, digital project management Calgary, PMaaS Calgary, web maintenance Calgary, tech stack audit Calgary, executive leadership consulting Alberta, IT consulting Calgary" />
+        <title>Services | SecuNova Inc. | Strategic Advisory &amp; PMaaS</title>
+        <meta name="description" content="SecuNova Inc. delivers Strategic Advisory &amp; Digital Transformation and Project Management as a Service (PMaaS) to restructure organizations for the digital age." />
+        <meta name="keywords" content="SecuNova Inc., SecuNova Consulting, strategic advisory Calgary, digital transformation roadmap, PMaaS Canada, business process reengineering, cloud transformation, cybersecurity governance" />
         <link rel="canonical" href="https://secunovainc.com/services" />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content="Consulting & Engineering Services Calgary | SecuNova Consulting" />
-        <meta property="og:description" content="Two pillars. One partner. Strategic consulting for leaders and digital engineering that turns your online presence into your hardest-working salesperson." />
+        <meta property="og:title" content="Services | SecuNova Consulting | Strategic Advisory &amp; PMaaS" />
+        <meta property="og:description" content="Two service lines: Strategic Advisory &amp; Digital Transformation, and Project Management as a Service (PMaaS)." />
         <meta property="og:url" content="https://secunovainc.com/services" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://secunovainc.com/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="SecuNova Consulting" />
-        <meta property="og:locale" content="en_CA" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Consulting & Engineering Services Calgary | SecuNova Consulting" />
-        <meta name="twitter:description" content="Consulting, executive programs, and digital engineering built for North American growth. Calgary, AB." />
-        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
-
-        {/* Additional SEO Tags */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
@@ -262,69 +282,15 @@ const ServicesPage = () => {
             ]
           })}
         </script>
-
-
-        {/* Structured Data for Services Page */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "SecuNova Inc. Services",
-            "description": "Strategic consulting, executive programs, and digital engineering for North American businesses.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "SecuNova Inc.",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "#270, 1122 3 St SE Ste 1906",
-                "addressLocality": "Calgary",
-                "addressRegion": "AB",
-                "postalCode": "T2G 0E7",
-                "addressCountry": "CA"
-              },
-              "telephone": "+1-403-401-1552",
-              "email": "hello@secunovainc.com"
-            },
-            "areaServed": [
-              { "@type": "Country", "name": "Canada" },
-              { "@type": "Country", "name": "United States" }
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "SecuNova Services",
-              "itemListElement": [
-                {
-                  "@type": "OfferCatalog",
-                  "name": "Strategic Consulting & Executive Programs",
-                  "itemListElement": [
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Transformation Consulting" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Executive Leadership & Innovation Consulting" } }
-                  ]
-                },
-                {
-                  "@type": "OfferCatalog",
-                  "name": "Digital Engineering & Growth Solutions",
-                  "itemListElement": [
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web App" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Maintenance & Performance Optimization" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website & App UI/UX Redesigns" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B Content & SEO Strategy" } },
-                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Architecture & Tech Stack Audits" } }
-                  ]
-                }
-              ]
-            }
-          })}
-        </script>
       </Helmet>
 
-      {/* ================= Hero ================= */}
-      <section className="relative min-h-screen overflow-hidden flex items-center justify-center pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
+      {/* Hero */}
+      <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="SecuNova Consulting & Digital Engineering"
-            className="w-full h-full object-cover"
+            alt="SecuNova Strategic Advisory and Digital Transformation"
+            className="w-full h-full object-cover opacity-30"
             loading="eager"
             fetchPriority="high"
             decoding="async"
@@ -332,58 +298,46 @@ const ServicesPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/85"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10 w-full">
-          <div className="max-w-6xl mx-auto w-full">
-            <div className="text-center text-white">
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full text-sm font-medium mb-6">
-                <Crown className="h-4 w-4 mr-2 text-white" />
-                Two Pillars. One Partner.
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest text-secunova-light mb-6">
+              <Crown className="h-4 w-4 mr-2" />
+              Two Service Lines
+            </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
-                Strategy For Leaders.
-                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-secunova-light to-white">Engineering For Growth.</span>
-              </h1>
+            <h1 className="hero-heading mb-6">
+              Advisory. Transformation. <br />
+              <span className="text-secunova-light">On-Demand Delivery.</span>
+            </h1>
 
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                SecuNova helps North American leaders navigate digital change before it costs them momentum.
-                From executive strategy to enterprise-grade digital products, we keep your organization
-                moving efficiently, securely, and ahead of the curve.
-              </p>
+            <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              SecuNova restructures and develops organizations through strategic advisory and digital transformation, backed by flexible project management expertise that executes on time and on budget.
+            </p>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                <Link
-                  to="/contact"
-                  className="btn btn-gradient btn-lg"
-                >
-                  <span>Book a Free Strategy Call</span>
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-                <a
-                  href="tel:403-401-1552"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all backdrop-blur-sm border border-white/20"
-                >
-                  <Phone className="h-4 w-4 text-white" />
-                  <span>403-401-1552</span>
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+              <Link to="/contact" className="btn btn-gradient btn-lg">
+                Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4 text-white" />
+              </Link>
+              <a href="tel:403-401-1552" className="btn btn-outline-light btn-lg text-white">
+                <Phone className="mr-2 h-4 w-4" /> 403-401-1552
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= Pillar I: Strategic Consulting ================= */}
+      {/* Service Line I: Strategic Advisory & Digital Transformation */}
       <section id="strategic-consulting" className="secunova-section secunova-section--light">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <PillarHeader
               index="01"
-              label="Pillar I"
-              title="Strategic Consulting & Executive Programs"
-              description="For executives and founders who refuse to fall behind. We turn technological change from a threat into your competitive edge, with the strategy, structure, and execution to act before the market forces your hand."
+              label="Service Line"
+              title="Strategic Advisory & Digital Transformation"
+              description="A wide range of advanced services that restructure and develop organizations to strengthen competitive advantage and operational efficiency in the digital age, from digital roadmaps and process reengineering to cybersecurity governance and customer experience."
               icon={<Crown className="h-4 w-4" />}
             />
 
-            <div className="secunova-grid secunova-grid--3col">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {strategicServices.map((service, index) => (
                 <ServiceCard
                   key={index}
@@ -400,34 +354,31 @@ const ServicesPage = () => {
 
             <div className="mt-12 bg-gradient-to-r from-secunova-blue/5 to-secunova-light/5 border border-secunova-blue/20 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-xl font-bold text-secunova-dark mb-2">Need a partner who understands your boardroom?</h3>
-                <p className="text-secunova-dark/70">Talk directly with a senior architect about your strategic priorities.</p>
+                <h3 className="text-xl font-bold text-secunova-dark mb-2">Ready to reshape your organization for the digital age?</h3>
+                <p className="text-secunova-dark/70 text-sm">Schedule a direct briefing with our strategic advisory practice.</p>
               </div>
-              <Link
-                to="/contact"
-                className="btn btn-gradient btn-lg"
-              >
-                Start the Conversation <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/services/strategic-advisory-pmaas" className="btn btn-gradient btn-lg">
+                View Full Specifications <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= Pillar II: Digital Engineering ================= */}
-      <section id="digital-engineering" className="secunova-section secunova-section--gray">
+      {/* Service Line II: PMaaS */}
+      <section id="pmaas" className="secunova-section secunova-section--gray">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <PillarHeader
               index="02"
-              label="Pillar II"
-              title="Digital Engineering & Growth Solutions"
-              description="For small, emerging, and new businesses ready to compete like enterprises. Senior-led engineering, conversion-focused design, and growth systems that turn your digital presence into your hardest-working salesperson."
-              icon={<Code className="h-4 w-4" />}
+              label="Service Line"
+              title="Project Management as a Service (PMaaS)"
+              description="A flexible operational model giving your organization access to experienced project management expertise on demand, without hiring a permanent team. Execute projects at maximum efficiency while reducing costs and guaranteeing adherence to timelines and budgets."
+              icon={<ClipboardCheck className="h-4 w-4" />}
             />
 
-            <div className="secunova-grid">
-              {engineeringServices.map((service, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {pmaasServices.map((service, index) => (
                 <ServiceCard
                   key={index}
                   title={service.title}
@@ -436,135 +387,116 @@ const ServicesPage = () => {
                   highlights={service.highlights}
                   path={service.path}
                   accent={service.accent}
+                  badge={service.badge}
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ================= Why SecuNova ================= */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center bg-secunova-blue/10 text-secunova-blue px-6 py-3 rounded-full text-sm font-semibold mb-6">
-                Why SecuNova
+            {/* Strategic Advantages */}
+            <div className="mt-14 bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+              <div className="bg-gradient-to-r from-secunova-blue/10 to-secunova-light/10 px-8 py-6 border-b border-gray-100">
+                <h3 className="text-2xl font-bold text-secunova-dark">Strategic Advantages of the PMaaS Model</h3>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark mb-6 leading-tight">
-                Why Leaders <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">Choose SecuNova</span>
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                We keep your organization resilient, strategically sharp, operationally clean, and digitally unstoppable.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                  <div className="w-12 h-12 bg-secunova-blue/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secunova-blue/20 transition-colors duration-300">
-                    <Crown className="h-6 w-6 text-secunova-blue" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
+                {pmaasAdvantages.map((adv, i) => (
+                  <div key={i}>
+                    <div className="w-12 h-12 bg-secunova-blue/10 rounded-xl flex items-center justify-center text-secunova-blue mb-4">
+                      {adv.icon}
+                    </div>
+                    <h4 className="font-bold text-secunova-dark mb-2">{adv.title}</h4>
+                    <p className="text-sm text-secunova-dark/70 leading-relaxed">{adv.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-secunova-dark mb-2">Senior Leadership on Every Engagement</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Led directly by a principal architect. You get decision-makers, not account managers reading scripts.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                  <div className="w-12 h-12 bg-secunova-light/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secunova-light/20 transition-colors duration-300">
-                    <Network className="h-6 w-6 text-secunova-light" />
-                  </div>
-                  <h3 className="text-lg font-bold text-secunova-dark mb-2">Strategy and Engineering Under One Roof</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Consulting that actually ships. Our creative directors and developers execute the strategies we recommend. No handoffs, no drift.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                  <div className="w-12 h-12 bg-secunova-blue/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secunova-blue/20 transition-colors duration-300">
-                    <Target className="h-6 w-6 text-secunova-blue" />
-                  </div>
-                  <h3 className="text-lg font-bold text-secunova-dark mb-2">Built for North American Decision-Makers</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Messaging, compliance, and delivery standards tuned for Canadian and U.S. corporate expectations.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                  <div className="w-12 h-12 bg-secunova-light/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secunova-light/20 transition-colors duration-300">
-                    <Zap className="h-6 w-6 text-secunova-light" />
-                  </div>
-                  <h3 className="text-lg font-bold text-secunova-dark mb-2">Speed Without Sacrifice</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Senior-led, AI-augmented workflows deliver enterprise precision at delivery speeds that feel unfair to the competition.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-3xl p-8 lg:sticky lg:top-24 shadow-sm">
-                <div className="inline-flex items-center bg-secunova-blue/10 text-secunova-blue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wide mb-4">
-                  The SecuNova Standard
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-xl p-4">
-                    <span className="text-secunova-dark font-medium">Senior-Led Delivery</span>
-                    <span className="font-bold text-secunova-blue">100%</span>
-                  </div>
-                  <div className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-xl p-4">
-                    <span className="text-secunova-dark font-medium">Conversion-First Design</span>
-                    <span className="font-bold text-secunova-blue">Always</span>
-                  </div>
-                  <div className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-xl p-4">
-                    <span className="text-secunova-dark font-medium">Zero Template Shortcuts</span>
-                    <span className="font-bold text-secunova-blue">Guaranteed</span>
-                  </div>
-                  <div className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-xl p-4">
-                    <span className="text-secunova-dark font-medium">North American Localization</span>
-                    <span className="font-bold text-secunova-blue">Built-In</span>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <Link
-                    to="/about"
-                    className="btn btn-gradient btn-md w-full"
-                  >
-                    Meet Our Principal Architect
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= Direct contact strip ================= */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      {/* Featured Portfolio: Engineered & Delivered Under Our Leadership */}
+      <section id="internal-rnd" className="secunova-section secunova-section--dark">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-secunova-dark mb-4">
-              Prefer to talk it through?
-            </h2>
-            <p className="text-lg text-secunova-dark/70 mb-8">
-              A senior consultant answers, not a call center. Tell us where you want your organization to be in twelve months.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="tel:403-401-1552"
-                className="btn btn-gradient btn-lg"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                Call 403-401-1552
-              </a>
-              <a
-                href="mailto:hello@secunovainc.com"
-                className="btn btn-outline btn-lg"
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                hello@secunovainc.com
-              </a>
+          <div className="max-w-7xl mx-auto">
+            <PillarHeader
+              index="03"
+              label="Technical Mastery"
+              title="Our Work. Engineered & Delivered Under Our Leadership"
+              description="A showcase of software systems and digital platforms engineered, architected, and brought to market under SecuNova's direct technical standards and strategic stewardship."
+              icon={<Code className="h-4 w-4" />}
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
+                  Supervised Delivery · 2026
+                </span>
+                <h4 className="text-lg font-bold text-white mb-2">Nova</h4>
+                <p className="text-xs text-blue-100 mb-4">Native macOS AI agent engineered for local execution (Swift, Core ML, AppleScript) with zero cloud data transfer.</p>
+                <Link to="/our-work/nova" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
+                  View Tech Architecture <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
+                  Supervised Delivery · 2025
+                </span>
+                <h4 className="text-lg font-bold text-white mb-2">Career OS</h4>
+                <p className="text-xs text-blue-100 mb-4">Automated career management and ATS resume tailoring platform (Next.js, TypeScript, IndexedDB) running client-side.</p>
+                <Link to="/our-work/career-os" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
+                  View Tech Architecture <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
+                  Supervised Delivery · 2025
+                </span>
+                <h4 className="text-lg font-bold text-white mb-2">SecuBoost</h4>
+                <p className="text-xs text-blue-100 mb-4">High-performance native macOS utility and security suite operating 100 percent offline (Swift, SwiftUI, CryptoKit).</p>
+                <Link to="/our-work/secuboost" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
+                  View Tech Architecture <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
+                  Supervised Delivery · 2025
+                </span>
+                <h4 className="text-lg font-bold text-white mb-2">Journalism Audit Platform</h4>
+                <p className="text-xs text-blue-100 mb-4">Private AI content verification platform for media organizations (Python, FastAPI, LangChain) requiring editorial integrity.</p>
+                <Link to="/our-work/journalism-audit" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
+                  View Tech Architecture <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
+                  Supervised Delivery · 2025
+                </span>
+                <h4 className="text-lg font-bold text-white mb-2">SecuNova Lead Finder</h4>
+                <p className="text-xs text-blue-100 mb-4">Custom sales intelligence and lead discovery system (Python, PostgreSQL, Redis) eliminating recurring SaaS fees.</p>
+                <Link to="/our-work/lead-finder" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
+                  View Tech Architecture <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-light/15 text-secunova-light rounded font-semibold inline-block mb-3">
+                  Supervised Delivery · 2025
+                </span>
+                <h4 className="text-lg font-bold text-white mb-2">CanadaQuest</h4>
+                <p className="text-xs text-blue-100 mb-4">AI-powered Canadian citizenship training platform (Next.js, TypeScript, PWA) built for offline civic learning.</p>
+                <Link to="/our-work/canadaquest" className="text-xs font-bold text-secunova-light hover:underline flex items-center gap-1">
+                  View Tech Architecture <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link to="/about/our-work" className="btn btn-gradient btn-lg">
+                View Full Track Record <ArrowRight className="ml-2 h-4 w-4 text-white" />
+              </Link>
             </div>
           </div>
         </div>
