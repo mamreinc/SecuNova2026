@@ -152,7 +152,7 @@ const sanitizeHead = (html, route) => {
 // Minimal static file server with SPA fallback.
 const server = createServer(async (req, res) => {
   try {
-    const url = new URL(req.url, `http://localhost:${PORT}`);
+    const url = new URL(req.url, `http://localhost:${activePort}`);
     let pathname = decodeURIComponent(url.pathname);
     if (pathname === '/') pathname = '/index.html';
     const filePath = normalize(join(DIST, pathname));
@@ -223,7 +223,7 @@ async function main() {
     await page.setViewport({ width: 1440, height: 20000 });
     await page.setRequestInterception(true);
 
-    page.on('request', (req) => {
+    page.on("request", (req) => {
       const url = req.url();
       const isSameOrigin = url.startsWith(`http://localhost:${activePort}`);
       const isBlocked = BLOCK_PREFIXES.some((p) => url.startsWith(p));

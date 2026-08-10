@@ -27,6 +27,7 @@ import {
 import { PRODUCT_DETAIL_DATA } from '../data/productDetailData';
 import { getDownloadCount, incrementDownloadCount } from '../utils/downloadTracker';
 import CtaSection from '../components/CtaSection';
+import { buildSeoTags } from '../utils/seo-meta';
 
 const ICON_MAP: Record<string, React.ReactNode> = {
   Shield: <Shield className="h-6 w-6 text-secunova-blue" />,
@@ -99,12 +100,31 @@ const ProductDetailPage: React.FC = () => {
         <meta name="description" content={`${product.name}: ${product.pitch}`} />
         <meta name="keywords" content={`${product.name}, ${product.techStack.join(', ')}, SecuNova internal R&amp;D, proprietary software`} />
         <link rel="canonical" href={`https://secunovainc.com/about/our-work/${product.id}`} />
-
-        <meta property="og:title" content={`${product.name} | SecuNova R&amp;D Showcase`} />
-        <meta property="og:description" content={product.pitch} />
-        <meta property="og:url" content={`https://secunovainc.com/about/our-work/${product.id}`} />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        {buildSeoTags({
+          title: `${product.name} | SecuNova R&D Showcase`,
+          description: product.pitch,
+          url: `/about/our-work/${product.id}`,
+          type: 'article',
+          imageAlt: `${product.name} - SecuNova Supervised Delivery`,
+        })}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": product.name,
+            "description": product.pitch,
+            "url": `https://secunovainc.com/about/our-work/${product.id}`,
+            "image": "https://secunovainc.com/og-image.png",
+            "brand": { "@id": "https://secunovainc.com/#organization" },
+            "category": "Enterprise Technology / Internal R&D",
+            "releaseDate": product.year,
+            "additionalProperty": product.techStack.map((tech) => ({
+              "@type": "PropertyValue",
+              "name": "Technology",
+              "value": tech
+            }))
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

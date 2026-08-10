@@ -1,86 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://secunovainc.com/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/" />
+    <image:image>
+      <image:loc>https://secunovainc.com/og-image.png</image:loc>
+      <image:title>SecuNova Consulting - Enterprise IT Advisory &amp; Governance</image:title>
+    </image:image>
   </url>
 
   <!-- Main Pages - High Priority -->
   <url>
     <loc>https://secunovainc.com/services</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/services" />
   </url>
 
   <url>
     <loc>https://secunovainc.com/about</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/about" />
   </url>
 
   <url>
     <loc>https://secunovainc.com/contact</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/contact" />
   </url>
 
   <!-- Service Pages - High Priority for SEO -->
   <url>
     <loc>https://secunovainc.com/services/strategic-advisory-pmaas</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/services/strategic-advisory-pmaas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/services/strategic-advisory-pmaas" />
   </url>
 
   <url>
     <loc>https://secunovainc.com/services/enterprise-it-security-audits</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/services/enterprise-it-security-audits" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/services/enterprise-it-security-audits" />
   </url>
 
-  <!-- Portfolio & Case Studies -->
+  <!-- Supervised Track Record & Case Studies -->
   <url>
     <loc>https://secunovainc.com/about/our-work</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/about/our-work" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/about/our-work" />
   </url>
 
   <url>
-    <loc>https://secunovainc.com/about/our-work/canadaquest</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://secunovainc.com/about/our-work/nova</loc>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
+    <loc>https://secunovainc.com/about/our-work/career-os</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://secunovainc.com/about/our-work/secuboost</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://secunovainc.com/about/our-work/journalism-audit</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://secunovainc.com/about/our-work/lead-finder</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://secunovainc.com/about/our-work/canadaquest</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Supporting Pages -->
+  <url>
     <loc>https://secunovainc.com/faq</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://secunovainc.com/join-us</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://secunovainc.com/privacy-terms</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

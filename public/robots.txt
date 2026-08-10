@@ -10,6 +10,7 @@ Disallow: /private/
 Disallow: /api/
 Disallow: /login
 Disallow: /brand
+Disallow: /support
 Disallow: /_next/
 Disallow: /node_modules/
 

@@ -18,7 +18,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, Users, PhoneCall, Globe, Crown, RefreshCw, GraduationCap, PenTool, FileText, ClipboardCheck, Shield, Code, Cpu, Target, Calendar } from 'lucide-react';
+import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, Users, PhoneCall, Globe, Crown, RefreshCw, GraduationCap, PenTool, FileText, ClipboardCheck, Shield, Target, Calendar } from 'lucide-react';
 import Logo from './Logo';
 
 interface NavDropdownItem {
@@ -118,7 +118,7 @@ const Navbar = () => {
           items: [
             { name: 'Strategic Advisory & Business Planning', path: '/services/strategic-advisory-pmaas', icon: <ClipboardCheck className="h-4 w-4" /> },
             { name: 'Digital Transformation & Process Optimization', path: '/services/strategic-advisory-pmaas', icon: <RefreshCw className="h-4 w-4" /> },
-            { name: 'Cybersecurity & Risk Management', path: '/services/strategic-advisory-pmaas', icon: <Shield className="h-4 w-4" /> },
+            { name: 'Cybersecurity & Risk Management', path: '/services/enterprise-it-security-audits', icon: <Shield className="h-4 w-4" /> },
             { name: 'Customer Experience & Digital Solutions', path: '/services/strategic-advisory-pmaas', icon: <Globe className="h-4 w-4" /> }
           ]
         },
@@ -132,16 +132,6 @@ const Navbar = () => {
             { name: 'Risk Management', path: '/services/strategic-advisory-pmaas', icon: <Shield className="h-4 w-4" /> },
             { name: 'Quality Assurance', path: '/services/strategic-advisory-pmaas', icon: <FileText className="h-4 w-4" /> },
             { name: 'Governance & Reporting', path: '/services/strategic-advisory-pmaas', icon: <Target className="h-4 w-4" /> }
-          ]
-        },
-        {
-          category: 'Track Record of Supervised Delivery',
-          icon: <Code className="h-5 w-5 text-secunova-blue" />,
-          items: [
-            { name: 'Track Record Overview', path: '/about/our-work', icon: <Code className="h-4 w-4" /> },
-            { name: 'Nova macOS AI Agent', path: '/our-work/nova', icon: <Cpu className="h-4 w-4" /> },
-            { name: 'Career OS Automation Engine', path: '/our-work/career-os', icon: <FileText className="h-4 w-4" /> },
-            { name: 'SecuBoost Native Security Suite', path: '/our-work/secuboost', icon: <Shield className="h-4 w-4" /> }
           ]
         }
       ]
@@ -239,7 +229,7 @@ const Navbar = () => {
                             : 'opacity-0 invisible -translate-y-2'
                         }`}>
                           <div className="p-6 sm:p-8">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                               {link.megaMenuItems.map((category, categoryIndex) => (
                                 <div key={categoryIndex} className="space-y-4">
                                   <div className="pb-3 border-b border-gray-100 flex items-center gap-2.5">

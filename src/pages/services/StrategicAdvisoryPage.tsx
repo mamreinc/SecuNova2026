@@ -20,105 +20,98 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, CheckCircle, Phone, Crown, Compass,
-  ChevronRight, Zap, Lightbulb, RefreshCw, Shield, Globe,
-  BarChart, Users, Scale, Award, LineChart, Target, Clock,
-  ClipboardCheck, TrendingUp, Map
+  ChevronRight, Zap, RefreshCw, Shield,
+  BarChart, Users, Award, Target, Clock, AlertTriangle,
+  ClipboardCheck, Lock, FileText, Database
 } from 'lucide-react';
 import CtaSection from '../../components/CtaSection';
 import OptimizedImage from '../../components/OptimizedImage';
+import { buildSeoTags } from '../../utils/seo-meta';
 
 const StrategicAdvisoryPage = () => {
-  const capabilityGroups = [
+
+  const hiddenCosts = [
     {
-      icon: <Lightbulb className="h-7 w-7" />,
-      accent: 'blue',
+      icon: <AlertTriangle className="h-6 w-6" />,
+      title: 'Vendor Misalignment',
+      description: 'Technology vendors optimize for billable hours, not your outcomes. Without an independent client representative, scope drift, inflated invoices, and unverified deliverables are the default result.',
+      color: 'text-red-400',
+      bg: 'bg-red-500/10',
+    },
+    {
+      icon: <BarChart className="h-6 w-6" />,
+      title: 'Scope Creep and Budget Overruns',
+      description: 'Every uncontrolled change request erodes your budget and delays your launch. Without formal change-request gates, projects routinely deliver 40 to 60 percent over original authorization.',
+      color: 'text-amber-400',
+      bg: 'bg-amber-500/10',
+    },
+    {
+      icon: <Lock className="h-6 w-6" />,
+      title: 'Unprotected IP and Data Exposure',
+      description: 'Shared credentials, unmonitored staging access, and undocumented data handling expose your proprietary systems, customer data, and competitive intelligence to unnecessary third-party risk.',
+      color: 'text-red-400',
+      bg: 'bg-red-500/10',
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: 'Failed Change Adoption',
+      description: 'New systems fail not from technical flaws, but from poor change management. Without structured executive coaching and staff training, adoption rates collapse and ROI evaporates within 90 days.',
+      color: 'text-amber-400',
+      bg: 'bg-amber-500/10',
+    },
+  ];
+
+  const serviceModules = [
+    {
+      icon: <Database className="h-7 w-7" />,
+      accent: 'blue' as const,
       number: '01',
-      title: 'Executive Technology & Governance Advisory',
-      description:
-        'Develop long-term strategic plans aligning technology with corporate vision, board governance expectations, and capital allocation frameworks.',
+      title: 'Digital Readiness Assessment',
+      description: 'Before any technology investment is authorized, SecuNova conducts a forensic audit of your existing workflows, software stack, vendor contracts, and organizational capacity. The output is a board-ready gap analysis that forms the foundation of every subsequent decision.',
       services: [
-        {
-          name: 'Digital Maturity & Roadmap Planning',
-          detail: 'Long-term technology roadmaps aligned with corporate balance sheets and market objectives.',
-        },
-        {
-          name: 'Organizational Change Governance',
-          detail: 'Prepare management structures to adopt digital operating models and mitigate organizational resistance.',
-        },
-        {
-          name: 'Feasibility Studies & Technical Readiness',
-          detail: 'Forensic audits of existing infrastructure to identify operational gaps and innovation opportunities.',
-        },
-        {
-          name: 'Innovation & Digital Business Models',
-          detail: 'Transition legacy business operations into scalable, technology-enabled revenue engines.',
-        },
+        { name: 'Workflow and Process Mapping', detail: 'Document and evaluate all operational workflows to identify redundancy, manual bottlenecks, and automation opportunities.' },
+        { name: 'Software Stack Forensic Audit', detail: 'Catalog all active systems, integrations, and SaaS subscriptions with utilization data and cost analysis.' },
+        { name: 'Organizational Capacity Assessment', detail: 'Evaluate internal team capabilities, bandwidth, and readiness for digital change initiatives.' },
+        { name: 'Board-Ready Gap Analysis', detail: 'Compile findings into a defensible executive report with prioritized recommendations and investment thresholds.' },
+      ],
+    },
+    {
+      icon: <Zap className="h-7 w-7" />,
+      accent: 'light' as const,
+      number: '02',
+      title: 'Practical AI Adoption Roadmap',
+      description: 'SecuNova formulates clear, secure strategies to deploy AI tools that lower operational costs and boost productivity - without exposing proprietary data to third-party model training or uncontrolled API endpoints.',
+      services: [
+        { name: 'Use-Case Identification and Prioritization', detail: 'Map AI deployment opportunities to specific workflows where measurable ROI and security requirements align.' },
+        { name: 'Secure AI Architecture Design', detail: 'Specify deployment models (on-premise, private cloud, isolated API) that prevent data sovereignty issues.' },
+        { name: 'Vendor Evaluation and Procurement Oversight', detail: 'Independently evaluate AI vendors against security, compliance, and contractual criteria before any commitment.' },
+        { name: 'Adoption Metrics and KPI Framework', detail: 'Establish baseline metrics and quarterly benchmarks to measure productivity gains from AI deployment.' },
       ],
     },
     {
       icon: <RefreshCw className="h-7 w-7" />,
-      accent: 'light',
-      number: '02',
-      title: 'Digital Transformation & Process Optimization',
-      description:
-        'Reengineer operational workflows, migrate infrastructure to cloud environments, and integrate automation to reduce overhead.',
-      services: [
-        {
-          name: 'Business Process Reengineering (BPR)',
-          detail: 'Analyze and optimize operational workflows to eliminate waste and accelerate delivery.',
-        },
-        {
-          name: 'Cloud Architecture & Migration',
-          detail: 'Architect multi-cloud migration strategies across AWS and GCP tailored to security requirements.',
-        },
-        {
-          name: 'AI Automation & Workflow Integration',
-          detail: 'Deploy custom AI models and robotic process automation (RPA) to raise service speed.',
-        },
-        {
-          name: 'Data Architecture & Analytics',
-          detail: 'Design enterprise data warehouses that power quantitative executive decision-making.',
-        },
-      ],
-    },
-    {
-      icon: <Shield className="h-7 w-7" />,
-      accent: 'blue',
+      accent: 'blue' as const,
       number: '03',
-      title: 'Cybersecurity Risk & Regulatory Compliance',
-      description:
-        'Safeguard enterprise assets, audit security posture, and enforce compliance standards (SOC 2, ISO 27001, PIPEDA).',
+      title: 'Business Process Re-Engineering',
+      description: 'SecuNova modernizes manual, fragmented routines into automated, connected digital workflows. Every re-engineering initiative is governed by a formal change-request protocol to prevent scope drift and ensure budget integrity.',
       services: [
-        {
-          name: 'Cyber Risk Posture Assessment',
-          detail: 'Identify security vulnerabilities across infrastructure and define prioritized remediation plans.',
-        },
-        {
-          name: 'Regulatory Compliance & Audits',
-          detail: 'Ensure digital infrastructure satisfies Canadian and US statutory privacy and security mandates.',
-        },
-        {
-          name: 'Disaster Recovery & Business Continuity',
-          detail: 'Architect resilient recovery protocols guaranteeing operational continuity during technical events.',
-        },
+        { name: 'Process Automation Design', detail: 'Map manual workflows to automation candidates using RPA, workflow engines, and API integration layers.' },
+        { name: 'System Integration Architecture', detail: 'Architect data flow between disconnected platforms to create unified, real-time operational visibility.' },
+        { name: 'Operational SOP Documentation', detail: 'Create standardized operating procedures for every re-engineered process to ensure repeatability and auditability.' },
+        { name: 'Cloud Migration Planning', detail: 'Architect phased migration from legacy on-premise systems to compliant cloud environments (AWS, GCP).' },
       ],
     },
     {
-      icon: <Globe className="h-7 w-7" />,
-      accent: 'light',
+      icon: <Users className="h-7 w-7" />,
+      accent: 'light' as const,
       number: '04',
-      title: 'Customer Platforms & Bespoke Engineering',
-      description:
-        'Architect high-performance client portals, digital products, and web systems engineered with sub-second responsiveness.',
+      title: 'Executive Guidance and Change Management',
+      description: 'Technology investments fail when leadership teams and staff are not prepared to operate new systems. SecuNova coaches leadership teams and designs staff training protocols that guarantee adoption rates exceed 90 percent within the first quarter.',
       services: [
-        {
-          name: 'Digital Journey Architecture',
-          detail: 'Design seamless omni-channel experiences for high-value enterprise customer touchpoints.',
-        },
-        {
-          name: 'Bespoke Software Development Oversight',
-          detail: 'Supervise technical buildout of custom web applications with zero pre-made agency templates.',
-        },
+        { name: 'C-Suite Change Leadership Coaching', detail: 'Equip executive teams with the frameworks and communication strategies needed to sponsor digital transformation effectively.' },
+        { name: 'Staff Training Program Design', detail: 'Develop role-specific training curricula and onboarding workflows for all new digital systems delivered.' },
+        { name: 'Adoption Monitoring and Escalation', detail: 'Track usage metrics post-deployment and intervene with targeted interventions when adoption rates fall below threshold.' },
+        { name: 'Organizational Readiness Certification', detail: 'Conduct structured readiness reviews before each phase gate to confirm organizational capacity before proceeding.' },
       ],
     },
   ];
@@ -126,109 +119,124 @@ const StrategicAdvisoryPage = () => {
   const roadmapPhases = [
     {
       step: '01',
-      title: 'Assess & Discover',
-      description: 'Forensic audits expose infrastructure gaps, cost bloat, and legacy operational bottlenecks.',
-      deliverable: 'Current-State Gap Analysis & Audit',
-      icon: <Map className="h-6 w-6" />
+      title: 'Diagnostic Audit',
+      description: 'Forensic review of infrastructure, workflows, vendor contracts, and organizational capacity to expose gaps before any investment.',
+      deliverable: 'Current-State Gap Analysis',
+      icon: <Database className="h-6 w-6" />,
     },
     {
       step: '02',
-      title: 'Architect Roadmap',
-      description: 'Phase-gated implementation plans align technology investment with corporate targets.',
+      title: 'Strategic Blueprint',
+      description: 'Phase-gated implementation roadmap aligned with corporate objectives, compliance standards, and board-authorized budgets.',
       deliverable: 'Board-Ready Digital Roadmap',
-      icon: <Compass className="h-6 w-6" />
+      icon: <FileText className="h-6 w-6" />,
     },
     {
       step: '03',
-      title: 'Transform & Deploy',
-      description: 'Workflow reengineering, cloud migration, and automation deployed in governed sprints.',
-      deliverable: 'Modernized Enterprise Infrastructure',
-      icon: <Zap className="h-6 w-6" />
+      title: 'Governed Execution',
+      description: 'On-demand senior project leadership enforces milestone gates, vendor accountability, and zero-trust access controls throughout delivery.',
+      deliverable: 'Audited Technical Delivery',
+      icon: <ClipboardCheck className="h-6 w-6" />,
     },
     {
       step: '04',
-      title: 'Govern & Optimize',
-      description: 'On-demand PMaaS enforces timelines, budget authorizations, and quantitative KPIs.',
-      deliverable: 'Governed Performance & C-Suite Dashboard',
-      icon: <LineChart className="h-6 w-6" />
-    }
+      title: 'Operational Handover',
+      description: 'Structured knowledge transfer, SOP documentation, and adoption verification ensure your team fully owns and operates the delivered systems.',
+      deliverable: 'Full Asset and IP Handoff',
+      icon: <Award className="h-6 w-6" />,
+    },
   ];
 
-  const pmaasCapabilities = [
+  const engagementModels = [
     {
-      icon: <Users className="h-6 w-6" />,
-      title: 'Senior Project Leadership',
-      description: 'Senior project leads drive initiatives from charter definition through execution and handoff.',
+      title: 'Fixed Roadmap Package',
+      badge: 'Project-Based',
+      badgeColor: 'bg-secunova-blue/10 text-secunova-blue',
+      description: 'A defined-scope, fixed-timeline, fixed-investment engagement for organizations with a specific digital initiative or transformation objective.',
+      highlights: [
+        'Defined deliverable scope agreed before work begins',
+        'Fixed investment with no retroactive billing',
+        'Phase-gated payment tied to verified completion',
+        'Board-ready documentation at each milestone',
+        'Ideal for: Digital audits, AI roadmaps, specific process overhauls',
+      ],
+      cta: 'Request Fixed Package Briefing',
+      icon: <FileText className="h-6 w-6" />,
     },
     {
-      icon: <Scale className="h-6 w-6" />,
-      title: 'Resource Allocation',
-      description: 'Align technical tasks by specialization to maximize throughput and eliminate downtime.',
-    },
-    {
-      icon: <BarChart className="h-6 w-6" />,
-      title: 'Capital & Cost Control',
-      description: 'Continuous financial monitoring ensures projects stay strictly within approved authorizations.',
-    },
-    {
-      icon: <Shield className="h-6 w-6" />,
-      title: 'Risk Governance',
-      description: 'Proactively identify technical dependencies and counter obstacles before milestones slip.',
-    },
-    {
-      icon: <Award className="h-6 w-6" />,
-      title: 'Quality Benchmarking',
-      description: 'Systematic code reviews and technical audits verify outputs meet sub-second performance standards.',
-    },
-    {
-      icon: <LineChart className="h-6 w-6" />,
-      title: 'Executive Reporting',
-      description: 'Transparent C-suite dashboards report completion velocity, burn rate, and deliverable status.',
-    },
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: 'Agile & Hybrid Precision',
-      description: 'Deploy adaptive sprint cycles or structured waterfall delivery matching corporate governance.',
-    },
-    {
+      title: 'Recurring Advisory Retainer',
+      badge: 'Ongoing Access',
+      badgeColor: 'bg-secunova-light/15 text-secunova-light',
+      description: 'Continuous access to a senior SecuNova partner for strategic decision support, vendor governance, and operational oversight on a monthly basis.',
+      highlights: [
+        'Dedicated senior advisor assigned to your account',
+        'Monthly strategic review sessions with action outputs',
+        'Priority response for vendor escalations and urgent decisions',
+        'Ongoing risk monitoring and budget oversight',
+        'Ideal for: Growing enterprises, active dev teams, ongoing transformations',
+      ],
+      cta: 'Request Retainer Briefing',
       icon: <Clock className="h-6 w-6" />,
-      title: 'Milestone Integrity',
-      description: 'Strict schedule management guarantees adherence to agreed launch timelines.',
     },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Strategic Advisory &amp; PMaaS | SecuNova Inc. Calgary</title>
-        <meta name="description" content="SecuNova Inc. delivers executive strategic advisory, digital transformation, cybersecurity risk governance, and Project Management as a Service (PMaaS) in Calgary, AB." />
-        <meta name="keywords" content="strategic advisory Calgary, digital transformation Canada, PMaaS Calgary, business process reengineering, cloud transformation AWS GCP, cybersecurity risk management" />
+        <title>Strategic Advisory &amp; Digital Transformation | SecuNova Inc. Calgary</title>
+        <meta name="description" content="SecuNova Inc. delivers executive strategic advisory, digital readiness assessments, practical AI integration, business process re-engineering, and change management for Canadian and US enterprises." />
+        <meta name="keywords" content="strategic advisory Calgary, digital transformation Canada, AI adoption roadmap, business process reengineering, change management, enterprise advisory Calgary" />
         <link rel="canonical" href="https://secunovainc.com/services/strategic-advisory-pmaas" />
-
-        <meta property="og:title" content="Strategic Advisory &amp; PMaaS | SecuNova Inc." />
-        <meta property="og:description" content="Strategic advisory, digital transformation, and Project Management as a Service (PMaaS) for Canadian and US enterprise markets." />
-        <meta property="og:url" content="https://secunovainc.com/services/strategic-advisory-pmaas" />
-        <meta property="og:type" content="website" />
+        {buildSeoTags({
+          title: 'Strategic Advisory & Digital Transformation | SecuNova Inc.',
+          description:
+            'Executive strategic advisory, digital readiness assessments, practical AI adoption, business process re-engineering, and change management for Canadian and US mid-market enterprises.',
+          url: '/services/strategic-advisory-pmaas',
+          imageAlt: 'SecuNova Inc. - Strategic Advisory & Digital Transformation',
+        })}
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            "@id": "https://secunovainc.com/services/strategic-advisory-pmaas#service",
             "name": "Strategic Advisory & Digital Transformation",
-            "provider": { "@type": "Organization", "name": "SecuNova Inc.", "url": "https://secunovainc.com" },
-            "areaServed": ["CA", "US"],
-            "description": "Executive strategic technology advisory and governed Project Management as a Service."
+            "provider": { "@id": "https://secunovainc.com/#organization" },
+            "areaServed": [
+              { "@type": "City", "name": "Calgary" },
+              { "@type": "State", "name": "Alberta" },
+              { "@type": "Country", "name": "Canada" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "url": "https://secunovainc.com/services/strategic-advisory-pmaas",
+            "image": "https://secunovainc.com/og-image.png",
+            "description": "Executive strategic advisory, digital readiness assessments, AI adoption roadmaps, and business process re-engineering for enterprise organizations.",
+            "serviceType": [
+              "Executive Technology Advisory",
+              "Digital Transformation Roadmaps",
+              "Practical AI Adoption",
+              "Business Process Re-Engineering",
+              "Change Management Governance"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "CAD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://secunovainc.com/services/strategic-advisory-pmaas"
+            }
           })}
         </script>
       </Helmet>
 
-      {/* Hero Section */}
+      {/* ========================================
+          Hero Section
+          ======================================== */}
       <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
         <div className="absolute inset-0">
           <OptimizedImage
             src="/images/hero_strategic.png"
-            alt="Strategic Advisory and Digital Systems"
-            className="w-full h-full object-cover opacity-30"
+            alt="Strategic Advisory and Digital Transformation"
+            className="w-full h-full object-cover opacity-25"
             priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-secunova-dark via-secunova-dark/95 to-secunova-blue/80"></div>
@@ -239,20 +247,20 @@ const StrategicAdvisoryPage = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-              {/* Left Column Text */}
+              {/* Left Column */}
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-widest text-secunova-light mb-6">
                   <Crown className="h-4 w-4 mr-2" />
-                  Strategic Advisory &amp; PMaaS
+                  Strategic Advisory &amp; Digital Transformation
                 </div>
 
-                <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                  Restructure Systems. <br />
-                  <span className="text-secunova-light">Execute with Discipline.</span>
+                <h1 className="hero-heading mb-6 text-white">
+                  <span className="block">Restructure Operations.</span>
+                  <span className="block text-secunova-light mt-1">Execute with Precision.</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed mb-8 max-w-2xl font-normal">
-                  SecuNova Inc. pairs senior executive advisory with on-demand project execution (PMaaS). We help leadership teams modernize core operations, de-risk cloud architecture, and maintain total budget integrity.
+                  SecuNova's advisory practice delivers executive governance frameworks, practical AI integration strategies, and zero-trust digital transformation for mid-market enterprises that cannot afford failed implementations.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -265,28 +273,20 @@ const StrategicAdvisoryPage = () => {
                 </div>
               </div>
 
-              {/* Right Column Metric Cards */}
+              {/* Right Column: Metric Cards */}
               <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                  <RefreshCw className="h-8 w-8 text-secunova-light mb-3" />
-                  <div className="text-3xl font-black text-white mb-1">4</div>
-                  <div className="text-xs uppercase tracking-wider text-blue-100 font-semibold">Core Practice Lines</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                  <Target className="h-8 w-8 text-secunova-blue mb-3" />
-                  <div className="text-3xl font-black text-white mb-1">8</div>
-                  <div className="text-xs uppercase tracking-wider text-blue-100 font-semibold">PMaaS Disciplines</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                  <BarChart className="h-8 w-8 text-secunova-light mb-3" />
-                  <div className="text-3xl font-black text-white mb-1">On-Budget</div>
-                  <div className="text-xs uppercase tracking-wider text-blue-100 font-semibold">Capital Protection</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                  <Crown className="h-8 w-8 text-secunova-blue mb-3" />
-                  <div className="text-3xl font-black text-white mb-1">Senior</div>
-                  <div className="text-xs uppercase tracking-wider text-blue-100 font-semibold">Advisory Practice</div>
-                </div>
+                {[
+                  { icon: <Database className="h-8 w-8 text-secunova-light" />, stat: 'Audit-First', label: 'Every Engagement Begins with Forensic Discovery' },
+                  { icon: <Shield className="h-8 w-8 text-secunova-blue" />, stat: 'Zero-Trust', label: 'Security Protocols on All Advisory Engagements' },
+                  { icon: <Target className="h-8 w-8 text-secunova-light" />, stat: '4 Modules', label: 'Core Advisory Disciplines Delivered' },
+                  { icon: <Crown className="h-8 w-8 text-secunova-blue" />, stat: 'Senior', label: 'Partner-Level Access From Day One' },
+                ].map((card, i) => (
+                  <div key={i} className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl">
+                    {card.icon}
+                    <div className="text-2xl font-black text-white mt-3 mb-1">{card.stat}</div>
+                    <div className="text-[11px] uppercase tracking-wider text-blue-100 font-medium leading-tight">{card.label}</div>
+                  </div>
+                ))}
               </div>
 
             </div>
@@ -294,45 +294,90 @@ const StrategicAdvisoryPage = () => {
         </div>
       </section>
 
-      {/* Service Line I: Strategic Advisory & Digital Transformation */}
+      {/* ========================================
+          Hidden Costs Section
+          ======================================== */}
+      <section className="secunova-section bg-secunova-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '48px 48px'}}></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <div className="inline-flex items-center bg-red-500/15 text-red-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-5">
+                <AlertTriangle className="h-4 w-4 mr-2" />
+                The Real Cost of Inaction
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
+                The Hidden Costs of <span className="text-red-400">Unguided Tech Adoption</span>
+              </h2>
+              <p className="text-blue-100/80 text-base md:text-lg leading-relaxed">
+                Every enterprise without independent advisory oversight is absorbing one or more of these costs silently. The longer the delay, the greater the erosion.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {hiddenCosts.map((cost, i) => (
+                <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:bg-white/8 transition-all duration-300">
+                  <div className={`w-12 h-12 ${cost.bg} rounded-xl flex items-center justify-center ${cost.color} mb-5`}>
+                    {cost.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{cost.title}</h3>
+                  <p className="text-sm text-blue-100/75 leading-relaxed">{cost.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="max-w-xl">
+                <h3 className="text-xl font-bold text-white mb-2">These costs are preventable.</h3>
+                <p className="text-sm text-blue-100/80 leading-relaxed">SecuNova's advisory model eliminates each of these risk categories through independent oversight, formal governance protocols, and zero-trust operational security.</p>
+              </div>
+              <Link to="/contact" className="btn btn-gradient btn-lg text-white whitespace-nowrap flex-shrink-0">
+                Request a Risk Assessment <ArrowRight className="ml-2 h-4 w-4 text-white" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================
+          Service Modules
+          ======================================== */}
       <section className="secunova-section secunova-section--light">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center bg-secunova-blue/10 text-secunova-blue px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
                 <Compass className="h-4 w-4 mr-2" />
-                Practice Area One
+                Advisory Practice Areas
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark tracking-tight leading-tight">
-                Strategic Advisory &amp; <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">Digital Systems</span>
+                Four Modules. <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">One Cohesive Strategy.</span>
               </h2>
               <p className="text-slate-700 text-base md:text-lg mt-4 leading-relaxed">
-                Advanced advisory practices engineered to restructure operations, de-risk cloud migrations, and enforce cybersecurity governance across your enterprise.
+                Each advisory module is interconnected and delivered with the same governance standard: audit-first, milestone-gated, and zero-trust by design.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-              {capabilityGroups.map((group, i) => (
+              {serviceModules.map((group, i) => (
                 <div key={i} className="group bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between h-full">
                   <div className="p-6 sm:p-8">
                     <div className="flex items-center justify-between mb-5">
-                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 ${
-                        group.accent === 'blue' ? 'bg-secunova-blue/10 text-secunova-blue' : 'bg-secunova-light/15 text-secunova-light'
-                      }`}>
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 ${group.accent === 'blue' ? 'bg-secunova-blue/10 text-secunova-blue' : 'bg-secunova-light/15 text-secunova-light'}`}>
                         {group.icon}
                       </div>
-                      <span className="text-3xl font-black text-gray-100 group-hover:text-secunova-blue/20 transition-colors">{group.number}</span>
+                      <span className={`text-3xl font-black text-gray-100 group-hover:text-secunova-blue/20 transition-colors`}>{group.number}</span>
                     </div>
                     <h3 className="text-xl font-bold text-secunova-dark mb-3 group-hover:text-secunova-blue transition-colors">{group.title}</h3>
                     <p className="text-sm text-slate-600 leading-relaxed mb-6">{group.description}</p>
 
-                    <div className="border-t border-gray-100 pt-4 space-y-3">
+                    <div className="border-t border-gray-100 pt-5 space-y-4">
                       {group.services.map((service, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <CheckCircle className={`h-4 w-4 flex-shrink-0 mt-0.5 ${group.accent === 'blue' ? 'text-secunova-blue' : 'text-secunova-light'}`} />
                           <div>
                             <span className="text-sm font-bold text-secunova-dark">{service.name}</span>
-                            <p className="text-xs text-slate-500 leading-relaxed">{service.detail}</p>
+                            <p className="text-xs text-slate-500 leading-relaxed mt-0.5">{service.detail}</p>
                           </div>
                         </div>
                       ))}
@@ -340,7 +385,7 @@ const StrategicAdvisoryPage = () => {
                   </div>
                   <div className="px-6 sm:px-8 pb-6">
                     <Link to="/contact" className="text-xs font-bold text-secunova-blue hover:text-secunova-light flex items-center justify-between pt-4 border-t border-gray-100 transition-colors">
-                      <span>Inquire About This Capability</span> <ChevronRight className="h-4 w-4" />
+                      <span>Inquire About This Module</span> <ChevronRight className="h-4 w-4" />
                     </Link>
                   </div>
                 </div>
@@ -350,7 +395,9 @@ const StrategicAdvisoryPage = () => {
         </div>
       </section>
 
-      {/* 4-Phase Execution Framework */}
+      {/* ========================================
+          4-Phase Governance Process
+          ======================================== */}
       <section className="secunova-section bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -360,7 +407,7 @@ const StrategicAdvisoryPage = () => {
                 The 4-Phase <span className="text-secunova-light">Advisory Methodology</span>
               </h2>
               <p className="text-blue-100/90 text-base md:text-lg leading-relaxed">
-                A disciplined framework that takes organizations from forensic gap discovery to long-term governed performance.
+                A disciplined engagement model that eliminates ambiguity and delivers measurable outcomes at every phase gate.
               </p>
             </div>
 
@@ -375,8 +422,9 @@ const StrategicAdvisoryPage = () => {
                     <h3 className="text-lg font-bold text-white mb-2">{phase.title}</h3>
                     <p className="text-xs text-blue-100/90 leading-relaxed mb-6">{phase.description}</p>
                   </div>
-                  <div className="pt-4 border-t border-white/10 text-[11px] font-semibold text-secunova-light">
-                    Deliverable: {phase.deliverable}
+                  <div className="pt-4 border-t border-white/10">
+                    <div className="text-[10px] uppercase tracking-widest text-white/40 font-semibold mb-0.5">Key Deliverable</div>
+                    <div className="text-xs font-bold text-secunova-light">{phase.deliverable}</div>
                   </div>
                 </div>
               ))}
@@ -385,86 +433,67 @@ const StrategicAdvisoryPage = () => {
         </div>
       </section>
 
-      {/* Service Line II: PMaaS */}
+      {/* ========================================
+          Engagement Models
+          ======================================== */}
       <section className="secunova-section secunova-section--light">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center bg-secunova-blue/10 text-secunova-blue px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
                 <ClipboardCheck className="h-4 w-4 mr-2" />
-                Practice Area Two
+                Engagement Models
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark tracking-tight">
-                Project Management <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">as a Service (PMaaS)</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark tracking-tight leading-tight">
+                Structured Engagements <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">for Every Context</span>
               </h2>
               <p className="text-slate-700 text-base md:text-lg mt-4 leading-relaxed">
-                An agile execution model granting instant access to senior project leads on demand. We enforce strict schedule discipline, budget oversight, and transparent C-suite status reporting.
+                Whether you have a defined project scope or need ongoing strategic access, SecuNova provides an engagement model built around your objectives.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {pmaasCapabilities.map((cap, i) => (
-                <div key={i} className="bg-gray-50 rounded-2xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
-                  <div>
-                    <div className="w-12 h-12 bg-secunova-blue/10 rounded-xl flex items-center justify-center text-secunova-blue mb-4">
-                      {cap.icon}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              {engagementModels.map((model, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full">
+                  <div className="p-8 sm:p-10 flex-1">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-14 h-14 bg-secunova-blue/10 rounded-2xl flex items-center justify-center text-secunova-blue">
+                        {model.icon}
+                      </div>
+                      <span className={`text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full ${model.badgeColor}`}>{model.badge}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-secunova-dark mb-2">{cap.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{cap.description}</p>
+                    <h3 className="text-2xl font-bold text-secunova-dark mb-3">{model.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-8">{model.description}</p>
+                    <ul className="space-y-3">
+                      {model.highlights.map((item, j) => (
+                        <li key={j} className="flex items-start gap-3">
+                          <CheckCircle className="h-4 w-4 text-secunova-blue flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-slate-700 leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="px-8 sm:px-10 pb-8">
+                    <Link to="/contact" className="btn btn-gradient w-full justify-center text-sm font-bold text-white">
+                      {model.cta} <ArrowRight className="ml-2 h-4 w-4 text-white" />
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* PMaaS Strategic Advantages */}
-            <div className="mt-16 rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-secunova-blue/10 to-secunova-light/10 px-8 py-6 border-b border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-secunova-dark">Strategic Advantages of PMaaS Governance</h3>
-                  <p className="text-sm text-slate-600 mt-1">Why modern enterprises choose flexible delivery leadership.</p>
-                </div>
-                <Link to="/contact" className="btn btn-gradient btn-md text-white">
-                  Schedule PMaaS Assessment <ArrowRight className="ml-2 h-4 w-4 text-white" />
-                </Link>
+            {/* Comparison footnote */}
+            <div className="mt-10 bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+              <div className="w-12 h-12 bg-secunova-blue/10 rounded-xl flex items-center justify-center text-secunova-blue flex-shrink-0">
+                <Shield className="h-6 w-6" />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secunova-blue/10 rounded-xl flex items-center justify-center text-secunova-blue flex-shrink-0">
-                    <RefreshCw className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-secunova-dark mb-1">Operational Scalability</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed">Scale project leadership capacity up or down seamlessly based on project requirements without fixed headcount burden.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secunova-light/15 rounded-xl flex items-center justify-center text-secunova-light flex-shrink-0">
-                    <TrendingUp className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-secunova-dark mb-1">Cost Control</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed">Replace fixed executive salary commitments with performance-focused investment tied to delivered deliverables.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secunova-blue/10 rounded-xl flex items-center justify-center text-secunova-blue flex-shrink-0">
-                    <Clock className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-secunova-dark mb-1">Immediate Senior Expertise</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed">Gain immediate access to battle-tested project leads experienced in complex cloud infrastructure and risk compliance.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secunova-light/15 rounded-xl flex items-center justify-center text-secunova-light flex-shrink-0">
-                    <Target className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-secunova-dark mb-1">Uninterrupted Executive Focus</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed">Your internal leadership focuses on commercial growth while our PMaaS team governs technical execution.</p>
-                  </div>
-                </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-secunova-dark mb-1 text-lg">Both engagement models include the same governance standard.</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">Milestone gating, independent vendor oversight, zero-trust access controls, and direct access to a senior SecuNova partner are non-negotiable components of every engagement we accept.</p>
               </div>
+              <Link to="/contact" className="btn btn-outline btn-md whitespace-nowrap flex-shrink-0">
+                Compare Models <ChevronRight className="ml-1 h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>

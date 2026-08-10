@@ -18,6 +18,7 @@
 
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { buildSeoTags } from '../utils/seo-meta';
 import { 
   Users, Crown, DollarSign, Star, ArrowRight, 
   Mail, Phone, Lightbulb, Briefcase, 
@@ -143,20 +144,13 @@ const JoinUsPage = () => {
         <meta name="description" content="Partner with SecuNova Consulting in Calgary, Alberta. Explore seed investment opportunities and executive co-founder leadership roles." />
         <meta name="keywords" content="SecuNova investment, Calgary IT startup investment, co-founder opportunity Calgary, tech equity Alberta, SecuNova partnership" />
         <link rel="canonical" href="https://secunovainc.com/join-us" />
-
-        <meta property="og:title" content="Join SecuNova Consulting | Capital &amp; Executive Partnerships" />
-        <meta property="og:description" content="Invest and scale with a senior-led Canadian technology firm redefining enterprise IT delivery." />
-        <meta property="og:url" content="https://secunovainc.com/join-us" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="SecuNova Consulting" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Join SecuNova Consulting | Capital &amp; Leadership" />
-        <meta name="twitter:description" content="Investment and executive co-founder leadership opportunities." />
-        <meta name="twitter:image" content="https://secunovainc.com/og-image.png" />
+        {buildSeoTags({
+          title: 'Join SecuNova Consulting | Capital & Executive Partnerships',
+          description:
+            'Partner with SecuNova Consulting in Calgary, Alberta. Explore seed investment opportunities and executive co-founder leadership roles.',
+          url: '/join-us',
+          imageAlt: 'SecuNova Consulting - Investment & Executive Partnerships',
+        })}
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -187,8 +181,9 @@ const JoinUsPage = () => {
               Executive Growth &amp; Investor Pathways
             </div>
 
-            <h1 className="hero-heading mb-6">
-              Invest &amp; Scale With <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue via-sky-400 to-secunova-light">SecuNova Inc.</span>
+            <h1 className="hero-heading mb-6 text-white">
+              <span className="block">Invest &amp; Scale</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue via-sky-400 to-secunova-light mt-1">With SecuNova Inc.</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">

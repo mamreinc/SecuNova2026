@@ -19,13 +19,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  X, Send, Sparkles, User, Shield, ArrowRight
+  X, Send, Sparkles, Mail, Shield, ArrowRight
 } from 'lucide-react';
 import {
   searchKnowledge, isArabicText, isOffTopicQuery,
   SUPPORT_PHONE, KnowledgeItem
 } from '../ai/knowledge';
-import { sanitizeInput, validateEmail, validatePhone } from '../utils/security';
 
 interface ChatMessage {
   id: string;
@@ -54,8 +53,6 @@ const ChatWidget: React.FC = () => {
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [showProfileForm, setShowProfileForm] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', phone: '', company: '' });
-  const [formError, setFormError] = useState('');
   const [hasUnread, setHasUnread] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -155,38 +152,6 @@ const ChatWidget: React.FC = () => {
     }, 600);
   };
 
-  // Submit Lead Form
-  const handleProfileSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const name = sanitizeInput(form.name);
-    const email = sanitizeInput(form.email);
-    const phone = sanitizeInput(form.phone);
-
-    if (!name) {
-      setFormError('Please enter your name.');
-      return;
-    }
-    if (!validateEmail(email)) {
-      setFormError('Please enter a valid email address.');
-      return;
-    }
-    if (!validatePhone(phone)) {
-      setFormError('Please enter a valid phone number.');
-      return;
-    }
-
-    setShowProfileForm(false);
-    setFormError('');
-
-    const confirmMsg: ChatMessage = {
-      id: `bot-confirm-${Date.now()}`,
-      role: 'assistant',
-      content: `Thank you, ${name}! Your contact information has been registered. Our senior consulting team will reach out to you at ${email} regarding your service request.`,
-      timestamp: new Date()
-    };
-    setMessages(prev => [...prev, confirmMsg]);
-  };
-
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 font-sans" id="chat-widget-root">
       
@@ -245,10 +210,10 @@ const ChatWidget: React.FC = () => {
               <button
                 onClick={() => setShowProfileForm(!showProfileForm)}
                 className="p-2 text-blue-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
-                title="Register Contact Info"
+                title="Contact by Email"
                 id="toggle-profile-form-btn"
               >
-                <User className="h-4 w-4" />
+                <Mail className="h-4 w-4" />
               </button>
               <button
                 onClick={() => setOpen(false)}
@@ -261,58 +226,30 @@ const ChatWidget: React.FC = () => {
             </div>
           </div>
 
-          {/* Profile / Contact Form Modal Overlay */}
+          {/* Direct Email Contact Card */}
           {showProfileForm && (
             <div className="bg-gray-50 border-b border-gray-200 p-4">
               <div className="flex items-center justify-between mb-3">
                 <h4 className="text-xs font-bold text-secunova-dark uppercase tracking-wider flex items-center gap-1.5">
-                  <User className="h-4 w-4 text-secunova-blue" />
-                  Connect With Senior Consultant
+                  <Mail className="h-4 w-4 text-secunova-blue" />
+                  Contact Directly
                 </h4>
                 <button onClick={() => setShowProfileForm(false)} className="text-gray-400 hover:text-gray-600">
                   <X className="h-4 w-4" />
                 </button>
               </div>
 
-              <form onSubmit={handleProfileSubmit} className="space-y-2">
-                <input
-                  type="text"
-                  placeholder="Your Name *"
-                  value={form.name}
-                  onChange={e => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-3 py-1.5 text-xs rounded-lg border border-gray-300 focus:outline-none focus:border-secunova-blue bg-white"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address *"
-                  value={form.email}
-                  onChange={e => setForm({ ...form, email: e.target.value })}
-                  className="w-full px-3 py-1.5 text-xs rounded-lg border border-gray-300 focus:outline-none focus:border-secunova-blue bg-white"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number *"
-                  value={form.phone}
-                  onChange={e => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-3 py-1.5 text-xs rounded-lg border border-gray-300 focus:outline-none focus:border-secunova-blue bg-white"
-                />
-                <input
-                  type="text"
-                  placeholder="Company Name (Optional)"
-                  value={form.company}
-                  onChange={e => setForm({ ...form, company: e.target.value })}
-                  className="w-full px-3 py-1.5 text-xs rounded-lg border border-gray-300 focus:outline-none focus:border-secunova-blue bg-white"
-                />
+              <p className="text-[11px] text-slate-600 mb-3 leading-relaxed">
+                Reach the senior advisory team directly by email. No forms, no automated replies.
+              </p>
 
-                {formError && <p className="text-[11px] text-red-500 font-medium">{formError}</p>}
-
-                <button
-                  type="submit"
-                  className="w-full py-2 bg-secunova-blue text-white text-xs font-bold rounded-lg hover:bg-secunova-blue/90 transition-colors"
-                >
-                  Save & Request Call
-                </button>
-              </form>
+              <a
+                href="mailto:hello@secunovainc.com"
+                className="w-full flex items-center justify-center gap-2 py-2.5 bg-secunova-blue text-white text-xs font-bold rounded-lg hover:bg-secunova-blue/90 transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5" />
+                hello@secunovainc.com
+              </a>
             </div>
           )}
 

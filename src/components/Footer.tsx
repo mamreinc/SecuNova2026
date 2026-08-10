@@ -17,7 +17,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Linkedin, Lock, ShieldCheck, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Lock, ShieldCheck } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -78,7 +78,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/enterprise-audits" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                <Link to="/services/enterprise-it-security-audits" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
                   Cybersecurity &amp; Risk Mitigation
                 </Link>
               </li>
@@ -107,7 +107,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/enterprise-audits" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
+                <Link to="/services/enterprise-it-security-audits" className="text-sm text-white/70 hover:text-secunova-light transition-colors">
                   Governance &amp; Quality Assurance
                 </Link>
               </li>
@@ -162,7 +162,7 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-secunova-light" />
               </div>
               <div>
-                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Headquarters</p>
+                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Mailing Address</p>
                 <p className="text-sm text-white leading-relaxed">
                   #270, 1122 3 St SE Ste 1906<br />
                   Calgary, AB T2G 0E7, Canada
@@ -196,7 +196,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-blue-200">
-          <p>© {new Date().getFullYear()} SecuNova Inc. All rights reserved. Registered in Calgary, AB, Canada.</p>
+          <p className="text-xs text-blue-200 leading-relaxed text-center sm:text-left">
+            © {new Date().getFullYear()} SecuNova Inc. All rights reserved.<br />
+            <span className="text-blue-200/70">Business No. 714343225 · Corporation No. 2026915245</span>
+          </p>
           <div className="flex items-center space-x-6 mt-4 sm:mt-0">
             <Link to="/join-us" className="hover:text-white transition-colors">Partners</Link>
             <Link to="/privacy-terms" className="hover:text-white transition-colors">Privacy &amp; Terms</Link>

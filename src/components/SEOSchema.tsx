@@ -44,6 +44,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": "https://secunovainc.com/#organization",
           "name": "SecuNova Consulting",
           "legalName": "SecuNova Inc.",
           "alternateName": ["SecuNova", "SecuNova Inc."],
@@ -57,6 +58,8 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           "image": "https://secunovainc.com/logo/secunova-logo.png",
           "description": "Canadian IT advisory and executive governance firm based in Calgary, AB. Strategic advisory, PMaaS, enterprise IT and security audits, and proprietary internal R&D.",
           "foundingDate": "2025",
+          "taxID": "714343225",
+          "identifier": "2026915245",
           "slogan": "Strategic Shield & Governance for Enterprise IT.",
           "address": {
             "@type": "PostalAddress",
@@ -180,23 +183,14 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "WebPage",
+          "@id": data?.url ? `${data.url}#webpage` : "https://secunovainc.com/#webpage",
+          "url": data?.url || "https://secunovainc.com",
           "name": data?.title || "SecuNova Inc.",
           "description": data?.description || "Enterprise IT Advisory & Governance in Calgary",
-          "url": data?.url || "https://secunovainc.com",
           "inLanguage": "en-CA",
-          "isPartOf": {
-            "@type": "WebSite",
-            "name": "SecuNova Inc.",
-            "url": "https://secunovainc.com"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "SecuNova Inc.",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://secunovainc.com/logo/secunova-logo.png"
-            }
-          }
+          "isPartOf": { "@id": "https://secunovainc.com/#website" },
+          "about": { "@id": "https://secunovainc.com/#organization" },
+          "publisher": { "@id": "https://secunovainc.com/#organization" }
         };
 
       case 'article':

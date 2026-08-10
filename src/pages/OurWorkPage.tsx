@@ -22,6 +22,8 @@ import {
   ArrowRight, Code
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
+import { buildSeoTags } from '../utils/seo-meta';
+import SEOSchema from '../components/SEOSchema';
 
 interface OutcomeStat {
   value: string;
@@ -40,19 +42,19 @@ interface Product {
   techStack: string[];
 }
 
-const RND_PRODUCTS: Product[] = [
+const SUPERVISED_PROJECTS: Product[] = [
   {
     id: 'nova',
     name: 'Nova macOS AI Agent',
     tagline: 'Native macOS Intelligence for Autonomous Local Execution',
-    badge: 'Flagship R&D',
+    badge: 'Supervised Delivery',
     year: '2026',
     heroLabel: 'macOS AI Agent',
-    pitch: 'Nova is a native macOS intelligence architecture engineered in Swift and Core ML. It executes desktop workflows locally on-device with zero cloud data transmission, reading screen context and orchestrating tasks securely.',
+    pitch: 'End-to-end project management oversight of a native macOS AI agent programme. SecuNova scoped the Swift and Core ML roadmap, supervised the engineering delivery, enforced milestone gates, and validated on-device execution with zero cloud data transfer.',
     outcomeStats: [
-      { value: '100%', label: 'Local On-Device' },
+      { value: '100%', label: 'On-Device Delivery' },
       { value: '0 MB', label: 'Cloud Leakage' },
-      { value: 'Swift', label: 'Core ML Native' },
+      { value: 'Swift', label: 'Core ML Stack' },
     ],
     techStack: ['Swift', 'Core ML', 'AppleScript', 'macOS Accessibility API'],
   },
@@ -60,10 +62,10 @@ const RND_PRODUCTS: Product[] = [
     id: 'career-os',
     name: 'Career OS Engine',
     tagline: 'Automated Job Intelligence & Resume Tailoring Platform',
-    badge: 'Career Automation',
+    badge: 'PMaaS Oversight',
     year: '2025',
     heroLabel: 'Career Intelligence Engine',
-    pitch: 'Career OS is a client-side web engine built with Next.js and TypeScript. It parses job specifications, rewrites resume components for optimal ATS alignment, and manages data entirely within local browser storage.',
+    pitch: 'Independent project management for a client-side job intelligence engine built with Next.js and TypeScript. SecuNova governed the delivery vendor, audited ATS alignment logic, and gated every release behind verified quality benchmarks.',
     outcomeStats: [
       { value: '100%', label: 'Client-Side Privacy' },
       { value: '98%', label: 'ATS Alignment Score' },
@@ -75,10 +77,10 @@ const RND_PRODUCTS: Product[] = [
     id: 'secuboost',
     name: 'SecuBoost Security Suite',
     tagline: 'Native macOS System Utility & Security Architecture',
-    badge: 'Security Suite',
+    badge: 'Supervised Delivery',
     year: '2025',
     heroLabel: 'macOS Security Utility',
-    pitch: 'SecuBoost is a native macOS utility engineered in SwiftUI and CryptoKit. Operating 100 percent offline with zero background telemetry, SecuBoost provides system optimization and AES-256 file vault encryption.',
+    pitch: 'Project governance for a native macOS security suite delivered in SwiftUI and CryptoKit. SecuNova controlled scope, supervised the build team, and enforced zero-telemetry compliance through every delivery milestone.',
     outcomeStats: [
       { value: '100%', label: 'Offline Operation' },
       { value: 'AES-256', label: 'CryptoKit Vault' },
@@ -90,10 +92,10 @@ const RND_PRODUCTS: Product[] = [
     id: 'journalism-audit',
     name: 'Journalism Audit Platform',
     tagline: 'Private AI Content Verification & Editorial Integrity Platform',
-    badge: 'Media Verification',
+    badge: 'Delivery Oversight',
     year: '2025',
     heroLabel: 'Private AI Verification',
-    pitch: 'A private AI content verification platform engineered for media organizations using Python, FastAPI, and LangChain. It audits source validity and detects synthetic media within air-gapped corporate networks.',
+    pitch: 'Delivery oversight for a private AI content-verification platform built on Python and FastAPI. SecuNova managed the engineering roadmap, audited air-gapped RAG pipelines, and enforced editorial-integrity requirements at each milestone.',
     outcomeStats: [
       { value: '0', label: 'Cloud Data Leakage' },
       { value: '85%', label: 'Faster Verification' },
@@ -105,10 +107,10 @@ const RND_PRODUCTS: Product[] = [
     id: 'lead-finder',
     name: 'SecuNova Lead Finder',
     tagline: 'Privately Owned Sales Intelligence & Lead Discovery Engine',
-    badge: 'Revenue Tech',
+    badge: 'PMaaS Oversight',
     year: '2025',
     heroLabel: 'Sales Intelligence System',
-    pitch: 'SecuNova Lead Finder is a self-hosted sales intelligence system engineered with Python, PostgreSQL, and Redis. It provides automated web extraction, contact enrichment, and verification without recurring SaaS fees.',
+    pitch: 'Project management for a self-hosted sales intelligence system delivered with Python and PostgreSQL. SecuNova supervised the vendor build, verified data-ownership controls, and gated budget release against verified feature completion.',
     outcomeStats: [
       { value: '100%', label: 'Data Ownership' },
       { value: '$0', label: 'SaaS Seat Fees' },
@@ -120,10 +122,10 @@ const RND_PRODUCTS: Product[] = [
     id: 'canadaquest',
     name: 'CanadaQuest',
     tagline: 'AI-Powered Canadian Citizenship Training Platform',
-    badge: 'Civic EdTech',
+    badge: 'Delivery Governance',
     year: '2025',
     heroLabel: 'Civic Learning Platform',
-    pitch: 'CanadaQuest is an AI-powered Canadian citizenship training platform built with Next.js, TypeScript, and Progressive Web App architecture. It offers adaptive exam simulations, full offline curriculum access, and WCAG AA compliance.',
+    pitch: 'Governance and delivery management for an AI-powered citizenship training PWA built with Next.js and TypeScript. SecuNova oversaw accessibility compliance, offline architecture reviews, and milestone-gated release to production.',
     outcomeStats: [
       { value: '99+', label: 'Lighthouse Score' },
       { value: '100%', label: 'Offline PWA Access' },
@@ -137,10 +139,17 @@ const OurWorkPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Technical Track Record | SecuNova Inc. Calgary</title>
-        <meta name="description" content="Explore enterprise software systems and internal R&amp;D platforms engineered under SecuNova Inc. technical leadership: Nova, Career OS, SecuBoost, and custom platforms." />
-        <meta name="keywords" content="SecuNova R&amp;D, Nova macOS AI agent, Career OS, SecuBoost macOS, Journalism Audit Platform, SecuNova Lead Finder, CanadaQuest" />
+        <title>Projects Under Our Project Management | SecuNova Inc. Calgary</title>
+        <meta name="description" content="Technology initiatives delivered under SecuNova Inc. independent project management: Nova, Career OS, SecuBoost, and more, governed end-to-end under our PMaaS discipline." />
+        <meta name="keywords" content="SecuNova PMaaS, project management Calgary, supervised delivery, Nova macOS AI agent, Career OS, SecuBoost macOS, Journalism Audit Platform, SecuNova Lead Finder, CanadaQuest" />
         <link rel="canonical" href="https://secunovainc.com/about/our-work" />
+        {buildSeoTags({
+          title: 'Projects Under Our Project Management | SecuNova Inc. Calgary',
+          description:
+            'Technology initiatives delivered under SecuNova Inc. independent project management: Nova, Career OS, SecuBoost, and more, governed end-to-end under our PMaaS discipline.',
+          url: '/about/our-work',
+          imageAlt: 'SecuNova Inc. - Supervised Track Record',
+        })}
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -154,13 +163,22 @@ const OurWorkPage = () => {
           })}
         </script>
       </Helmet>
+      <SEOSchema
+        type="webpage"
+        data={{
+          title: 'Projects Under Our Project Management | SecuNova Inc. Calgary',
+          description:
+            'Technology initiatives delivered under SecuNova Inc. independent project management: Nova, Career OS, SecuBoost, and more, governed end-to-end under our PMaaS discipline.',
+          url: 'https://secunovainc.com/about/our-work',
+        }}
+      />
 
       {/* Hero Header */}
       <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85"
-            alt="SecuNova Technical Engineering Lab"
+            alt="SecuNova project management delivery oversight"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/80"></div>
@@ -170,16 +188,16 @@ const OurWorkPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-widest text-secunova-light mb-6">
               <Code className="h-4 w-4 mr-2" />
-              Supervised Technical Delivery
+              Independent Project Management
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Engineered Under Our Leadership. <br />
-              <span className="text-secunova-light">Delivered to Institutional Standards.</span>
+            <h1 className="hero-heading mb-6 text-white">
+              <span className="block">Oversaw as Project Managers.</span>
+              <span className="block text-secunova-light mt-1">Delivered to Institutional Standards.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed font-normal">
-              A showcase of software platforms and internal technical systems architected, engineered, and brought to market under SecuNova's governance protocols and sub-second performance standards.
+              A track record of technology initiatives delivered under SecuNova's independent project management, governing scope, vendors, milestones, budgets, and quality for every engagement we supervise.
             </p>
           </div>
         </div>
@@ -191,15 +209,15 @@ const OurWorkPage = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-secunova-dark mb-4 tracking-tight">
-                Supervised Engineering Track Record
+                Projects Delivered Under Our Project Management
               </h2>
               <p className="text-slate-600 text-base">
-                Six flagship digital platforms engineered under SecuNova's architectural oversight, technical governance, and PMaaS delivery discipline.
+                Six technology initiatives governed end-to-end under SecuNova's PMaaS discipline: independent oversight, vendor accountability, milestone-gated delivery, and total IP protection.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {RND_PRODUCTS.map((prod) => (
+              {SUPERVISED_PROJECTS.map((prod) => (
                 <div key={prod.id} className="bg-white rounded-2xl p-8 border border-gray-200 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300">
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -235,7 +253,7 @@ const OurWorkPage = () => {
                     to={`/our-work/${prod.id}`}
                     className="btn btn-outline w-full justify-center text-xs uppercase tracking-wider font-bold py-3"
                   >
-                    Explore Architecture <ArrowRight className="ml-2 h-4 w-4" />
+                    View Case Study <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
               ))}
@@ -250,19 +268,19 @@ const OurWorkPage = () => {
           <div className="max-w-5xl mx-auto bg-secunova-dark text-white rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
             <div className="max-w-3xl">
               <span className="text-xs font-bold uppercase tracking-widest text-secunova-light block mb-3">
-                Engineering Authority Applied to Advisory
+                PM Experience Applied to Advisory
               </span>
               <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
-                Advisory Rooted in Active System Engineering.
+                Advisory Rooted in Live Project Governance.
               </h2>
               <p className="text-blue-100/90 text-sm md:text-base leading-relaxed mb-8 font-normal">
-                When SecuNova audits your technical estate or manages your vendor roadmaps, our guidance is informed by active engineering experience. We build native Swift applications, high-throughput Python NLP microservices, and client-side TypeScript engines in-house, giving us definitive technical authority.
+                When SecuNova audits your technical estate or manages your vendor roadmaps, our guidance is informed by hands-on project management experience. We have supervised the delivery of native Swift applications, high-throughput Python NLP microservices, and client-side TypeScript engines under our PMaaS model, giving us definitive technical authority to audit and govern third-party delivery.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/services/strategic-advisory-pmaas" className="btn btn-gradient btn-md text-white">
                   Explore Strategic Advisory <ArrowRight className="ml-2 h-4 w-4 text-white" />
                 </Link>
-                <Link to="/services/enterprise-audits" className="btn btn-outline-light btn-md text-white">
+                <Link to="/services/enterprise-it-security-audits" className="btn btn-outline-light btn-md text-white">
                   Explore Forensic Audits
                 </Link>
               </div>

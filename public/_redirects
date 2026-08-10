@@ -12,3 +12,12 @@
 # Retired free website initiative (permanent).
 /free-services                     /contact                                301
 
+# Legacy enterprise audits path (permanent).
+/services/enterprise-audits        /services/enterprise-it-security-audits 301
+
+# Canonical URL consolidation for case studies (permanent).
+/our-work/:id                      /about/our-work/:id                     301
+/products/:id                      /about/our-work/:id                     301
+
+# /support is a legacy alias of /contact (permanent).
+/support                           /contact                                301

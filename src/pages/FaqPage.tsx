@@ -21,6 +21,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Search, HelpCircle, ChevronDown, ArrowRight, Phone } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
+import { buildSeoTags } from '../utils/seo-meta';
 
 interface FaqItem {
   category: string;
@@ -129,6 +130,25 @@ const FaqPage = () => {
           content="SecuNova FAQ, IT consulting questions Calgary, strategic advisory FAQ, PMaaS questions, enterprise IT audit FAQ"
         />
         <link rel="canonical" href="https://secunovainc.com/faq" />
+        {buildSeoTags({
+          title: 'Frequently Asked Questions | SecuNova Consulting Calgary',
+          description:
+            'Find answers to executive questions about SecuNova Consulting: strategic advisory, PMaaS, forensic IT audits, and internal R&D products.',
+          url: '/faq',
+          imageAlt: 'SecuNova Consulting - Frequently Asked Questions',
+        })}
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map((faq) => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+            }))
+          })}
+        </script>
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -153,8 +173,9 @@ const FaqPage = () => {
               Executive Knowledge Base
             </div>
 
-            <h1 className="hero-heading mb-6">
-              Frequently Asked <span className="text-secunova-light">Questions</span>
+            <h1 className="hero-heading mb-6 text-white">
+              <span className="block">Frequently Asked</span>
+              <span className="block text-secunova-light mt-1">Questions.</span>
             </h1>
 
             <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto mb-8">

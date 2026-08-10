@@ -25,6 +25,8 @@ import {
   Award, LineChart, ClipboardCheck, BarChart, TrendingUp, Clock
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
+import { buildSeoTags } from '../utils/seo-meta';
+import SEOSchema from '../components/SEOSchema';
 
 interface ServiceCardProps {
   title: string;
@@ -161,7 +163,7 @@ const ServicesPage = () => {
         'Forensic risk audits, regulatory compliance frameworks (SOC 2, ISO 27001, PIPEDA), threat vector mitigation, and business continuity architecture.',
       icon: <Shield className="h-6 w-6" />,
       highlights: ['Cyber risk posture assessments', 'Regulatory compliance & audits', 'Business continuity (BCDR) planning'],
-      path: '/services/enterprise-audits',
+      path: '/services/enterprise-it-security-audits',
       accent: 'blue' as const,
     },
     {
@@ -281,13 +283,13 @@ const ServicesPage = () => {
         <meta name="description" content="SecuNova Inc. delivers Strategic Advisory, Digital Transformation, Cybersecurity Governance, and Project Management as a Service (PMaaS) for North American enterprises." />
         <meta name="keywords" content="SecuNova Inc, strategic advisory Calgary, digital transformation roadmap, PMaaS Canada, business process reengineering, cybersecurity audit Calgary" />
         <link rel="canonical" href="https://secunovainc.com/services" />
-
-        {/* OpenGraph Tags */}
-        <meta property="og:title" content="Services &amp; Practice Areas | SecuNova Inc." />
-        <meta property="og:description" content="Two core practice areas: Strategic Advisory &amp; Digital Transformation, and Project Management as a Service (PMaaS)." />
-        <meta property="og:url" content="https://secunovainc.com/services" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://secunovainc.com/og-image.png" />
+        {buildSeoTags({
+          title: 'Services & Practice Areas | SecuNova Inc.',
+          description:
+            'SecuNova Inc. delivers Strategic Advisory, Digital Transformation, Cybersecurity Governance, and Project Management as a Service (PMaaS) for North American enterprises.',
+          url: '/services',
+          imageAlt: 'SecuNova Inc. Services - Strategic Advisory, Digital Transformation & PMaaS',
+        })}
 
         {/* BreadcrumbList Schema */}
         <script type="application/ld+json">
@@ -301,6 +303,15 @@ const ServicesPage = () => {
           })}
         </script>
       </Helmet>
+      <SEOSchema
+        type="webpage"
+        data={{
+          title: 'Services & Practice Areas | SecuNova Inc.',
+          description:
+            'SecuNova Inc. delivers Strategic Advisory, Digital Transformation, Cybersecurity Governance, and Project Management as a Service (PMaaS) for North American enterprises.',
+          url: 'https://secunovainc.com/services',
+        }}
+      />
 
       {/* Hero */}
       <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
@@ -322,9 +333,9 @@ const ServicesPage = () => {
               Institutional Practice Areas
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Strategic Advisory. <br />
-              <span className="text-secunova-light">Governed Project Delivery.</span>
+            <h1 className="hero-heading mb-6 text-white">
+              <span className="block">Strategic Advisory.</span>
+              <span className="block text-secunova-light mt-1">Governed Project Delivery.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-blue-100/90 max-w-3xl mx-auto leading-relaxed">

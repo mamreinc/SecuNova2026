@@ -20,6 +20,7 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo/secunova-icon.png" />
+    <link rel="apple-touch-icon" href="/logo/secunova-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Enhanced Security Meta Tags - Comprehensive Protection -->
@@ -110,14 +111,17 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
     <meta property="og:url" content="https://secunovainc.com/">
+    <meta property="og:site_name" content="SecuNova Consulting">
     <meta property="og:title" content="SecuNova Inc. | Enterprise IT Governance &amp; Strategic Advisory">
     <meta property="og:description" content="High-trust strategic advisory, PMaaS, cybersecurity risk governance, and digital systems architecture for North American enterprises.">
     <meta property="og:image" content="https://secunovainc.com/og-image.png">
+    <meta property="og:image:secure_url" content="https://secunovainc.com/og-image.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="SecuNova Inc. - Enterprise IT Governance &amp; Strategic Advisory">
-    <meta property="og:site_name" content="SecuNova Inc.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -166,6 +170,7 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
     </style>
     
     <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="/images/hero_strategic.png" fetchpriority="high">
     <link rel="preconnect" href="https://images.pexels.com" crossorigin>
     <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
     <link rel="dns-prefetch" href="https://images.pexels.com">
@@ -175,55 +180,80 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "@id": "https://secunovainc.com",
-        "name": "SecuNova Inc.",
-        "alternateName": ["SecuNova", "SecuNova Consulting", "SecuNova Calgary"],
-        "foundingDate": "2016",
-        "image": "https://secunovainc.com/logo/secunova-logo.png",
-        "description": "SecuNova Inc. is a Calgary-based boutique IT advisory firm delivering high-trust strategic advisory, PMaaS, cybersecurity risk audits, and digital transformation.",
-        "slogan": "Institutional Governance & Executive Technology Execution.",
-        "logo": "https://secunovainc.com/logo/secunova-logo.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "#270, 1122 3 St SE Ste 1906",
-          "addressLocality": "Calgary",
-          "addressRegion": "AB",
-          "postalCode": "T2G 0E7",
-          "addressCountry": "CA"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 51.0447,
-          "longitude": -114.0719
-        },
-        "areaServed": ["Calgary", "Edmonton", "Alberta", "Canada", "United States"],
-        "url": "https://secunovainc.com",
-        "telephone": "+14034011552",
-        "email": "hello@secunovainc.com",
-        "foundingLocation": {
-          "@type": "Place",
-          "name": "Calgary, Alberta, Canada"
-        },
-        "priceRange": "$$$",
-        "currenciesAccepted": "CAD, USD",
-        "knowsAbout": [
-          "Strategic Technology Advisory",
-          "Project Management as a Service",
-          "Digital Transformation Roadmaps",
-          "Cybersecurity & IT Risk Governance",
-          "Enterprise IT Infrastructure Audits",
-          "SOC 2 & ISO 27001 Readiness",
-          "Technology Expense Optimization"
-        ],
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        "sameAs": [
-          "https://ca.linkedin.com/company/secunovac"
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://secunovainc.com/#organization",
+            "name": "SecuNova Consulting",
+            "legalName": "SecuNova Inc.",
+            "alternateName": ["SecuNova", "SecuNova Inc.", "SecuNova Calgary"],
+            "foundingDate": "2025",
+            "image": "https://secunovainc.com/logo/secunova-logo.png",
+            "description": "SecuNova Consulting is a Calgary-based boutique IT advisory firm delivering high-trust strategic advisory, PMaaS, cybersecurity risk audits, and digital transformation governance.",
+            "slogan": "Strategic Shield & Governance for Enterprise IT.",
+            "logo": "https://secunovainc.com/logo/secunova-logo.png",
+            "taxID": "714343225",
+            "identifier": "2026915245",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "#270, 1122 3 St SE Ste 1906",
+              "addressLocality": "Calgary",
+              "addressRegion": "AB",
+              "postalCode": "T2G 0E7",
+              "addressCountry": "CA"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 51.0447,
+              "longitude": -114.0719
+            },
+            "areaServed": ["Calgary", "Edmonton", "Alberta", "Canada", "United States"],
+            "url": "https://secunovainc.com",
+            "telephone": "+1-403-401-1552",
+            "email": "hello@secunovainc.com",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-403-401-1552",
+              "contactType": "customer service",
+              "email": "hello@secunovainc.com",
+              "availableLanguage": ["en", "fr"],
+              "areaServed": "CA-AB"
+            },
+            "foundingLocation": {
+              "@type": "Place",
+              "name": "Calgary, Alberta, Canada"
+            },
+            "priceRange": "$$",
+            "currenciesAccepted": "CAD, USD",
+            "knowsAbout": [
+              "Strategic Technology Advisory",
+              "Project Management as a Service",
+              "Digital Transformation Roadmaps",
+              "Cybersecurity & IT Risk Governance",
+              "Enterprise IT Infrastructure Audits",
+              "SOC 2 & ISO 27001 Readiness",
+              "Technology Expense Optimization"
+            ],
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "17:00"
+            },
+            "sameAs": [
+              "https://ca.linkedin.com/company/secunovac"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://secunovainc.com/#website",
+            "url": "https://secunovainc.com",
+            "name": "SecuNova Consulting",
+            "alternateName": ["SecuNova", "SecuNova Inc."],
+            "description": "Enterprise IT advisory and governance firm based in Calgary, Alberta.",
+            "inLanguage": "en-CA",
+            "publisher": { "@id": "https://secunovainc.com/#organization" }
+          }
         ]
       }
     </script>

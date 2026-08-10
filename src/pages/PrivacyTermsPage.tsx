@@ -18,6 +18,8 @@
 
 import { Helmet } from 'react-helmet-async';
 import { Shield, Lock, FileCheck, Phone } from 'lucide-react';
+import { buildSeoTags } from '../utils/seo-meta';
+import SEOSchema from '../components/SEOSchema';
 
 const PrivacyTermsPage = () => {
   return (
@@ -27,14 +29,31 @@ const PrivacyTermsPage = () => {
         <meta name="description" content="SecuNova Consulting privacy policy and terms of service. Learn how we protect your data and the terms governing our consulting and engineering services in Calgary & Alberta." />
         <meta name="keywords" content="SecuNova privacy policy, SecuNova terms of service, consulting privacy Calgary, data protection Alberta, service terms Calgary, SecuNova Consulting legal" />
         <link rel="canonical" href="https://secunovainc.com/privacy-terms" />
+        {buildSeoTags({
+          title: 'Privacy Policy & Terms of Service | SecuNova Consulting Calgary',
+          description:
+            'SecuNova Consulting privacy policy and terms of service. Learn how we protect your data and the terms governing our consulting and engineering services in Calgary & Alberta.',
+          url: '/privacy-terms',
+          imageAlt: 'SecuNova Consulting - Privacy Policy & Terms',
+        })}
       </Helmet>
+      <SEOSchema
+        type="webpage"
+        data={{
+          title: 'Privacy Policy & Terms of Service | SecuNova Consulting Calgary',
+          description:
+            'SecuNova Consulting privacy policy and terms of service. Learn how we protect your data and the terms governing our consulting and engineering services in Calgary & Alberta.',
+          url: 'https://secunovainc.com/privacy-terms',
+        }}
+      />
 
       <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="hero-heading mb-6">
-              Privacy Policy &amp; <span className="text-secunova-light">Terms</span>
+            <h1 className="hero-heading mb-6 text-white">
+              <span className="block">Privacy Policy</span>
+              <span className="block text-secunova-light mt-1">&amp; Legal Terms.</span>
             </h1>
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
               Your privacy and security are important to us. Learn how we protect your data and the terms governing our services.
