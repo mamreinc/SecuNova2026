@@ -24,7 +24,8 @@ import {
   ArrowRight, Shield, Phone, Crown, Target, CheckCircle,
   Briefcase, Compass, Code, RefreshCw, Users, Globe, ClipboardCheck,
   Scale, Clock, Lightbulb, Database, Award, Wrench,
-  X, Lock, FileText, ChevronRight, Zap, Mail
+  X, Lock, FileText, ChevronRight, Zap, Mail, Brain, Workflow,
+  DollarSign, Package, BarChart3, MessageSquare, Cpu, Sparkles
 } from 'lucide-react';
 import LazySection from '../components/LazySection';
 
@@ -32,15 +33,16 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       <Helmet>
-        <title>SecuNova Inc. | Predictable Digital Execution &amp; Enterprise Strategic Advisory</title>
-        <meta name="description" content="SecuNova Inc. governs complex technology projects, controls vendor accountability, and protects digital investments with zero-trust security protocols. PMaaS and strategic advisory for Canadian and US enterprises." />
-        <meta name="keywords" content="SecuNova Inc, strategic advisory Calgary, digital transformation Canada, PMaaS Calgary, IT governance Canada, cloud architecture advisory, enterprise cybersecurity risk, vendor management" />
+        <title>SecuNova Inc. | Local AI Applications, PMaaS &amp; Enterprise Strategic Advisory</title>
+        <meta name="description" content="SecuNova Inc. builds private, locally-run AI applications for small businesses and delivers PMaaS governance, cybersecurity risk management, and strategic advisory for North American enterprises." />
+        <meta name="keywords" content="AI for small business Calgary, local AI applications Canada, private AI tools Alberta, PMaaS Calgary, enterprise strategic advisory, digital transformation Canada, offline AI apps macOS Windows, cybersecurity audits" />
+        <link rel="canonical" href="https://secunovainc.com/" />
         {buildSeoTags({
-          title: 'SecuNova Inc. | Predictable Digital Execution & Enterprise Strategic Advisory',
+          title: 'SecuNova Inc. | Local AI Applications, PMaaS & Enterprise Strategic Advisory',
           description:
-            'SecuNova Inc. governs complex technology projects, controls vendor accountability, and protects digital investments with zero-trust security protocols. PMaaS and strategic advisory for Canadian and US enterprises.',
+            'SecuNova Inc. builds private, locally-run AI applications for small businesses and delivers PMaaS governance, cybersecurity risk management, and strategic advisory for North American enterprises.',
           url: '/',
-          imageAlt: 'SecuNova Inc. - Predictable Digital Execution & Enterprise Strategic Advisory',
+          imageAlt: 'SecuNova Inc. - Local AI Applications & Enterprise Strategic Advisory',
         })}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -48,9 +50,9 @@ const HomePage = () => {
             "@type": "WebPage",
             "@id": "https://secunovainc.com/#webpage",
             "url": "https://secunovainc.com/",
-            "name": "SecuNova Inc. | Predictable Digital Execution & Enterprise Strategic Advisory",
+            "name": "SecuNova Inc. | Local AI Applications, PMaaS & Enterprise Strategic Advisory",
             "description":
-              "SecuNova Inc. governs complex technology projects, controls vendor accountability, and protects digital investments with zero-trust security protocols. PMaaS and strategic advisory for Canadian and US enterprises.",
+              "SecuNova Inc. builds private, locally-run AI applications for small businesses and delivers PMaaS governance, cybersecurity risk management, and strategic advisory for North American enterprises.",
             "inLanguage": "en-CA",
             "isPartOf": { "@id": "https://secunovainc.com/#website" },
             "about": { "@id": "https://secunovainc.com/#organization" },
@@ -67,7 +69,7 @@ const HomePage = () => {
       {/* ========================================
           Hero Section
           ======================================== */}
-      <section className="relative min-h-[92vh] sm:min-h-screen overflow-hidden bg-secunova-dark pt-36 sm:pt-48 pb-28 sm:pb-36 flex flex-col justify-center">
+      <section className="relative min-h-[92vh] sm:min-h-screen overflow-hidden bg-secunova-dark pt-36 sm:pt-48 pb-24 sm:pb-32 flex flex-col justify-center">
         <div className="absolute inset-0 hero-bg-optimized">
           <video
             src="/hero-video.mp4"
@@ -84,53 +86,256 @@ const HomePage = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center text-center w-full">
-          <div className="max-w-4xl mx-auto w-full flex flex-col items-center">
+          <div className="max-w-5xl mx-auto w-full flex flex-col items-center">
 
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest text-secunova-light mb-8 animate-fade-in">
-              <Shield className="h-3.5 w-3.5 mr-2" />
-              Enterprise Strategic Advisory - Calgary, AB
+            {/* Strategic Positioning Badge */}
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-secunova-light mb-8 animate-fade-in shadow-lg">
+              <Sparkles className="h-3.5 w-3.5 mr-2 text-secunova-light" />
+              Local AI Applications &amp; Enterprise PMaaS Governance
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-bold text-white leading-[1.15] tracking-tight hero-title-optimized max-w-5xl text-center">
-              <span className="block whitespace-normal">Predictable Digital Execution.</span>
-              <span className="block text-secunova-light mt-2 whitespace-normal">Strategic Leadership for Modern Enterprises.</span>
+            {/* High-Converting Main Headline */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4.2rem] font-extrabold text-white leading-[1.12] tracking-tight hero-title-optimized max-w-5xl text-center">
+              <span className="block whitespace-normal">Own Your AI. Protect Your Projects.</span>
+              <span className="block text-secunova-light mt-2 whitespace-normal bg-clip-text text-transparent bg-gradient-to-r from-secunova-light via-blue-200 to-white">
+                Local AI Applications &amp; Enterprise PMaaS.
+              </span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-base sm:text-xl text-blue-100/90 leading-relaxed hero-description-optimized animate-fade-in-up delay-500 font-normal">
-              Governing complex technology projects, controlling vendor accountability, and protecting digital investments with zero-trust security protocols and executive oversight.
+            {/* Marketing Value Proposition Hook */}
+            <p className="mt-8 max-w-3xl text-base sm:text-xl text-blue-100/90 leading-relaxed hero-description-optimized animate-fade-in-up delay-500 font-normal">
+              SecuNova provides two high-impact capabilities: <strong className="text-white font-semibold">100% locally-executed AI applications</strong> you own outright with zero monthly subscriptions, and <strong className="text-white font-semibold">Project Management as a Service (PMaaS)</strong> that eliminates vendor risk, protects your budget, and guarantees milestone execution.
             </p>
 
-            {/* Trust Metric Bar */}
-            <div className="mt-10 w-full max-w-2xl animate-fade-in-up delay-700">
-              <div className="grid grid-cols-3 gap-3 sm:gap-4">
-                <div className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-xl px-3 sm:px-5 py-3 sm:py-4 text-center">
-                  <div className="text-secunova-light font-black text-xs sm:text-sm uppercase tracking-wider mb-0.5">100%</div>
-                  <div className="text-[10px] sm:text-xs text-white/70 font-medium leading-tight">Milestone-Gated<br className="hidden sm:block" /> Budget Protection</div>
+            {/* Dual Core Pillar Feature Cards in Hero */}
+            <div className="mt-10 w-full grid grid-cols-1 md:grid-cols-2 gap-4 text-left animate-fade-in-up delay-700">
+              
+              {/* Pillar 1: Local AI */}
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-secunova-light/20 flex items-center justify-center text-secunova-light">
+                      <Brain className="h-5 w-5" />
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest font-black px-2.5 py-1 rounded bg-secunova-light/20 text-secunova-light">
+                      01 / Local AI
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">Local AI for Small Business</h3>
+                  <p className="text-xs text-blue-100/80 leading-relaxed mb-4">
+                    Custom AI Apps and document automation built natively for macOS &amp; Windows. Pay once, zero subscriptions, complete source code handoff.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-white">100% Local</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-white">$0 SaaS Fees</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-white">Mac &amp; Windows</span>
+                  </div>
                 </div>
-                <div className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-xl px-3 sm:px-5 py-3 sm:py-4 text-center">
-                  <div className="text-secunova-light font-black text-xs sm:text-sm uppercase tracking-wider mb-0.5">Zero-Trust</div>
-                  <div className="text-[10px] sm:text-xs text-white/70 font-medium leading-tight">Security Protocols<br className="hidden sm:block" /> Enforced</div>
-                </div>
-                <div className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-xl px-3 sm:px-5 py-3 sm:py-4 text-center">
-                  <div className="text-secunova-light font-black text-xs sm:text-sm uppercase tracking-wider mb-0.5">Senior-Led</div>
-                  <div className="text-[10px] sm:text-xs text-white/70 font-medium leading-tight">Advisory Practice<br className="hidden sm:block" /> On-Demand</div>
-                </div>
+                <Link
+                  to="/services/ai-for-small-business"
+                  className="text-xs font-bold text-secunova-light flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-3 border-t border-white/10"
+                >
+                  <span>Explore Local AI Tools</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
+
+              {/* Pillar 2: PMaaS */}
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-secunova-blue/30 flex items-center justify-center text-secunova-light">
+                      <ClipboardCheck className="h-5 w-5" />
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest font-black px-2.5 py-1 rounded bg-white/10 text-white">
+                      02 / PMaaS
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">PMaaS &amp; Operations Governance</h3>
+                  <p className="text-xs text-blue-100/80 leading-relaxed mb-4">
+                    On-demand Chief Project Officer leadership. We hold external agencies accountable, gate milestone payments, and enforce zero-trust security.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-white">Vendor Audits</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-white">Budget Gating</span>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-white/10 text-white">Zero-Trust</span>
+                  </div>
+                </div>
+                <Link
+                  to="/services/strategic-advisory-pmaas"
+                  className="text-xs font-bold text-secunova-light flex items-center gap-1.5 group-hover:translate-x-1 transition-transform pt-3 border-t border-white/10"
+                >
+                  <span>Explore PMaaS Governance</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-1000">
-              <Link to="/contact" className="btn btn-gradient btn-lg text-white">
-                Schedule an Executive Briefing
+            {/* Main Action CTAs */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-800">
+              <Link to="/services/ai-for-small-business" className="btn btn-gradient btn-lg text-white font-bold shadow-xl">
+                Build a Local AI Tool
                 <ArrowRight className="ml-2 h-4 w-4 text-white" />
               </Link>
-              <Link to="/services" className="btn btn-outline-light btn-lg text-white">
-                Explore Operational Framework
+              <Link to="/services/strategic-advisory-pmaas" className="btn btn-outline-light btn-lg text-white font-bold">
+                Retain PMaaS Leadership
               </Link>
             </div>
 
           </div>
         </div>
       </section>
+
+      {/* ========================================
+          Core Service Offerings (Reordered: 01 AI, 02 PMaaS, 03 Strategic Advisory)
+          ======================================== */}
+      <LazySection className="secunova-section secunova-section--light">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center bg-secunova-blue/10 text-secunova-blue px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <Briefcase className="h-4 w-4 mr-2" />
+                Core Practice Areas
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark tracking-tight leading-tight">
+                Three Practice Lines. <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">One Governance Standard.</span>
+              </h2>
+              <p className="text-base sm:text-lg text-slate-700 mt-4 leading-relaxed">
+                From local AI tools for small business to enterprise PMaaS and strategic advisory, every engagement delivers complete IP ownership, milestone gating, and independent oversight.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+
+              {/* Service 01: AI for Small Business */}
+              <div className="bg-white rounded-2xl border-2 border-secunova-blue/20 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full relative">
+                <div className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest bg-secunova-light/15 text-secunova-light px-3 py-1 rounded-full">Flagship Practice</div>
+                <div className="p-8 sm:p-9 flex-1">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-secunova-light/20 to-secunova-blue/10 rounded-2xl flex items-center justify-center text-secunova-light flex-shrink-0">
+                      <Brain className="h-7 w-7" />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 bg-secunova-blue/10 text-secunova-blue rounded-full">Service 01</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-secunova-dark mb-3 leading-tight">
+                    AI for Small Business
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                    Custom AI applications built to run locally on your machine (macOS &amp; Windows). Pay once, zero subscriptions, complete source code handoff, and total data privacy.
+                  </p>
+                  <div className="space-y-4 mb-8">
+                    {[
+                      { icon: <MessageSquare className="h-4 w-4" />, title: 'Custom AI Assistants', detail: 'Trained on your business context and documents. Runs locally on your hardware.' },
+                      { icon: <FileText className="h-4 w-4" />, title: 'Document Intelligence Tools', detail: 'Extract data and summarize contracts, invoices, and reports with zero cloud AI calls.' },
+                      { icon: <Workflow className="h-4 w-4" />, title: 'Workflow Automation', detail: 'Automate repetitive daily operations and connect local systems seamlessly.' },
+                      { icon: <BarChart3 className="h-4 w-4" />, title: 'Team Productivity Dashboards', detail: 'Self-hosted internal intelligence dashboards with complete data privacy.' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3.5">
+                        <div className="w-8 h-8 bg-secunova-light/15 rounded-lg flex items-center justify-center text-secunova-light flex-shrink-0 mt-0.5">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <div className="text-sm font-bold text-secunova-dark mb-0.5">{item.title}</div>
+                          <div className="text-xs text-slate-500 leading-relaxed">{item.detail}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="px-8 sm:px-9 pb-8">
+                  <Link to="/services/ai-for-small-business" className="btn btn-gradient w-full justify-center text-sm font-bold text-white">
+                    Explore AI for Small Business <ArrowRight className="ml-2 h-4 w-4 text-white" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Service 02: PMaaS */}
+              <div className="bg-white rounded-2xl border border-gray-200/90 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full">
+                <div className="p-8 sm:p-9 flex-1">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-14 h-14 bg-secunova-blue/10 rounded-2xl flex items-center justify-center text-secunova-blue flex-shrink-0">
+                      <ClipboardCheck className="h-7 w-7" />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 bg-secunova-blue/10 text-secunova-blue rounded-full">Service 02</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-secunova-dark mb-3 leading-tight">
+                    PMaaS &amp; Operations Governance
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                    Acting as your independent Chief Project Officer: governing digital initiatives, holding vendors accountable, protecting your budget, and enforcing zero-trust operational security.
+                  </p>
+                  <div className="space-y-4 mb-8">
+                    {[
+                      { icon: <Users className="h-4 w-4" />, title: 'Vendor Management & Oversight', detail: 'Auditing agency deliverables, verifying code, and gating milestone payments independently.' },
+                      { icon: <Shield className="h-4 w-4" />, title: 'Zero-Trust Operations', detail: 'Isolated staging access, IP protection protocols, and confidential data handling enforced.' },
+                      { icon: <Target className="h-4 w-4" />, title: 'Scope & Risk Mitigation', detail: 'Formal change-request protocols, timeline enforcement, and active risk mitigation.' },
+                      { icon: <Wrench className="h-4 w-4" />, title: 'Workspace Engineering', detail: 'Structured project platforms (Jira, ClickUp, Notion) with repeatable SOPs built for your team.' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3.5">
+                        <div className="w-8 h-8 bg-secunova-blue/8 rounded-lg flex items-center justify-center text-secunova-blue flex-shrink-0 mt-0.5">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <div className="text-sm font-bold text-secunova-dark mb-0.5">{item.title}</div>
+                          <div className="text-xs text-slate-500 leading-relaxed">{item.detail}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="px-8 sm:px-9 pb-8">
+                  <Link to="/services/strategic-advisory-pmaas" className="btn btn-outline w-full justify-center text-sm font-bold">
+                    Explore PMaaS Governance <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Service 03: Strategic Advisory */}
+              <div className="bg-white rounded-2xl border border-gray-200/90 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full">
+                <div className="p-8 sm:p-9 flex-1">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-14 h-14 bg-secunova-light/15 rounded-2xl flex items-center justify-center text-secunova-light flex-shrink-0">
+                      <Crown className="h-7 w-7" />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 bg-secunova-light/15 text-secunova-light rounded-full">Service 03</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-secunova-dark mb-3 leading-tight">
+                    Strategic Advisory &amp; Transformation
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                    Providing executive guidance to eliminate operational friction, replace legacy processes with modern digital workflows, and integrate practical, secure AI into daily operations.
+                  </p>
+                  <div className="space-y-4 mb-8">
+                    {[
+                      { icon: <Lightbulb className="h-4 w-4" />, title: 'Digital Readiness Assessment', detail: 'Deep-dive audits of workflows, software stacks, and operational bottlenecks.' },
+                      { icon: <Zap className="h-4 w-4" />, title: 'Practical AI Adoption Roadmap', detail: 'Secure AI deployment strategies that lower costs without data exposure risks.' },
+                      { icon: <RefreshCw className="h-4 w-4" />, title: 'Business Process Re-engineering', detail: 'Modernizing manual routines into automated, connected digital workflows.' },
+                      { icon: <Users className="h-4 w-4" />, title: 'Executive Guidance', detail: 'Coaching leadership teams and training staff for seamless digital adoption.' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3.5">
+                        <div className="w-8 h-8 bg-secunova-light/12 rounded-lg flex items-center justify-center text-secunova-light flex-shrink-0 mt-0.5">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <div className="text-sm font-bold text-secunova-dark mb-0.5">{item.title}</div>
+                          <div className="text-xs text-slate-500 leading-relaxed">{item.detail}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="px-8 sm:px-9 pb-8">
+                  <Link to="/services/strategic-advisory-pmaas" className="btn btn-outline w-full justify-center text-sm font-bold">
+                    Explore Strategic Advisory <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </LazySection>
 
       {/* ========================================
           Strategic Comparison Matrix
@@ -144,7 +349,7 @@ const HomePage = () => {
                 Why SecuNova
               </div>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
-                The Advisory Model That <span className="text-secunova-blue">Protects Your Investment</span>
+                The Execution Model That <span className="text-secunova-blue">Protects Your Investment</span>
               </h2>
               <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                 Most technology engagements fail not from lack of talent, but from lack of governance. Here is the structural difference.
@@ -165,10 +370,10 @@ const HomePage = () => {
                 </div>
                 <ul className="space-y-5">
                   {[
-                    { label: 'Billing Model', value: 'Hourly or retainer billing with no outcome accountability' },
+                    { label: 'Billing Model', value: 'Hourly or recurring monthly subscriptions with no outcome accountability' },
                     { label: 'Scope Management', value: 'Change orders accumulate without structured approval gates' },
                     { label: 'Vendor Oversight', value: 'Self-reported progress with no independent code verification' },
-                    { label: 'IP Protection', value: 'Shared development credentials with minimal access controls' },
+                    { label: 'IP Protection', value: 'Shared development credentials and vendor lock-in dependencies' },
                     { label: 'Reporting', value: 'Reactive status updates delivered after issues surface' },
                     { label: 'Risk Management', value: 'No formal risk register or escalation protocols in place' },
                     { label: 'Budget Control', value: 'Invoice-first with retroactive cost reconciliation' },
@@ -193,15 +398,15 @@ const HomePage = () => {
                   </div>
                   <div>
                     <div className="text-xs font-bold uppercase tracking-widest text-secunova-blue mb-0.5">The SecuNova Model</div>
-                    <div className="text-lg font-bold text-secunova-dark">Strategic Advisory Framework</div>
+                    <div className="text-lg font-bold text-secunova-dark">Strategic &amp; Bespoke Framework</div>
                   </div>
                 </div>
                 <ul className="space-y-5">
                   {[
-                    { label: 'Billing Model', value: 'Milestone-gated payment approval: vendors are paid only upon verified deliverable completion' },
-                    { label: 'Scope Management', value: 'Formal change-request protocols enforce strict roadmap controls and prevent scope drift' },
-                    { label: 'Vendor Oversight', value: 'Independent code audits and technical verification of all third-party deliverables' },
-                    { label: 'IP Protection', value: 'Zero-trust access controls, isolated staging environments, and full IP handoff to client' },
+                    { label: 'Billing Model', value: 'Fixed investment or milestone-gated approval: pay once with 100% full IP ownership' },
+                    { label: 'Scope Management', value: 'Formal change-request protocols enforce strict roadmap controls and prevent drift' },
+                    { label: 'Vendor Oversight', value: 'Independent code audits and technical verification of all software deliverables' },
+                    { label: 'IP Protection', value: 'Zero-trust access controls, local execution, and complete source code handoff' },
                     { label: 'Reporting', value: 'Proactive C-suite dashboards with real-time milestone, budget, and risk visibility' },
                     { label: 'Risk Management', value: 'Active risk registers with escalation protocols and contingency authorization paths' },
                     { label: 'Budget Control', value: 'Milestone-gated spending with board-authorized financial thresholds enforced throughout' },
@@ -228,114 +433,6 @@ const HomePage = () => {
       </LazySection>
 
       {/* ========================================
-          Core Service Offerings
-          ======================================== */}
-      <LazySection className="secunova-section secunova-section--light">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center bg-secunova-blue/10 text-secunova-blue px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
-                <Briefcase className="h-4 w-4 mr-2" />
-                Core Practice Areas
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-secunova-dark tracking-tight leading-tight">
-                Two Practice Lines. <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">One Governance Standard.</span>
-              </h2>
-              <p className="text-base sm:text-lg text-slate-700 mt-4 leading-relaxed">
-                Both services operate under the same zero-trust execution model: independent oversight, milestone-gated delivery, and total IP protection.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-
-              {/* Service 1: PMaaS */}
-              <div className="bg-white rounded-2xl border border-gray-200/90 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full">
-                <div className="p-8 sm:p-10 flex-1">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 bg-secunova-blue/10 rounded-2xl flex items-center justify-center text-secunova-blue flex-shrink-0">
-                      <ClipboardCheck className="h-7 w-7" />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 bg-secunova-blue/10 text-secunova-blue rounded-full">Service 01</span>
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-secunova-dark mb-3 leading-tight">
-                    PMaaS &amp; Operations Governance
-                  </h3>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
-                    Acting as your independent Chief Project Officer: governing digital initiatives, holding vendors accountable, protecting your budget, and enforcing zero-trust operational security.
-                  </p>
-                  <div className="space-y-4 mb-8">
-                    {[
-                      { icon: <Users className="h-4 w-4" />, title: 'Client Representation & Vendor Management', detail: 'Auditing agency deliverables, verifying code, and gating milestone payments independently.' },
-                      { icon: <Shield className="h-4 w-4" />, title: 'Zero-Trust Operations & Data Governance', detail: 'Isolated staging access, IP protection protocols, and confidential data handling enforced throughout.' },
-                      { icon: <Target className="h-4 w-4" />, title: 'Scope & Risk Mitigation', detail: 'Formal change-request protocols, timeline enforcement, and active risk management before milestones slip.' },
-                      { icon: <Wrench className="h-4 w-4" />, title: 'Workspace Engineering', detail: 'Structured project platforms (Jira, ClickUp, Notion) with repeatable SOPs built for your team.' },
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-4">
-                        <div className="w-9 h-9 bg-secunova-blue/8 rounded-lg flex items-center justify-center text-secunova-blue flex-shrink-0 mt-0.5">
-                          {item.icon}
-                        </div>
-                        <div>
-                          <div className="text-sm font-bold text-secunova-dark mb-0.5">{item.title}</div>
-                          <div className="text-xs text-slate-500 leading-relaxed">{item.detail}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="px-8 sm:px-10 pb-8">
-                  <Link to="/services/strategic-advisory-pmaas" className="btn btn-gradient w-full justify-center text-sm font-bold text-white">
-                    Explore PMaaS Governance <ArrowRight className="ml-2 h-4 w-4 text-white" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Service 2: Strategic Advisory */}
-              <div className="bg-white rounded-2xl border border-gray-200/90 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between h-full">
-                <div className="p-8 sm:p-10 flex-1">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 bg-secunova-light/15 rounded-2xl flex items-center justify-center text-secunova-light flex-shrink-0">
-                      <Crown className="h-7 w-7" />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 bg-secunova-light/15 text-secunova-light rounded-full">Service 02</span>
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-secunova-dark mb-3 leading-tight">
-                    Strategic Advisory &amp; Digital Transformation
-                  </h3>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
-                    Providing executive guidance to eliminate operational friction, replace legacy processes with modern digital workflows, and integrate practical, secure AI into daily operations.
-                  </p>
-                  <div className="space-y-4 mb-8">
-                    {[
-                      { icon: <Lightbulb className="h-4 w-4" />, title: 'Digital Readiness Assessment', detail: 'Deep-dive audits of workflows, software stacks, and operational bottlenecks with board-ready output.' },
-                      { icon: <Zap className="h-4 w-4" />, title: 'Practical AI Adoption Roadmap', detail: 'Secure AI deployment strategies that lower costs and boost productivity without data exposure risks.' },
-                      { icon: <RefreshCw className="h-4 w-4" />, title: 'Business Process Re-engineering', detail: 'Modernizing manual routines into automated, connected digital workflows that scale with your business.' },
-                      { icon: <Users className="h-4 w-4" />, title: 'Executive Guidance & Change Management', detail: 'Coaching leadership teams and training staff for seamless adoption of new digital infrastructure.' },
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-4">
-                        <div className="w-9 h-9 bg-secunova-light/12 rounded-lg flex items-center justify-center text-secunova-light flex-shrink-0 mt-0.5">
-                          {item.icon}
-                        </div>
-                        <div>
-                          <div className="text-sm font-bold text-secunova-dark mb-0.5">{item.title}</div>
-                          <div className="text-xs text-slate-500 leading-relaxed">{item.detail}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="px-8 sm:px-10 pb-8">
-                  <Link to="/services/strategic-advisory-pmaas" className="btn btn-outline w-full justify-center text-sm font-bold">
-                    Explore Strategic Advisory <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </LazySection>
-
-      {/* ========================================
           4-Step Governance Process
           ======================================== */}
       <LazySection className="secunova-section bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue text-white relative overflow-hidden">
@@ -350,7 +447,7 @@ const HomePage = () => {
                 The 4-Phase <span className="text-secunova-light">Governance Framework</span>
               </h2>
               <p className="text-blue-100/90 text-base sm:text-lg leading-relaxed">
-                A disciplined engagement model that takes organizations from forensic discovery to operational handover. No ambiguity. No surprises.
+                A disciplined engagement model that takes organizations from discovery to complete operational handover. No ambiguity. No surprises.
               </p>
             </div>
 
@@ -359,7 +456,7 @@ const HomePage = () => {
                 {
                   phase: '01',
                   title: 'Diagnostic Audit',
-                  description: 'A forensic review of your existing infrastructure, software stack, vendor contracts, and operational workflows. We identify cost bloat, security gaps, and process bottlenecks before committing a single dollar.',
+                  description: 'A forensic review of your existing infrastructure, software stack, workflows, and tool requirements before committing a single dollar.',
                   deliverable: 'Current-State Gap Analysis',
                   icon: <Database className="h-5 w-5" />,
                   accentColor: 'text-secunova-light',
@@ -367,7 +464,7 @@ const HomePage = () => {
                 {
                   phase: '02',
                   title: 'Strategic Blueprint',
-                  description: 'A phase-gated implementation roadmap aligned with your corporate objectives, budget authorizations, and compliance requirements. Board-ready documentation included at every stage.',
+                  description: 'A phase-gated implementation roadmap aligned with your business objectives, hardware specifications, and security requirements.',
                   deliverable: 'Governed Digital Roadmap',
                   icon: <FileText className="h-5 w-5" />,
                   accentColor: 'text-secunova-blue',
@@ -375,7 +472,7 @@ const HomePage = () => {
                 {
                   phase: '03',
                   title: 'Governed Execution',
-                  description: 'On-demand senior project leadership governs all technical execution: vendor accountability, milestone gating, zero-trust access controls, and real-time budget tracking.',
+                  description: 'Bespoke software build and senior project leadership governing all technical execution: local AI runtimes, milestone gating, and verification.',
                   deliverable: 'Audited Technical Delivery',
                   icon: <ClipboardCheck className="h-5 w-5" />,
                   accentColor: 'text-secunova-light',
@@ -383,7 +480,7 @@ const HomePage = () => {
                 {
                   phase: '04',
                   title: 'Operational Handover',
-                  description: 'Structured knowledge transfer, SOP documentation, and staff training protocols ensure your team fully owns and can operate the delivered infrastructure independently.',
+                  description: 'Complete source code handoff, local hardware installation, SOP documentation, and staff training so your team operates independently.',
                   deliverable: 'Full Asset & IP Handoff',
                   icon: <Award className="h-5 w-5" />,
                   accentColor: 'text-secunova-blue',
@@ -410,7 +507,7 @@ const HomePage = () => {
             </div>
 
             <div className="mt-12 text-center">
-              <Link to="/services/strategic-advisory-pmaas" className="btn btn-gradient btn-lg text-white">
+              <Link to="/services" className="btn btn-gradient btn-lg text-white">
                 View Full Delivery Framework <ArrowRight className="ml-2 h-4 w-4 text-white" />
               </Link>
             </div>
@@ -421,7 +518,7 @@ const HomePage = () => {
       {/* ========================================
           Technical Track Record
           ======================================== */}
-      <LazySection className="secunova-section secunova-section--light">
+      <LazySection id="track-record" className="secunova-section secunova-section--light">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -434,20 +531,20 @@ const HomePage = () => {
                   Supervised Engineering <span className="bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue to-secunova-light">&amp; Case Studies</span>
                 </h2>
                 <p className="text-xs font-semibold text-secunova-blue uppercase tracking-wider mt-2">
-                  Institutional Execution Demonstrated
+                  Demonstrated Software Engineering &amp; Governance
                 </p>
               </div>
               <p className="text-slate-600 max-w-md text-sm mt-4 md:mt-0 leading-relaxed">
-                Our team applies rigorous engineering and governance principles across internal R&amp;D platforms and supervised client initiatives.
+                We build bespoke software platforms and apply rigorous governance principles across internal R&amp;D and client initiatives.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
               <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-md border border-gray-200/90 flex flex-col justify-between h-full min-h-[290px] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-amber-500/10 text-amber-600 rounded border border-amber-500/20">ACTIVE R&amp;D - 2026</span>
-                    <span className="text-xs font-mono text-slate-500">macOS Platform</span>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-amber-500/10 text-amber-600 rounded-md border border-amber-500/20 whitespace-nowrap">Active R&amp;D</span>
+                    <span className="text-xs font-mono text-slate-500 whitespace-nowrap">macOS • 2026</span>
                   </div>
                   <h3 className="text-xl font-bold text-secunova-dark mb-2 break-words">Nova macOS AI Agent</h3>
                   <p className="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed break-words">
@@ -459,37 +556,37 @@ const HomePage = () => {
                     <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">AppleScript</span>
                   </div>
                 </div>
-                <Link to="/our-work/nova" className="text-xs font-bold text-secunova-blue hover:text-secunova-light flex items-center justify-between pt-4 border-t border-gray-100">
+                <Link to="/about/our-work/nova" className="text-xs font-bold text-secunova-blue hover:text-secunova-light flex items-center justify-between pt-4 border-t border-gray-100">
                   <span>View Tech Architecture</span> <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
 
               <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-md border border-gray-200/90 flex flex-col justify-between h-full min-h-[290px] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-blue/10 text-secunova-blue rounded">PLATFORM DELIVERY - 2025</span>
-                    <span className="text-xs font-mono text-slate-500">Web Engine</span>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-secunova-blue/10 text-secunova-blue rounded-md border border-secunova-blue/20 whitespace-nowrap">Sales Engine</span>
+                    <span className="text-xs font-mono text-slate-500 whitespace-nowrap">Python • 2025</span>
                   </div>
-                  <h3 className="text-xl font-bold text-secunova-dark mb-2 break-words">Career OS Engine</h3>
+                  <h3 className="text-xl font-bold text-secunova-dark mb-2 break-words">SecuNova Lead Finder</h3>
                   <p className="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed break-words">
-                    A high-performance client-side application delivered under our PMaaS governance model using Next.js, TypeScript, and local storage encryption.
+                    A self-hosted sales intelligence platform built with Python and PostgreSQL that replaces recurring SaaS subscriptions with a privately owned local system.
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-6">
-                    <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">Next.js</span>
-                    <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">TypeScript</span>
-                    <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">IndexedDB</span>
+                    <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">Python</span>
+                    <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">PostgreSQL</span>
+                    <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">FastAPI</span>
                   </div>
                 </div>
-                <Link to="/our-work/career-os" className="text-xs font-bold text-secunova-blue hover:text-secunova-light flex items-center justify-between pt-4 border-t border-gray-100">
+                <Link to="/about/our-work/lead-finder" className="text-xs font-bold text-secunova-blue hover:text-secunova-light flex items-center justify-between pt-4 border-t border-gray-100">
                   <span>View Tech Architecture</span> <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
 
               <div className="bg-white rounded-2xl p-6 sm:p-7 shadow-md border border-gray-200/90 flex flex-col justify-between h-full min-h-[290px] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-secunova-blue/10 text-secunova-blue rounded">SECURITY SUITE - 2025</span>
-                    <span className="text-xs font-mono text-slate-500">System Utility</span>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 bg-secunova-blue/10 text-secunova-blue rounded-md border border-secunova-blue/20 whitespace-nowrap">Security Suite</span>
+                    <span className="text-xs font-mono text-slate-500 whitespace-nowrap">SwiftUI • 2025</span>
                   </div>
                   <h3 className="text-xl font-bold text-secunova-dark mb-2 break-words">SecuBoost Security Suite</h3>
                   <p className="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed break-words">
@@ -501,7 +598,7 @@ const HomePage = () => {
                     <span className="text-[10px] bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-mono">IOKit</span>
                   </div>
                 </div>
-                <Link to="/our-work/secuboost" className="text-xs font-bold text-secunova-blue hover:text-secunova-light flex items-center justify-between pt-4 border-t border-gray-100">
+                <Link to="/about/our-work/secuboost" className="text-xs font-bold text-secunova-blue hover:text-secunova-light flex items-center justify-between pt-4 border-t border-gray-100">
                   <span>View Tech Architecture</span> <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
@@ -621,17 +718,17 @@ const HomePage = () => {
               Executive Consultation
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
-              Ready to Govern Your <span className="text-secunova-light">Next Digital Initiative?</span>
+              Ready to Build Your AI Tool or <span className="text-secunova-light">Govern Your Next Project?</span>
             </h2>
             <p className="text-blue-100/90 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-              Connect directly with SecuNova's senior advisory team for an independent assessment of your digital roadmap, vendor exposure, and project execution risk.
+              Connect directly with SecuNova's senior engineering and advisory team. We deliver custom local AI applications and independent project governance for organizations across Canada and North America.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact" className="btn btn-gradient btn-lg text-white">
                 Schedule Executive Consultation <ArrowRight className="ml-2 h-4 w-4 text-white" />
               </Link>
-              <Link to="/services" className="btn btn-outline-light btn-lg text-white">
-                Explore Advisory Solutions
+              <Link to="/services/ai-for-small-business" className="btn btn-outline-light btn-lg text-white">
+                Explore AI for Small Business
               </Link>
             </div>
           </div>
@@ -642,3 +739,4 @@ const HomePage = () => {
 };
 
 export default memo(HomePage);
+

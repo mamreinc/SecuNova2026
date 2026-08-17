@@ -17,7 +17,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Linkedin, Lock, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Lock } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -54,10 +54,6 @@ const Footer = () => {
               >
                 <Linkedin className="h-5 w-5 text-white" />
               </a>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-xs text-secunova-light">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                <span>Enterprise Governance</span>
-              </div>
             </div>
           </div>
 

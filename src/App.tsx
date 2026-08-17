@@ -39,6 +39,7 @@ const JoinUsPage = React.lazy(() => import('./pages/JoinUsPage'));
 const BrandPage = React.lazy(() => import('./pages/BrandPage'));
 
 // Service Pages
+const AISmallBusinessPage = React.lazy(() => import('./pages/services/AISmallBusinessPage'));
 const StrategicAdvisoryPage = React.lazy(() => import('./pages/services/StrategicAdvisoryPage'));
 const EnterpriseAuditsPage = React.lazy(() => import('./pages/services/EnterpriseAuditsPage'));
 
@@ -101,6 +102,7 @@ function App() {
                       <Routes>
                         <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
                         <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} />
+                        <Route path="/services/ai-for-small-business" element={<PageTransition><AISmallBusinessPage /></PageTransition>} />
                         <Route path="/services/strategic-advisory-pmaas" element={<PageTransition><StrategicAdvisoryPage /></PageTransition>} />
                         <Route path="/services/enterprise-it-security-audits" element={<PageTransition><EnterpriseAuditsPage /></PageTransition>} />
                         <Route path="/support" element={<PageTransition><ContactPage /></PageTransition>} />

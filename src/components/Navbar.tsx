@@ -18,7 +18,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, Users, PhoneCall, Globe, Crown, RefreshCw, GraduationCap, PenTool, FileText, ClipboardCheck, Shield, Target, Calendar } from 'lucide-react';
+import { Menu, X, User, Mail, Phone, ChevronDown, Home, LayoutGrid, Users, PhoneCall, Globe, Crown, RefreshCw, GraduationCap, PenTool, FileText, ClipboardCheck, Shield, Target, Calendar, Brain, Workflow, BarChart3, MessageSquare, Cpu } from 'lucide-react';
 import Logo from './Logo';
 
 interface NavDropdownItem {
@@ -113,6 +113,17 @@ const Navbar = () => {
       isMegaMenu: true,
       megaMenuItems: [
         {
+          category: 'AI for Small Business',
+          icon: <Brain className="h-5 w-5 text-secunova-light" />,
+          items: [
+            { name: 'Custom AI Assistants', path: '/services/ai-for-small-business', icon: <MessageSquare className="h-4 w-4" /> },
+            { name: 'Document Intelligence Tools', path: '/services/ai-for-small-business', icon: <FileText className="h-4 w-4" /> },
+            { name: 'Workflow Automation', path: '/services/ai-for-small-business', icon: <Workflow className="h-4 w-4" /> },
+            { name: 'Team Productivity Dashboards', path: '/services/ai-for-small-business', icon: <BarChart3 className="h-4 w-4" /> },
+            { name: 'Client-Tailored Custom Apps', path: '/services/ai-for-small-business#custom-apps', icon: <Cpu className="h-4 w-4" /> },
+          ]
+        },
+        {
           category: 'Strategic Advisory & Digital Transformation',
           icon: <Crown className="h-5 w-5 text-secunova-blue" />,
           items: [
@@ -184,7 +195,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-16 sm:h-20 gap-4 sm:gap-6">
             {/* Left: Brand Logo Container */}
-            <div className="flex items-center flex-shrink-0">
+            <div className="flex items-center flex-shrink-0 pt-[5px]">
               <Logo size="md" theme="light" />
             </div>
 
@@ -229,7 +240,7 @@ const Navbar = () => {
                             : 'opacity-0 invisible -translate-y-2'
                         }`}>
                           <div className="p-6 sm:p-8">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                               {link.megaMenuItems.map((category, categoryIndex) => (
                                 <div key={categoryIndex} className="space-y-4">
                                   <div className="pb-3 border-b border-gray-100 flex items-center gap-2.5">

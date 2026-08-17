@@ -21,6 +21,7 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface LazySectionProps {
   children: ReactNode;
+  id?: string;
   className?: string;
   threshold?: number;
   rootMargin?: string;
@@ -29,10 +30,10 @@ interface LazySectionProps {
 
 const LazySection: React.FC<LazySectionProps> = memo(({
   children,
+  id,
   className = '',
-  threshold = 0.1,
-  rootMargin = '100px',
-  fallback = null
+  threshold = 0.05,
+  rootMargin = '120px',
 }) => {
   const { elementRef, isIntersecting } = useIntersectionObserver<HTMLDivElement>({
     threshold,
@@ -43,11 +44,12 @@ const LazySection: React.FC<LazySectionProps> = memo(({
   return (
     <div
       ref={elementRef}
-      className={`transition-opacity duration-500 ${
-        isIntersecting ? 'opacity-100' : 'opacity-0'
+      id={id}
+      className={`transition-all duration-700 ease-out ${
+        isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
       } ${className}`}
     >
-      {isIntersecting ? children : fallback}
+      {children}
     </div>
   );
 });

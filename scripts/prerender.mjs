@@ -28,6 +28,7 @@ let activePort = process.env.PRERENDER_PORT ? parseInt(process.env.PRERENDER_POR
 const ROUTES = [
   '/',
   '/services',
+  '/services/ai-for-small-business',
   '/services/strategic-advisory-pmaas',
   '/services/enterprise-it-security-audits',
   '/about',

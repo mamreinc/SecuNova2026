@@ -49,8 +49,17 @@
 
   <!-- Service Pages - High Priority for SEO -->
   <url>
+    <loc>https://secunovainc.com/services/ai-for-small-business</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/services/ai-for-small-business" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://secunovainc.com/services/ai-for-small-business" />
+  </url>
+
+  <url>
     <loc>https://secunovainc.com/services/strategic-advisory-pmaas</loc>
-    <lastmod>2026-08-09</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://secunovainc.com/services/strategic-advisory-pmaas" />

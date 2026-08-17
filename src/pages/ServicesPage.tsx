@@ -22,7 +22,8 @@ import { Link } from 'react-router-dom';
 import {
   Crown, Shield, ArrowRight, CheckCircle,
   RefreshCw, Globe, Target, Zap, Phone, Code, Lightbulb, Scale, Users,
-  Award, LineChart, ClipboardCheck, BarChart, TrendingUp, Clock
+  Award, LineChart, ClipboardCheck, BarChart, TrendingUp, Clock,
+  Brain, Lock, DollarSign, Workflow, Cpu
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 import { buildSeoTags } from '../utils/seo-meta';
@@ -137,6 +138,56 @@ const PillarHeader: React.FC<PillarHeaderProps> = ({ index, label, title, descri
 };
 
 const ServicesPage = () => {
+  const aiSmallBusinessServices = [
+    {
+      title: 'Custom AI Assistants',
+      description:
+        'AI assistants trained on your business context: your products, workflows, and client language. Handles routine communication, internal Q&A, and repetitive decision support - runs entirely on your machine.',
+      icon: <Brain className="h-6 w-6" />,
+      highlights: ['Business-specific knowledge base', 'Automated response drafting', 'Zero cloud data transmission'],
+      path: '/services/ai-for-small-business',
+      accent: 'blue' as const,
+      badge: 'Core Practice',
+    },
+    {
+      title: 'Document Intelligence Tools',
+      description:
+        'Tools that read, extract, and summarize your business documents locally. Contracts, invoices, and reports processed privately on your hardware with no external API calls required.',
+      icon: <Code className="h-6 w-6" />,
+      highlights: ['Contract and agreement review', 'Invoice and form data extraction', 'Offline operation guaranteed'],
+      path: '/services/ai-for-small-business',
+      accent: 'light' as const,
+    },
+    {
+      title: 'Workflow Automation',
+      description:
+        'AI-powered automations that eliminate repetitive daily tasks. From data entry to scheduling, we build local integrations that connect directly with your existing tools and databases.',
+      icon: <Workflow className="h-6 w-6" />,
+      highlights: ['Automated data entry and routing', 'Local system integration', 'Trigger-based execution'],
+      path: '/services/ai-for-small-business',
+      accent: 'dark' as const,
+    },
+    {
+      title: 'Team Productivity Dashboards',
+      description:
+        'Private, locally-hosted dashboards that aggregate your business data and surface AI-generated insights. Your team sees what matters most with no data leaving your network.',
+      icon: <LineChart className="h-6 w-6" />,
+      highlights: ['Operational KPI tracking', 'AI-generated weekly summaries', 'Private local hosting'],
+      path: '/services/ai-for-small-business',
+      accent: 'blue' as const,
+    },
+    {
+      title: 'Client-Tailored Custom AI Apps',
+      description:
+        '100% bespoke AI applications engineered to your exact operational requirements. You specify what your business needs; we design, build, and deploy it locally with full IP ownership.',
+      icon: <Cpu className="h-6 w-6" />,
+      highlights: ['Built to custom client specifications', 'Proprietary workflow & database integration', '100% source code & asset ownership'],
+      path: '/services/ai-for-small-business#custom-apps',
+      accent: 'light' as const,
+      badge: 'Bespoke On-Demand',
+    },
+  ];
+
   const strategicServices = [
     {
       title: 'Executive Technology & Governance Advisory',
@@ -354,12 +405,52 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Service Line I: Strategic Advisory & Digital Transformation */}
-      <section id="strategic-consulting" className="secunova-section secunova-section--light">
+      {/* Service Line I: AI for Small Business */}
+      <section id="ai-small-business" className="secunova-section secunova-section--gray">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <PillarHeader
               index="01"
+              label="Practice Area"
+              title="AI for Small Business"
+              description="Custom-built local AI applications engineered for small businesses. Tools that help real teams work smarter - private by design, fully owned by you, with zero recurring subscription fees."
+              icon={<Brain className="h-4 w-4" />}
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {aiSmallBusinessServices.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                  highlights={service.highlights}
+                  path={service.path}
+                  accent={service.accent}
+                  badge={service.badge}
+                />
+              ))}
+            </div>
+
+            <div className="mt-12 bg-gradient-to-r from-secunova-light/10 to-secunova-blue/5 border border-secunova-light/20 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-xl font-bold text-secunova-dark mb-2">Ready to build your first local AI tool?</h3>
+                <p className="text-slate-600 text-sm">Book a 30-minute discovery call. We scope the tool, set a fixed price, and deliver in 14 days.</p>
+              </div>
+              <Link to="/services/ai-for-small-business" className="btn btn-gradient btn-lg text-white">
+                Explore AI for Small Business <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Line II: Strategic Advisory & Digital Transformation */}
+      <section id="strategic-consulting" className="secunova-section secunova-section--light">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <PillarHeader
+              index="02"
               label="Practice Area"
               title="Strategic Advisory &amp; Digital Transformation"
               description="Senior technology advisory services designed to modernize infrastructure, reengineer legacy workflows, enforce risk compliance, and architect custom software platforms for North American enterprises."
@@ -394,12 +485,12 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Service Line II: PMaaS */}
+      {/* Service Line III: PMaaS */}
       <section id="pmaas" className="secunova-section secunova-section--gray">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <PillarHeader
-              index="02"
+              index="03"
               label="Practice Area"
               title="Project Management as a Service (PMaaS)"
               description="On-demand project leadership model providing access to senior project directors without permanent headcount commitments. We enforce strict schedule discipline, budget oversight, and technical quality standards."
@@ -447,7 +538,7 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <PillarHeader
-              index="03"
+              index="04"
               label="Technical Track Record"
               title="Supervised Systems &amp; Technical Architecture"
               description="A showcase of enterprise software systems, internal R&amp;D platforms, and digital solutions engineered under SecuNova's direct technical standards and project leadership."

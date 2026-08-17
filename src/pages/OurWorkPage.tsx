@@ -231,12 +231,15 @@ const OurWorkPage = () => {
                     <p className="text-xs font-semibold text-secunova-blue mb-4">{prod.tagline}</p>
                     <p className="text-xs text-slate-600 leading-relaxed mb-6">{prod.pitch}</p>
 
-                    <div className="grid grid-cols-3 gap-2 py-4 border-y border-gray-100 mb-6 text-center">
+                    <div className="flex flex-wrap gap-2 mb-5 items-center">
                       {prod.outcomeStats.map((stat, idx) => (
-                        <div key={idx}>
-                          <div className="text-sm font-bold text-secunova-dark">{stat.value}</div>
-                          <div className="text-[9px] text-slate-500 uppercase tracking-tight">{stat.label}</div>
-                        </div>
+                        <span
+                          key={idx}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200/80 text-xs text-slate-700 whitespace-nowrap"
+                        >
+                          <strong className="font-bold text-secunova-dark font-mono">{stat.value}</strong>
+                          <span className="text-slate-500 text-[11px] font-medium">{stat.label}</span>
+                        </span>
                       ))}
                     </div>
 
@@ -250,7 +253,7 @@ const OurWorkPage = () => {
                   </div>
 
                   <Link
-                    to={`/our-work/${prod.id}`}
+                    to={`/about/our-work/${prod.id}`}
                     className="btn btn-outline w-full justify-center text-xs uppercase tracking-wider font-bold py-3"
                   >
                     View Case Study <ArrowRight className="ml-2 h-4 w-4" />
