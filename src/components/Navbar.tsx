@@ -78,9 +78,33 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({
+    'Services': true,
+    'About': false,
+    'Contact': false,
+  });
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const toggleMobileSection = (name: string) => {
+    setMobileExpanded((prev) => ({
+      ...prev,
+      [name]: !prev[name],
+    }));
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -343,47 +367,85 @@ const Navbar = () => {
 
         {/* Mobile Navigation Drawer */}
         {isOpen && (
-          <div id="mobile-navigation" className="lg:hidden mobile-menu border-t border-gray-200 bg-white px-4 pt-2 pb-6 space-y-3">
+          <div
+            id="mobile-navigation"
+            className="lg:hidden mobile-menu border-t border-gray-200 bg-white px-4 pt-3 pb-28 space-y-3 max-h-[calc(100dvh-4rem)] sm:max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain shadow-2xl"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {navLinks.map((link) => (
-              <div key={link.name} className="py-1">
-                <Link
-                  to={link.path}
-                  className="flex items-center text-base font-bold text-secunova-dark py-2.5 min-h-[44px]"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.icon}
-                  {link.name}
-                </Link>
-
-                {link.megaMenuItems && link.megaMenuItems.map((category, categoryIndex) => (
-                  <div key={categoryIndex} className="pl-6 mt-1 mb-3 border-l-2 border-secunova-blue/20">
-                    <div className="flex items-center gap-2 pt-2 pb-1">
-                      {category.icon}
-                      <h3 className="text-[11px] font-bold uppercase tracking-wider text-secunova-blue">{category.category}</h3>
-                    </div>
-                    <div className="space-y-0.5">
-                      {category.items.map((item, itemIndex) => (
-                        <Link
-                          key={itemIndex}
-                          to={item.path}
-                          className="flex items-center gap-2 text-sm text-gray-600 hover:text-secunova-blue py-2.5 font-medium min-h-[44px]"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {item.icon}
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
+              <div key={link.name} className="py-1 border-b border-gray-50 last:border-b-0">
+                {link.hasDropdown ? (
+                  <div className="flex items-center justify-between">
+                    <Link
+                      to={link.path}
+                      className="flex items-center text-base font-bold text-secunova-dark py-2.5 min-h-[44px] flex-1 hover:text-secunova-blue transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.icon}
+                      {link.name}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => toggleMobileSection(link.name)}
+                      className="p-2.5 text-gray-500 hover:text-secunova-blue focus:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center"
+                      aria-label={`Toggle ${link.name} section`}
+                      aria-expanded={mobileExpanded[link.name] !== false}
+                    >
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          mobileExpanded[link.name] ? 'rotate-180 text-secunova-blue' : ''
+                        }`}
+                      />
+                    </button>
                   </div>
-                ))}
+                ) : (
+                  <Link
+                    to={link.path}
+                    className="flex items-center text-base font-bold text-secunova-dark py-2.5 min-h-[44px] hover:text-secunova-blue transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.icon}
+                    {link.name}
+                  </Link>
+                )}
 
-                {!link.megaMenuItems && link.dropdownItems && (
-                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-secunova-blue/20">
+                {link.isMegaMenu && link.megaMenuItems && mobileExpanded[link.name] && (
+                  <div className="pl-4 mt-1 mb-3 space-y-4 border-l-2 border-secunova-blue/20">
+                    {link.megaMenuItems.map((category, categoryIndex) => (
+                      <div key={categoryIndex} className="space-y-1">
+                        <div className="flex items-center gap-2 pt-2 pb-1">
+                          {category.icon}
+                          <h3 className="text-[11px] font-bold uppercase tracking-wider text-secunova-blue">
+                            {category.category}
+                          </h3>
+                        </div>
+                        <div className="space-y-0.5">
+                          {category.items.map((item, itemIndex) => (
+                            <Link
+                              key={itemIndex}
+                              to={item.path}
+                              className="flex items-center gap-2 text-sm text-gray-600 hover:text-secunova-blue py-2 font-medium min-h-[40px] rounded-lg px-2 hover:bg-slate-50 transition-colors"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <span className="text-gray-400 flex-shrink-0">
+                                {item.icon}
+                              </span>
+                              <span>{item.name}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {!link.isMegaMenu && link.dropdownItems && mobileExpanded[link.name] && (
+                  <div className="pl-4 space-y-1 mt-1 mb-2 border-l-2 border-secunova-blue/20">
                     {link.dropdownItems.map((subItem) => (
                       <Link
                         key={subItem.name}
                         to={subItem.path}
-                        className="block text-sm text-gray-600 hover:text-secunova-blue py-2.5 font-medium min-h-[44px]"
+                        className="block text-sm text-gray-600 hover:text-secunova-blue py-2 font-medium min-h-[40px] rounded-lg px-2 hover:bg-slate-50 transition-colors"
                         onClick={() => setIsOpen(false)}
                       >
                         {subItem.name}
@@ -393,10 +455,10 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="pt-4 border-t border-gray-100">
+            <div className="pt-4 pb-6 border-t border-gray-100">
               <Link
                 to="/contact"
-                className="btn btn-gradient w-full justify-center text-xs uppercase tracking-wider font-bold min-h-[44px] flex items-center"
+                className="btn btn-gradient w-full justify-center text-xs uppercase tracking-wider font-bold min-h-[44px] flex items-center shadow-md"
                 onClick={() => setIsOpen(false)}
               >
                 <Calendar className="h-4 w-4 mr-2" />
