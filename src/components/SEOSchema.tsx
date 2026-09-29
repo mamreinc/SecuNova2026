@@ -44,18 +44,18 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "Organization",
-          "@id": "https://secunovainc.com/#organization",
+          "@id": "https://secunovainc.ca/#organization",
           "name": "SecuNova Consulting",
           "legalName": "SecuNova Inc.",
           "alternateName": ["SecuNova", "SecuNova Inc."],
-          "url": "https://secunovainc.com",
+          "url": "https://secunovainc.ca",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://secunovainc.com/logo/secunova-logo.png",
+            "url": "https://secunovainc.ca/logo/secunova-logo.png",
             "width": "800",
             "height": "800"
           },
-          "image": "https://secunovainc.com/logo/secunova-logo.png",
+          "image": "https://secunovainc.ca/logo/secunova-logo.png",
           "description": "Canadian IT advisory and executive governance firm based in Calgary, AB. Strategic advisory, PMaaS, enterprise IT and security audits, and proprietary internal R&D.",
           "foundingDate": "2025",
           "taxID": "714343225",
@@ -63,10 +63,8 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           "slogan": "Strategic Shield & Governance for Enterprise IT.",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "#270, 1122 3 St SE Ste 1906",
             "addressLocality": "Calgary",
             "addressRegion": "AB",
-            "postalCode": "T2G 0E7",
             "addressCountry": "CA"
           },
           "geo": {
@@ -79,7 +77,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
               "@type": "ContactPoint",
               "telephone": "+1-403-401-1552",
               "contactType": "customer service",
-              "email": "hello@secunovainc.com",
+              "email": "hello@secunovainc.ca",
               "availableLanguage": ["English", "French"],
               "areaServed": "CA-AB",
               "hoursAvailable": {
@@ -104,7 +102,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           "provider": {
             "@type": "Organization",
             "name": "SecuNova Inc.",
-            "url": "https://secunovainc.com"
+            "url": "https://secunovainc.ca"
           },
           "areaServed": {
             "@type": "Place",
@@ -147,19 +145,17 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "@id": "https://secunovainc.com",
+          "@id": "https://secunovainc.ca",
           "name": "SecuNova Consulting",
           "legalName": "SecuNova Inc.",
-          "url": "https://secunovainc.com",
+          "url": "https://secunovainc.ca",
           "telephone": "+1-403-401-1552",
-          "email": "hello@secunovainc.com",
+          "email": "hello@secunovainc.ca",
           "priceRange": "$$",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "#270, 1122 3 St SE Ste 1906",
             "addressLocality": "Calgary",
             "addressRegion": "AB",
-            "postalCode": "T2G 0E7",
             "addressCountry": "CA"
           },
           "geo": {
@@ -175,7 +171,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
               "closes": "17:00"
             }
           ],
-          "image": "https://secunovainc.com/logo/secunova-logo.png",
+          "image": "https://secunovainc.ca/logo/secunova-logo.png",
           "description": "Canadian IT advisory and governance firm in Calgary, AB. Strategic advisory, PMaaS, and enterprise IT forensic audits."
         };
 
@@ -183,14 +179,14 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
         return {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "@id": data?.url ? `${data.url}#webpage` : "https://secunovainc.com/#webpage",
-          "url": data?.url || "https://secunovainc.com",
+          "@id": data?.url ? `${data.url}#webpage` : "https://secunovainc.ca/#webpage",
+          "url": data?.url || "https://secunovainc.ca",
           "name": data?.title || "SecuNova Inc.",
           "description": data?.description || "Enterprise IT Advisory & Governance in Calgary",
           "inLanguage": "en-CA",
-          "isPartOf": { "@id": "https://secunovainc.com/#website" },
-          "about": { "@id": "https://secunovainc.com/#organization" },
-          "publisher": { "@id": "https://secunovainc.com/#organization" }
+          "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+          "about": { "@id": "https://secunovainc.ca/#organization" },
+          "publisher": { "@id": "https://secunovainc.ca/#organization" }
         };
 
       case 'article':
@@ -199,7 +195,7 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
           "@type": "Article",
           "headline": data?.title || "",
           "description": data?.description || "",
-          "image": data?.image || "https://secunovainc.com/logo/secunova-logo.png",
+          "image": data?.image || "https://secunovainc.ca/logo/secunova-logo.png",
           "datePublished": data?.publishedTime || new Date().toISOString(),
           "dateModified": data?.modifiedTime || new Date().toISOString(),
           "author": {
@@ -211,12 +207,12 @@ const SEOSchema: React.FC<SEOSchemaProps> = ({ type, data }) => {
             "name": "SecuNova Inc.",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://secunovainc.com/logo/secunova-logo.png"
+              "url": "https://secunovainc.ca/logo/secunova-logo.png"
             }
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": data?.url || "https://secunovainc.com"
+            "@id": data?.url || "https://secunovainc.ca"
           }
         };
 

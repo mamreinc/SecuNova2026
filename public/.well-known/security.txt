@@ -1,0 +1,21 @@
+# Security Policy for SecuNova Inc. Website
+# Format: https://www.secrets.org/security.txt
+
+Contact: mailto:security@secunovainc.ca
+Contact: tel:+1-403-401-1552
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en, ar
+Canonical: https://secunovainc.ca/.well-known/security.txt
+
+## Security Vulnerability Reporting
+If you discover a security vulnerability, please report it to:
+- Email: security@secunovainc.ca
+- Phone: 403-401-1552
+
+Please include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested remediation (if any)
+
+We will respond within 48 hours and provide appropriate recognition for responsible disclosure.

@@ -99,7 +99,6 @@ const ProductDetailPage: React.FC = () => {
         <title>{product.name} | {product.tagline} | SecuNova R&amp;D Showcase</title>
         <meta name="description" content={`${product.name}: ${product.pitch}`} />
         <meta name="keywords" content={`${product.name}, ${product.techStack.join(', ')}, SecuNova internal R&amp;D, proprietary software`} />
-        <link rel="canonical" href={`https://secunovainc.com/about/our-work/${product.id}`} />
         {buildSeoTags({
           title: `${product.name} | SecuNova R&D Showcase`,
           description: product.pitch,
@@ -113,9 +112,9 @@ const ProductDetailPage: React.FC = () => {
             "@type": "Product",
             "name": product.name,
             "description": product.pitch,
-            "url": `https://secunovainc.com/about/our-work/${product.id}`,
-            "image": "https://secunovainc.com/og-image.png",
-            "brand": { "@id": "https://secunovainc.com/#organization" },
+            "url": `https://secunovainc.ca/about/our-work/${product.id}`,
+            "image": "https://secunovainc.ca/og-image.png",
+            "brand": { "@id": "https://secunovainc.ca/#organization" },
             "category": "Enterprise Technology / Internal R&D",
             "releaseDate": product.year,
             "additionalProperty": product.techStack.map((tech) => ({

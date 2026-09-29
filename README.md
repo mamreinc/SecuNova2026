@@ -88,10 +88,10 @@ src/
 
 Ready for your own custom website? Contact us today!
 
-- **Website**: [https://secunovainc.com](https://secunovainc.com)
-- **Email**: [hello@secunovainc.com](mailto:hello@secunovainc.com)
+- **Website**: [https://secunovainc.ca](https://secunovainc.ca)
+- **Email**: [hello@secunovainc.ca](mailto:hello@secunovainc.ca)
 - **Phone**: [(403) 401-1552](tel:4034011552)
-- **Address**: #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7, Canada
+- **Operational Hub**: Calgary, AB, Canada (100% Remote-First Operations)
 
 ## 🚀 Services We Offer
 

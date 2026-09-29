@@ -127,9 +127,8 @@ const FaqPage = () => {
         />
         <meta
           name="keywords"
-          content="SecuNova FAQ, IT consulting questions Calgary, strategic advisory FAQ, PMaaS questions, enterprise IT audit FAQ"
+          content="SecuNova FAQ, IT consulting questions Calgary, strategic advisory FAQ, PMaaS questions, enterprise IT audit FAQ, SecuNova Consulting FAQ Alberta"
         />
-        <link rel="canonical" href="https://secunovainc.com/faq" />
         {buildSeoTags({
           title: 'Frequently Asked Questions | SecuNova Consulting Calgary',
           description:
@@ -142,22 +141,23 @@ const FaqPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            "@id": "https://secunovainc.ca/faq#webpage",
+            "name": "Frequently Asked Questions | SecuNova Consulting",
+            "url": "https://secunovainc.ca/faq",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://secunovainc.ca/faq" }
+              ]
+            },
             "mainEntity": faqs.map((faq) => ({
               "@type": "Question",
               "name": faq.q,
               "acceptedAnswer": { "@type": "Answer", "text": faq.a }
             }))
-          })}
-        </script>
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
-              { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://secunovainc.com/faq" }
-            ]
           })}
         </script>
       </Helmet>

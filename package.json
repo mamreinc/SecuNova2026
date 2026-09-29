@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "description": "Custom website built from scratch by SecuNova Inc. - No templates, no shortcuts, just pure custom code.",
-  "author": "SecuNova Inc. <hello@secunovainc.com>",
-  "homepage": "https://secunovainc.com",
+  "author": "SecuNova Inc. <hello@secunovainc.ca>",
+  "homepage": "https://secunovainc.ca",
   "repository": {
     "type": "git",
     "url": "https://github.com/secunova/custom-website"
@@ -59,8 +59,8 @@
   },
   "customDevelopment": {
     "builtBy": "SecuNova Inc.",
-    "website": "https://secunovainc.com",
-    "email": "hello@secunovainc.com",
+    "website": "https://secunovainc.ca",
+    "email": "hello@secunovainc.ca",
     "phone": "(403) 401-1552",
     "description": "This website was built entirely from scratch using modern web technologies. No templates or pre-built themes were used.",
     "technologies": [

@@ -1,24 +1,69 @@
 # ============================================================================
-# PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+# MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
 # ----------------------------------------------------------------------------
 # All design, software architecture, UI/UX components, and source code are
-# 100% custom-engineered and designed exclusively by SecuNova.
-# 
+# 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+#
 # CORE ARCHITECTURAL ETHOS:
 # - 100% Bespoke Code: Built strictly to client specifications from scratch.
 # - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
 # - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
 #   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
 # - Full IP & Repository Handoff: 100% client asset and codebase ownership.
-# 
-# Copyright (c) SecuNova. All rights reserved.
+#
+# Copyright (c) MaxPhaos Marketing. All rights reserved.
 # ============================================================================
+
 [build]
   # Installs headless Chrome's runtime libraries, then runs the build (incl. prerendering)
   command = "bash scripts/build.sh"
   publish = "dist"
   environment = { NODE_VERSION = "18", NETLIFY_NEXT_PLUGIN_SKIP = "true" }
 
+# Domain Redirection to primary canonical domain secunovainc.ca
+[[redirects]]
+  from = "https://secunovainc.com/*"
+  to = "https://secunovainc.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.secunovainc.com/*"
+  to = "https://secunovainc.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.secunovainc.ca/*"
+  to = "https://secunovainc.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://secunovainc.com/*"
+  to = "https://secunovainc.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.secunovainc.com/*"
+  to = "https://secunovainc.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://secunovainc.ca/*"
+  to = "https://secunovainc.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.secunovainc.ca/*"
+  to = "https://secunovainc.ca/:splat"
+  status = 301
+  force = true
+
+# SPA client-side fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"

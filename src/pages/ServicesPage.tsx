@@ -23,7 +23,7 @@ import {
   Crown, Shield, ArrowRight, CheckCircle,
   RefreshCw, Globe, Target, Zap, Phone, Code, Lightbulb, Scale, Users,
   Award, LineChart, ClipboardCheck, BarChart, TrendingUp, Clock,
-  Brain, Lock, DollarSign, Workflow, Cpu
+  Brain, Workflow, Cpu
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 import { buildSeoTags } from '../utils/seo-meta';
@@ -332,8 +332,7 @@ const ServicesPage = () => {
       <Helmet>
         <title>Services &amp; Practice Areas | SecuNova Inc. | Advisory &amp; PMaaS</title>
         <meta name="description" content="SecuNova Inc. delivers Strategic Advisory, Digital Transformation, Cybersecurity Governance, and Project Management as a Service (PMaaS) for North American enterprises." />
-        <meta name="keywords" content="SecuNova Inc, strategic advisory Calgary, digital transformation roadmap, PMaaS Canada, business process reengineering, cybersecurity audit Calgary" />
-        <link rel="canonical" href="https://secunovainc.com/services" />
+        <meta name="keywords" content="SecuNova Inc, strategic advisory Calgary, digital transformation roadmap, PMaaS Canada, business process reengineering, cybersecurity audit Calgary, AI adoption roadmap Alberta" />
         {buildSeoTags({
           title: 'Services & Practice Areas | SecuNova Inc.',
           description:
@@ -342,15 +341,25 @@ const ServicesPage = () => {
           imageAlt: 'SecuNova Inc. Services - Strategic Advisory, Digital Transformation & PMaaS',
         })}
 
-        {/* BreadcrumbList Schema */}
+        {/* WebPage Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
-              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.com/services" }
-            ]
+            "@type": "WebPage",
+            "@id": "https://secunovainc.ca/services#webpage",
+            "url": "https://secunovainc.ca/services",
+            "name": "Services & Practice Areas | SecuNova Inc.",
+            "description": "SecuNova Inc. delivers Strategic Advisory, Digital Transformation, Cybersecurity Governance, and Project Management as a Service (PMaaS) for North American enterprises.",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.ca/services" }
+              ]
+            }
           })}
         </script>
       </Helmet>
@@ -360,7 +369,7 @@ const ServicesPage = () => {
           title: 'Services & Practice Areas | SecuNova Inc.',
           description:
             'SecuNova Inc. delivers Strategic Advisory, Digital Transformation, Cybersecurity Governance, and Project Management as a Service (PMaaS) for North American enterprises.',
-          url: 'https://secunovainc.com/services',
+          url: 'https://secunovainc.ca/services',
         }}
       />
 

@@ -1,5 +1,36 @@
-# Performance Optimizations for SecuNova Inc.
-# Custom Built Website - Performance Configuration
+# ============================================================================
+# MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+# ----------------------------------------------------------------------------
+# All design, software architecture, UI/UX components, and source code are
+# 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+#
+# CORE ARCHITECTURAL ETHOS:
+# - 100% Bespoke Code: Built strictly to client specifications from scratch.
+# - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+# - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+#   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+# - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+#
+# Copyright (c) MaxPhaos Marketing. All rights reserved.
+# ============================================================================
+
+# Primary Canonical Domain Enforcement (Redirect all domains to secunovainc.ca)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Exclude loopback and local development
+  RewriteCond %{HTTP_HOST} !^localhost [NC]
+  RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+  RewriteCond %{HTTP_HOST} !^::1 [NC]
+  # Redirect any other domain, secondary domain, or www to https://secunovainc.ca
+  RewriteCond %{HTTP_HOST} !^secunovainc\.ca$ [NC]
+  RewriteRule ^(.*)$ https://secunovainc.ca/$1 [R=301,L]
+
+  # Force HTTPS on secunovainc.ca
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP_HOST} ^secunovainc\.ca$ [NC]
+  RewriteRule ^(.*)$ https://secunovainc.ca/$1 [R=301,L]
+</IfModule>
 
 # Enable Compression
 <IfModule mod_deflate.c>

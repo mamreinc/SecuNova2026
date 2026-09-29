@@ -166,13 +166,12 @@ Main Content:
   * Promise: Response within 2 hours during business hours
 - Contact Methods:
   * Phone - immediate team contact
-  * Email - hello@secunovainc.com
-- Office Information:
-  * Address: #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7
-  * Open in Maps
-  * Business Hours: Mon-Fri 9:00-18:00 MT
-  * Emergency Support: 24/7
-- Office imagery on the right side
+  * Email - hello@secunovainc.ca
+- Operational Information:
+  * Model: 100% Remote-First Operations
+  * Operational Headquarters: Calgary, AB, Canada
+  * Delivery: Secure Virtual Delivery & Scheduled On-Site Client Sessions
+  * Business Hours: Mon-Fri 9:00-17:00 MT
 Shared Components Used:
 - Helmet
 - Navbar
@@ -302,7 +301,7 @@ Main Content:
   * Service level agreements
   * Limitation of liability
   * Changes to terms
-- Contact for privacy questions: info@secunovainc.com
+- Contact for privacy questions: hello@secunovainc.ca
 Shared Components Used:
 - Helmet
 - Navbar
@@ -391,7 +390,7 @@ Main Content:
   * Collaborative network
   * Professional development
 - Contact actions:
-  * Apply Now via network@secunovainc.com
+  * Apply Now via careers@secunovainc.ca
   * Discuss Opportunities by phone
 Shared Components Used:
 - Helmet

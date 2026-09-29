@@ -45,7 +45,7 @@ const JoinUsPage = () => {
         'Structured exit pathways through acquisition or secondary share liquidity'
       ],
       ctaText: 'Inquire for Investor Deck',
-      contactEmail: 'invest@secunovainc.com',
+      contactEmail: 'invest@secunovainc.ca',
       subject: 'Inquiry: Strategic Capital & Investment Opportunities'
     },
     {
@@ -62,7 +62,7 @@ const JoinUsPage = () => {
         'Collaborative C-Suite decision-making authority on corporate growth strategy'
       ],
       ctaText: 'Explore Leadership Roles',
-      contactEmail: 'careers@secunovainc.com',
+      contactEmail: 'careers@secunovainc.ca',
       subject: 'Inquiry: Executive Leadership & Co-Founder Position'
     }
   ];
@@ -141,9 +141,8 @@ const JoinUsPage = () => {
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>Join SecuNova Consulting | Investment &amp; Executive Partnership Opportunities</title>
-        <meta name="description" content="Partner with SecuNova Consulting in Calgary, Alberta. Explore seed investment opportunities and executive co-founder leadership roles." />
-        <meta name="keywords" content="SecuNova investment, Calgary IT startup investment, co-founder opportunity Calgary, tech equity Alberta, SecuNova partnership" />
-        <link rel="canonical" href="https://secunovainc.com/join-us" />
+        <meta name="description" content="Partner with SecuNova Consulting in Calgary, Alberta. Explore seed investment opportunities and executive co-founder leadership roles in a high-margin Canadian technology firm." />
+        <meta name="keywords" content="SecuNova investment Calgary, Calgary IT startup investment, co-founder opportunity Calgary, tech equity Alberta, SecuNova partnership, invest in Canadian tech" />
         {buildSeoTags({
           title: 'Join SecuNova Consulting | Capital & Executive Partnerships',
           description:
@@ -156,13 +155,24 @@ const JoinUsPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Join SecuNova Consulting Investor & Co-Founder Opportunities",
-            "description": "Investment and executive co-founder leadership opportunities with SecuNova Consulting.",
+            "@id": "https://secunovainc.ca/join-us#webpage",
+            "name": "Join SecuNova Consulting | Investment & Executive Partnership Opportunities",
+            "description": "Seed investment and executive co-founder leadership opportunities with SecuNova Consulting, a Calgary-based high-margin technology advisory firm.",
+            "url": "https://secunovainc.ca/join-us",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "Join Us", "item": "https://secunovainc.ca/join-us" }
+              ]
+            },
             "publisher": {
               "@type": "Organization",
               "name": "SecuNova Inc.",
-              "alternateName": "SecuNova Consulting",
-              "url": "https://secunovainc.com"
+              "url": "https://secunovainc.ca"
             }
           })}
         </script>
@@ -199,7 +209,7 @@ const JoinUsPage = () => {
                 <ArrowRight className="h-5 w-5" />
               </a>
               <a
-                href="mailto:invest@secunovainc.com"
+                href="mailto:invest@secunovainc.ca"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-all"
               >
                 <Mail className="h-5 w-5 text-secunova-light" />
@@ -391,26 +401,26 @@ const JoinUsPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <a
-              href="mailto:invest@secunovainc.com"
+              href="mailto:invest@secunovainc.ca"
               className="p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 hover:border-secunova-light/50 transition-all text-center group"
             >
               <div className="w-12 h-12 rounded-xl bg-secunova-blue/30 text-secunova-light flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Mail className="h-6 w-6" />
               </div>
               <h3 className="text-base font-bold text-white mb-1">Capital &amp; Investment</h3>
-              <p className="text-xs font-semibold text-secunova-light mb-1">invest@secunovainc.com</p>
+              <p className="text-xs font-semibold text-secunova-light mb-1">invest@secunovainc.ca</p>
               <p className="text-[11px] text-blue-100/80 font-medium">Equity rounds &amp; investor decks</p>
             </a>
 
             <a
-              href="mailto:careers@secunovainc.com"
+              href="mailto:careers@secunovainc.ca"
               className="p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 hover:border-secunova-light/50 transition-all text-center group"
             >
               <div className="w-12 h-12 rounded-xl bg-secunova-blue/30 text-secunova-light flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Handshake className="h-6 w-6" />
               </div>
               <h3 className="text-base font-bold text-white mb-1">Executive Co-Founders</h3>
-              <p className="text-xs font-semibold text-secunova-light mb-1">careers@secunovainc.com</p>
+              <p className="text-xs font-semibold text-secunova-light mb-1">careers@secunovainc.ca</p>
               <p className="text-[11px] text-blue-100/80 font-medium">Practice division equity roles</p>
             </a>
 

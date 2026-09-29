@@ -23,6 +23,26 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
     <link rel="apple-touch-icon" href="/logo/secunova-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Immediate Canonical Domain Redirection to secunovainc.ca -->
+    <script>
+      (function() {
+        try {
+          var h = window.location.hostname.toLowerCase();
+          if (
+            h &&
+            h !== 'secunovainc.ca' &&
+            h !== 'localhost' &&
+            h !== '127.0.0.1' &&
+            h !== '::1' &&
+            !h.endsWith('.local')
+          ) {
+            var target = 'https://secunovainc.ca' + window.location.pathname + window.location.search + window.location.hash;
+            window.location.replace(target);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    
     <!-- Enhanced Security Meta Tags - Comprehensive Protection -->
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -100,9 +120,9 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
     <meta name="coverage" content="Worldwide">
     <meta name="distribution" content="Global">
     <meta name="rating" content="General">
-    <link rel="canonical" href="https://secunovainc.com">
-    <link rel="alternate" hreflang="en" href="https://secunovainc.com">
-    <link rel="alternate" hreflang="x-default" href="https://secunovainc.com">
+    <link rel="canonical" href="https://secunovainc.ca">
+    <link rel="alternate" hreflang="en" href="https://secunovainc.ca">
+    <link rel="alternate" hreflang="x-default" href="https://secunovainc.ca">
 
     <!-- Custom Website Attribution -->
     <meta name="designer" content="MaxPhaos Marketing - Bespoke Architecture">
@@ -112,12 +132,12 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_CA">
-    <meta property="og:url" content="https://secunovainc.com/">
+    <meta property="og:url" content="https://secunovainc.ca/">
     <meta property="og:site_name" content="SecuNova Consulting">
     <meta property="og:title" content="SecuNova Inc. | Local AI Applications &amp; Enterprise Strategic Advisory">
     <meta property="og:description" content="Custom local AI applications for small businesses, PMaaS governance, cybersecurity risk audits, and strategic advisory for North American enterprises.">
-    <meta property="og:image" content="https://secunovainc.com/og-image.png">
-    <meta property="og:image:secure_url" content="https://secunovainc.com/og-image.png">
+    <meta property="og:image" content="https://secunovainc.ca/og-image.png">
+    <meta property="og:image:secure_url" content="https://secunovainc.ca/og-image.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -125,10 +145,10 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://secunovainc.com/">
+    <meta property="twitter:url" content="https://secunovainc.ca/">
     <meta property="twitter:title" content="SecuNova Inc. | Local AI Applications &amp; Enterprise Strategic Advisory">
     <meta property="twitter:description" content="Boutique firm delivering custom local AI tools for small business, senior PMaaS governance, and strategic advisory.">
-    <meta property="twitter:image" content="https://secunovainc.com/og-image.png">
+    <meta property="twitter:image" content="https://secunovainc.ca/og-image.png">
     <meta property="twitter:image:alt" content="SecuNova Inc. - Local AI Applications &amp; Advisory">
     <meta name="twitter:site" content="@SecuNova">
     <meta name="twitter:creator" content="@SecuNova">
@@ -147,14 +167,38 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
     <meta name="theme-color" content="#1e40af">
     <meta name="msapplication-TileColor" content="#1e40af">
     
-    <!-- Local Business Schema -->
-    <meta name="business:contact_data:street_address" content="#270, 1122 3 St SE Ste 1906">
+    <!-- Operating Model & Regional Presence -->
     <meta name="business:contact_data:locality" content="Calgary">
     <meta name="business:contact_data:region" content="Alberta">
-    <meta name="business:contact_data:postal_code" content="T2G 0E7">
     <meta name="business:contact_data:country_name" content="Canada">
     <meta name="business:contact_data:phone_number" content="+14034011552">
-    <meta name="business:contact_data:email" content="hello@secunovainc.com">
+    <meta name="business:contact_data:email" content="hello@secunovainc.ca">
+
+    <!-- Generative Engine Optimization (GEO) & Dublin Core Standards -->
+    <meta name="DC.title" content="SecuNova Inc. | Local AI Applications, PMaaS &amp; Enterprise Strategic Advisory">
+    <meta name="DC.creator" content="SecuNova Inc.">
+    <meta name="DC.subject" content="Local AI for small business, Strategic Advisory, Enterprise IT Audits, PMaaS, Digital Transformation">
+    <meta name="DC.description" content="SecuNova Inc. builds private local AI applications for small businesses and delivers enterprise IT audits and PMaaS governance in Calgary, Alberta, Canada.">
+    <meta name="DC.publisher" content="SecuNova Inc.">
+    <meta name="DC.date" scheme="W3CDTF" content="2025-01-01">
+    <meta name="DC.type" content="Service">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.identifier" content="https://secunovainc.ca/">
+    <meta name="DC.language" content="en-CA">
+    <meta name="DC.coverage" content="Calgary, Edmonton, Alberta, Canada, North America">
+    <meta name="DC.rights" content="Copyright (c) SecuNova Inc. All rights reserved.">
+
+    <!-- AI Search & Citation Optimization -->
+    <meta name="citation_title" content="SecuNova Inc.: Enterprise Technology Advisory &amp; Local AI Engineering">
+    <meta name="citation_author" content="SecuNova Inc.">
+    <meta name="citation_publication_date" content="2025/01/01">
+    <meta name="citation_fulltext_html_url" content="https://secunovainc.ca/">
+    <meta name="citation_publisher" content="SecuNova Inc.">
+    <meta name="ai-content-declaration" content="human-directed-bespoke-engineering">
+    <meta name="ai-agent-discovery" content="allowed">
+    <meta name="llms-txt" content="https://secunovainc.ca/llms.txt">
+    <link rel="alternate" type="text/plain" href="https://secunovainc.ca/llms.txt" title="LLM Context Manifest">
+    <link rel="alternate" type="text/plain" href="https://secunovainc.ca/llms-full.txt" title="Comprehensive LLM Knowledge Base">
 
     <!-- Brand Font: Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,23 +227,22 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
         "@graph": [
           {
             "@type": "ProfessionalService",
-            "@id": "https://secunovainc.com/#organization",
+            "@id": "https://secunovainc.ca/#organization",
             "name": "SecuNova Consulting",
             "legalName": "SecuNova Inc.",
             "alternateName": ["SecuNova", "SecuNova Inc.", "SecuNova Calgary"],
+            "disambiguatingDescription": "Independent Canadian enterprise technology advisory and software engineering firm specializing in local on-premise AI applications, digital transformation governance, PMaaS, and forensic enterprise IT audits. Headquartered in Calgary, Alberta.",
             "foundingDate": "2025",
-            "image": "https://secunovainc.com/logo/secunova-logo.png",
+            "image": "https://secunovainc.ca/logo/secunova-logo.png",
             "description": "SecuNova Consulting is a Calgary-based boutique firm delivering custom local AI applications for small businesses, high-trust PMaaS governance, and strategic enterprise advisory.",
             "slogan": "Local AI Engineering & Strategic Shield for Enterprise IT.",
-            "logo": "https://secunovainc.com/logo/secunova-logo.png",
+            "logo": "https://secunovainc.ca/logo/secunova-logo.png",
             "taxID": "714343225",
             "identifier": "2026915245",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "#270, 1122 3 St SE Ste 1906",
               "addressLocality": "Calgary",
               "addressRegion": "AB",
-              "postalCode": "T2G 0E7",
               "addressCountry": "CA"
             },
             "geo": {
@@ -208,14 +251,14 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
               "longitude": -114.0719
             },
             "areaServed": ["Calgary", "Edmonton", "Alberta", "Canada", "United States"],
-            "url": "https://secunovainc.com",
+            "url": "https://secunovainc.ca",
             "telephone": "+1-403-401-1552",
-            "email": "hello@secunovainc.com",
+            "email": "hello@secunovainc.ca",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+1-403-401-1552",
               "contactType": "customer service",
-              "email": "hello@secunovainc.com",
+              "email": "hello@secunovainc.ca",
               "availableLanguage": ["en", "fr"],
               "areaServed": "CA-AB"
             },
@@ -226,6 +269,7 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
             "priceRange": "$$",
             "currenciesAccepted": "CAD, USD",
             "knowsAbout": [
+              "Generative Engine Optimization",
               "AI for Small Business",
               "Local AI Application Development",
               "Document Intelligence & Workflow Automation",
@@ -237,6 +281,39 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
               "SOC 2 & ISO 27001 Readiness",
               "Technology Expense Optimization"
             ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "SecuNova Professional Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI for Small Business",
+                    "url": "https://secunovainc.ca/services/ai-for-small-business",
+                    "description": "Custom local AI applications running on client hardware with zero recurring cloud fees and total privacy."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Strategic Advisory & Digital Transformation",
+                    "url": "https://secunovainc.ca/services/strategic-advisory-pmaas",
+                    "description": "Executive technology roadmaps, practical AI adoption planning, and business process re-engineering."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Enterprise IT Audits & Vendor Accountability",
+                    "url": "https://secunovainc.ca/services/enterprise-it-security-audits",
+                    "description": "Forensic infrastructure assessments, software bloat elimination, and compliance readiness."
+                  }
+                }
+              ]
+            },
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
               "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -249,13 +326,87 @@ Copyright (c) MaxPhaos Marketing. All rights reserved.
           },
           {
             "@type": "WebSite",
-            "@id": "https://secunovainc.com/#website",
-            "url": "https://secunovainc.com",
+            "@id": "https://secunovainc.ca/#website",
+            "url": "https://secunovainc.ca",
             "name": "SecuNova Consulting",
             "alternateName": ["SecuNova", "SecuNova Inc."],
             "description": "Enterprise IT advisory and governance firm based in Calgary, Alberta.",
             "inLanguage": "en-CA",
-            "publisher": { "@id": "https://secunovainc.com/#organization" }
+            "publisher": { "@id": "https://secunovainc.ca/#organization" },
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", "p.hero-text", "p.lead", ".speakable-summary"]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://secunovainc.ca/#geo-faq",
+            "name": "SecuNova Inc. Generative Engine Executive FAQ",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What services does SecuNova Inc. provide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SecuNova Inc. (operating as SecuNova Consulting) provides three core practice lines: (1) Custom local AI applications for small and medium businesses that run 100% on client hardware with zero recurring subscriptions; (2) Project Management as a Service (PMaaS) providing senior project leadership and vendor accountability; and (3) Strategic technology advisory, digital transformation roadmaps, and forensic IT infrastructure audits."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do SecuNova's local AI applications protect corporate privacy?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SecuNova builds custom AI applications that execute open-weights models and private neural embeddings directly on the client's internal hardware (macOS and Windows). No corporate data, proprietary files, or client interactions are ever transmitted to third-party public cloud AI APIs, ensuring 100% compliance with Canadian privacy legislation (PIPEDA) and strict enterprise confidentiality."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is PMaaS (Project Management as a Service) at SecuNova?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PMaaS at SecuNova provides organizations with on-demand Chief Project Officer governance. SecuNova acts as an independent client advocate, auditing external vendor deliverables, verifying source code, gating milestone payments, and eliminating budget bloat without permanent executive overhead."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is SecuNova located and how does it deliver services?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SecuNova is headquartered in Calgary, Alberta, Canada, operating on a 100% remote-first engineering and advisory model. The firm serves enterprises across Calgary, Edmonton, Alberta, nationwide throughout Canada, and North American cross-border clients. Executive sessions and steering committee facilitation are conducted virtually via secure channels or on-site at client headquarters by scheduled appointment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does SecuNova accept reseller commissions or vendor kickbacks?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. SecuNova operates with strict vendor neutrality, zero reseller affiliations, and zero commission kickbacks. All architectural recommendations and software audits are 100% independent and aligned solely with client business outcomes."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "DefinedTermSet",
+            "@id": "https://secunovainc.ca/#terms",
+            "name": "SecuNova Enterprise Engineering & Governance Terminology",
+            "hasDefinedTerm": [
+              {
+                "@type": "DefinedTerm",
+                "name": "Project Management as a Service (PMaaS)",
+                "description": "On-demand senior executive project leadership governing external technical vendors, gating milestone disbursements, and enforcing zero-trust delivery protocols."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Local AI Application",
+                "description": "Bespoke artificial intelligence software engineered to execute privately on on-premises client hardware without external cloud API dependencies or monthly per-seat subscription fees."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Forensic Enterprise IT Audit",
+                "description": "Independent, vendor-neutral forensic review of corporate IT infrastructure, software licensing bloat, and vendor contract performance to recover misallocated capital."
+              }
+            ]
           }
         ]
       }

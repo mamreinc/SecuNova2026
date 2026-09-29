@@ -102,9 +102,8 @@ const AboutPage = () => {
         />
         <meta
           name="keywords"
-          content="SecuNova Consulting, IT advisory Calgary, strategic advisory Canada, PMaaS Calgary, enterprise IT governance, cybersecurity compliance Alberta, vendor accountability"
+          content="SecuNova Consulting, IT advisory Calgary, strategic advisory Canada, PMaaS Calgary, enterprise IT governance, cybersecurity compliance Alberta, vendor accountability, digital transformation firm Calgary"
         />
-        <link rel="canonical" href="https://secunovainc.com/about" />
         {buildSeoTags({
           title: 'About SecuNova Consulting | Enterprise Technology Advisory & Governance',
           description:
@@ -116,11 +115,21 @@ const AboutPage = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
-              { "@type": "ListItem", "position": 2, "name": "About", "item": "https://secunovainc.com/about" }
-            ]
+            "@type": "WebPage",
+            "@id": "https://secunovainc.ca/about#webpage",
+            "url": "https://secunovainc.ca/about",
+            "name": "About SecuNova Consulting | Enterprise Technology Advisory & Governance",
+            "description": "Calgary-based enterprise technology advisory and governance firm protecting corporate capital, enforcing vendor accountability, and directing digital transformation roadmaps.",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "About", "item": "https://secunovainc.ca/about" }
+              ]
+            }
           })}
         </script>
       </Helmet>
@@ -130,7 +139,7 @@ const AboutPage = () => {
           title: 'About SecuNova Consulting | Enterprise Technology Advisory & Governance',
           description:
             'SecuNova Consulting is a Calgary-based enterprise technology advisory and governance firm protecting corporate capital, enforcing vendor accountability, and directing digital transformation roadmaps across Canada and the US.',
-          url: 'https://secunovainc.com/about',
+          url: 'https://secunovainc.ca/about',
         }}
       />
 
@@ -193,8 +202,8 @@ const AboutPage = () => {
                   <div className="relative aspect-square w-full overflow-hidden bg-gray-100">
                     {!teamImageFailed && (
                       <img
-                        src="/team.jpg"
-                        alt="The SecuNova Consulting Team"
+                        src="/office.png"
+                        alt="SecuNova Operational Headquarters & Executive Workspace"
                         className="w-full h-full object-cover"
                         loading="eager"
                         onError={() => setTeamImageFailed(true)}
@@ -203,14 +212,14 @@ const AboutPage = () => {
                     {teamImageFailed && (
                       <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-secunova-dark to-secunova-blue text-white/50">
                         <Users className="h-16 w-16 mb-3" />
-                        <span className="text-xs uppercase tracking-widest font-semibold">Team Profile</span>
+                        <span className="text-xs uppercase tracking-widest font-semibold">Executive Hub</span>
                       </div>
                     )}
                   </div>
                   <div className="bg-secunova-dark text-white p-5 text-center">
                     <div className="text-sm font-bold flex items-center justify-center gap-2">
                       <Sparkles className="h-4 w-4 text-secunova-light" />
-                      The SecuNova Consulting Team
+                      SecuNova Executive Workspace
                     </div>
                     <div className="text-xs text-blue-200 mt-1">Calgary, AB · Serving North American Enterprises</div>
                   </div>

@@ -143,7 +143,6 @@ const EnterpriseAuditsPage = () => {
         <title>Enterprise IT Audits &amp; Vendor Accountability | SecuNova Inc. Calgary</title>
         <meta name="description" content="SecuNova Inc. conducts independent forensic IT audits that expose latent vulnerabilities, recover misallocated technology budgets, and deliver board-ready compliance documentation for Canadian and US enterprises." />
         <meta name="keywords" content="enterprise IT audit Calgary, vendor accountability audit, cybersecurity audit Canada, technology budget audit, IT compliance audit, forensic IT review Alberta" />
-        <link rel="canonical" href="https://secunovainc.com/services/enterprise-it-security-audits" />
         {buildSeoTags({
           title: 'Enterprise IT Audits & Vendor Accountability | SecuNova Inc.',
           description:
@@ -155,18 +154,39 @@ const EnterpriseAuditsPage = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://secunovainc.ca/services/enterprise-it-security-audits#webpage",
+            "url": "https://secunovainc.ca/services/enterprise-it-security-audits",
+            "name": "Enterprise IT Audits & Vendor Accountability | SecuNova Inc. Calgary",
+            "description": "Independent forensic IT audits, vendor accountability reviews, and cybersecurity risk assessments for Canadian and US enterprises.",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.ca/services" },
+                { "@type": "ListItem", "position": 3, "name": "Enterprise IT Audits", "item": "https://secunovainc.ca/services/enterprise-it-security-audits" }
+              ]
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Service",
-            "@id": "https://secunovainc.com/services/enterprise-it-security-audits#service",
+            "@id": "https://secunovainc.ca/services/enterprise-it-security-audits#service",
             "name": "Enterprise IT Audits & Vendor Accountability",
-            "provider": { "@id": "https://secunovainc.com/#organization" },
+            "provider": { "@id": "https://secunovainc.ca/#organization" },
             "areaServed": [
               { "@type": "City", "name": "Calgary" },
               { "@type": "State", "name": "Alberta" },
               { "@type": "Country", "name": "Canada" },
               { "@type": "Country", "name": "United States" }
             ],
-            "url": "https://secunovainc.com/services/enterprise-it-security-audits",
-            "image": "https://secunovainc.com/og-image.png",
+            "url": "https://secunovainc.ca/services/enterprise-it-security-audits",
+            "image": "https://secunovainc.ca/og-image.png",
             "description": "Independent forensic IT infrastructure audits, vendor contract compliance reviews, cybersecurity risk assessments, and technology budget recovery for enterprise organizations.",
             "serviceType": [
               "Forensic IT Infrastructure Audits",
@@ -179,7 +199,7 @@ const EnterpriseAuditsPage = () => {
               "@type": "Offer",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
-              "url": "https://secunovainc.com/services/enterprise-it-security-audits"
+              "url": "https://secunovainc.ca/services/enterprise-it-security-audits"
             }
           })}
         </script>

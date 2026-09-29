@@ -25,6 +25,7 @@ import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import LoadingSpinner from './components/LoadingSpinner';
 import SecurityWrapper from './components/SecurityWrapper';
+import { CanonicalDomainRedirect } from './components/CanonicalDomainRedirect';
 const ChatWidget = React.lazy(() => import('./components/ChatWidget'));
 
 // Lazy load pages for performance
@@ -84,6 +85,7 @@ function App() {
       />
       <SecurityWrapper>
         <Router>
+          <CanonicalDomainRedirect />
           <ScrollToTop />
           <div className="flex flex-col min-h-screen">
             <Routes>

@@ -1,23 +1,46 @@
-# Cloudflare Pages does not need a catch-all SPA rewrite: it serves the
-# index.html fallback automatically for any unmatched path (this project
-# ships no top-level 404.html). Existing prerendered pages are served as
-# static files, which take priority over these rules.
+# ============================================================================
+# MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+# ----------------------------------------------------------------------------
+# All design, software architecture, UI/UX components, and source code are
+# 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+#
+# CORE ARCHITECTURAL ETHOS:
+# - 100% Bespoke Code: Built strictly to client specifications from scratch.
+# - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+# - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+#   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+# - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+#
+# Copyright (c) MaxPhaos Marketing. All rights reserved.
+# ============================================================================
+
+# Primary Canonical Domain Enforcement (Redirect all domains to secunovainc.ca)
+https://secunovainc.com/*     https://secunovainc.ca/:splat 301!
+https://www.secunovainc.com/*  https://secunovainc.ca/:splat 301!
+https://www.secunovainc.ca/*   https://secunovainc.ca/:splat 301!
+http://secunovainc.com/*      https://secunovainc.ca/:splat 301!
+http://www.secunovainc.com/*   https://secunovainc.ca/:splat 301!
+http://secunovainc.ca/*       https://secunovainc.ca/:splat 301!
+http://www.secunovainc.ca/*   https://secunovainc.ca/:splat 301!
 
 # Retired service routes redirect to the new governance pillars (permanent).
-/services/web-development          /services/strategic-advisory-pmaas      301
-/services/ui-ux-design             /services/strategic-advisory-pmaas      301
+/services/web-development           /services/strategic-advisory-pmaas      301
+/services/ui-ux-design              /services/strategic-advisory-pmaas      301
 /services/digital-project-management /services/strategic-advisory-pmaas   301
-/services/seo-marketing            /services/enterprise-it-security-audits 301
+/services/seo-marketing             /services/enterprise-it-security-audits 301
 
 # Retired free website initiative (permanent).
-/free-services                     /contact                                301
+/free-services                      /contact                                301
 
 # Legacy enterprise audits path (permanent).
-/services/enterprise-audits        /services/enterprise-it-security-audits 301
+/services/enterprise-audits         /services/enterprise-it-security-audits 301
 
 # Canonical URL consolidation for case studies (permanent).
-/our-work/:id                      /about/our-work/:id                     301
-/products/:id                      /about/our-work/:id                     301
+/our-work/:id                       /about/our-work/:id                     301
+/products/:id                       /about/our-work/:id                     301
 
 # /support is a legacy alias of /contact (permanent).
-/support                           /contact                                301
+/support                            /contact                                301
+
+# SPA fallback
+/*                                  /index.html                             200

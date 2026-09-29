@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 import { buildSeoTags } from '../utils/seo-meta';
-import SEOSchema from '../components/SEOSchema';
 
 interface OutcomeStat {
   value: string;
@@ -142,7 +141,6 @@ const OurWorkPage = () => {
         <title>Projects Under Our Project Management | SecuNova Inc. Calgary</title>
         <meta name="description" content="Technology initiatives delivered under SecuNova Inc. independent project management: Nova, Career OS, SecuBoost, and more, governed end-to-end under our PMaaS discipline." />
         <meta name="keywords" content="SecuNova PMaaS, project management Calgary, supervised delivery, Nova macOS AI agent, Career OS, SecuBoost macOS, Journalism Audit Platform, SecuNova Lead Finder, CanadaQuest" />
-        <link rel="canonical" href="https://secunovainc.com/about/our-work" />
         {buildSeoTags({
           title: 'Projects Under Our Project Management | SecuNova Inc. Calgary',
           description:
@@ -154,24 +152,26 @@ const OurWorkPage = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.com" },
-              { "@type": "ListItem", "position": 2, "name": "About", "item": "https://secunovainc.com/about" },
-              { "@type": "ListItem", "position": 3, "name": "Our Work", "item": "https://secunovainc.com/about/our-work" }
-            ]
+            "@type": "WebPage",
+            "@id": "https://secunovainc.ca/about/our-work#webpage",
+            "url": "https://secunovainc.ca/about/our-work",
+            "name": "Projects Under Our Project Management | SecuNova Inc. Calgary",
+            "description": "Technology initiatives delivered under SecuNova Inc. independent project management: Nova, Career OS, SecuBoost, and more.",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "About", "item": "https://secunovainc.ca/about" },
+                { "@type": "ListItem", "position": 3, "name": "Our Work", "item": "https://secunovainc.ca/about/our-work" }
+              ]
+            }
           })}
         </script>
       </Helmet>
-      <SEOSchema
-        type="webpage"
-        data={{
-          title: 'Projects Under Our Project Management | SecuNova Inc. Calgary',
-          description:
-            'Technology initiatives delivered under SecuNova Inc. independent project management: Nova, Career OS, SecuBoost, and more, governed end-to-end under our PMaaS discipline.',
-          url: 'https://secunovainc.com/about/our-work',
-        }}
-      />
+
 
       {/* Hero Header */}
       <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">

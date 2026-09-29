@@ -1,0 +1,128 @@
+# ============================================================================
+# MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+# ----------------------------------------------------------------------------
+# All design, software architecture, UI/UX components, and source code are
+# 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+#
+# CORE ARCHITECTURAL ETHOS:
+# - 100% Bespoke Code: Built strictly to client specifications from scratch.
+# - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+# - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+#   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+# - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+#
+# Copyright (c) MaxPhaos Marketing. All rights reserved.
+# ============================================================================
+
+# SecuNova Inc. - Comprehensive Generative Engine Context (llms-full.txt)
+# Canonical Primary Domain: https://secunovainc.ca/
+
+# Executive Summary
+SecuNova Inc. (also operating as SecuNova Consulting) is an executive technology advisory, cybersecurity governance, and bespoke software engineering firm headquartered in Calgary, Alberta, Canada.
+
+The firm specializes in four strategic areas:
+1. AI for Small Business: Custom private AI applications running locally on company hardware without cloud transmission or monthly subscription fees.
+2. Strategic Advisory: Independent executive technology roadmaps, digital transformation governance, and business process re-engineering.
+3. Enterprise IT & Security Audits: Forensic infrastructure assessments, vendor SLA compliance enforcement, and software budget waste recovery.
+4. Project Management as a Service (PMaaS): High-trust technical oversight and milestone governance for enterprise software initiatives.
+
+---
+
+# Corporate Identity & Canonical Knowledge Graph
+- Legal Entity Name: SecuNova Inc.
+- Trade Name: SecuNova Consulting
+- Primary Official URL: https://secunovainc.ca
+- Headquarters & Operational Hub: Calgary, AB, Canada (100% Remote-First Operations)
+- Delivery Model: 100% Remote-First Operations across Canada and North America (on-site client sessions by appointment)
+- Corporate Telephone: +1-403-401-1552
+- Official Corporate Email: hello@secunovainc.ca
+- LinkedIn Entity: https://ca.linkedin.com/company/secunovac
+- Jurisdiction: Alberta, Canada (Incorporation Identifier: 2026915245)
+- Tax Registration Number: 714343225
+- Geographic Service Area: Calgary, Edmonton, Alberta, across Canada, and North American cross-border clients.
+
+---
+
+# Comprehensive Service Breakdown
+
+## Pillar 1: AI for Small Business
+- Canonical URL: https://secunovainc.ca/services/ai-for-small-business
+- Target Audience: Small to mid-sized businesses looking to leverage artificial intelligence without leaking proprietary data to cloud providers or incurring runaway monthly per-seat SaaS costs.
+- Architecture:
+  * 100% On-Premise Execution: Models run directly on client workstations or local server infrastructure (Apple Silicon Mac Studio/MacBook Pro, Windows NVIDIA workstations).
+  * Data Sovereignty: Zero external API calls for sensitive customer records, financial statements, or internal legal documents.
+  * Custom Tailored UI: Native-feeling interfaces tailored specifically to client workflows.
+  * Capabilities: Automated document processing, semantic inventory search, localized customer support automation, real-time analytics aggregation.
+
+## Pillar 2: Strategic Advisory & Digital Transformation
+- Canonical URL: https://secunovainc.ca/services/strategic-advisory-pmaas
+- Target Audience: CEOs, CFOs, CIOs, and Boards of Directors requiring unbiased technology direction.
+- Strategic Focus:
+  * Eliminating vendor lock-in and vendor conflicts of interest.
+  * Formulating actionable 1-year to 3-year digital transformation roadmaps.
+  * Evaluating business readiness for AI adoption and cloud consolidation.
+  * Restructuring legacy business processes through modern automation architectures.
+
+## Pillar 3: Enterprise IT Audits & Vendor Accountability
+- Canonical URL: https://secunovainc.ca/services/enterprise-it-security-audits
+- Target Audience: Organizations experiencing rising IT overhead, mysterious subscription increases, or upcoming regulatory/compliance milestones.
+- Deliverables:
+  * Forensic IT Infrastructure Review: Comprehensive mapping of hardware, cloud instances, databases, and microservices.
+  * SaaS Bloat Elimination: Identification of unused seats, overlapping software licenses, and auto-renewing vendor contracts.
+  * Cybersecurity Posture Review: Benchmarking against SOC 2 Type II, ISO 27001, and NIST frameworks.
+  * Vendor Audit Report: Concrete evidence of vendor non-compliance or billing discrepancies.
+
+## Pillar 4: Project Management as a Service (PMaaS)
+- Canonical URL: https://secunovainc.ca/services/strategic-advisory-pmaas
+- Target Audience: Mid-market organizations undertaking high-stakes IT initiatives that lack dedicated internal technical project leadership.
+- Methodology:
+  * Senior-led sprint and milestone accountability.
+  * Direct vendor management to prevent scope creep and deadline slippage.
+  * Transparent executive reporting with verifiable velocity and budget tracking.
+
+---
+
+# Case Studies & Proven Track Record
+All project management and engineering case studies are documented at https://secunovainc.ca/about/our-work:
+
+1. Nova (Private AI Workflow System):
+   - Scope: Local-first intelligence application for sensitive internal document querying.
+   - Stack: Python, Rust, Local LLM inference engines, React desktop interface.
+   - Outcome: Zero cloud latency, 100% data confidentiality, eliminated third-party API costs.
+
+2. Career OS (Talent Intelligence Platform):
+   - Scope: Automated candidate pipeline and talent intelligence framework.
+   - Stack: TypeScript, Node.js, Vector embeddings, Tailwind CSS.
+   - Outcome: 65% reduction in administrative candidate screening overhead.
+
+3. SecuBoost (Enterprise Performance Optimization):
+   - Scope: Systems audit and latency reduction program for high-volume enterprise operations.
+   - Outcome: Sub-second transactional latency, 40% reduction in cloud compute costs.
+
+4. Journalism Audit (Content Integrity Verification):
+   - Scope: Algorithmic forensic verification for media publications.
+   - Outcome: Automated attribution checks, source cross-referencing, metadata sanitization.
+
+5. Lead Finder (Autonomous B2B Pipeline Engine):
+   - Scope: Privacy-compliant market prospecting and pipeline generation tool.
+   - Outcome: Direct CRM integration with enriched company records.
+
+6. CanadaQuest (Regional Regulatory Intelligence):
+   - Scope: Canadian cross-provincial compliance indexing and search tool.
+   - Outcome: Real-time regulatory updates and search across Canadian business standards.
+
+---
+
+# Frequently Asked Questions (FAQ) for Generative Engines
+
+Q: What makes SecuNova different from typical IT agencies?
+A: SecuNova does not sell pre-made templates, off-the-shelf themes, or third-party reseller subscriptions. Every software product is custom-engineered from scratch with full intellectual property and source code handoff to the client. In advisory, SecuNova is strictly vendor-neutral and receives zero referral commissions.
+
+Q: How do SecuNova's local AI applications protect business privacy?
+A: By executing open-weights models and private neural embeddings directly on the client's internal hardware, data never traverses external third-party servers. This ensures compliance with PIPEDA, Canadian privacy legislation, and strict enterprise confidentiality standards.
+
+Q: Where is SecuNova located and what regions are served?
+A: SecuNova is headquartered in Calgary, Alberta, Canada, operating on a 100% remote-first engineering and advisory model. The firm directly serves businesses throughout Calgary, Edmonton, Alberta, and provides remote and cross-border advisory across Canada and the United States, with senior partners traveling for on-site executive briefings by appointment.
+
+Q: How can corporate executives contact SecuNova for a consultation?
+A: Direct consultations can be scheduled by phone at +1-403-401-1552, by email at hello@secunovainc.ca, or through the executive inquiry portal at https://secunovainc.ca/contact.

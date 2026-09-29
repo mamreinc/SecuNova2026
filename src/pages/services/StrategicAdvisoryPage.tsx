@@ -185,8 +185,7 @@ const StrategicAdvisoryPage = () => {
       <Helmet>
         <title>Strategic Advisory &amp; Digital Transformation | SecuNova Inc. Calgary</title>
         <meta name="description" content="SecuNova Inc. delivers executive strategic advisory, digital readiness assessments, practical AI integration, business process re-engineering, and change management for Canadian and US enterprises." />
-        <meta name="keywords" content="strategic advisory Calgary, digital transformation Canada, AI adoption roadmap, business process reengineering, change management, enterprise advisory Calgary" />
-        <link rel="canonical" href="https://secunovainc.com/services/strategic-advisory-pmaas" />
+        <meta name="keywords" content="strategic advisory Calgary, digital transformation Canada, AI adoption roadmap, business process reengineering, change management, enterprise advisory Calgary, executive technology advisory Alberta" />
         {buildSeoTags({
           title: 'Strategic Advisory & Digital Transformation | SecuNova Inc.',
           description:
@@ -198,18 +197,39 @@ const StrategicAdvisoryPage = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://secunovainc.ca/services/strategic-advisory-pmaas#webpage",
+            "url": "https://secunovainc.ca/services/strategic-advisory-pmaas",
+            "name": "Strategic Advisory & Digital Transformation | SecuNova Inc.",
+            "description": "Executive strategic advisory, digital readiness assessments, AI adoption roadmaps, and business process re-engineering for enterprise organizations.",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.ca/services" },
+                { "@type": "ListItem", "position": 3, "name": "Strategic Advisory", "item": "https://secunovainc.ca/services/strategic-advisory-pmaas" }
+              ]
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Service",
-            "@id": "https://secunovainc.com/services/strategic-advisory-pmaas#service",
+            "@id": "https://secunovainc.ca/services/strategic-advisory-pmaas#service",
             "name": "Strategic Advisory & Digital Transformation",
-            "provider": { "@id": "https://secunovainc.com/#organization" },
+            "provider": { "@id": "https://secunovainc.ca/#organization" },
             "areaServed": [
               { "@type": "City", "name": "Calgary" },
               { "@type": "State", "name": "Alberta" },
               { "@type": "Country", "name": "Canada" },
               { "@type": "Country", "name": "United States" }
             ],
-            "url": "https://secunovainc.com/services/strategic-advisory-pmaas",
-            "image": "https://secunovainc.com/og-image.png",
+            "url": "https://secunovainc.ca/services/strategic-advisory-pmaas",
+            "image": "https://secunovainc.ca/og-image.png",
             "description": "Executive strategic advisory, digital readiness assessments, AI adoption roadmaps, and business process re-engineering for enterprise organizations.",
             "serviceType": [
               "Executive Technology Advisory",
@@ -222,7 +242,7 @@ const StrategicAdvisoryPage = () => {
               "@type": "Offer",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
-              "url": "https://secunovainc.com/services/strategic-advisory-pmaas"
+              "url": "https://secunovainc.ca/services/strategic-advisory-pmaas"
             }
           })}
         </script>

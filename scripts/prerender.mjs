@@ -73,7 +73,7 @@ const MIME = {
 
 // Canonical domain for all on-page metadata. Each route gets exactly one
 // canonical / og:url / twitter:url tag pointing at its own URL.
-const SITE_BASE = 'https://secunovainc.com';
+const SITE_BASE = 'https://secunovainc.ca';
 
 /**
  * Removes all but the last occurrence of a tag matching the given attribute

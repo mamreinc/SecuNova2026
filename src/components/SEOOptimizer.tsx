@@ -60,7 +60,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   description,
   keywords,
   canonicalUrl,
-  ogImage = "https://secunovainc.com/logo/secunova-icon.png",
+  ogImage = "https://secunovainc.ca/logo/secunova-icon.png",
   structuredData,
   breadcrumbs,
   noIndex = false,

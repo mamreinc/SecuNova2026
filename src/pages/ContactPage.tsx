@@ -17,7 +17,7 @@
  */
 
 import { Helmet } from 'react-helmet-async';
-import { Mail, Phone, MapPin, Clock, CheckCircle2, MessageSquare, Globe, ChevronRight } from 'lucide-react';
+import { Mail, Phone, Clock, CheckCircle2, MessageSquare, Globe, ChevronRight } from 'lucide-react';
 import CtaSection from '../components/CtaSection';
 import { buildSeoTags } from '../utils/seo-meta';
 
@@ -34,8 +34,8 @@ const ContactPage = () => {
       icon: <Mail className="h-6 w-6 text-secunova-light" />,
       title: 'Executive Electronic Briefing',
       description: 'Email our senior leadership directly regarding engagement scope.',
-      contact: 'hello@secunovainc.com',
-      action: 'mailto:hello@secunovainc.com'
+      contact: 'hello@secunovainc.ca',
+      action: 'mailto:hello@secunovainc.ca'
     }
   ];
 
@@ -61,13 +61,12 @@ const ContactPage = () => {
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>Executive Contact &amp; Consultations | SecuNova Inc. Calgary</title>
-        <meta name="description" content="Contact SecuNova Inc., a Calgary-based IT advisory firm. Call 403-401-1552 or email hello@secunovainc.com for executive strategic advisory, PMaaS, and enterprise audits." />
-        <meta name="keywords" content="SecuNova Inc, contact SecuNova, IT advisory Calgary, strategic consulting Canada, PMaaS consultation" />
-        <link rel="canonical" href="https://secunovainc.com/contact" />
+        <meta name="description" content="Contact SecuNova Inc., a Calgary-based IT advisory firm. Call 403-401-1552 or email hello@secunovainc.ca for executive strategic advisory, PMaaS, and enterprise audits." />
+        <meta name="keywords" content="contact SecuNova Inc, IT advisory Calgary, strategic consulting Canada, PMaaS consultation, free strategy call Calgary, hello@secunovainc.ca, 403-401-1552" />
         {buildSeoTags({
           title: 'Executive Contact & Consultations | SecuNova Inc.',
           description:
-            'Direct engagement channels for enterprise leaders seeking strategic advisory, cybersecurity risk governance, and PMaaS.',
+            'Direct engagement channels for enterprise leaders seeking strategic advisory, cybersecurity risk governance, and PMaaS. Call 403-401-1552 or email hello@secunovainc.ca.',
           url: '/contact',
           imageAlt: 'SecuNova Inc. - Executive Contact & Consultations',
         })}
@@ -76,23 +75,41 @@ const ContactPage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
+            "@id": "https://secunovainc.ca/contact#webpage",
             "name": "Contact SecuNova Inc.",
-            "description": "Direct contact channels for executive IT advisory, PMaaS, and forensic audits.",
-            "url": "https://secunovainc.com/contact",
+            "description": "Direct contact channels for executive IT advisory, PMaaS, and forensic audits in Calgary, Alberta.",
+            "url": "https://secunovainc.ca/contact",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://secunovainc.ca/contact" }
+              ]
+            },
             "mainEntity": {
-              "@type": "Organization",
+              "@type": "LocalBusiness",
+              "@id": "https://secunovainc.ca/#organization",
               "name": "SecuNova Inc.",
+              "legalName": "SecuNova Inc.",
               "telephone": "+1-403-401-1552",
-              "email": "hello@secunovainc.com",
+              "email": "hello@secunovainc.ca",
               "taxID": "714343225",
               "identifier": "2026915245",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "#270, 1122 3 St SE Ste 1906",
                 "addressLocality": "Calgary",
                 "addressRegion": "AB",
-                "postalCode": "T2G 0E7",
                 "addressCountry": "CA"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-403-401-1552",
+                "contactType": "customer service",
+                "email": "hello@secunovainc.ca",
+                "availableLanguage": ["en", "fr"],
+                "areaServed": "CA-AB"
               }
             }
           })}
@@ -126,7 +143,7 @@ const ContactPage = () => {
                 <Phone className="mr-2 h-5 w-5 text-white" />
                 Call 403-401-1552
               </a>
-              <a href="mailto:hello@secunovainc.com" className="btn btn-outline-light btn-lg text-white">
+              <a href="mailto:hello@secunovainc.ca" className="btn btn-outline-light btn-lg text-white">
                 <Mail className="mr-2 h-5 w-5 text-white" />
                 Email Executive Brief
               </a>
@@ -173,28 +190,29 @@ const ContactPage = () => {
                 ))}
 
                 <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                  <div className="flex items-start gap-4 mb-4">
+                  <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secunova-blue/10 to-secunova-light/10 rounded-xl flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-secunova-blue" />
+                      <Globe className="h-6 w-6 text-secunova-blue" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-semibold text-secunova-dark text-lg mb-1">Mailing Address</div>
-                      <div className="text-sm text-slate-700 font-mono">#270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7, Canada</div>
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200/60 mb-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        100% Remote-First Operations
+                      </div>
+                      <div className="font-semibold text-secunova-dark text-lg mb-1">Operational Headquarters</div>
+                      <div className="text-sm font-semibold text-slate-700">Calgary, Alberta, Canada</div>
                       <div className="mt-3 space-y-1 border-t border-gray-100 pt-3 text-xs">
                         <div className="flex justify-between gap-4">
-                          <span className="text-slate-500 font-medium">Business Number</span>
-                          <span className="font-mono text-secunova-dark font-semibold">714343225</span>
+                          <span className="text-slate-500 font-medium">Alberta Corporate ID</span>
+                          <span className="font-mono text-secunova-dark font-semibold">2026915245</span>
                         </div>
                         <div className="flex justify-between gap-4">
-                          <span className="text-slate-500 font-medium">Corporation Number</span>
-                          <span className="font-mono text-secunova-dark font-semibold">2026915245</span>
+                          <span className="text-slate-500 font-medium">Federal Business No.</span>
+                          <span className="font-mono text-secunova-dark font-semibold">714343225</span>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">
-                    We operate on a fully remote basis, conducting client consultations via Zoom or Google Meet. When an in-person meeting is necessary, we are pleased to travel to your location or arrange a private meeting room at the Calgary Public Library.
-                  </p>
                 </div>
 
                 <div className="bg-blue-50/80 rounded-2xl p-6 border border-blue-200/80 shadow-sm space-y-5">
@@ -223,9 +241,32 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* What Happens Next Card */}
-              <div className="bg-gradient-to-br from-secunova-dark to-gray-900 text-white rounded-2xl p-8 shadow-xl border border-gray-800 flex flex-col">
-                <h3 className="text-2xl font-bold mb-2">What Happens Next</h3>
+              {/* Right Column: Office Workspace & Consultation Process */}
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 group">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                    <img
+                      src="/office.png"
+                      alt="SecuNova Operational Headquarters & Executive Workspace in Calgary"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="eager"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-secunova-dark/80 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+                      <div>
+                        <div className="text-xs uppercase tracking-widest text-secunova-light font-bold">Operational Headquarters</div>
+                        <div className="text-sm font-semibold text-white">Calgary, Alberta, Canada</div>
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white border border-white/20">
+                        Executive Hub
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* What Happens Next Card */}
+                <div className="bg-gradient-to-br from-secunova-dark to-gray-900 text-white rounded-2xl p-8 shadow-xl border border-gray-800 flex flex-col">
+                  <h3 className="text-2xl font-bold mb-2">What Happens Next</h3>
                 <p className="text-blue-100/90 text-sm leading-relaxed mb-8">
                   From first contact to proposal, a senior partner owns your inquiry end to end.
                 </p>
@@ -254,6 +295,7 @@ const ContactPage = () => {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

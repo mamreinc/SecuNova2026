@@ -274,11 +274,11 @@ const ChatWidget: React.FC = () => {
               </p>
 
               <a
-                href="mailto:hello@secunovainc.com"
+                href="mailto:hello@secunovainc.ca"
                 className="w-full flex items-center justify-center gap-2 py-2.5 bg-secunova-blue text-white text-xs font-bold rounded-lg hover:bg-secunova-blue/90 transition-colors"
               >
                 <Mail className="h-3.5 w-3.5" />
-                hello@secunovainc.com
+                hello@secunovainc.ca
               </a>
             </div>
           )}

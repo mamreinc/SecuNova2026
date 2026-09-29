@@ -1,3 +1,19 @@
+# ============================================================================
+# MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+# ----------------------------------------------------------------------------
+# All design, software architecture, UI/UX components, and source code are
+# 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+#
+# CORE ARCHITECTURAL ETHOS:
+# - 100% Bespoke Code: Built strictly to client specifications from scratch.
+# - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+# - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+#   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+# - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+#
+# Copyright (c) MaxPhaos Marketing. All rights reserved.
+# ============================================================================
+
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
@@ -8,6 +24,30 @@
   Cross-Origin-Resource-Policy: same-origin
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; img-src 'self' data: https: blob: https://images.pexels.com; font-src 'self' data: https: https://fonts.gstatic.com https://fonts.cdnfonts.com; connect-src 'self' https: wss: data: blob:; frame-src 'self' https://www.google.com https://maps.google.com https://*.googleapis.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests; block-all-mixed-content;
   Cache-Control: public, max-age=0, must-revalidate
+
+# Generative Engine Optimization (GEO) manifests
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: all, index, follow
+  Cache-Control: public, max-age=3600
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: all, index, follow
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: all, index, follow
+  Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: all, index, follow
+  Cache-Control: public, max-age=3600
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate

@@ -25,7 +25,7 @@ import {
   Briefcase, Compass, Code, RefreshCw, Users, Globe, ClipboardCheck,
   Scale, Clock, Lightbulb, Database, Award, Wrench,
   X, Lock, FileText, ChevronRight, Zap, Mail, Brain, Workflow,
-  DollarSign, Package, BarChart3, MessageSquare, Cpu, Sparkles
+  BarChart3, MessageSquare, Sparkles
 } from 'lucide-react';
 import LazySection from '../components/LazySection';
 
@@ -36,7 +36,6 @@ const HomePage = () => {
         <title>SecuNova Inc. | Local AI Applications, PMaaS &amp; Enterprise Strategic Advisory</title>
         <meta name="description" content="SecuNova Inc. builds private, locally-run AI applications for small businesses and delivers PMaaS governance, cybersecurity risk management, and strategic advisory for North American enterprises." />
         <meta name="keywords" content="AI for small business Calgary, local AI applications Canada, private AI tools Alberta, PMaaS Calgary, enterprise strategic advisory, digital transformation Canada, offline AI apps macOS Windows, cybersecurity audits" />
-        <link rel="canonical" href="https://secunovainc.com/" />
         {buildSeoTags({
           title: 'SecuNova Inc. | Local AI Applications, PMaaS & Enterprise Strategic Advisory',
           description:
@@ -47,18 +46,44 @@ const HomePage = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://secunovainc.ca/#website",
+            "url": "https://secunovainc.ca",
+            "name": "SecuNova Consulting",
+            "alternateName": "SecuNova Inc.",
+            "inLanguage": "en-CA",
+            "publisher": { "@id": "https://secunovainc.ca/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://secunovainc.ca/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://secunovainc.com/#webpage",
-            "url": "https://secunovainc.com/",
+            "@id": "https://secunovainc.ca/#webpage",
+            "url": "https://secunovainc.ca/",
             "name": "SecuNova Inc. | Local AI Applications, PMaaS & Enterprise Strategic Advisory",
             "description":
               "SecuNova Inc. builds private, locally-run AI applications for small businesses and delivers PMaaS governance, cybersecurity risk management, and strategic advisory for North American enterprises.",
             "inLanguage": "en-CA",
-            "isPartOf": { "@id": "https://secunovainc.com/#website" },
-            "about": { "@id": "https://secunovainc.com/#organization" },
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" }
+              ]
+            },
             "primaryImageOfPage": {
               "@type": "ImageObject",
-              "url": "https://secunovainc.com/og-image.png",
+              "url": "https://secunovainc.ca/og-image.png",
               "width": 1200,
               "height": 630
             }
@@ -658,7 +683,7 @@ const HomePage = () => {
 
                   <div className="space-y-4">
                     <a
-                      href="mailto:hello@secunovainc.com?subject=Executive%20Briefing%20Request"
+                      href="mailto:hello@secunovainc.ca?subject=Executive%20Briefing%20Request"
                       className="flex items-center justify-between gap-4 bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-lg hover:border-secunova-blue/30 transition-all duration-300 group"
                     >
                       <div className="flex items-center gap-4 min-w-0">
@@ -667,7 +692,7 @@ const HomePage = () => {
                         </div>
                         <div className="min-w-0">
                           <div className="font-semibold text-secunova-dark text-lg">Executive Email</div>
-                          <div className="text-sm text-slate-600 break-all">hello@secunovainc.com</div>
+                          <div className="text-sm text-slate-600 break-all">hello@secunovainc.ca</div>
                         </div>
                       </div>
                       <ArrowRight className="h-5 w-5 text-secunova-blue flex-shrink-0" />
@@ -691,7 +716,7 @@ const HomePage = () => {
                   </div>
 
                   <a
-                    href="mailto:hello@secunovainc.com?subject=Executive%20Briefing%20Request"
+                    href="mailto:hello@secunovainc.ca?subject=Executive%20Briefing%20Request"
                     className="btn btn-gradient btn-lg w-full text-white font-bold mt-6"
                   >
                     Compose Executive Brief <ArrowRight className="ml-2 h-4 w-4 text-white" />

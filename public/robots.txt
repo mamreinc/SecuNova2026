@@ -1,10 +1,95 @@
-# robots.txt for SecuNova Consulting
-# https://secunovainc.com/robots.txt
+# ============================================================================
+# MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+# ----------------------------------------------------------------------------
+# All design, software architecture, UI/UX components, and source code are
+# 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+#
+# CORE ARCHITECTURAL ETHOS:
+# - 100% Bespoke Code: Built strictly to client specifications from scratch.
+# - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+# - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+#   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+# - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+#
+# Copyright (c) MaxPhaos Marketing. All rights reserved.
+# ============================================================================
 
-User-agent: *
+# robots.txt for SecuNova Consulting
+# Primary Canonical Domain: https://secunovainc.ca/robots.txt
+
+# ----------------------------------------------------------------------------
+# Generative Engine Optimization (GEO) & AI Search Agent Directives
+# ----------------------------------------------------------------------------
+
+# OpenAI (SearchGPT, ChatGPT Search & Web Retrieval)
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login
+Disallow: /brand
+
+User-agent: ChatGPT-User
 Allow: /
 
-# Private and admin areas
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity AI Engine
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-Search
+Allow: /
+
+# Anthropic Claude & Claude Search
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+
+# Google Gemini & Extended AI Services
+User-agent: Google-Extended
+Allow: /
+User-agent: GoogleOther
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Amazon AI & Web Crawler
+User-agent: Amazonbot
+Allow: /
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+
+# Diffbot AI & Knowledge Graph Crawler
+User-agent: Diffbot
+Allow: /
+
+# Cohere Enterprise AI
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ----------------------------------------------------------------------------
+# General Web Crawlers
+# ----------------------------------------------------------------------------
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Disallow private and administrative paths
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
@@ -14,5 +99,10 @@ Disallow: /support
 Disallow: /_next/
 Disallow: /node_modules/
 
-# Sitemap location
-Sitemap: https://secunovainc.com/sitemap.xml
+# ----------------------------------------------------------------------------
+# Authoritative Sitemaps & LLM Context Manifests (GEO Standards)
+# ----------------------------------------------------------------------------
+Sitemap: https://secunovainc.ca/sitemap.xml
+# LLM Manifest for Generative Engine Discovery
+# Reference: https://secunovainc.ca/llms.txt
+# Comprehensive LLM Context: https://secunovainc.ca/llms-full.txt

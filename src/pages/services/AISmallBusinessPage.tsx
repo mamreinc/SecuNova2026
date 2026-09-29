@@ -238,8 +238,7 @@ const AISmallBusinessPage = () => {
       <Helmet>
         <title>AI for Small Business | Local AI Apps Built for Real Teams | SecuNova Inc.</title>
         <meta name="description" content="SecuNova Inc. builds custom AI applications that run locally for small businesses in Calgary and across Canada. Private AI tools with local processing, no SaaS fees, and full IP ownership." />
-        <meta name="keywords" content="AI for small business Calgary, local AI tools Canada, private AI apps Alberta, custom AI software small business, private AI assistants, no cloud AI processing" />
-        <link rel="canonical" href="https://secunovainc.com/services/ai-for-small-business" />
+        <meta name="keywords" content="AI for small business Calgary, local AI tools Canada, private AI apps Alberta, custom AI software small business, private AI assistants, no cloud AI processing, offline AI macOS Windows" />
         {buildSeoTags({
           title: 'AI for Small Business | Local AI Apps | SecuNova Inc.',
           description:
@@ -251,17 +250,38 @@ const AISmallBusinessPage = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://secunovainc.ca/services/ai-for-small-business#webpage",
+            "url": "https://secunovainc.ca/services/ai-for-small-business",
+            "name": "AI for Small Business | Local AI Apps | SecuNova Inc.",
+            "description": "Custom locally-executed AI applications for small businesses. AI assistants, document intelligence tools, workflow automation, and productivity dashboards - all running privately on your hardware.",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://secunovainc.ca/services" },
+                { "@type": "ListItem", "position": 3, "name": "AI for Small Business", "item": "https://secunovainc.ca/services/ai-for-small-business" }
+              ]
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Service",
-            "@id": "https://secunovainc.com/services/ai-for-small-business#service",
+            "@id": "https://secunovainc.ca/services/ai-for-small-business#service",
             "name": "AI for Small Business",
-            "provider": { "@id": "https://secunovainc.com/#organization" },
+            "provider": { "@id": "https://secunovainc.ca/#organization" },
             "areaServed": [
               { "@type": "City", "name": "Calgary" },
               { "@type": "State", "name": "Alberta" },
               { "@type": "Country", "name": "Canada" },
               { "@type": "Country", "name": "United States" }
             ],
-            "url": "https://secunovainc.com/services/ai-for-small-business",
+            "url": "https://secunovainc.ca/services/ai-for-small-business",
             "description": "Custom locally-executed AI applications built for small businesses. AI assistants, document intelligence tools, workflow automation, and productivity dashboards - all running privately on your hardware.",
             "serviceType": [
               "Custom AI Assistants",
@@ -274,7 +294,7 @@ const AISmallBusinessPage = () => {
               "@type": "Offer",
               "priceCurrency": "CAD",
               "availability": "https://schema.org/InStock",
-              "url": "https://secunovainc.com/services/ai-for-small-business"
+              "url": "https://secunovainc.ca/services/ai-for-small-business"
             }
           })}
         </script>

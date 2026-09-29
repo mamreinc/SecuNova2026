@@ -1,21 +1,38 @@
+/**
+ * ============================================================================
+ * MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+ * ----------------------------------------------------------------------------
+ * All design, software architecture, UI/UX components, and source code are
+ * 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+ *
+ * CORE ARCHITECTURAL ETHOS:
+ * - 100% Bespoke Code: Built strictly to client specifications from scratch.
+ * - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+ * - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+ *   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+ * - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+ *
+ * Copyright (c) MaxPhaos Marketing. All rights reserved.
+ * ============================================================================
+ */
+
 export const baseSEO = {
   siteName: 'SecuNova Consulting',
-  siteUrl: 'https://secunovainc.com',
-  defaultImage: 'https://secunovainc.com/og-image.png',
-  logo: 'https://secunovainc.com/logo/secunova-logo.png',
+  siteUrl: 'https://secunovainc.ca',
+  defaultImage: 'https://secunovainc.ca/og-image.png',
+  logo: 'https://secunovainc.ca/logo/secunova-logo.png',
   defaultAuthor: 'SecuNova Inc.',
   companyName: 'SecuNova Consulting',
   legalName: 'SecuNova Inc.',
   slogan: 'Strategic Advisory & Digital Transformation for the Digital Enterprise.',
   phone: '+1-403-401-1552',
   phoneDisplay: '403-401-1552',
-  email: 'hello@secunovainc.com',
+  email: 'hello@secunovainc.ca',
   address: {
-    street: '#270, 1122 3 St SE Ste 1906',
     city: 'Calgary',
     region: 'AB',
-    postal: 'T2G 0E7',
-    country: 'CA'
+    country: 'CA',
+    operationalModel: '100% Remote-First Operations'
   },
   geo: {
     latitude: '51.0447',
@@ -117,9 +134,9 @@ export const pageSEO = {
   '/contact': {
     title: 'Contact SecuNova Consulting Calgary | Free Strategy Call',
     description:
-      'Contact SecuNova Consulting in Calgary, AB. Call 403-401-1552 or email hello@secunovainc.com for a free strategy call. Located at #270, 1122 3 St SE Ste 1906, Calgary, AB T2G 0E7.',
+      'Contact SecuNova Consulting. Headquartered in Calgary, AB with 100% remote-first advisory and digital delivery across Canada and North America. Call 403-401-1552 or email hello@secunovainc.ca.',
     keywords:
-      'contact SecuNova Consulting Calgary, free strategy call, consulting firm Calgary contact, 403-401-1552, hello@secunovainc.com'
+      'contact SecuNova Consulting Calgary, remote IT advisory Canada, free strategy call, consulting firm Calgary contact, 403-401-1552, hello@secunovainc.ca'
   },
   '/faq': {
     title: 'FAQ | SecuNova Consulting Calgary Questions Answered',
@@ -182,10 +199,8 @@ export const generateServiceSchema = (service: {
       'email': baseSEO.email,
       'address': {
         '@type': 'PostalAddress',
-        'streetAddress': baseSEO.address.street,
         'addressLocality': baseSEO.address.city,
         'addressRegion': baseSEO.address.region,
-        'postalCode': baseSEO.address.postal,
         'addressCountry': baseSEO.address.country
       },
       'geo': {
@@ -260,10 +275,8 @@ export const generateLocalBusinessSchema = () => {
     'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',
-      'streetAddress': baseSEO.address.street,
       'addressLocality': baseSEO.address.city,
       'addressRegion': baseSEO.address.region,
-      'postalCode': baseSEO.address.postal,
       'addressCountry': baseSEO.address.country
     },
     'geo': {

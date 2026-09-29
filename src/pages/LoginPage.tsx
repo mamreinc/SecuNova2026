@@ -117,7 +117,7 @@ const LoginPage = () => {
         <meta name="description" content="Secure client portal login for SecuNova Inc. clients in Calgary & Alberta. Access your account, support tickets, and project information." />
         <meta name="robots" content="noindex, nofollow" />
         <meta name="googlebot" content="noindex, nofollow" />
-        <link rel="canonical" href="https://secunovainc.com/login" />
+        <link rel="canonical" href="https://secunovainc.ca/login" />
       </Helmet>
 
       <section className="py-16">

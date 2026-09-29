@@ -17,7 +17,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Linkedin, Lock } from 'lucide-react';
+import { Phone, Mail, Globe, Linkedin, Lock } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -155,13 +155,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center">
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                <MapPin className="h-5 w-5 text-secunova-light" />
+                <Globe className="h-5 w-5 text-secunova-light" />
               </div>
               <div>
-                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Mailing Address</p>
+                <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Operating Model</p>
                 <p className="text-sm text-white leading-relaxed">
-                  #270, 1122 3 St SE Ste 1906<br />
-                  Calgary, AB T2G 0E7, Canada
+                  Remote-First Operations<br />
+                  Headquartered in Calgary, AB, Canada
                 </p>
               </div>
             </div>
@@ -182,8 +182,8 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-xs text-blue-200 uppercase tracking-wider mb-1 font-medium">Executive Inquiries</p>
-                <a href="mailto:hello@secunovainc.com" className="text-sm text-white hover:text-secunova-light transition-colors">
-                  hello@secunovainc.com
+                <a href="mailto:hello@secunovainc.ca" className="text-sm text-white hover:text-secunova-light transition-colors">
+                  hello@secunovainc.ca
                 </a>
               </div>
             </div>

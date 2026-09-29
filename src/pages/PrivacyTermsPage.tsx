@@ -19,16 +19,14 @@
 import { Helmet } from 'react-helmet-async';
 import { Shield, Lock, FileCheck, Sparkles } from 'lucide-react';
 import { buildSeoTags } from '../utils/seo-meta';
-import SEOSchema from '../components/SEOSchema';
 
 const PrivacyTermsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Privacy Policy & Terms of Service | SecuNova Consulting Calgary</title>
+        <title>Privacy Policy &amp; Terms of Service | SecuNova Consulting Calgary</title>
         <meta name="description" content="SecuNova Consulting privacy policy and terms of service. Learn how we protect your data and the terms governing our advisory and governance services in Calgary & Alberta." />
         <meta name="keywords" content="SecuNova privacy policy, SecuNova terms of service, consulting privacy Calgary, data protection Alberta, service terms Calgary, SecuNova Consulting legal" />
-        <link rel="canonical" href="https://secunovainc.com/privacy-terms" />
         {buildSeoTags({
           title: 'Privacy Policy & Terms of Service | SecuNova Consulting Calgary',
           description:
@@ -36,16 +34,29 @@ const PrivacyTermsPage = () => {
           url: '/privacy-terms',
           imageAlt: 'SecuNova Consulting - Privacy Policy & Terms',
         })}
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://secunovainc.ca/privacy-terms#webpage",
+            "name": "Privacy Policy & Terms of Service | SecuNova Consulting",
+            "description": "SecuNova Consulting privacy policy and terms of service governing advisory and governance services in Calgary and Alberta.",
+            "url": "https://secunovainc.ca/privacy-terms",
+            "inLanguage": "en-CA",
+            "isPartOf": { "@id": "https://secunovainc.ca/#website" },
+            "about": { "@id": "https://secunovainc.ca/#organization" },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://secunovainc.ca" },
+                { "@type": "ListItem", "position": 2, "name": "Privacy & Terms", "item": "https://secunovainc.ca/privacy-terms" }
+              ]
+            }
+          })}
+        </script>
       </Helmet>
-      <SEOSchema
-        type="webpage"
-        data={{
-          title: 'Privacy Policy & Terms of Service | SecuNova Consulting Calgary',
-          description:
-            'SecuNova Consulting privacy policy and terms of service. Learn how we protect your data and the terms governing our advisory and governance services in Calgary & Alberta.',
-          url: 'https://secunovainc.com/privacy-terms',
-        }}
-      />
+
 
       <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
@@ -160,7 +171,7 @@ const PrivacyTermsPage = () => {
                     <h4 className="text-lg font-semibold mb-3 text-gray-800">Privacy & Data Handling</h4>
                     <p className="text-gray-600 leading-relaxed">
                       Conversations with the assistant are processed locally in your browser and are not stored on SecuNova servers or transmitted to third parties. The assistant does not collect, retain, or have access to any personal information. For formal engagements or confidential matters, we invite you to contact a senior partner directly by email at{' '}
-                      <a href="mailto:hello@secunovainc.com" className="text-secunova-blue hover:text-secunova-dark underline font-medium">hello@secunovainc.com</a>{' '}
+                      <a href="mailto:hello@secunovainc.ca" className="text-secunova-blue hover:text-secunova-dark underline font-medium">hello@secunovainc.ca</a>{' '}
                       or by telephone at{' '}
                       <a href="tel:403-401-1552" className="text-secunova-blue hover:text-secunova-dark underline font-medium">403-401-1552</a>.
                     </p>
@@ -198,7 +209,7 @@ const PrivacyTermsPage = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-gray-800">Contact</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    For questions about this Privacy Policy or to exercise your privacy rights, contact us at <a href="mailto:hello@secunovainc.com" className="text-secunova-blue hover:text-secunova-dark underline font-medium">hello@secunovainc.com</a> or by telephone at <a href="tel:403-401-1552" className="text-secunova-blue hover:text-secunova-dark underline font-medium">403-401-1552</a>.
+                    For questions about this Privacy Policy or to exercise your privacy rights, contact us at <a href="mailto:hello@secunovainc.ca" className="text-secunova-blue hover:text-secunova-dark underline font-medium">hello@secunovainc.ca</a> or by telephone at <a href="tel:403-401-1552" className="text-secunova-blue hover:text-secunova-dark underline font-medium">403-401-1552</a>.
                   </p>
                 </div>
               </div>
@@ -302,7 +313,7 @@ const PrivacyTermsPage = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-gray-800">11. Contact</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    For questions about these terms or our services, contact us at <a href="mailto:hello@secunovainc.com" className="text-secunova-blue hover:text-secunova-dark underline font-medium">hello@secunovainc.com</a> or by telephone at <a href="tel:403-401-1552" className="text-secunova-blue hover:text-secunova-dark underline font-medium">403-401-1552</a>.
+                    For questions about these terms or our services, contact us at <a href="mailto:hello@secunovainc.ca" className="text-secunova-blue hover:text-secunova-dark underline font-medium">hello@secunovainc.ca</a> or by telephone at <a href="tel:403-401-1552" className="text-secunova-blue hover:text-secunova-dark underline font-medium">403-401-1552</a>.
                   </p>
                 </div>
               </div>
@@ -318,7 +329,7 @@ const PrivacyTermsPage = () => {
                 If you have any questions about our privacy policy or terms of service, please contact our team.
               </p>
               <a
-                href="mailto:hello@secunovainc.com"
+                href="mailto:hello@secunovainc.ca"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-secunova-blue to-secunova-light hover:from-secunova-light hover:to-secunova-blue transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
               >
                 Contact Privacy &amp; Legal Team

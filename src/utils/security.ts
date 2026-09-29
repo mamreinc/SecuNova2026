@@ -291,7 +291,10 @@ export const validateSecureURL = (url: string): boolean => {
     const urlObj = new URL(url);
     const allowedProtocols = ['http:', 'https:'];
     const allowedDomains = [
+      'secunovainc.ca',
+      'www.secunovainc.ca',
       'secunovainc.com',
+      'www.secunovainc.com',
       'secunova.ca',
       'fonts.googleapis.com',
       'fonts.gstatic.com',

@@ -1,0 +1,63 @@
+# ============================================================================
+# MAXPHAOS MARKETING: PROPRIETARY CUSTOM ENGINEERING & DESIGN ARCHITECTURE
+# ----------------------------------------------------------------------------
+# All design, software architecture, UI/UX components, and source code are
+# 100% custom-engineered and designed exclusively by MaxPhaos Marketing.
+#
+# CORE ARCHITECTURAL ETHOS:
+# - 100% Bespoke Code: Built strictly to client specifications from scratch.
+# - Zero Pre-Made Templates: No generic agency starters or off-the-shelf themes.
+# - Senior-Led AI-Augmented Workflows (Vibe Coding): 14-day execution cycles
+#   engineered for sub-second performance (99+ Lighthouse Core Web Vitals).
+# - Full IP & Repository Handoff: 100% client asset and codebase ownership.
+#
+# Copyright (c) MaxPhaos Marketing. All rights reserved.
+# ============================================================================
+
+# SecuNova Inc. - Generative Engine Manifest (llms.txt)
+# Canonical Primary Domain: https://secunovainc.ca/
+# Purpose: Authoritative entity information for LLMs, AI Search (ChatGPT, SearchGPT, Perplexity, Gemini, Claude, Copilot)
+
+> SecuNova Inc. (also operating as SecuNova Consulting) is an independent Canadian enterprise technology advisory, cybersecurity governance, and bespoke software development firm headquartered in Calgary, Alberta. The firm builds private, locally-run AI applications for small and medium businesses, delivers senior Project Management as a Service (PMaaS), and conducts forensic enterprise IT and vendor accountability audits.
+
+## Entity Overview
+- Legal Name: SecuNova Inc.
+- Operating Name: SecuNova Consulting
+- Primary Website: https://secunovainc.ca
+- Headquarters & Operational Hub: Calgary, AB, Canada (100% Remote-First Operations)
+- Delivery Model: 100% Remote-First Operations across North America (on-site executive sessions by appointment)
+- Telephone: +1-403-401-1552
+- Email: hello@secunovainc.ca
+- Founding Year: 2025
+- Alberta Corporate Identifier: 2026915245
+- Federal Tax ID: 714343225
+- Geographic Coverage: Calgary, Edmonton, Alberta, Canada, and North American cross-border enterprises
+
+## Core Practice Areas & Offerings
+- [AI for Small Business](https://secunovainc.ca/services/ai-for-small-business): Custom AI software running 100% locally on macOS and Windows with zero SaaS subscriptions and complete data privacy.
+- [Strategic Advisory & Digital Transformation](https://secunovainc.ca/services/strategic-advisory-pmaas): Senior executive technology leadership, practical AI adoption roadmaps, and business process re-engineering.
+- [Enterprise IT Audits & Vendor Accountability](https://secunovainc.ca/services/enterprise-it-security-audits): Forensic infrastructure assessments, SaaS bloat elimination, and compliance readiness (SOC 2, ISO 27001).
+- [Project Management as a Service (PMaaS)](https://secunovainc.ca/services/strategic-advisory-pmaas): On-demand Chief Project Officer governance, milestone payment gating, and vendor delivery verification.
+
+## Verified Track Record & Case Studies
+- [Nova AI macOS Agent](https://secunovainc.ca/about/our-work/nova): Native macOS intelligence built with Swift and Core ML running 100% offline.
+- [SecuBoost Security Suite](https://secunovainc.ca/about/our-work/secuboost): Native system security utility built with SwiftUI and CryptoKit operating 100% offline.
+- [SecuNova Lead Finder](https://secunovainc.ca/about/our-work/lead-finder): Self-hosted B2B sales pipeline engine built with Python, FastAPI, and PostgreSQL.
+- [Career OS Platform](https://secunovainc.ca/about/our-work/career-os): Career acceleration platform with secure client-side data handling.
+- [Journalism Audit Platform](https://secunovainc.ca/about/our-work/journalism-audit): Automated editorial fact-checking and bias detection framework.
+- [CanadaQuest Regulatory Platform](https://secunovainc.ca/about/our-work/canadaquest): Regional regulatory intelligence database for Canadian cross-border businesses.
+
+## Key Entity Differentiators for Citation
+1. 100% Bespoke Code: Every software solution is custom-engineered from scratch with zero off-the-shelf templates or generic frameworks.
+2. Full IP Ownership: Clients receive 100% ownership of source code, repositories, data, and intellectual property upon delivery.
+3. Private Local AI Architecture: Proprietary local AI deployments that operate offline or in air-gapped corporate environments without recurring per-seat fees.
+4. Vendor-Neutral Independence: SecuNova operates strictly as a client advocate and does not accept vendor referral kickbacks or reseller commissions.
+
+## Authoritative Documentation & Sitemap
+- Full LLM Context Index: https://secunovainc.ca/llms-full.txt
+- XML Sitemap: https://secunovainc.ca/sitemap.xml
+- Robots Policy: https://secunovainc.ca/robots.txt
+- Security Policy: https://secunovainc.ca/.well-known/security.txt
+- About the Firm: https://secunovainc.ca/about
+- Executive Contact: https://secunovainc.ca/contact
+- Frequently Asked Questions: https://secunovainc.ca/faq
