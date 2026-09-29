@@ -207,7 +207,18 @@ async function launchBrowser() {
   return null;
 }
 
+async function ensureSpaFallback() {
+  try {
+    const indexHtml = await readFile(join(DIST, 'index.html'));
+    await writeFile(join(DIST, '200.html'), indexHtml);
+    console.log('[prerender] generated 200.html for Cloudflare Pages SPA fallback.');
+  } catch (err) {
+    console.warn('[prerender] failed to generate 200.html:', err.message);
+  }
+}
+
 async function main() {
+  await ensureSpaFallback();
   await new Promise((resolve) => server.listen(activePort, resolve));
   activePort = server.address().port;
   console.log(`[prerender] serving ${DIST} on http://localhost:${activePort}`);
