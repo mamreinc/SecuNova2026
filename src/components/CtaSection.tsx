@@ -33,8 +33,8 @@ const CtaSection = ({
   ctaText = 'Schedule Executive Consultation',
   ctaLink = '/contact'
 }: CtaSectionProps) => {
-  const headingTitle = title ?? 'Elevate Your Enterprise Systems & Governance';
-  const headingSubtitle = subtitle ?? 'Partner with senior technology advisors to audit infrastructure, de-risk cloud architecture, and execute digital transformation with institutional discipline.';
+  const headingTitle = title ?? 'Transform Your Digital Presence Into Market Authority';
+  const headingSubtitle = subtitle ?? 'Partner with senior advisors to audit your digital footprint, dominate high-intent search, and govern external delivery with institutional discipline.';
   
   return (
     <section className="secunova-section secunova-section--dark relative min-h-[45vh] overflow-hidden flex items-center justify-center">
@@ -42,10 +42,10 @@ const CtaSection = ({
         <OptimizedImage
           src="/images/strategic_hero_bg.png"
           alt="Professional Executive IT Consultation"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-25 brightness-75 contrast-105"
           priority={false}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/96 via-secunova-dark/90 to-secunova-dark/95"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 w-full">

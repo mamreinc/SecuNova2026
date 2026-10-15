@@ -582,15 +582,23 @@ const BrandPage: React.FC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center pt-32 sm:pt-36 pb-16 overflow-hidden bg-gradient-to-b from-secunova-dark via-secunova-dark to-[#0B121E]">
-        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/80"></div>
+      <section className="relative min-h-[750px] flex items-center justify-center pt-32 sm:pt-36 pb-16 overflow-hidden bg-gradient-to-b from-secunova-dark via-secunova-dark to-[#0B121E]">
+        <div className="absolute inset-0">
+          <img
+            src="/images/heroes/brand-hero.jpg"
+            alt="SecuNova Brand Suite and Design Architecture Laboratory"
+            className="w-full h-full object-cover opacity-55"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secunova-dark/80 via-secunova-dark/60 to-secunova-dark/90"></div>
+        </div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="max-w-5xl mx-auto text-center text-white">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full text-sm font-medium mb-6">
               <ImageIcon className="h-4 w-4 mr-2 text-white" />
               Brand Design System & LinkedIn Banners
             </div>
-            
+
             <h1 className="hero-heading mb-6">
               LinkedIn Company Banners & <span className="text-secunova-light">Brand Suite</span>
             </h1>
@@ -1261,15 +1269,14 @@ const BrandPage: React.FC = () => {
                       <div className="text-xs text-gray-500 mt-0.5">Weight: {item.weight} | Height: {item.lineHeight}</div>
                     </div>
                     <div className="lg:col-span-8">
-                      <p className={`text-secunova-dark font-sans leading-tight ${
-                        index === 0 ? 'text-2xl sm:text-4xl font-extrabold' :
-                        index === 1 ? 'text-xl sm:text-3xl font-extrabold' :
-                        index === 2 ? 'text-lg sm:text-2xl font-bold' :
-                        index === 3 ? 'text-base sm:text-xl font-bold' :
-                        index === 4 ? 'text-base sm:text-lg font-medium text-gray-700' :
-                        index === 5 ? 'text-sm sm:text-base text-gray-600' :
-                        'text-xs font-semibold tracking-wide text-secunova-blue'
-                      }`}>
+                      <p className={`text-secunova-dark font-sans leading-tight ${index === 0 ? 'text-2xl sm:text-4xl font-extrabold' :
+                          index === 1 ? 'text-xl sm:text-3xl font-extrabold' :
+                            index === 2 ? 'text-lg sm:text-2xl font-bold' :
+                              index === 3 ? 'text-base sm:text-xl font-bold' :
+                                index === 4 ? 'text-base sm:text-lg font-medium text-gray-700' :
+                                  index === 5 ? 'text-sm sm:text-base text-gray-600' :
+                                    'text-xs font-semibold tracking-wide text-secunova-blue'
+                        }`}>
                         {item.sample}
                       </p>
                     </div>

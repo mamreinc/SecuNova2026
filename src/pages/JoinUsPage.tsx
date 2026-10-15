@@ -178,25 +178,37 @@ const JoinUsPage = () => {
         </script>
       </Helmet>
 
-      {/* ─── Hero Section ─── */}
-      <section className="relative min-h-[70vh] flex items-center pt-32 sm:pt-36 pb-16 bg-secunova-dark overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue/40"></div>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-secunova-blue/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secunova-light/10 rounded-full blur-3xl"></div>
+      {/* Hero Section */}
+      <section className="relative min-h-[750px] flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark overflow-hidden">
+        <div className="absolute inset-0">
+          <video
+            src="/literacy.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/heroes/join-us-hero.jpg"
+            className="w-full h-full object-cover opacity-25 brightness-75 contrast-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secunova-dark/96 via-secunova-dark/88 to-secunova-dark/98"></div>
+        </div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-secunova-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secunova-light/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-secunova-light mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-secunova-light mb-6 hero-badge-motion">
               <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
               Executive Growth &amp; Investor Pathways
             </div>
 
             <h1 className="hero-heading mb-6 text-white">
-              <span className="block">Invest &amp; Scale</span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue via-sky-400 to-secunova-light mt-1">With SecuNova Inc.</span>
+              <span className="hero-line">Invest &amp; Scale</span>
+              <span className="hero-line bg-clip-text text-transparent bg-gradient-to-r from-secunova-blue via-sky-400 to-secunova-light mt-1 motion-gradient-text">With SecuNova Inc.</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10">
+            <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10 hero-sub-motion">
               A federally registered Canadian technology firm headquartered in Calgary, Alberta. We partner with strategic investors and executive co-founders to deliver world-class software, cybersecurity, and digital infrastructure.
             </p>
 

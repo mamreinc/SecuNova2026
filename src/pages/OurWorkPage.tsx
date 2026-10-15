@@ -174,14 +174,15 @@ const OurWorkPage = () => {
 
 
       {/* Hero Header */}
-      <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
+      <section className="relative min-h-[750px] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85"
-            alt="SecuNova project management delivery oversight"
-            className="w-full h-full object-cover opacity-20"
+            src="/images/heroes/our-work-hero.jpg"
+            alt="SecuNova Project Management Delivery Oversight and Enterprise Track Record"
+            className="w-full h-full object-cover opacity-55"
+            loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark/95 via-secunova-dark/90 to-secunova-blue/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-secunova-dark/80 via-secunova-dark/60 to-secunova-dark/90"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10 w-full">
@@ -280,11 +281,11 @@ const OurWorkPage = () => {
                 When SecuNova audits your technical estate or manages your vendor roadmaps, our guidance is informed by hands-on project management experience. We have supervised the delivery of native Swift applications, high-throughput Python NLP microservices, and client-side TypeScript engines under our PMaaS model, giving us definitive technical authority to audit and govern third-party delivery.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/services/strategic-advisory-pmaas" className="btn btn-gradient btn-md text-white">
+                <Link to="/services" className="btn btn-gradient btn-md text-white">
                   Explore Strategic Advisory <ArrowRight className="ml-2 h-4 w-4 text-white" />
                 </Link>
-                <Link to="/services/enterprise-it-security-audits" className="btn btn-outline-light btn-md text-white">
-                  Explore Forensic Audits
+                <Link to="/contact" className="btn btn-outline-light btn-md text-white">
+                  Schedule Consultation
                 </Link>
               </div>
             </div>

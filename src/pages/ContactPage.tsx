@@ -61,12 +61,12 @@ const ContactPage = () => {
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>Executive Contact &amp; Consultations | SecuNova Inc. Calgary</title>
-        <meta name="description" content="Contact SecuNova Inc., a Calgary-based IT advisory firm. Call 403-401-1552 or email hello@secunovainc.ca for executive strategic advisory, PMaaS, and enterprise audits." />
-        <meta name="keywords" content="contact SecuNova Inc, IT advisory Calgary, strategic consulting Canada, PMaaS consultation, free strategy call Calgary, hello@secunovainc.ca, 403-401-1552" />
+        <meta name="description" content="Contact SecuNova Inc., an executive Digital Presence Consulting and PMaaS Governance firm. Call 403-401-1552 or email hello@secunovainc.ca for strategic advisory and authority positioning." />
+        <meta name="keywords" content="contact SecuNova Inc, digital presence consultant Calgary, strategic consulting Canada, PMaaS consultation, executive branding Calgary, hello@secunovainc.ca, 403-401-1552" />
         {buildSeoTags({
           title: 'Executive Contact & Consultations | SecuNova Inc.',
           description:
-            'Direct engagement channels for enterprise leaders seeking strategic advisory, cybersecurity risk governance, and PMaaS. Call 403-401-1552 or email hello@secunovainc.ca.',
+            'Direct engagement channels for enterprise leaders seeking digital presence consulting, authority architecture, and PMaaS governance. Call 403-401-1552 or email hello@secunovainc.ca.',
           url: '/contact',
           imageAlt: 'SecuNova Inc. - Executive Contact & Consultations',
         })}
@@ -116,40 +116,45 @@ const ContactPage = () => {
         </script>
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
+      {/* Hero Section: Compact & Executive */}
+      <section className="relative min-h-[750px] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
+          <img
+            src="/images/heroes/contact-hero.jpg"
+            alt="SecuNova Executive Private Consultation Suite"
+            className="w-full h-full object-cover opacity-55"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secunova-dark/80 via-secunova-dark/60 to-secunova-dark/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 w-full">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-widest text-secunova-light mb-6">
-              <MessageSquare className="h-4 w-4 mr-2" />
-              Executive Consultation Briefings
+        <div className="container mx-auto px-4 relative z-10 w-full text-center">
+          <div className="max-w-3xl mx-auto">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-secunova-light mb-4">
+              <MessageSquare className="h-3.5 w-3.5 mr-1.5" />
+              Direct Executive Access
             </div>
 
-            <h1 className="hero-heading mb-6 text-white">
-              <span className="block">Connect With Senior</span>
-              <span className="block text-secunova-light mt-1">Technology Leadership.</span>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight mb-3">
+              Connect With Senior <span className="text-secunova-light block sm:inline">Advisory Leadership.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-blue-100/90 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
-              Direct access to senior SecuNova partners for C-suite leaders and enterprise directors in Calgary and across North America.
+            <p className="text-sm sm:text-base text-blue-100/90 max-w-xl mx-auto leading-relaxed mb-8">
+              Direct access to senior partners for business leaders seeking digital presence transformation and PMaaS delivery governance.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="tel:403-401-1552" className="btn btn-gradient btn-lg text-white">
-                <Phone className="mr-2 h-5 w-5 text-white" />
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
+              <a href="tel:403-401-1552" className="btn btn-gradient text-xs sm:text-sm font-bold text-white px-5 py-3">
+                <Phone className="mr-2 h-4 w-4 text-white" />
                 Call 403-401-1552
               </a>
-              <a href="mailto:hello@secunovainc.ca" className="btn btn-outline-light btn-lg text-white">
-                <Mail className="mr-2 h-5 w-5 text-white" />
+              <a href="mailto:hello@secunovainc.ca" className="btn btn-outline-light text-xs sm:text-sm font-bold text-white px-5 py-3">
+                <Mail className="mr-2 h-4 w-4 text-white" />
                 Email Executive Brief
               </a>
             </div>
-            <p className="text-xs text-blue-200 mt-6 flex items-center justify-center gap-1.5">
-              <Clock className="h-4 w-4 text-secunova-light" />
+            <p className="text-xs text-blue-200 mt-4 flex items-center justify-center gap-1.5">
+              <Clock className="h-3.5 w-3.5 text-secunova-light" />
               Same business day response protocol
             </p>
           </div>
@@ -166,9 +171,9 @@ const ContactPage = () => {
                 Executive Access
               </span>
               <h2 className="text-2xl md:text-4xl font-bold text-secunova-dark mb-3 tracking-tight">Direct Engagement Channels</h2>
-              <p className="text-slate-600 text-sm md:text-base">Reach out directly to discuss strategic advisory, cybersecurity audits, or PMaaS terms. No intake forms, no queues.</p>
+              <p className="text-slate-600 text-sm md:text-base">Reach out directly to discuss digital presence consulting, brand positioning, or PMaaS governance. No intake forms, no queues.</p>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
               <div className="space-y-4">
                 {contactMethods.map((m, i) => (
@@ -267,35 +272,35 @@ const ContactPage = () => {
                 {/* What Happens Next Card */}
                 <div className="bg-gradient-to-br from-secunova-dark to-gray-900 text-white rounded-2xl p-8 shadow-xl border border-gray-800 flex flex-col">
                   <h3 className="text-2xl font-bold mb-2">What Happens Next</h3>
-                <p className="text-blue-100/90 text-sm leading-relaxed mb-8">
-                  From first contact to proposal, a senior partner owns your inquiry end to end.
-                </p>
-                <div className="space-y-6">
-                  {engagementSteps.map((step, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-secunova-light to-secunova-blue flex items-center justify-center text-secunova-dark font-bold text-sm">
-                        {i + 1}
+                  <p className="text-blue-100/90 text-sm leading-relaxed mb-8">
+                    From first contact to proposal, a senior partner owns your inquiry end to end.
+                  </p>
+                  <div className="space-y-6">
+                    {engagementSteps.map((step, i) => (
+                      <div key={i} className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-secunova-light to-secunova-blue flex items-center justify-center text-secunova-dark font-bold text-sm">
+                          {i + 1}
+                        </div>
+                        <div>
+                          <div className="font-semibold text-white">{step.title}</div>
+                          <div className="text-xs text-blue-100/80 leading-relaxed mt-1">{step.description}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="font-semibold text-white">{step.title}</div>
-                        <div className="text-xs text-blue-100/80 leading-relaxed mt-1">{step.description}</div>
-                      </div>
+                    ))}
+                  </div>
+                  <div className="border-t border-white/10 pt-6 space-y-4 text-xs text-blue-100/90 mt-8">
+                    <div className="flex items-center gap-2.5 font-semibold text-white">
+                      <CheckCircle2 className="h-4 w-4 text-secunova-light flex-shrink-0" /> Mutual NDA &amp; Confidentiality Guaranteed
                     </div>
-                  ))}
-                </div>
-                <div className="border-t border-white/10 pt-6 space-y-4 text-xs text-blue-100/90 mt-8">
-                  <div className="flex items-center gap-2.5 font-semibold text-white">
-                    <CheckCircle2 className="h-4 w-4 text-secunova-light flex-shrink-0" /> Mutual NDA &amp; Confidentiality Guaranteed
-                  </div>
-                  <div className="flex items-center gap-2.5 font-semibold text-white">
-                    <CheckCircle2 className="h-4 w-4 text-secunova-light flex-shrink-0" /> Direct Senior Partner Lead
-                  </div>
-                  <div className="flex items-center gap-2.5 font-semibold text-white">
-                    <CheckCircle2 className="h-4 w-4 text-secunova-light flex-shrink-0" /> Board-Ready Documentation Benchmarks
+                    <div className="flex items-center gap-2.5 font-semibold text-white">
+                      <CheckCircle2 className="h-4 w-4 text-secunova-light flex-shrink-0" /> Direct Senior Partner Lead
+                    </div>
+                    <div className="flex items-center gap-2.5 font-semibold text-white">
+                      <CheckCircle2 className="h-4 w-4 text-secunova-light flex-shrink-0" /> Board-Ready Documentation Benchmarks
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

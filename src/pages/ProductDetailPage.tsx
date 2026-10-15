@@ -127,13 +127,22 @@ const ProductDetailPage: React.FC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue text-white pt-32 sm:pt-36 pb-16">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="relative min-h-[750px] flex items-center overflow-hidden bg-secunova-dark text-white pt-32 sm:pt-36 pb-16">
+        <div className="absolute inset-0">
+          <img
+            src="/images/heroes/product-detail-hero.jpg"
+            alt="SecuNova Strategic Advisory Solution Architecture"
+            className="w-full h-full object-cover opacity-25 brightness-75 contrast-105"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secunova-dark/96 via-secunova-dark/88 to-secunova-dark/98"></div>
+        </div>
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Content Column */}
             <div className={`${heroMedia ? 'lg:col-span-7' : 'lg:col-span-12 max-w-4xl'} space-y-6`}>
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-3 flex-wrap hero-badge-motion">
                 <span className="text-xs font-semibold uppercase tracking-wider text-secunova-light bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
                   {product.year} · {product.heroLabel}
                 </span>
@@ -148,11 +157,11 @@ const ProductDetailPage: React.FC = () => {
                 {product.name}
               </h1>
 
-              <p className="text-xl sm:text-2xl font-semibold text-secunova-light">
+              <p className="text-xl sm:text-2xl font-semibold text-secunova-light hero-sub-motion">
                 {product.tagline}
               </p>
 
-              <p className="text-blue-100 text-lg leading-relaxed max-w-3xl">
+              <p className="text-blue-100 text-lg leading-relaxed max-w-3xl hero-sub-motion">
                 {product.pitch}
               </p>
 

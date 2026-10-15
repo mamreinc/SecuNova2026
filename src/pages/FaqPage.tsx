@@ -77,20 +77,20 @@ const FaqPage = () => {
       linkText: 'Request Vendor Oversight Briefing'
     },
 
-    // IT & Security Audits
+    // Digital Presence & Governance Audits
     {
-      category: 'IT & Security Audits',
-      q: 'What does a Technical Infrastructure Forensic Audit cover?',
-      a: 'Our forensic audits evaluate your entire technology stack: network perimeter integrity, server environments, cloud configurations, SaaS subscription spend line-items, and backup disaster recovery readiness. We deliver evidence-based, board-ready audit reports.',
-      link: '/services/enterprise-it-security-audits',
-      linkText: 'View Audit Modules'
+      category: 'Digital Presence & Governance Audits',
+      q: 'What does a Digital Presence & Vendor Audit cover?',
+      a: 'Our forensic audits evaluate your entire digital touchpoint ecosystem: customer conversion funnels, search authority, competitor positioning, and external agency contract deliverables. We deliver evidence-based, board-ready audit reports.',
+      link: '/services',
+      linkText: 'View Audit Services'
     },
     {
-      category: 'IT & Security Audits',
-      q: 'How much capital can SaaS Subscription Bloat audits recover?',
-      a: 'On average, enterprise audit engagements identify 15% to 35% in redundant software licenses, unassigned user seats, duplicate SaaS tool tiers, and unnegotiated auto-renewals that can be immediately eliminated.',
-      link: '/services/enterprise-it-security-audits',
-      linkText: 'Learn About SaaS Expense Audits'
+      category: 'Digital Presence & Governance Audits',
+      q: 'How does PMaaS protect digital and marketing budgets?',
+      a: 'Our PMaaS governance model eliminates agency budget drift by establishing milestone gates before invoices are approved. On average, our oversight prevents 20% to 35% in scope creep and vendor waste.',
+      link: '/services',
+      linkText: 'Learn About PMaaS Governance'
     },
 
     // Internal R&D Portfolio
@@ -163,22 +163,30 @@ const FaqPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
+      <section className="relative min-h-[750px] overflow-hidden flex items-center justify-center pt-36 sm:pt-44 pb-24 bg-secunova-dark text-white">
+        <div className="absolute inset-0">
+          <img
+            src="/images/heroes/faq-hero.jpg"
+            alt="SecuNova Strategic Advisory Executive Knowledge Base"
+            className="w-full h-full object-cover opacity-25 brightness-75 contrast-105"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secunova-dark/96 via-secunova-dark/88 to-secunova-dark/98"></div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10 w-full">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-secunova-light mb-6">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-secunova-light mb-6 hero-badge-motion">
               <HelpCircle className="h-4 w-4 mr-2" />
               Executive Knowledge Base
             </div>
 
             <h1 className="hero-heading mb-6 text-white">
-              <span className="block">Frequently Asked</span>
-              <span className="block text-secunova-light mt-1">Questions.</span>
+              <span className="hero-line">Frequently Asked</span>
+              <span className="hero-line text-secunova-light mt-1 motion-gradient-text bg-clip-text text-transparent bg-gradient-to-r from-secunova-light via-blue-200 to-white">Questions.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-2xl mx-auto mb-8 hero-sub-motion">
               Clear answers regarding SecuNova advisory engagements, PMaaS execution, forensic IT audits, and our internal R&amp;D software portfolio.
             </p>
 

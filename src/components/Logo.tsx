@@ -36,29 +36,41 @@ export const Logo: React.FC<LogoProps> = ({
   className = '',
   showLink = true,
 }) => {
-  // Icon height responsive classes
+  // Refined Apple-scale Icon height classes
   const iconHeightClass = {
-    sm: 'h-6 sm:h-7',
-    md: 'h-8 sm:h-9',
-    lg: 'h-10 sm:h-12',
+    sm: 'h-4 sm:h-5',
+    md: 'h-5 sm:h-6',
+    lg: 'h-7 sm:h-8',
   }[size];
 
-  // Font size responsive classes
+  // Scaled-down Apple-scale typography classes
   const textSizeClass = {
-    sm: 'text-lg sm:text-xl',
-    md: 'text-xl sm:text-2xl md:text-[1.65rem]',
-    lg: 'text-3xl sm:text-4xl',
+    sm: 'text-xs sm:text-[13px] tracking-[0.16em]',
+    md: 'text-sm sm:text-[15px] tracking-[0.18em]',
+    lg: 'text-lg sm:text-xl tracking-[0.2em]',
   }[size];
+
+  // Micro-typography for specialization subtext with transform scale
+  const subtextSizeClass = {
+    sm: 'text-[8px] scale-[0.65]',
+    md: 'text-[8.5px] scale-[0.68]',
+    lg: 'text-[9.5px] scale-[0.72]',
+  }[size];
+
+  const subtextOriginClass = variant === 'vertical' ? 'origin-center' : 'origin-left';
+
+  // Brand subtext under logo
+  const effectiveSubtext = subtext !== undefined ? subtext : 'Advancing Success';
 
   const iconSrc = theme === 'dark' ? '/logo/secunova-icon-white.png' : '/logo/secunova-icon.png';
 
   const logoContent = (
     <div
-      className={`inline-flex group transition-transform duration-300 hover:scale-[1.02] ${
-        variant === 'vertical' ? 'flex-col items-center text-center space-y-2.5' : 'flex-row space-x-2.5 sm:space-x-3 items-center'
+      className={`inline-flex group transition-transform duration-300 hover:scale-[1.01] ${
+        variant === 'vertical' ? 'flex-col items-center text-center space-y-1.5' : 'flex-row space-x-2 sm:space-x-2.5 items-center'
       } ${className}`}
     >
-      {/* Icon from attached image mark */}
+      {/* Icon mark */}
       <img
         src={iconSrc}
         alt="SecuNova Icon"
@@ -67,25 +79,25 @@ export const Logo: React.FC<LogoProps> = ({
         decoding="async"
       />
 
-      {/* Brand Text formatted strictly matching secunovainc.com */}
+      {/* Brand Text scaled down with Apple-style specialization subtext */}
       {variant !== 'monogram' && (
-        <div className="flex flex-col">
+        <div className="flex flex-col text-left">
           <div
-            className={`font-sans uppercase tracking-widest leading-none select-none transition-colors duration-200 ${textSizeClass} ${
+            className={`font-sans uppercase font-bold tracking-widest leading-none select-none transition-colors duration-200 ${textSizeClass} ${
               theme === 'dark' ? 'text-white' : 'text-secunova-dark'
             }`}
           >
-            <span className="font-light opacity-85">SECU</span>
+            <span className="font-light opacity-90">SECU</span>
             <span className="font-black">NOVA</span>
             <span className="text-secunova-blue font-black ml-0.5 select-none">.</span>
           </div>
-          {subtext && (
+          {effectiveSubtext && (
             <div
-              className={`font-sans uppercase tracking-[0.32em] font-bold text-[0.42em] mt-1 select-none leading-none ${
-                theme === 'dark' ? 'text-secunova-light' : 'text-secunova-blue'
+              className={`font-mono uppercase font-normal mt-0.5 select-none leading-none whitespace-nowrap transform tracking-[0.24em] opacity-80 ${subtextSizeClass} ${subtextOriginClass} ${
+                theme === 'dark' ? 'text-slate-400' : 'text-secunova-blue/80'
               }`}
             >
-              {subtext}
+              {effectiveSubtext}
             </div>
           )}
         </div>

@@ -58,8 +58,16 @@ const PrivacyTermsPage = () => {
       </Helmet>
 
 
-      <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-secunova-dark via-gray-900 to-secunova-blue opacity-95"></div>
+      <section className="relative min-h-[750px] overflow-hidden flex items-center justify-center pt-32 sm:pt-36 pb-16 bg-secunova-dark text-white">
+        <div className="absolute inset-0">
+          <img
+            src="/images/heroes/privacy-hero.jpg"
+            alt="SecuNova Legal and Data Integrity Governance"
+            className="w-full h-full object-cover opacity-55"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secunova-dark/80 via-secunova-dark/60 to-secunova-dark/90"></div>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="hero-heading mb-6 text-white">
@@ -128,21 +136,21 @@ const PrivacyTermsPage = () => {
                   <p className="text-gray-700 mb-5 leading-relaxed">
                     SecuNova Inc. is committed to maintaining the highest standards of payment security and financial privacy. We have implemented strict policies to ensure your payment information remains secure and confidential.
                   </p>
-                  
+
                   <div className="mb-5">
                     <h4 className="text-lg font-semibold mb-3 text-gray-800">We Do Not Store Payment Information</h4>
                     <p className="text-gray-600 leading-relaxed">
                       For your security and privacy protection, SecuNova Inc. does not store, retain, or have access to any sensitive payment information, including credit card numbers, debit card details, bank account numbers, or any other financial data on our servers.
                     </p>
                   </div>
-                  
+
                   <div className="mb-5">
                     <h4 className="text-lg font-semibold mb-3 text-gray-800">Secure Payment Processing</h4>
                     <p className="text-gray-600 leading-relaxed">
                       All payment transactions are processed exclusively through Square, a PCI-DSS compliant, industry-leading third-party payment gateway. Square employs bank-level encryption and security protocols to ensure your payment information is handled securely.
                     </p>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-lg font-semibold mb-3 text-gray-800">Trusted Banking Partners</h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -159,14 +167,14 @@ const PrivacyTermsPage = () => {
                   <p className="text-gray-700 mb-5 leading-relaxed">
                     SecuNova AI Advisor is a proprietary artificial intelligence assistant designed specifically for SecuNova Inc. It is available exclusively on our Contact page and is configured to answer questions about our services, including strategic advisory, project management as a service (PMaaS), and enterprise IT and security audits, in English.
                   </p>
-                  
+
                   <div className="mb-5">
                     <h4 className="text-lg font-semibold mb-3 text-gray-800">No Personal Information Required</h4>
                     <p className="text-gray-600 leading-relaxed">
                       You are not required to provide any personal information to use the assistant. The assistant draws exclusively from SecuNova's own in-house service knowledge base.
                     </p>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-lg font-semibold mb-3 text-gray-800">Privacy & Data Handling</h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -233,7 +241,7 @@ const PrivacyTermsPage = () => {
                 <div className="mb-8">
                   <h3 className="text-xl font-bold mb-4 text-gray-800">1. Nature of Our Services</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    SecuNova Inc. (Business Number 714343225, Corporation Number 2026915245) is an independent technology advisory and governance firm headquartered in Calgary, Alberta. We provide executive strategic advisory, project management as a service (PMaaS), cybersecurity and IT risk audits, and digital transformation governance.
+                    SecuNova Inc. (Business Number 714343225, Corporation Number 2026915245) is an executive digital presence consulting and strategic advisory firm headquartered in Calgary, Alberta. We provide strategic advisory, digital presence optimization, and project management as a service (PMaaS) delivery governance.
                   </p>
                   <p className="text-gray-600 leading-relaxed mt-3">
                     Our services are advisory and governance oriented. Program and project delivery is supervised by our senior partners and executed through accountable vendors, partners, or client resources, unless otherwise specified in a written engagement agreement.

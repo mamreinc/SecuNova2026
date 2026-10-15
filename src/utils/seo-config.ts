@@ -118,11 +118,11 @@ export const pageSEO = {
       'enterprise IT audit Calgary, IT security audit Calgary, security posture review, infrastructure forensic audit, subscription bloat audit, compliance advisory Alberta, SecuNova Consulting'
   },
   '/about': {
-    title: 'About SecuNova Consulting | Senior-Led Advisory Firm in Calgary',
+    title: 'About SecuNova Inc. | Leadership, Fiduciary Governance & Team',
     description:
-      'Meet SecuNova Consulting, a Calgary-based advisory firm restructuring organizations through strategic advisory, digital transformation, and Project Management as a Service (PMaaS).',
+      'Meet the leadership, partners, and governance specialists behind SecuNova Inc. Independent digital presence consulting in Calgary & North America.',
     keywords:
-      'About SecuNova Consulting, senior-led consulting firm Calgary, Calgary consulting and advisory firm, digital transformation consulting Alberta, SecuNova team'
+      'SecuNova leadership, Max Amrein, Calgary consulting team, PMaaS governance partners, independent advisory Canada'
   },
   '/about/our-work': {
     title: 'Our Work & Products | SecuNova Consulting',
@@ -164,13 +164,6 @@ export const pageSEO = {
     description:
       'SecuNova Consulting brand guidelines, identity, and digital assets.',
     keywords: 'SecuNova brand, SecuNova Consulting identity, brand guidelines'
-  },
-  '/login': {
-    title: 'Client Portal Login | SecuNova Consulting',
-    description:
-      'Secure client portal login for SecuNova Consulting clients.',
-    keywords: 'SecuNova client login, client portal Calgary',
-    noIndex: true
   }
 };
 

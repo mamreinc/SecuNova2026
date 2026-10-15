@@ -15,7 +15,7 @@
  * Copyright (c) MaxPhaos Marketing. All rights reserved.
  * ============================================================================
  */
-import { defineConfig, splitVendorChunk } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
@@ -68,31 +68,15 @@ export default defineConfig({
         chunkFileNames: 'assets/js/[hash]-[name].js',
         entryFileNames: 'assets/js/[hash]-[name].js',
         // Better code splitting for performance
-        manualChunks: (id, { getModuleInfo }) => {
-          // React and core
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
-            return 'react-vendor';
-          }
-          // Router
-          if (id.includes('react-router-dom')) {
-            return 'router';
-          }
-          // UI libraries
-          if (id.includes('lucide-react') || id.includes('swiper')) {
-            return 'ui-vendor';
-          }
-          // React Helmet
-          if (id.includes('react-helmet-async')) {
-            return 'helmet-vendor';
-          }
-          // Tailwind
-          if (id.includes('tailwindcss')) {
-            return 'tailwind-vendor';
-          }
-          // Default vendor chunk splitting
-          const vendorChunk = splitVendorChunk()(id, { getModuleInfo });
-          if (vendorChunk) {
-            return vendorChunk;
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/scheduler/') || id.includes('react-router') || id.includes('@remix-run') || id.includes('react-helmet-async')) {
+              return 'react-vendor';
+            }
+            if (id.includes('lucide-react') || id.includes('swiper') || id.includes('framer-motion') || id.includes('motion-dom')) {
+              return 'ui-vendor';
+            }
+            return 'vendor';
           }
           // Split large page chunks
           if (id.includes('/pages/')) {
@@ -137,6 +121,7 @@ export default defineConfig({
       'react-router-dom',
       'react-helmet-async',
       'lucide-react',
+      'framer-motion',
     ],
     exclude: ['swiper'], // Exclude swiper if not used on every page
     // Force optimization for better caching

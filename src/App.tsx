@@ -33,16 +33,17 @@ const HomePage = React.lazy(() => import('./pages/HomePage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
-const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const FaqPage = React.lazy(() => import('./pages/FaqPage'));
 const PrivacyTermsPage = React.lazy(() => import('./pages/PrivacyTermsPage'));
 const JoinUsPage = React.lazy(() => import('./pages/JoinUsPage'));
 const BrandPage = React.lazy(() => import('./pages/BrandPage'));
 
-// Service Pages
-const AISmallBusinessPage = React.lazy(() => import('./pages/services/AISmallBusinessPage'));
-const StrategicAdvisoryPage = React.lazy(() => import('./pages/services/StrategicAdvisoryPage'));
-const EnterpriseAuditsPage = React.lazy(() => import('./pages/services/EnterpriseAuditsPage'));
+// Service Pages - Strategic Digital Presence Consulting & PMaaS Governance
+const DigitalPresenceAuditPage = React.lazy(() => import('./pages/services/DigitalPresenceAuditPage'));
+const ContentStorytellingPage = React.lazy(() => import('./pages/services/ContentStorytellingPage'));
+const AIPromptWorkflowsPage = React.lazy(() => import('./pages/services/AIPromptWorkflowsPage'));
+const LocalSeoReputationPage = React.lazy(() => import('./pages/services/LocalSeoReputationPage'));
+const DigitalProjectGovernancePage = React.lazy(() => import('./pages/services/DigitalProjectGovernancePage'));
 
 // About Sub-Pages
 const OurWorkPage = React.lazy(() => import('./pages/OurWorkPage'));
@@ -103,21 +104,24 @@ function App() {
                     <Suspense fallback={<PageLoadingFallback />}>
                       <Routes>
                         <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
-                        <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} />
-                        <Route path="/services/ai-for-small-business" element={<PageTransition><AISmallBusinessPage /></PageTransition>} />
-                        <Route path="/services/strategic-advisory-pmaas" element={<PageTransition><StrategicAdvisoryPage /></PageTransition>} />
-                        <Route path="/services/enterprise-it-security-audits" element={<PageTransition><EnterpriseAuditsPage /></PageTransition>} />
-                        <Route path="/support" element={<PageTransition><ContactPage /></PageTransition>} />
-                        <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
-                        <Route path="/about/our-work" element={<PageTransition><OurWorkPage /></PageTransition>} />
-                        <Route path="/about/our-work/:productId" element={<PageTransition><ProductDetailPage /></PageTransition>} />
-                        <Route path="/our-work/:productId" element={<PageTransition><ProductDetailPage /></PageTransition>} />
-                        <Route path="/products/:productId" element={<PageTransition><ProductDetailPage /></PageTransition>} />
-                        <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
-                        <Route path="/login" element={<PageTransition><LoginPage /></PageTransition>} />
-                        <Route path="/faq" element={<PageTransition><FaqPage /></PageTransition>} />
+                        
+                        {/* Single-Page Section Redirects */}
+                        <Route path="/services" element={<Navigate to="/#services" replace />} />
+                        <Route path="/services/*" element={<Navigate to="/#services" replace />} />
+                        <Route path="/about" element={<Navigate to="/#about" replace />} />
+                        <Route path="/about/*" element={<Navigate to="/#about" replace />} />
+                        <Route path="/team" element={<Navigate to="/#about" replace />} />
+                        <Route path="/our-work" element={<Navigate to="/#case-studies" replace />} />
+                        <Route path="/our-work/*" element={<Navigate to="/#case-studies" replace />} />
+                        <Route path="/contact" element={<Navigate to="/#consultation" replace />} />
+                        <Route path="/support" element={<Navigate to="/#consultation" replace />} />
+                        <Route path="/faq" element={<Navigate to="/#consultation" replace />} />
+                        <Route path="/join-us" element={<Navigate to="/#consultation" replace />} />
+                        <Route path="/login" element={<Navigate to="/#about" replace />} />
+                        <Route path="/portal" element={<Navigate to="/#about" replace />} />
+                        
+                        {/* Administrative & Policy Pages */}
                         <Route path="/privacy-terms" element={<PageTransition><PrivacyTermsPage /></PageTransition>} />
-                        <Route path="/join-us" element={<PageTransition><JoinUsPage /></PageTransition>} />
                         <Route path="/brand" element={<PageTransition><BrandPage /></PageTransition>} />
                         <Route path="*" element={<Navigate to="/" replace />} />
                       </Routes>
