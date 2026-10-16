@@ -34,7 +34,7 @@ const SecuNovaHero: React.FC = () => {
         muted
         playsInline
         aria-hidden="true"
-        title="SecuNova Advisory Pro Cinematic Visual"
+        title="SecuNova Consulting Cinematic Visual"
         className="absolute inset-0 w-full h-full object-cover opacity-45 pointer-events-none z-0"
       />
 

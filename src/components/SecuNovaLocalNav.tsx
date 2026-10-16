@@ -35,7 +35,7 @@ const SecuNovaLocalNav: React.FC = () => {
         {/* Left: Product Name */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a href="#overview" className="font-semibold text-white tracking-tight text-xs sm:text-base hover:text-secunova-light transition-colors whitespace-nowrap">
-            SecuNova Advisory Pro
+            SecuNova Consulting
           </a>
           <span className="hidden lg:inline-block text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-slate-300 border border-white/10">
             Alberta Corp Registry #2026915245

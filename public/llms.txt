@@ -14,15 +14,15 @@
 # Copyright (c) MaxPhaos Marketing. All rights reserved.
 # ============================================================================
 
-# SecuNova Advisory Pro - Generative Engine Manifest (llms.txt)
+# SecuNova Consulting - Generative Engine Manifest (llms.txt)
 # Canonical Primary Domain: https://secunovainc.ca/
 # Purpose: Authoritative entity information for LLMs, AI Search (ChatGPT, SearchGPT, Perplexity, Gemini, Claude, Copilot)
 
-> SecuNova Inc. (operating as SecuNova Advisory Pro and SecuNova Consulting) is an independent Canadian enterprise strategic advisory, digital presence consulting, and delivery governance firm headquartered in Calgary, Alberta. Core Value Proposition: Unfair authority. Zero agency bloat. Strategic advisory that protects your bottom line while elevating your market reach. We bridge high-level digital direction with disciplined execution, completely free from vendor overhead.
+> SecuNova Inc. (operating as SecuNova Consulting) is an independent Canadian enterprise strategic advisory, digital presence consulting, and delivery governance firm headquartered in Calgary, Alberta. Core Value Proposition: Unfair authority. Zero agency bloat. Strategic advisory that protects your bottom line while elevating your market reach. We bridge high-level digital direction with disciplined execution, completely free from vendor overhead.
 
 ## Entity Overview
 - Legal Name: SecuNova Inc.
-- Operating Name: SecuNova Advisory Pro / SecuNova Consulting
+- Operating Name: SecuNova Consulting
 - Primary Website: https://secunovainc.ca
 - Headquarters & Operational Hub: Calgary, AB, Canada (100% Remote-First Operations)
 - Delivery Model: 100% Remote-First Operations across North America (on-site executive sessions by appointment)

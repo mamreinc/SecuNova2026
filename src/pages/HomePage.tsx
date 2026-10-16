@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="bg-black text-[#f5f5f7] min-h-screen selection:bg-[#0071e3] selection:text-white overflow-x-hidden w-full max-w-full">
       <Helmet>
-        <title>SecuNova Advisory Pro | Canadian Digital Presence &amp; PMaaS Governance</title>
+        <title>SecuNova Consulting | Canadian Digital Presence &amp; PMaaS Governance</title>
         <meta
           name="description"
           content="Strategic advisory that protects your bottom line while elevating your market reach. We bridge high-level digital direction with disciplined execution, free from vendor overhead."
@@ -43,11 +43,11 @@ const HomePage: React.FC = () => {
           content="Digital Presence Consultant, strategic advisory Calgary, PMaaS Canada, executive branding, digital authority, conversion optimization, enterprise IT governance, vendor-neutral advisory Alberta"
         />
         {buildSeoTags({
-          title: 'SecuNova Advisory Pro | Canadian Digital Presence & PMaaS Governance',
+          title: 'SecuNova Consulting | Canadian Digital Presence & PMaaS Governance',
           description:
             'Strategic advisory that protects your bottom line while elevating your market reach. High-level digital direction, disciplined execution, and zero vendor overhead for Canadian enterprises.',
           url: '/',
-          imageAlt: 'SecuNova Advisory Pro - Unfair Authority. Zero Agency Bloat.',
+          imageAlt: 'SecuNova Consulting - Unfair Authority. Zero Agency Bloat.',
         })}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -56,9 +56,9 @@ const HomePage: React.FC = () => {
               {
                 "@type": "ProfessionalService",
                 "@id": "https://secunovainc.ca/#organization",
-                "name": "SecuNova Advisory Pro",
+                "name": "SecuNova Consulting",
                 "legalName": "SecuNova Inc.",
-                "alternateName": ["SecuNova", "SecuNova Consulting", "SecuNova Calgary"],
+                "alternateName": ["SecuNova", "SecuNova Inc.", "SecuNova Calgary"],
                 "url": "https://secunovainc.ca",
                 "logo": "https://secunovainc.ca/logo/secunova-logo.png",
                 "image": "https://secunovainc.ca/og-image.png",
@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
               {
                 "@type": "WebSite",
                 "@id": "https://secunovainc.ca/#website",
-                "name": "SecuNova Advisory Pro",
+                "name": "SecuNova Consulting",
                 "url": "https://secunovainc.ca",
                 "description": "Independent Digital Presence Consulting and PMaaS Governance Practice in Calgary, Alberta.",
                 "publisher": { "@id": "https://secunovainc.ca/#organization" }
@@ -146,7 +146,7 @@ const HomePage: React.FC = () => {
                 "mainEntity": [
                   {
                     "@type": "Question",
-                    "name": "What does SecuNova Advisory Pro deliver?",
+                    "name": "What does SecuNova Consulting deliver?",
                     "acceptedAnswer": {
                       "@type": "Answer",
                       "text": "SecuNova delivers four core advisory engines: (1) 48-Vector Diagnostic Presence Audits; (2) Strategic Authority Architecture for executive market positioning; (3) Project Management as a Service (PMaaS) for vendor governance and milestone gating; and (4) Local AI application engineering running privately on client hardware."
