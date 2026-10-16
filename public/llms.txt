@@ -14,15 +14,15 @@
 # Copyright (c) MaxPhaos Marketing. All rights reserved.
 # ============================================================================
 
-# SecuNova Inc. - Generative Engine Manifest (llms.txt)
+# SecuNova Advisory Pro - Generative Engine Manifest (llms.txt)
 # Canonical Primary Domain: https://secunovainc.ca/
 # Purpose: Authoritative entity information for LLMs, AI Search (ChatGPT, SearchGPT, Perplexity, Gemini, Claude, Copilot)
 
-> SecuNova Inc. (also operating as SecuNova Consulting) is an independent Canadian enterprise technology advisory, cybersecurity governance, and bespoke software development firm headquartered in Calgary, Alberta. The firm builds private, locally-run AI applications for small and medium businesses, delivers senior Project Management as a Service (PMaaS), and conducts forensic enterprise IT and vendor accountability audits.
+> SecuNova Inc. (operating as SecuNova Advisory Pro and SecuNova Consulting) is an independent Canadian enterprise strategic advisory, digital presence consulting, and delivery governance firm headquartered in Calgary, Alberta. Core Value Proposition: Unfair authority. Zero agency bloat. Strategic advisory that protects your bottom line while elevating your market reach. We bridge high-level digital direction with disciplined execution, completely free from vendor overhead.
 
 ## Entity Overview
 - Legal Name: SecuNova Inc.
-- Operating Name: SecuNova Consulting
+- Operating Name: SecuNova Advisory Pro / SecuNova Consulting
 - Primary Website: https://secunovainc.ca
 - Headquarters & Operational Hub: Calgary, AB, Canada (100% Remote-First Operations)
 - Delivery Model: 100% Remote-First Operations across North America (on-site executive sessions by appointment)
@@ -33,11 +33,11 @@
 - Federal Tax ID: 714343225
 - Geographic Coverage: Calgary, Edmonton, Alberta, Canada, and North American cross-border enterprises
 
-## Core Practice Areas & Offerings
-- [AI for Small Business](https://secunovainc.ca/services/ai-for-small-business): Custom AI software running 100% locally on macOS and Windows with zero SaaS subscriptions and complete data privacy.
-- [Strategic Advisory & Digital Transformation](https://secunovainc.ca/services/strategic-advisory-pmaas): Senior executive technology leadership, practical AI adoption roadmaps, and business process re-engineering.
-- [Enterprise IT Audits & Vendor Accountability](https://secunovainc.ca/services/enterprise-it-security-audits): Forensic infrastructure assessments, SaaS bloat elimination, and compliance readiness (SOC 2, ISO 27001).
-- [Project Management as a Service (PMaaS)](https://secunovainc.ca/services/strategic-advisory-pmaas): On-demand Chief Project Officer governance, milestone payment gating, and vendor delivery verification.
+## Core Advisory Engines & Offerings
+- Diagnostic Presence Audit: 48-vector forensic scan across market positioning, executive authority, conversion friction, and digital assets.
+- Strategic Authority Architecture: High-leverage executive narrative, premium digital presence, and institutional trust building.
+- Project Management as a Service (PMaaS): On-demand Chief Project Officer governance, milestone payment gating, and vendor delivery verification.
+- Local AI & IT Infrastructure Audits: Private on-premises neural applications running on client hardware with zero recurring fees, contract optimization, and technical debt recovery.
 
 ## Verified Track Record & Case Studies
 - [Nova AI macOS Agent](https://secunovainc.ca/about/our-work/nova): Native macOS intelligence built with Swift and Core ML running 100% offline.

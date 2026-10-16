@@ -19,25 +19,24 @@
 # Domain-level redirects are handled at the Edge by functions/_middleware.ts
 # and on the client by CanonicalDomainRedirect.tsx.
 
-# Retired service routes mapped directly to new strategic service subpages (permanent 301)
-/services/enterprise-it-security-audits /services/digital-presence-audit          301
-/services/enterprise-audits             /services/digital-presence-audit          301
-/services/strategic-advisory-pmaas      /services/digital-project-governance      301
-/services/digital-project-management    /services/digital-project-governance      301
-/services/ai-for-small-business         /services/ai-workflows-prompt-engineering 301
-/services/seo-marketing                 /services/local-seo-reputation-management 301
-/services/web-development               /services                                301
-/services/ui-ux-design                  /services/content-storytelling-strategy   301
+# Sub-Page redirects to Flagship Single-Page Homepage (permanent 301)
+/services/*        / 301
+/services          / 301
+/about/*           / 301
+/about             / 301
+/contact           / 301
+/our-work/*        / 301
+/our-work          / 301
+/products/*        / 301
+/products          / 301
+/support           / 301
+/faq               / 301
+/join-us           / 301
+/team              / 301
+/free-services     / 301
+/alberta-startups  / 301
+/login             / 301
+/portal            / 301
 
-# Retired free website initiative (permanent).
-/free-services                          /contact                                 301
-
-# Canonical URL consolidation for case studies (permanent).
-/our-work/:id                           /about/our-work/:id                      301
-/products/:id                           /about/our-work/:id                      301
-
-# /support is a legacy alias of /contact (permanent).
-/support                                /contact                                 301
-
-# Investor & Partner Opportunities redirected to About Us (permanent).
-/join-us                                /about                                   301
+# Cloudflare Pages SPA fallback: MUST be the LAST rule.
+/*    /index.html   200

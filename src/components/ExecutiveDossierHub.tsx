@@ -129,7 +129,7 @@ const ExecutiveDossierHub: React.FC = () => {
         </div>
 
         {/* Minimalist Advisory Mandate Switcher: Borderless, Open-Air */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-20">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 mb-16 sm:mb-20 px-2">
           {ADVISORY_CASES.map((advisoryCase, idx) => (
             <button
               key={advisoryCase.id}
@@ -137,7 +137,7 @@ const ExecutiveDossierHub: React.FC = () => {
                 setActiveIdx(idx);
                 setIsPlaying(true);
               }}
-              className={`apple-press px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              className={`apple-press px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-center max-w-full leading-snug ${
                 activeIdx === idx
                   ? 'bg-[#0071e3] text-white shadow-[0_2px_14px_rgba(0,113,227,0.45)]'
                   : 'text-slate-400 hover:text-white bg-white/[0.04]'
@@ -149,7 +149,7 @@ const ExecutiveDossierHub: React.FC = () => {
         </div>
 
         {/* Open-Air Case Study Presentation: Focus On SecuNova Advisory Intervention */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           
           {/* Left Column: Governed Production Artifact Preview */}
           <div className="lg:col-span-7 space-y-6">
@@ -162,6 +162,8 @@ const ExecutiveDossierHub: React.FC = () => {
                 loop
                 muted
                 playsInline
+                title={`SecuNova Governed Artifact: ${current.mandateTitle}`}
+                aria-label={`SecuNova Case Study: ${current.mandateTitle}`}
                 className="w-full h-full object-cover"
               />
 

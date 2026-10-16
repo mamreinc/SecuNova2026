@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
               </a>
               <a
                 href="#consultation"
-                className="btn btn-gradient w-full justify-center text-xs uppercase tracking-wider font-bold min-h-[44px] flex items-center shadow-md apple-press"
+                className="w-full flex items-center justify-center text-xs font-semibold text-white py-3 rounded-full bg-[#0071e3] hover:bg-[#0077ed] apple-press min-h-[44px] shadow-lg tracking-tight"
                 onClick={() => setIsOpen(false)}
               >
                 <Calendar className="h-4 w-4 mr-2" />

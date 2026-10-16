@@ -28,26 +28,10 @@ import SecurityWrapper from './components/SecurityWrapper';
 import { CanonicalDomainRedirect } from './components/CanonicalDomainRedirect';
 const ChatWidget = React.lazy(() => import('./components/ChatWidget'));
 
-// Lazy load pages for performance
+// Lazy load active pages for maximum performance
 const HomePage = React.lazy(() => import('./pages/HomePage'));
-const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
-const AboutPage = React.lazy(() => import('./pages/AboutPage'));
-const ContactPage = React.lazy(() => import('./pages/ContactPage'));
-const FaqPage = React.lazy(() => import('./pages/FaqPage'));
 const PrivacyTermsPage = React.lazy(() => import('./pages/PrivacyTermsPage'));
-const JoinUsPage = React.lazy(() => import('./pages/JoinUsPage'));
 const BrandPage = React.lazy(() => import('./pages/BrandPage'));
-
-// Service Pages - Strategic Digital Presence Consulting & PMaaS Governance
-const DigitalPresenceAuditPage = React.lazy(() => import('./pages/services/DigitalPresenceAuditPage'));
-const ContentStorytellingPage = React.lazy(() => import('./pages/services/ContentStorytellingPage'));
-const AIPromptWorkflowsPage = React.lazy(() => import('./pages/services/AIPromptWorkflowsPage'));
-const LocalSeoReputationPage = React.lazy(() => import('./pages/services/LocalSeoReputationPage'));
-const DigitalProjectGovernancePage = React.lazy(() => import('./pages/services/DigitalProjectGovernancePage'));
-
-// About Sub-Pages
-const OurWorkPage = React.lazy(() => import('./pages/OurWorkPage'));
-const ProductDetailPage = React.lazy(() => import('./pages/ProductDetailPage'));
 
 // Custom redirect component for external URLs
 const ExternalRedirect: React.FC<{ url: string }> = ({ url }) => {
@@ -90,48 +74,64 @@ function App() {
           <ScrollToTop />
           <div className="flex flex-col min-h-screen">
             <Routes>
-              {/* External Redirects - Custom implementation */}
-              <Route 
-                path="/alberta-startups" 
-                element={<ExternalRedirect url="https://maxphaos.com/alberta-startups" />} 
-              />
-              
-              {/* English routes - Default language implementation */}
-              <Route path="/*" element={
+              {/* Single-Page Experience: All Sub-Pages Redirect Directly to Home Page */}
+              <Route path="/" element={
                 <>
                   <Navbar />
                   <main className="flex-grow">
                     <Suspense fallback={<PageLoadingFallback />}>
-                      <Routes>
-                        <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
-                        
-                        {/* Single-Page Section Redirects */}
-                        <Route path="/services" element={<Navigate to="/#services" replace />} />
-                        <Route path="/services/*" element={<Navigate to="/#services" replace />} />
-                        <Route path="/about" element={<Navigate to="/#about" replace />} />
-                        <Route path="/about/*" element={<Navigate to="/#about" replace />} />
-                        <Route path="/team" element={<Navigate to="/#about" replace />} />
-                        <Route path="/our-work" element={<Navigate to="/#case-studies" replace />} />
-                        <Route path="/our-work/*" element={<Navigate to="/#case-studies" replace />} />
-                        <Route path="/contact" element={<Navigate to="/#consultation" replace />} />
-                        <Route path="/support" element={<Navigate to="/#consultation" replace />} />
-                        <Route path="/faq" element={<Navigate to="/#consultation" replace />} />
-                        <Route path="/join-us" element={<Navigate to="/#consultation" replace />} />
-                        <Route path="/login" element={<Navigate to="/#about" replace />} />
-                        <Route path="/portal" element={<Navigate to="/#about" replace />} />
-                        
-                        {/* Administrative & Policy Pages */}
-                        <Route path="/privacy-terms" element={<PageTransition><PrivacyTermsPage /></PageTransition>} />
-                        <Route path="/brand" element={<PageTransition><BrandPage /></PageTransition>} />
-                        <Route path="*" element={<Navigate to="/" replace />} />
-                      </Routes>
+                      <PageTransition><HomePage /></PageTransition>
                     </Suspense>
                   </main>
                   <Footer />
-                  {/* Chat widget only on the Contact page */}
-                  <ChatOnlyOnContact />
                 </>
               } />
+
+              {/* Administrative, Legal & Brand Pages */}
+              <Route path="/privacy-terms" element={
+                <>
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Suspense fallback={<PageLoadingFallback />}>
+                      <PageTransition><PrivacyTermsPage /></PageTransition>
+                    </Suspense>
+                  </main>
+                  <Footer />
+                </>
+              } />
+              <Route path="/brand" element={
+                <>
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Suspense fallback={<PageLoadingFallback />}>
+                      <PageTransition><BrandPage /></PageTransition>
+                    </Suspense>
+                  </main>
+                  <Footer />
+                </>
+              } />
+
+              {/* Explicit Sub-Page Redirects to Home Page */}
+              <Route path="/services" element={<Navigate to="/" replace />} />
+              <Route path="/services/*" element={<Navigate to="/" replace />} />
+              <Route path="/about" element={<Navigate to="/" replace />} />
+              <Route path="/about/*" element={<Navigate to="/" replace />} />
+              <Route path="/team" element={<Navigate to="/" replace />} />
+              <Route path="/our-work" element={<Navigate to="/" replace />} />
+              <Route path="/our-work/*" element={<Navigate to="/" replace />} />
+              <Route path="/products" element={<Navigate to="/" replace />} />
+              <Route path="/products/*" element={<Navigate to="/" replace />} />
+              <Route path="/contact" element={<Navigate to="/" replace />} />
+              <Route path="/support" element={<Navigate to="/" replace />} />
+              <Route path="/faq" element={<Navigate to="/" replace />} />
+              <Route path="/join-us" element={<Navigate to="/" replace />} />
+              <Route path="/free-services" element={<Navigate to="/" replace />} />
+              <Route path="/alberta-startups" element={<Navigate to="/" replace />} />
+              <Route path="/login" element={<Navigate to="/" replace />} />
+              <Route path="/portal" element={<Navigate to="/" replace />} />
+
+              {/* Catch-all fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>
         </Router>

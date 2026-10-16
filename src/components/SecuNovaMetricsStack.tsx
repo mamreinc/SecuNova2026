@@ -82,7 +82,7 @@ export const SecuNovaMetricsStack: React.FC = () => {
   const step = 1 / METRICS.length;
 
   return (
-    <section ref={containerRef} className="py-24 sm:py-36 bg-black text-[#f5f5f7] relative border-t border-white/10">
+    <section id="benchmarks" ref={containerRef} className="py-24 sm:py-36 bg-black text-[#f5f5f7] relative border-t border-white/10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="mb-14 sm:mb-20 text-left">

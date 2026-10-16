@@ -62,7 +62,7 @@ export const AppleScrollTextReveal: React.FC<AppleScrollTextRevealProps> = ({
   const step = 1 / sentences.length;
 
   return (
-    <div ref={containerRef} className="py-24 sm:py-36 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+    <div id="governance" ref={containerRef} className="py-24 sm:py-36 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left scroll-mt-24">
       {eyebrow && (
         <span className="text-xs font-mono font-medium text-[#2997ff] uppercase tracking-wider block mb-4">
           {eyebrow}

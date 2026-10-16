@@ -99,23 +99,23 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#clarity" className="text-slate-400 hover:text-white transition-colors apple-press">
-                  Diagnostic Clarity Comparison
-                </a>
-              </li>
-              <li>
                 <a href="#governance" className="text-slate-400 hover:text-white transition-colors apple-press">
-                  Fiduciary Governance Endurance
+                  Fiduciary Governance Standard
                 </a>
               </li>
               <li>
-                <a href="#integrations" className="text-slate-400 hover:text-white transition-colors apple-press">
-                  Enterprise Integration Channels
+                <a href="#highlights" className="text-slate-400 hover:text-white transition-colors apple-press">
+                  Institutional Highlights
                 </a>
               </li>
               <li>
-                <a href="#compare" className="text-slate-400 hover:text-white transition-colors apple-press">
-                  Engagement Tier Comparison
+                <a href="#showcase" className="text-slate-400 hover:text-white transition-colors apple-press">
+                  Advisory Architecture
+                </a>
+              </li>
+              <li>
+                <a href="#case-studies" className="text-slate-400 hover:text-white transition-colors apple-press">
+                  Governed Track Record
                 </a>
               </li>
             </ul>
@@ -214,7 +214,7 @@ const Footer: React.FC = () => {
             <span>Crafted by <span className="font-semibold text-white group-hover:text-[#64d2ff] tracking-wider transition-colors">MAXPHAOS MARKETING</span></span>
           </a>
 
-          <div className="flex items-center space-x-6 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-medium text-center">
             <a href="#overview" className="hover:text-white transition-colors apple-press">Overview</a>
             <Link to="/privacy-terms" className="hover:text-white transition-colors">Privacy &amp; Terms</Link>
             <a href="#consultation" className="hover:text-white transition-colors apple-press">Executive Contact</a>

@@ -154,7 +154,7 @@ const SecuNovaEngineSection: React.FC = () => {
 
     const element = document.getElementById(`discipline-${num}`);
     if (element) {
-      const navOffset = 180;
+      const navOffset = 100;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: elementPosition - navOffset,
@@ -182,20 +182,20 @@ const SecuNovaEngineSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-semibold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[-0.04em] text-white leading-[0.98] mb-8"
+            className="font-display font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[-0.04em] text-white leading-[0.98] mb-6 sm:mb-8"
           >
             Five disciplines. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2997ff] via-[#64d2ff] to-white">
               One fiduciary standard.
             </span>
           </motion.h2>
-          <p className="text-lg sm:text-2xl text-[#86868b] font-medium leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl lg:text-2xl text-[#86868b] font-medium leading-relaxed max-w-3xl mx-auto px-2">
             We do not sell website templates, billable coding hours, or off-the-shelf software. We operate as client-side fiduciary advisors, directing technology initiatives, evaluating vendors, and enforcing milestone accountability.
           </p>
         </div>
 
         {/* State-of-the-Art Apple Floating Segmented Capsule Bar */}
-        <div className="sticky top-16 md:top-20 z-30 mb-20 sm:mb-28 flex justify-center px-2">
+        <div className="sticky top-16 sm:top-20 z-30 mb-16 sm:mb-28 flex justify-center px-2 w-full max-w-full">
           <nav
             aria-label="Advisory Disciplines Navigation"
             className="inline-flex items-center p-1.5 sm:p-2 rounded-2xl md:rounded-full bg-[#12151e]/85 backdrop-blur-2xl border border-white/10 shadow-[0_16px_40px_rgba(0,0,0,0.65)] max-w-full overflow-x-auto scrollbar-none no-scrollbar gap-1 sm:gap-1.5"
@@ -207,7 +207,7 @@ const SecuNovaEngineSection: React.FC = () => {
                 <button
                   key={d.number}
                   onClick={() => handleTabClick(d.number)}
-                  className={`relative flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl md:rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 apple-press ${
+                  className={`relative flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-xl md:rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 apple-press ${
                     isActive ? 'text-white font-semibold' : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
                   }`}
                   aria-selected={isActive}
@@ -233,23 +233,23 @@ const SecuNovaEngineSection: React.FC = () => {
         </div>
 
         {/* The 5 Disciplines: Luxury Editorial Chapters */}
-        <div className="space-y-20 sm:space-y-32">
+        <div className="space-y-16 sm:space-y-32">
           {DISCIPLINES.map((discipline) => {
             const isSelected = activeTab === discipline.number;
             return (
               <div
                 key={discipline.number}
                 id={`discipline-${discipline.number}`}
-                className={`relative rounded-3xl p-8 sm:p-12 lg:p-16 transition-all duration-500 border ${
+                className={`relative rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 transition-all duration-500 border ${
                   isSelected
                     ? 'bg-gradient-to-b from-white/[0.04] to-white/[0.01] border-[#2997ff]/40 shadow-[0_20px_60px_rgba(41,151,255,0.08)]'
                     : 'bg-white/[0.02] border-white/10 hover:border-white/20'
-                } scroll-mt-44`}
+                } scroll-mt-48`}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                   
                   {/* Left Column: Story & Strategy */}
-                  <div className="lg:col-span-7 space-y-6">
+                  <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                     <div className="flex items-center gap-3">
                       <span className="px-2.5 py-1 rounded-md bg-[#2997ff]/15 border border-[#2997ff]/30 text-xs font-mono font-bold text-[#64d2ff]">
                         DISCIPLINE {discipline.number}
@@ -265,31 +265,31 @@ const SecuNovaEngineSection: React.FC = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: '-40px' }}
                       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                      className="font-display font-semibold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.1]"
+                      className="font-display font-semibold text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.12]"
                     >
                       {discipline.headline}
                     </motion.h3>
 
-                    <p className="text-base sm:text-lg text-slate-300 font-sans leading-relaxed pt-2">
+                    <p className="text-sm sm:text-lg text-slate-300 font-sans leading-relaxed pt-1">
                       {discipline.story}
                     </p>
 
-                    <div className="pt-4 space-y-3">
+                    <div className="pt-3 space-y-3">
                       <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 block mb-2">
                         Supervised Executive Outcomes:
                       </span>
                       {discipline.supervisedOutcomes.map((outcome, idx) => (
-                        <div key={idx} className="flex items-start gap-3 text-sm text-slate-300 font-sans">
+                        <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300 font-sans">
                           <CheckCircle2 className="h-4 w-4 text-[#2997ff] flex-shrink-0 mt-0.5" />
                           <span className="leading-relaxed">{outcome}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="pt-6">
+                    <div className="pt-4 sm:pt-6">
                       <a
                         href="#consultation"
-                        className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/[0.05] hover:bg-[#2997ff] text-white border border-white/10 hover:border-[#2997ff] text-sm font-semibold transition-all duration-300 apple-press group"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3 sm:py-2.5 rounded-full bg-white/[0.05] hover:bg-[#2997ff] text-white border border-white/10 hover:border-[#2997ff] text-xs sm:text-sm font-semibold transition-all duration-300 apple-press group text-center"
                       >
                         <ShieldCheck className="h-4 w-4 text-[#2997ff] group-hover:text-white transition-colors" />
                         <span>Request advisory briefing on {discipline.shortTitle}</span>
@@ -299,24 +299,24 @@ const SecuNovaEngineSection: React.FC = () => {
                   </div>
 
                   {/* Right Column: Empirical Metrics & Deliverables */}
-                  <div className="lg:col-span-5 space-y-6 pt-2 lg:pt-4">
+                  <div className="lg:col-span-5 space-y-4 sm:space-y-6 pt-2 lg:pt-4 w-full">
                     {/* Primary Tangible Deliverable */}
-                    <div className="p-6 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-sm min-w-0">
-                      <div className="flex items-center gap-2 mb-2.5">
+                    <div className="p-4 sm:p-6 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-sm min-w-0">
+                      <div className="flex items-center gap-2 mb-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#2997ff]" />
                         <span className="text-xs font-mono uppercase tracking-wider text-[#2997ff] font-semibold">
                           Primary Tangible Deliverable
                         </span>
                       </div>
-                      <div className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug break-words">
+                      <div className="text-sm sm:text-lg font-bold text-white tracking-tight leading-snug break-words">
                         {discipline.tangibleDeliverable}
                       </div>
                     </div>
 
                     {/* Empirical Performance Metrics - Unified Specification Card */}
-                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 divide-y divide-white/10 min-w-0">
-                      <div className="pb-5">
-                        <div className="text-3xl sm:text-4xl font-display font-semibold text-white tracking-tight mb-1.5 whitespace-nowrap">
+                    <div className="p-4 sm:p-6 rounded-2xl bg-white/[0.02] border border-white/10 divide-y divide-white/10 min-w-0">
+                      <div className="pb-4 sm:pb-5">
+                        <div className="text-2xl sm:text-4xl font-display font-semibold text-white tracking-tight mb-1 whitespace-nowrap">
                           {discipline.primaryMetric.value}
                         </div>
                         <div className="text-xs sm:text-sm text-slate-400 font-sans leading-relaxed">
@@ -324,8 +324,8 @@ const SecuNovaEngineSection: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="pt-5">
-                        <div className="text-3xl sm:text-4xl font-display font-semibold text-[#2997ff] tracking-tight mb-1.5 whitespace-nowrap">
+                      <div className="pt-4 sm:pt-5">
+                        <div className="text-2xl sm:text-4xl font-display font-semibold text-[#2997ff] tracking-tight mb-1 whitespace-nowrap">
                           {discipline.secondaryMetric.value}
                         </div>
                         <div className="text-xs sm:text-sm text-slate-400 font-sans leading-relaxed">

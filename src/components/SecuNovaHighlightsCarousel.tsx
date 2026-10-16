@@ -103,7 +103,7 @@ export const SecuNovaHighlightsCarousel: React.FC = () => {
   const current = HIGHLIGHTS[currentIndex];
 
   return (
-    <section className="py-20 sm:py-28 bg-black text-[#f5f5f7] overflow-hidden">
+    <section id="highlights" className="py-20 sm:py-28 bg-black text-[#f5f5f7] overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Row */}
@@ -117,7 +117,7 @@ export const SecuNovaHighlightsCarousel: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-6xl font-semibold tracking-[-0.03em] text-white"
+              className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white"
             >
               Get the highlights.
             </motion.h2>
@@ -133,7 +133,7 @@ export const SecuNovaHighlightsCarousel: React.FC = () => {
 
         {/* Carousel Viewport */}
         <div className="relative">
-          <div className="overflow-hidden rounded-[28px] sm:rounded-[36px] bg-[#0c0e14] border border-white/10 min-h-[460px] sm:min-h-[500px] flex items-center relative shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+          <div className="overflow-hidden rounded-[24px] sm:rounded-[36px] bg-[#0c0e14] border border-white/10 min-h-[440px] sm:min-h-[500px] flex items-center relative shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
             
             {/* Ambient Lighting Glow tailored to current highlight */}
             <div
@@ -152,10 +152,10 @@ export const SecuNovaHighlightsCarousel: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full p-8 sm:p-14 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center z-10"
+                className="w-full p-5 sm:p-10 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center z-10"
               >
                 {/* Left Narrative Column */}
-                <div className="lg:col-span-7 space-y-6">
+                <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-300">
                     <span
                       className="w-2 h-2 rounded-full"
@@ -164,11 +164,11 @@ export const SecuNovaHighlightsCarousel: React.FC = () => {
                     <span>{current.tag}</span>
                   </div>
 
-                  <h3 className="text-3xl sm:text-5xl font-semibold text-white tracking-[-0.03em] leading-[1.08]">
+                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-[-0.03em] leading-[1.12]">
                     {current.title}
                   </h3>
 
-                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
+                  <p className="text-sm sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
                     {current.description}
                   </p>
 
@@ -180,10 +180,10 @@ export const SecuNovaHighlightsCarousel: React.FC = () => {
                 </div>
 
                 {/* Right Monumental Quantitative Card */}
-                <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center">
-                  <div className="w-full max-w-sm rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-left backdrop-blur-md">
+                <div className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center w-full">
+                  <div className="w-full max-w-sm rounded-2xl bg-white/[0.03] border border-white/10 p-5 sm:p-8 text-left backdrop-blur-md">
                     <div
-                      className="text-6xl sm:text-7xl font-display font-semibold tracking-tight mb-3"
+                      className="text-5xl sm:text-6xl lg:text-7xl font-display font-semibold tracking-tight mb-2 sm:mb-3"
                       style={{ color: current.accentColor }}
                     >
                       {current.metric}

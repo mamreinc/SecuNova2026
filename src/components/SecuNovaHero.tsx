@@ -33,6 +33,8 @@ const SecuNovaHero: React.FC = () => {
         loop
         muted
         playsInline
+        aria-hidden="true"
+        title="SecuNova Advisory Pro Cinematic Visual"
         className="absolute inset-0 w-full h-full object-cover opacity-45 pointer-events-none z-0"
       />
 
@@ -47,10 +49,12 @@ const SecuNovaHero: React.FC = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-6 flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-widest uppercase font-mono text-slate-300"
+          className="mb-6 inline-flex items-center justify-center flex-wrap gap-2 text-[11px] sm:text-sm font-semibold tracking-wider sm:tracking-widest uppercase font-mono text-slate-300 text-center max-w-full px-2"
         >
-          <span className="w-2 h-2 rounded-full bg-[#2997ff]" />
-          <span>Independent Advisory Practice | Calgary &amp; Canadian Enterprise</span>
+          <span className="w-2 h-2 rounded-full bg-[#2997ff] shrink-0" />
+          <span>Independent Advisory Practice</span>
+          <span className="hidden sm:inline text-slate-500">|</span>
+          <span className="text-slate-400">Calgary &amp; Canadian Enterprise</span>
         </motion.div>
 
         {/* Apple Monumental Keynote Headline */}
@@ -58,7 +62,7 @@ const SecuNovaHero: React.FC = () => {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] text-[#f5f5f7] leading-[0.92] sm:leading-[0.90] lg:leading-[0.88] mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] overflow-visible"
+          className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-[-0.04em] text-[#f5f5f7] leading-[0.94] sm:leading-[0.90] lg:leading-[0.88] mb-8 drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] overflow-visible max-w-full break-words"
         >
           <span className="block">Unfair authority.</span>
           <span className="block -mt-[0.06em] sm:-mt-[0.08em] pb-3 sm:pb-4 lg:pb-6 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-slate-300">
@@ -71,7 +75,7 @@ const SecuNovaHero: React.FC = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg sm:text-2xl text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed mb-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]"
+          className="text-base sm:text-xl lg:text-2xl text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed mb-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] px-2"
         >
           Strategic advisory that protects your bottom line while elevating your market reach. We bridge the gap between high-level digital direction and disciplined execution, completely free from vendor overhead.
         </motion.p>
@@ -81,17 +85,18 @@ const SecuNovaHero: React.FC = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 mb-20"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-16 sm:mb-20 w-full max-w-md sm:max-w-none px-4"
         >
           <a
             href="#consultation"
-            className="px-9 py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-semibold text-sm sm:text-base tracking-tight transition-all duration-200 apple-press shadow-[0_4px_24px_rgba(0,113,227,0.5)]"
+            aria-label="Book Strategic Consultation with SecuNova"
+            className="w-full sm:w-auto px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-semibold text-sm sm:text-base tracking-tight transition-all duration-200 apple-press shadow-[0_4px_24px_rgba(0,113,227,0.5)] text-center justify-center"
           >
             Book Strategic Consultation
           </a>
           <a
             href="#services"
-            className="group text-[#2997ff] hover:text-[#52aaff] font-semibold text-sm sm:text-base flex items-center gap-2 transition-colors apple-press"
+            className="w-full sm:w-auto group text-[#2997ff] hover:text-[#52aaff] font-semibold text-sm sm:text-base flex items-center justify-center gap-2 transition-colors apple-press py-2"
           >
             <span>Explore what we deliver</span>
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

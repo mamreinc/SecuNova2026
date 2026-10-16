@@ -123,7 +123,7 @@ export const SecuNovaFeatureShowcase: React.FC = () => {
   };
 
   return (
-    <section className="py-24 sm:py-36 bg-black text-[#f5f5f7] relative overflow-hidden border-t border-white/10">
+    <section id="showcase" className="py-24 sm:py-36 bg-black text-[#f5f5f7] relative overflow-hidden border-t border-white/10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -234,7 +234,7 @@ export const SecuNovaFeatureShowcase: React.FC = () => {
 
           {/* Right Column: Expansive Context Display */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl sm:rounded-[36px] bg-[#0c0e14] border border-white/10 p-8 sm:p-12 lg:p-14 relative min-h-[480px] flex flex-col justify-between overflow-hidden shadow-2xl">
+            <div className="rounded-3xl sm:rounded-[36px] bg-[#0c0e14] border border-white/10 p-5 sm:p-10 lg:p-14 relative min-h-[440px] sm:min-h-[480px] flex flex-col justify-between overflow-hidden shadow-2xl">
               
               {/* Subtle Ambient Radial Highlight */}
               <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(41,151,255,0.18)_0%,transparent_70%)] pointer-events-none" />
@@ -246,19 +246,19 @@ export const SecuNovaFeatureShowcase: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  className="space-y-8 z-10"
+                  className="space-y-6 sm:space-y-8 z-10"
                 >
-                  <div className="flex items-center justify-between border-b border-white/10 pb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5 sm:pb-6">
                     <div>
                       <span className="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-1">
                         Active Verification Focus
                       </span>
-                      <h4 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+                      <h4 className="text-xl sm:text-3xl font-semibold text-white tracking-tight">
                         {activePill.title}
                       </h4>
                     </div>
-                    <div className="text-right">
-                      <div className="text-4xl sm:text-5xl font-display font-semibold text-[#2997ff]">
+                    <div className="text-left sm:text-right">
+                      <div className="text-3xl sm:text-5xl font-display font-semibold text-[#2997ff]">
                         {activePill.metric}
                       </div>
                       <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mt-1">

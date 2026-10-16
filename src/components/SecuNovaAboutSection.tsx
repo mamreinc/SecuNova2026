@@ -122,7 +122,7 @@ const SecuNovaAboutSection: React.FC = () => {
         </div>
 
         {/* Open-Air Apple Leadership Roster (Zero Boxes, Zero Monogram Borders, Pure Typography) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-10 gap-y-10 sm:gap-y-12">
           {TEAM_MEMBERS.map((member) => (
             <div key={member.id} className="space-y-2 group">
               <div className="flex items-center text-xs font-mono pb-1">
@@ -145,7 +145,7 @@ const SecuNovaAboutSection: React.FC = () => {
         </div>
 
         {/* Open-Air Direct Engagement Invitation */}
-        <div className="mt-28 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+        <div className="mt-20 sm:mt-28 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8">
           <div>
             <h4 className="font-display font-semibold text-2xl sm:text-3xl text-white tracking-tight mb-2">
               Confidential Partner Briefing
@@ -156,7 +156,7 @@ const SecuNovaAboutSection: React.FC = () => {
           </div>
           <a
             href="#consultation"
-            className="px-9 py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-semibold text-sm sm:text-base tracking-tight transition-all duration-200 apple-press shadow-[0_4px_24px_rgba(0,113,227,0.45)] whitespace-nowrap flex items-center gap-2"
+            className="w-full sm:w-auto px-6 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-semibold text-sm sm:text-base tracking-tight transition-all duration-200 apple-press shadow-[0_4px_24px_rgba(0,113,227,0.45)] whitespace-nowrap flex items-center justify-center gap-2 text-center"
           >
             <span>Initiate Direct Consultation</span>
             <ArrowRight className="h-4 w-4" />
