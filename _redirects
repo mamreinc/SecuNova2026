@@ -38,5 +38,4 @@
 /login             / 301
 /portal            / 301
 
-# Cloudflare Pages SPA fallback: MUST be the LAST rule.
-/*    /index.html   200
+# Cloudflare Pages handles SPA routing automatically via dist/200.html
